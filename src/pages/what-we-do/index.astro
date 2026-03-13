@@ -1,0 +1,241 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  titleSv="Vad vi gör — Sigvardsson Consulting Group"
+  titleEn="What We Do — Sigvardsson Consulting Group"
+  descriptionSv="Tre pelare som driver vår leverans: vi identifierar utmaningen, skapar projektet och bygger processen för bestående förändring."
+  descriptionEn="Three pillars that drive our delivery: we identify the challenge, create the project and build the process for lasting change."
+  canonical="https://www.sigvardsson.org/what-we-do/"
+>
+  <Header slot="header" />
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label sv-text">Vad vi gör</span>
+      <span class="section-label en-text">What We Do</span>
+      <h1>
+        <span class="sv-text">Tre pelare.<br/>Bestående resultat.</span>
+        <span class="en-text">Three pillars.<br/>Lasting results.</span>
+      </h1>
+      <p class="hero-sub sv-text">Vår leveransmodell bygger på att identifiera rätt utmaning, genomföra rätt projekt och bygga rätt process — i den ordningen, alltid.</p>
+      <p class="hero-sub en-text">Our delivery model is built on identifying the right challenge, executing the right project and building the right process — in that order, always.</p>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="container">
+      <div class="pillar-card fade-up">
+        <div class="pillar-number">01</div>
+        <div class="pillar-content">
+          <h2 class="sv-text">Utmaningen</h2>
+          <h2 class="en-text">The Challenge</h2>
+          <p class="sv-text">Vi börjar alltid med att förstå din verkliga utmaning. Inte symptomen — utan grundorsaken. Genom djupgående analys av data, processer och organisation kartlägger vi var den verkliga förbättringspotentialen finns.</p>
+          <p class="en-text">We always start by understanding your real challenge. Not the symptoms — but the root cause. Through in-depth analysis of data, processes and organization, we map out where the real improvement potential lies.</p>
+          <ul class="pillar-list">
+            <li class="sv-text">Affärsanalys och datakartläggning</li>
+            <li class="en-text">Business analysis and data mapping</li>
+            <li class="sv-text">Identifiering av förbättringsområden</li>
+            <li class="en-text">Identification of improvement areas</li>
+            <li class="sv-text">Prioritering av initiativ med högst ROI</li>
+            <li class="en-text">Prioritization of initiatives with highest ROI</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card fade-up">
+        <div class="pillar-number">02</div>
+        <div class="pillar-content">
+          <h2 class="sv-text">Projektet</h2>
+          <h2 class="en-text">The Project</h2>
+          <p class="sv-text">Vi genomför varje projekt med tydliga mål, ansvar och tidplaner. Mobil-first, datadrivet och med fokus på omedelbar effekt. Varje projekt levererar mätbar ROI — från dag ett.</p>
+          <p class="en-text">We execute every project with clear goals, accountability and timelines. Mobile-first, data-driven and focused on immediate impact. Every project delivers measurable ROI — from day one.</p>
+          <ul class="pillar-list">
+            <li class="sv-text">Tydlig projektplan och milstolpar</li>
+            <li class="en-text">Clear project plan and milestones</li>
+            <li class="sv-text">Hands-on genomförande med ditt team</li>
+            <li class="en-text">Hands-on execution with your team</li>
+            <li class="sv-text">Kontinuerlig mätning och justering</li>
+            <li class="en-text">Continuous measurement and adjustment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card fade-up">
+        <div class="pillar-number">03</div>
+        <div class="pillar-content">
+          <h2 class="sv-text">Processen</h2>
+          <h2 class="en-text">The Process</h2>
+          <p class="sv-text">Vi bygger inte bara resultat — vi bygger förmåga. Genom att involvera hela din organisation och skapa strukturerade processer säkerställer vi att förändringen håller långsiktigt.</p>
+          <p class="en-text">We don't just build results — we build capability. By involving your entire organization and creating structured processes, we ensure that the change lasts long-term.</p>
+          <ul class="pillar-list">
+            <li class="sv-text">Processdokumentation och rutiner</li>
+            <li class="en-text">Process documentation and routines</li>
+            <li class="sv-text">Utbildning och kompetensöverföring</li>
+            <li class="en-text">Training and knowledge transfer</li>
+            <li class="sv-text">Uppföljningssystem och KPI:er</li>
+            <li class="en-text">Follow-up systems and KPIs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wwd-cta">
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <h2>
+          <span class="sv-text">Nyfiken på hur vi kan hjälpa dig?</span>
+          <span class="en-text">Curious how we can help you?</span>
+        </h2>
+        <div class="cta-buttons">
+          <a href="/services/" class="btn btn-light sv-text">Se alla tjänster</a>
+          <a href="/services/" class="btn btn-light en-text">See all services</a>
+          <a href="/Contact/" class="btn btn-outline sv-text">Kontakta oss</a>
+          <a href="/Contact/" class="btn btn-outline en-text">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+    color: var(--color-white);
+    padding: 5rem 2rem 4rem;
+  }
+
+  .page-hero .section-label { color: var(--color-blue-lite); }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .pillars {
+    padding: 5rem 2rem;
+  }
+
+  .pillar-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(1,13,96,0.08);
+  }
+
+  .pillar-card:last-child { border-bottom: none; }
+
+  .pillar-number {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--color-blue-lite);
+    line-height: 1;
+  }
+
+  .pillar-content h2 {
+    font-size: 1.75rem;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-content p {
+    color: rgba(1,13,96,0.7);
+    line-height: 1.75;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .pillar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pillar-list li {
+    font-size: 0.9rem;
+    color: var(--color-navy-mid);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .pillar-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-blue-lite);
+  }
+
+  .wwd-cta {
+    background: var(--color-navy);
+    padding: 4.5rem 2rem;
+    color: var(--color-white);
+  }
+
+  .cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-light {
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+
+  .btn-light:hover { background: var(--color-off-white); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    border: 2px solid rgba(255,255,255,0.35);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); color: var(--color-white); }
+
+  @media (max-width: 600px) {
+    .pillar-card { grid-template-columns: 1fr; gap: 0.75rem; }
+    .pillar-number { font-size: 2rem; }
+  }
+</style>

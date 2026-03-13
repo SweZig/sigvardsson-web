@@ -1,0 +1,598 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  titleSv="Sigvardsson Consulting Group — Retail Konsulter"
+  titleEn="Sigvardsson Consulting Group — Retail Consultants"
+  descriptionSv="Ledande konsultbyrå inom retail med 15+ år av bevisade resultat. Vi hjälper detaljhandeln att öka lönsamhet och effektivitet."
+  descriptionEn="Leading retail consultancy with 15+ years of proven results. We help retailers increase profitability and efficiency."
+  canonical="https://www.sigvardsson.org/"
+>
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="section-label sv-text">Sigvardsson Consulting Group</span>
+        <span class="section-label en-text">Sigvardsson Consulting Group</span>
+        <h1 class="hero-title">
+          <span class="sv-text">Retail<br/><em>optimering</em><br/>som ger resultat</span>
+          <span class="en-text">Retail<br/><em>optimization</em><br/>that delivers results</span>
+        </h1>
+        <p class="hero-desc sv-text">
+          15+ år av bevisade resultat hos ledande nordiska retailkedjor. Datadrivna verktyg, strategisk rådgivning och teknologilösningar som ökar din lönsamhet direkt.
+        </p>
+        <p class="hero-desc en-text">
+          15+ years of proven results at leading Nordic retail chains. Data-driven tools, strategic advisory and technology solutions that increase your profitability directly.
+        </p>
+        <div class="hero-actions">
+          <a href="/services/" class="btn btn-light sv-text">Utforska tjänster</a>
+          <a href="/services/" class="btn btn-light en-text">Explore services</a>
+          <a href="/Contact/" class="btn btn-outline sv-text">Kontakta oss</a>
+          <a href="/Contact/" class="btn btn-outline en-text">Contact us</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="/images/logos/S_white.png" alt="Sigvardsson Consulting Group" class="hero-logo" />
+        <!-- Awards in hero -->
+        <div class="hero-awards">
+          <div class="award-item">
+            <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="hero-award" />
+            <span class="award-year">2024</span>
+          </div>
+          <div class="award-item">
+            <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="hero-award" />
+            <span class="award-year">2025</span>
+          </div>
+          <div class="award-item">
+            <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="hero-award" />
+            <span class="award-year">2026</span>
+          </div>
+        </div>
+        <p class="awards-caption sv-text">Global 100 Winner tre år i rad</p>
+        <p class="awards-caption en-text">Global 100 Winner three years in a row</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat fade-up">
+          <div class="stat-number">500+</div>
+          <div class="stat-label sv-text">Genomförda projekt</div>
+          <div class="stat-label en-text">Completed projects</div>
+        </div>
+        <div class="stat fade-up" style="animation-delay:80ms">
+          <div class="stat-number">15+</div>
+          <div class="stat-label sv-text">År i retail</div>
+          <div class="stat-label en-text">Years in retail</div>
+        </div>
+        <div class="stat fade-up" style="animation-delay:160ms">
+          <div class="stat-number">100%</div>
+          <div class="stat-label sv-text">ROI i alla projekt</div>
+          <div class="stat-label en-text">ROI in every project</div>
+        </div>
+        <div class="stat fade-up" style="animation-delay:240ms">
+          <div class="stat-number">3×</div>
+          <div class="stat-label sv-text">Global 100 Winner</div>
+          <div class="stat-label en-text">Global 100 Winner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about">
+    <div class="container about-inner">
+      <div class="about-text fade-up">
+        <span class="section-label sv-text">Om oss</span>
+        <span class="section-label en-text">About us</span>
+        <h2 class="sv-text">Vi bygger<br/>långsiktiga relationer</h2>
+        <h2 class="en-text">We build<br/>lasting relationships</h2>
+        <p class="sv-text">Sigvardsson Consulting Group är en ledande nordisk konsultbyrå med djup specialisering inom retail. Vi kombinerar strategisk rådgivning med konkreta, datadrivna verktyg som ger mätbar effekt — i varje projekt, från dag ett.</p>
+        <p class="en-text">Sigvardsson Consulting Group is a leading Nordic consultancy with deep specialization in retail. We combine strategic advisory with concrete, data-driven tools that deliver measurable impact — in every project, from day one.</p>
+        <p class="sv-text" style="margin-top:1rem">Vår filosofi: starta i rätt skala, lär, erfar och bygg upp kompetens — sedan ta nästa steg. Vi involverar hela din organisation och skapar bestående affärsmannaskap.</p>
+        <p class="en-text" style="margin-top:1rem">Our philosophy: start at the right scale, learn, experience and build competence — then take the next step. We involve your whole organization and create lasting business acumen.</p>
+        <a href="/what-we-do/" class="btn btn-primary sv-text" style="margin-top:1.75rem;display:inline-block">Vad vi gör →</a>
+        <a href="/what-we-do/" class="btn btn-primary en-text" style="margin-top:1.75rem;display:inline-block">What we do →</a>
+      </div>
+      <div class="about-visual fade-up" style="animation-delay:120ms">
+        <div class="about-card">
+          <img src="/images/logos/S_blue-trans.png" alt="SCG" class="about-card-logo" />
+          <div class="about-card-text">
+            <p class="sv-text">"Ge en man en fisk och du mättar honom för en dag. Lär en man att fiska och du mättar honom för livet."</p>
+            <p class="en-text">"Give a man a fish and you feed him for a day. Teach a man to fish and you feed him for a lifetime."</p>
+            <span class="about-card-attr sv-text">— Vår filosofi</span>
+            <span class="about-card-attr en-text">— Our philosophy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES OVERVIEW ===== -->
+  <section class="services-overview">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label sv-text">Tjänster</span>
+        <span class="section-label en-text">Services</span>
+        <h2 class="sv-text">Tre kompletterande<br/>kompetensområden</h2>
+        <h2 class="en-text">Three complementary<br/>areas of expertise</h2>
+      </div>
+
+      <div class="service-pillars">
+        <a href="/services/#retail-optimization" class="pillar fade-up">
+          <div class="pillar-icon">🛒</div>
+          <h3 class="sv-text">Retail Optimering</h3>
+          <h3 class="en-text">Retail Optimization</h3>
+          <p class="sv-text">8 datadrivna verktyg för hylla, kampanj, kundflöde, kö, svinn och lager — med direkt mätbar ROI.</p>
+          <p class="en-text">8 data-driven tools for shelf, campaign, customer flow, queue, waste and inventory — with directly measurable ROI.</p>
+          <span class="pillar-cta sv-text">Läs mer →</span>
+          <span class="pillar-cta en-text">Learn more →</span>
+        </a>
+
+        <a href="/services/#technology" class="pillar fade-up" style="animation-delay:120ms">
+          <div class="pillar-icon">⚙️</div>
+          <h3 class="sv-text">Teknologi & System</h3>
+          <h3 class="en-text">Technology & Systems</h3>
+          <p class="sv-text">RFID, digital prissättning, självbetjäningskiosker och NPS-analys — teknologi som moderniserar din butik.</p>
+          <p class="en-text">RFID, digital pricing, self-service kiosks and NPS analytics — technology that modernizes your store.</p>
+          <span class="pillar-cta sv-text">Läs mer →</span>
+          <span class="pillar-cta en-text">Learn more →</span>
+        </a>
+
+        <a href="/services/#advisory" class="pillar fade-up" style="animation-delay:240ms">
+          <div class="pillar-icon">💡</div>
+          <h3 class="sv-text">Rådgivning & Strategi</h3>
+          <h3 class="en-text">Advisory & Strategy</h3>
+          <p class="sv-text">Strategisk rådgivning, processutveckling, implementering och utbildning byggd på 15+ år av retailerfarenhet.</p>
+          <p class="en-text">Strategic advisory, process development, implementation and training built on 15+ years of retail experience.</p>
+          <span class="pillar-cta sv-text">Läs mer →</span>
+          <span class="pillar-cta en-text">Learn more →</span>
+        </a>
+      </div>
+
+      <div class="services-cta-wrap fade-up">
+        <a href="/services/" class="btn btn-primary sv-text">Se hela tjänsteportföljen</a>
+        <a href="/services/" class="btn btn-primary en-text">See full service portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS TEASER ===== -->
+  <section class="process-teaser">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label sv-text">Vår process</span>
+        <span class="section-label en-text">Our process</span>
+        <h2 class="sv-text">Från analys till<br/>bestående förändring</h2>
+        <h2 class="en-text">From analysis to<br/>lasting change</h2>
+      </div>
+      <div class="process-steps">
+        {[
+          { num: '01', sv: 'Analys & kartläggning', en: 'Analysis & mapping' },
+          { num: '02', sv: 'Strategi & plan', en: 'Strategy & plan' },
+          { num: '03', sv: 'Implementering', en: 'Implementation' },
+          { num: '04', sv: 'Mät & justera', en: 'Measure & adjust' },
+          { num: '05', sv: 'Skala upp', en: 'Scale up' },
+        ].map((step, i) => (
+          <div class="process-step fade-up" style={`animation-delay:${i*80}ms`}>
+            <div class="step-num">{step.num}</div>
+            <div class="step-label">
+              <span class="sv-text">{step.sv}</span>
+              <span class="en-text">{step.en}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="process-cta fade-up">
+        <a href="/our-process/" class="btn btn-primary sv-text">Läs om vår process</a>
+        <a href="/our-process/" class="btn btn-primary en-text">Read about our process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BAND ===== -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner fade-up">
+        <h2>
+          <span class="sv-text">Redo att öka din lönsamhet?</span>
+          <span class="en-text">Ready to increase your profitability?</span>
+        </h2>
+        <a href="/Contact/" class="btn btn-light sv-text">Kontakta oss idag</a>
+        <a href="/Contact/" class="btn btn-light en-text">Contact us today</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+    color: var(--color-white);
+    padding: 5rem 2rem 4.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 85% 15%, rgba(144,162,207,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 5% 90%, rgba(42,78,169,0.25) 0%, transparent 50%);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--color-blue-lite);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    max-width: 520px;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-light {
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    display: inline-block;
+  }
+
+  .btn-light:hover {
+    background: var(--color-off-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    border: 2px solid rgba(255,255,255,0.35);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.7);
+    color: var(--color-white);
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero-logo {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .hero-awards {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .award-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .hero-award {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    transition: transform 0.2s;
+  }
+
+  .hero-award:hover { transform: scale(1.06); }
+
+  .award-year {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+  }
+
+  .awards-caption {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+
+  /* ===== STATS ===== */
+  .stats {
+    background: var(--color-off-white);
+    padding: 3rem 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-blue-mid);
+  }
+
+  /* ===== ABOUT ===== */
+  .about {
+    padding: var(--section-pad);
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-text h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    color: var(--color-navy);
+  }
+
+  .about-text p {
+    color: rgba(1,13,96,0.7);
+    line-height: 1.75;
+  }
+
+  .about-card {
+    background: var(--color-off-white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(1,13,96,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-card-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    opacity: 0.7;
+  }
+
+  .about-card-text p {
+    font-size: 1.05rem;
+    color: var(--color-navy-mid);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .about-card-attr {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-blue-mid);
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: 0.06em;
+  }
+
+  /* ===== SERVICES OVERVIEW ===== */
+  .services-overview {
+    background: var(--color-off-white);
+    padding: var(--section-pad);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--color-navy);
+    line-height: 1.2;
+    margin-top: 0.5rem;
+  }
+
+  .service-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .pillar {
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(1,13,96,0.08);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: block;
+  }
+
+  .pillar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(1,13,96,0.12);
+    border-color: var(--color-blue-lite);
+  }
+
+  .pillar-icon {
+    font-size: 2.25rem;
+    margin-bottom: 1.1rem;
+    line-height: 1;
+  }
+
+  .pillar h3 {
+    font-size: 1.15rem;
+    color: var(--color-navy);
+    margin-bottom: 0.7rem;
+  }
+
+  .pillar p {
+    font-size: 0.875rem;
+    color: rgba(1,13,96,0.65);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  .pillar-cta {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-blue);
+    letter-spacing: 0.03em;
+  }
+
+  .services-cta-wrap {
+    text-align: center;
+  }
+
+  /* ===== PROCESS TEASER ===== */
+  .process-teaser {
+    padding: var(--section-pad);
+  }
+
+  .process-steps {
+    display: flex;
+    gap: 0;
+    margin-bottom: 3rem;
+    overflow-x: auto;
+  }
+
+  .process-step {
+    flex: 1;
+    min-width: 160px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .process-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-blue-lite);
+    font-size: 1.2rem;
+  }
+
+  .step-num {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-blue-lite);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-label {
+    font-size: 0.875rem;
+    color: var(--color-navy-mid);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+  }
+
+  .process-cta { text-align: center; }
+
+  /* ===== CTA BAND ===== */
+  .cta-band {
+    background: var(--color-navy);
+    padding: 4rem 2rem;
+  }
+
+  .cta-band-inner {
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .cta-band-inner h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    margin-bottom: 2rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-visual { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .hero-logo { width: 100px; height: 100px; }
+    .service-pillars { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .hero { padding: 3.5rem 1.25rem 3rem; }
+    .hero-awards { gap: 0.75rem; }
+    .hero-award { width: 56px; height: 56px; }
+    .process-teaser .container { overflow-x: hidden; }
+    .process-steps { flex-direction: column; align-items: center; }
+    .process-step::after { display: none; }
+  }
+</style>

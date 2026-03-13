@@ -1,0 +1,350 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Services for the dropdown
+const servicesSv = [
+  'Retail Optimering — Perfekt hylla',
+  'Retail Optimering — Perfekt varuplacering',
+  'Retail Optimering — Perfekt kampanj',
+  'Retail Optimering — Perfekt kundflöde',
+  'Retail Optimering — Perfekt kö',
+  'Retail Optimering — Perfekt Feedback',
+  'Retail Optimering — Minimera Matsvinnet',
+  'Retail Optimering — Perfekt lager',
+  'Teknologi — RFID & Scanning',
+  'Teknologi — Digital prissättning',
+  'Teknologi — Kiosk & Självbetjäning',
+  'Teknologi — NPS & Kundanalys',
+  'Rådgivning — Retail strategi',
+  'Rådgivning — Processutveckling',
+  'Rådgivning — Implementering & Förändring',
+  'Rådgivning — Utbildning & Coaching',
+  'Övrigt / Generell förfrågan',
+];
+
+const servicesEn = [
+  'Retail Optimization — Perfect Shelf',
+  'Retail Optimization — Perfect Product Placement',
+  'Retail Optimization — Perfect Campaign',
+  'Retail Optimization — Perfect Customer Flow',
+  'Retail Optimization — Perfect Queue',
+  'Retail Optimization — Perfect Feedback',
+  'Retail Optimization — Minimize Food Waste',
+  'Retail Optimization — Perfect Inventory',
+  'Technology — RFID & Scanning',
+  'Technology — Digital Pricing',
+  'Technology — Kiosk & Self-Service',
+  'Technology — NPS & Customer Analytics',
+  'Advisory — Retail Strategy',
+  'Advisory — Process Development',
+  'Advisory — Implementation & Change',
+  'Advisory — Training & Coaching',
+  'Other / General inquiry',
+];
+---
+
+<Layout
+  titleSv="Kontakt — Sigvardsson Consulting Group"
+  titleEn="Contact — Sigvardsson Consulting Group"
+  descriptionSv="Kontakta Sigvardsson Consulting Group för att diskutera hur vi kan hjälpa er att öka lönsamheten i er retailverksamhet."
+  descriptionEn="Contact Sigvardsson Consulting Group to discuss how we can help you increase profitability in your retail operation."
+  canonical="https://www.sigvardsson.org/Contact/"
+>
+  <Header slot="header" />
+
+  <section class="contact-hero">
+    <div class="container">
+      <span class="section-label sv-text">Kontakt</span>
+      <span class="section-label en-text">Contact</span>
+      <h1>
+        <span class="sv-text">Låt oss prata<br/>retail</span>
+        <span class="en-text">Let's talk<br/>retail</span>
+      </h1>
+      <p class="hero-sub sv-text">Samtliga projekt har omedelbar effekt och ROI. Kontakta oss för att diskutera hur vi kan hjälpa just er.</p>
+      <p class="hero-sub en-text">All projects have immediate impact and ROI. Contact us to discuss how we can help your specific situation.</p>
+    </div>
+  </section>
+
+  <section class="contact-body">
+    <div class="container contact-grid">
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap fade-up">
+        <h2 class="sv-text">Skicka ett meddelande</h2>
+        <h2 class="en-text">Send a message</h2>
+
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="sv-text" for="name-sv">Namn</label>
+              <label class="en-text" for="name-en">Name</label>
+              <input type="text" id="name-sv" name="name" required placeholder="Anna Andersson" />
+            </div>
+            <div class="form-group">
+              <label class="sv-text" for="company">Företag</label>
+              <label class="en-text" for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Ditt företag" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="anna@foretag.se" />
+          </div>
+
+          <div class="form-group">
+            <label class="sv-text" for="service">Tjänst / Intresse</label>
+            <label class="en-text" for="service">Service / Interest</label>
+            <select id="service" name="service">
+              <option value="" class="sv-text">Välj tjänst...</option>
+              <option value="" class="en-text">Select service...</option>
+              {servicesSv.map((svc, i) => (
+                <option value={svc} class="sv-text">{svc}</option>
+              ))}
+              {servicesEn.map((svc, i) => (
+                <option value={svc} class="en-text">{svc}</option>
+              ))}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="sv-text" for="message">Meddelande</label>
+            <label class="en-text" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Berätta om era utmaningar och vad ni vill uppnå..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span class="sv-text">Skicka meddelande</span>
+            <span class="en-text">Send message</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info fade-up" style="animation-delay:120ms">
+        <div class="info-card">
+          <img src="/images/logos/S_blue-trans.png" alt="SCG" class="info-logo" />
+          <h3>Sigvardsson Consulting Group</h3>
+          <p class="sv-text">Stockholm, Sverige</p>
+          <p class="en-text">Stockholm, Sweden</p>
+          <a href="mailto:info@sigvardsson.org" class="info-email">info@sigvardsson.org</a>
+        </div>
+
+        <div class="awards-info">
+          <p class="awards-title sv-text">Utmärkelser</p>
+          <p class="awards-title en-text">Awards</p>
+          <div class="awards-row">
+            <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="info-award" />
+            <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="info-award" />
+            <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="info-award" />
+          </div>
+          <p class="awards-desc sv-text">Global 100 Winner 2024, 2025 & 2026</p>
+          <p class="awards-desc en-text">Global 100 Winner 2024, 2025 & 2026</p>
+        </div>
+
+        <div class="quick-links">
+          <p class="sv-text" style="font-family:'Chakra Petch',sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-blue-mid);margin-bottom:0.75rem">Snabblänkar</p>
+          <p class="en-text" style="font-family:'Chakra Petch',sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-blue-mid);margin-bottom:0.75rem">Quick links</p>
+          <div style="display:flex;flex-direction:column;gap:0.4rem">
+            <a href="/services/" class="quick-link sv-text">→ Våra tjänster</a>
+            <a href="/services/" class="quick-link en-text">→ Our services</a>
+            <a href="/our-process/" class="quick-link sv-text">→ Vår process</a>
+            <a href="/our-process/" class="quick-link en-text">→ Our process</a>
+            <a href="/our-people/" class="quick-link sv-text">→ Vårt team</a>
+            <a href="/our-people/" class="quick-link en-text">→ Our team</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  .hidden { display: none; }
+
+  .contact-hero {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+    color: var(--color-white);
+    padding: 5rem 2rem 4rem;
+  }
+
+  .contact-hero .section-label { color: var(--color-blue-lite); }
+
+  .contact-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 540px;
+    line-height: 1.7;
+  }
+
+  .contact-body { padding: 5rem 2rem; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* Form */
+  .contact-form-wrap h2 {
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin-bottom: 2rem;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  label {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-navy-mid);
+  }
+
+  input, select, textarea {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: var(--color-navy);
+    background: var(--color-off-white);
+    border: 1px solid rgba(1,13,96,0.15);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 3px rgba(42,78,169,0.1);
+  }
+
+  textarea { resize: vertical; min-height: 140px; }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Info */
+  .info-card {
+    background: var(--color-off-white);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+    color: var(--color-navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .info-card p {
+    font-size: 0.875rem;
+    color: var(--color-blue-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  .info-email {
+    font-size: 0.9rem;
+    color: var(--color-blue);
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+  .info-email:hover { text-decoration: underline; }
+
+  .awards-info {
+    background: var(--color-navy);
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .awards-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-blue-lite);
+    margin-bottom: 1rem;
+  }
+
+  .awards-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .info-award {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .awards-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .quick-links {
+    background: var(--color-off-white);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+
+  .quick-link {
+    font-size: 0.875rem;
+    color: var(--color-blue);
+    transition: color 0.2s;
+  }
+
+  .quick-link:hover { color: var(--color-navy); }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>

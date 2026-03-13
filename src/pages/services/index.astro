@@ -1,0 +1,731 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Service data - Swedish and English, grouped by category
+const categories = [
+  {
+    id: 'retail-optimization',
+    iconSv: '🛒',
+    labelSv: 'Retail Optimering',
+    labelEn: 'Retail Optimization',
+    descSv: 'Datadrivna verktyg som omvandlar butikens hyllor, kampanjer och flöden till mätbar lönsamhet — med direkt ROI i samtliga genomförda projekt.',
+    descEn: 'Data-driven tools that transform store shelves, campaigns and flows into measurable profitability — with immediate ROI in every completed project.',
+    services: [
+      {
+        id: 'perfekt-hylla',
+        titleSv: 'Perfekt hylla',
+        titleEn: 'Perfect Shelf',
+        descSv: 'Mobil-first verktyg för att optimera antal artiklar, ansikten och varuläggning. Visuell försäljningsrapport baserad på POS-data.',
+        descEn: 'Mobile-first tool to optimize number of SKUs, facings and shelf placement. Visual sales report based on POS data.',
+        effectSv: '4–15% försäljningsväxt',
+        effectEn: '4–15% sales growth',
+        clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
+        clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
+        projects: '100+',
+        color: '#2A4EA9',
+      },
+      {
+        id: 'perfekt-varuplacering',
+        titleSv: 'Perfekt varuplacering',
+        titleEn: 'Perfect Product Placement',
+        descSv: 'Optimera hyllvinnare, produkter med hög snittmarginal och bästa varuplacering i butik. Ökar omsättning och bruttomarginal.',
+        descEn: 'Optimize shelf winners, high-margin products and best in-store product placement. Increases turnover and gross margin.',
+        effectSv: '10–20% marginalväxt',
+        effectEn: '10–20% margin growth',
+        clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
+        clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
+        projects: '100+',
+        color: '#1A277A',
+      },
+      {
+        id: 'perfekt-kampanj',
+        titleSv: 'Perfekt kampanj',
+        titleEn: 'Perfect Campaign',
+        descSv: 'Mixa kampanj och produkt med hög snittmarginal, hitta rätt merförsäljning och optimera bästa varuplacering. Bättre kampanjmix.',
+        descEn: 'Mix campaigns and high-margin products, find the right cross-selling and optimize best product placement. Better campaign mix.',
+        effectSv: '12–18% försäljningsväxt',
+        effectEn: '12–18% sales growth',
+        clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
+        clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
+        projects: '80+',
+        color: '#3D4893',
+      },
+      {
+        id: 'perfekt-kundflode',
+        titleSv: 'Perfekt kundflöde',
+        titleEn: 'Perfect Customer Flow',
+        descSv: 'Värmekarta kompatibel med alla CCTV-system. Mäter flöden, zoner, genvägar, intryck och besökstid för alla kundbeteenden.',
+        descEn: 'Heat map compatible with all CCTV systems. Measures flows, zones, shortcuts, impressions and visit time for all customer behaviors.',
+        effectSv: '4–15% försäljningsväxt',
+        effectEn: '4–15% sales growth',
+        clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
+        clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
+        projects: '80+',
+        color: '#4867B6',
+      },
+      {
+        id: 'perfekt-ko',
+        titleSv: 'Perfekt kö',
+        titleEn: 'Perfect Queue',
+        descSv: 'Realtidsövervakning av trafik. Identifierar antal kunder i butik, mäter handlartid, räknar ut och varslar om kö innan den uppstår.',
+        descEn: 'Real-time traffic monitoring. Identifies number of customers in store, measures shopping time, calculates and alerts about queues before they form.',
+        effectSv: '6–9% kostnadsreduktion',
+        effectEn: '6–9% cost reduction',
+        clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
+        clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
+        projects: '80+',
+        color: '#010D60',
+      },
+      {
+        id: 'perfekt-feedback',
+        titleSv: 'Perfekt Feedback',
+        titleEn: 'Perfect Feedback',
+        descSv: 'Systematisk insamling och analys av kundfeedback för att identifiera förbättringsområden och öka kundnöjdheten i butik.',
+        descEn: 'Systematic collection and analysis of customer feedback to identify improvement areas and increase customer satisfaction in store.',
+        effectSv: '6–9% kostnadsreduktion',
+        effectEn: '6–9% cost reduction',
+        clientsSv: 'XL Bygg, Toys R Us',
+        clientsEn: 'XL Bygg, Toys R Us',
+        projects: '80+',
+        color: '#2A4EA9',
+      },
+      {
+        id: 'minimera-matsvinnet',
+        titleSv: 'Minimera Matsvinnet',
+        titleEn: 'Minimize Food Waste',
+        descSv: 'Bättre prognostisering i realtid, on-demand beställning och produktion. Säkrar tillgänglighet och reducerar svinn för bröd och frukt & grönt.',
+        descEn: 'Better real-time forecasting, on-demand ordering and production. Secures availability while reducing waste for bread and fruit & vegetables.',
+        effectSv: '30% minskat svinn',
+        effectEn: '30% reduced waste',
+        clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
+        clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
+        projects: '80+',
+        color: '#1A277A',
+      },
+      {
+        id: 'perfekt-lager',
+        titleSv: 'Perfekt lager',
+        titleEn: 'Perfect Inventory',
+        descSv: 'Konkret verktyg med tydliga actions för lagerhantering. Lägre kapitalbindning, ökad stockturn och friskare lager.',
+        descEn: 'Concrete tool with clear actions for inventory management. Lower capital tie-up, increased stockturn and healthier inventory.',
+        effectSv: 'Lägre kapitalbindning',
+        effectEn: 'Lower capital tie-up',
+        clientsSv: 'TBA',
+        clientsEn: 'TBA',
+        projects: 'Nytt',
+        color: '#3D4893',
+      },
+    ],
+  },
+  {
+    id: 'technology',
+    iconSv: '⚙️',
+    labelSv: 'Teknologi & System',
+    labelEn: 'Technology & Systems',
+    descSv: 'Digitala teknologier som moderniserar butiken — från automatiserade prissystem och RFID-scanning till självbetjäningskiosker och NPS-plattformar.',
+    descEn: 'Digital technologies that modernize the store — from automated pricing systems and RFID scanning to self-service kiosks and NPS platforms.',
+    services: [
+      {
+        id: 'rfid-scanning',
+        titleSv: 'RFID & Scanning',
+        titleEn: 'RFID & Scanning',
+        descSv: 'RFID-baserade lösningar för automatisk lagerinventering, spårning av varor och stöldskydd. Reducerar manuellt arbete och ökar lageraccuratessen.',
+        descEn: 'RFID-based solutions for automated inventory counting, goods tracking and theft prevention. Reduces manual work and increases inventory accuracy.',
+        effectSv: 'Ökad lageraccuratess',
+        effectEn: 'Increased inventory accuracy',
+        clientsSv: 'Ledande retailkedjor',
+        clientsEn: 'Leading retail chains',
+        projects: '50+',
+        color: '#2A4EA9',
+      },
+      {
+        id: 'digital-prissattning',
+        titleSv: 'Digital prissättning',
+        titleEn: 'Digital Pricing',
+        descSv: 'Dynamiska elektroniska prisetiketter och centraliserad prissättning i realtid. Eliminerar manuellt arbete, minskar fel och möjliggör kampanjflexibilitet.',
+        descEn: 'Dynamic electronic shelf labels and centralized real-time pricing. Eliminates manual work, reduces errors and enables campaign flexibility.',
+        effectSv: 'Eliminerar prisfel',
+        effectEn: 'Eliminates pricing errors',
+        clientsSv: 'Ledande retailkedjor',
+        clientsEn: 'Leading retail chains',
+        projects: '60+',
+        color: '#1A277A',
+      },
+      {
+        id: 'kiosk-self-service',
+        titleSv: 'Kiosk & Självbetjäning',
+        titleEn: 'Kiosk & Self-Service',
+        descSv: 'Interaktiva självbetjäningslösningar för snabbare kundservice, orderstationer och informationsterminaler i butiksmiljö.',
+        descEn: 'Interactive self-service solutions for faster customer service, order stations and information terminals in retail environments.',
+        effectSv: 'Kortare väntetider',
+        effectEn: 'Shorter waiting times',
+        clientsSv: 'Ledande retailkedjor',
+        clientsEn: 'Leading retail chains',
+        projects: '40+',
+        color: '#3D4893',
+      },
+      {
+        id: 'nps-analytics',
+        titleSv: 'NPS & Kundanalys',
+        titleEn: 'NPS & Customer Analytics',
+        descSv: 'Net Promoter Score-plattform med djupgående korrelationsanalys. Kopplar kundfeedback direkt till affärsprestanda och identifierar förbättringsområden.',
+        descEn: 'Net Promoter Score platform with in-depth correlation analysis. Links customer feedback directly to business performance and identifies improvement areas.',
+        effectSv: 'Ökad kundlojalitet',
+        effectEn: 'Increased customer loyalty',
+        clientsSv: 'Ledande retailkedjor',
+        clientsEn: 'Leading retail chains',
+        projects: '70+',
+        color: '#4867B6',
+      },
+    ],
+  },
+  {
+    id: 'advisory',
+    iconSv: '💡',
+    labelSv: 'Rådgivning & Strategi',
+    labelEn: 'Advisory & Strategy',
+    descSv: 'Strategisk rådgivning och processutveckling byggd på 15+ år av retail-erfarenhet och hundratals genomförda projekt hos ledande nordiska kedjor.',
+    descEn: 'Strategic advisory and process development built on 15+ years of retail experience and hundreds of completed projects at leading Nordic chains.',
+    services: [
+      {
+        id: 'retail-strategi',
+        titleSv: 'Retail strategi',
+        titleEn: 'Retail Strategy',
+        descSv: 'Helhetssyn på butikens kommersiella strategi — från sortimentsuppbyggnad och marginalförbättring till kundupplevelse och tillväxtplan.',
+        descEn: 'Holistic view of the store\'s commercial strategy — from assortment building and margin improvement to customer experience and growth plan.',
+        effectSv: 'Hållbar tillväxt',
+        effectEn: 'Sustainable growth',
+        clientsSv: 'Ledande Nordic kedjor',
+        clientsEn: 'Leading Nordic chains',
+        projects: '100+',
+        color: '#2A4EA9',
+      },
+      {
+        id: 'processutveckling',
+        titleSv: 'Processutveckling',
+        titleEn: 'Process Development',
+        descSv: 'Strukturerat arbete med interna processer, rutiner och verktyg för att bygga en effektiv, skalbar och lärande butiksorganisation.',
+        descEn: 'Structured work with internal processes, routines and tools to build an efficient, scalable and learning retail organization.',
+        effectSv: 'Skalbar organisation',
+        effectEn: 'Scalable organization',
+        clientsSv: 'Ledande Nordic kedjor',
+        clientsEn: 'Leading Nordic chains',
+        projects: '80+',
+        color: '#1A277A',
+      },
+      {
+        id: 'implementering',
+        titleSv: 'Implementering & Förändring',
+        titleEn: 'Implementation & Change',
+        descSv: 'Hands-on stöd vid implementering av nya verktyg, system och arbetssätt. Vi involverar personalen och bygger affärsmannaskap på alla nivåer.',
+        descEn: 'Hands-on support when implementing new tools, systems and ways of working. We involve staff and build business acumen at all levels.',
+        effectSv: 'Bestående förändring',
+        effectEn: 'Lasting change',
+        clientsSv: 'Ledande Nordic kedjor',
+        clientsEn: 'Leading Nordic chains',
+        projects: '80+',
+        color: '#3D4893',
+      },
+      {
+        id: 'utbildning',
+        titleSv: 'Utbildning & Coaching',
+        titleEn: 'Training & Coaching',
+        descSv: 'Skräddarsydda utbildningar, workshops och coachingprogram för butikspersonal, mellanchefer och ledningsgrupper inom retail.',
+        descEn: 'Tailored training programs, workshops and coaching for store staff, middle managers and retail leadership teams.',
+        effectSv: 'Kompetenslyft',
+        effectEn: 'Skills development',
+        clientsSv: 'Ledande Nordic kedjor',
+        clientsEn: 'Leading Nordic chains',
+        projects: '100+',
+        color: '#4867B6',
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  titleSv="Tjänster — Sigvardsson Consulting Group"
+  titleEn="Services — Sigvardsson Consulting Group"
+  descriptionSv="Komplett tjänsteportfölj inom retail optimering, teknologi och strategisk rådgivning. 15+ år av bevisade resultat hos ledande nordiska kedjor."
+  descriptionEn="Complete service portfolio in retail optimization, technology and strategic advisory. 15+ years of proven results at leading Nordic chains."
+  canonical="https://www.sigvardsson.org/services/"
+>
+  <Header slot="header" />
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="services-hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <span class="section-label sv-text">Vår tjänsteportfölj</span>
+      <span class="section-label en-text">Our service portfolio</span>
+      <h1>
+        <span class="sv-text">Allt vi gör<br/>för din butik</span>
+        <span class="en-text">Everything we do<br/>for your store</span>
+      </h1>
+      <p class="hero-sub sv-text">Från datadrivna hyllverktyg till strategisk rådgivning — ett sammanhållet erbjudande för hela din retailverksamhet.</p>
+      <p class="hero-sub en-text">From data-driven shelf tools to strategic advisory — a coherent offer for your entire retail operation.</p>
+
+      <!-- Category quick-nav -->
+      <div class="category-nav">
+        {categories.map(cat => (
+          <a href={`#${cat.id}`} class="cat-pill">
+            <span class="cat-icon">{cat.iconSv}</span>
+            <span class="sv-text">{cat.labelSv}</span>
+            <span class="en-text">{cat.labelEn}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number">15+</div>
+          <div class="stat-label sv-text">År i retail</div>
+          <div class="stat-label en-text">Years in retail</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">500+</div>
+          <div class="stat-label sv-text">Genomförda projekt</div>
+          <div class="stat-label en-text">Completed projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3×</div>
+          <div class="stat-label sv-text">Global 100 Winner</div>
+          <div class="stat-label en-text">Global 100 Winner</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label sv-text">ROI i alla projekt</div>
+          <div class="stat-label en-text">ROI in every project</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE CATEGORIES ===== -->
+  {categories.map((cat, catIdx) => (
+    <section class={`category-section ${catIdx % 2 === 1 ? 'category-alt' : ''}`} id={cat.id}>
+      <div class="container">
+
+        <!-- Category Header -->
+        <div class="category-header fade-up">
+          <div class="cat-header-left">
+            <span class="cat-emoji">{cat.iconSv}</span>
+            <div>
+              <h2 class="cat-title">
+                <span class="sv-text">{cat.labelSv}</span>
+                <span class="en-text">{cat.labelEn}</span>
+              </h2>
+              <p class="cat-desc">
+                <span class="sv-text">{cat.descSv}</span>
+                <span class="en-text">{cat.descEn}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid">
+          {cat.services.map((svc, i) => (
+            <article
+              class="service-card fade-up"
+              style={`animation-delay: ${i * 80}ms`}
+            >
+              <div class="card-accent" style={`background: ${svc.color}`}></div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <span class="sv-text">{svc.titleSv}</span>
+                  <span class="en-text">{svc.titleEn}</span>
+                </h3>
+                <p class="card-desc">
+                  <span class="sv-text">{svc.descSv}</span>
+                  <span class="en-text">{svc.descEn}</span>
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="card-effect">
+                  <span class="effect-label sv-text">Effekt</span>
+                  <span class="effect-label en-text">Effect</span>
+                  <span class="effect-value">
+                    <span class="sv-text">{svc.effectSv}</span>
+                    <span class="en-text">{svc.effectEn}</span>
+                  </span>
+                </div>
+                <div class="card-meta">
+                  <span class="meta-projects">
+                    <span class="sv-text">{svc.projects} proj.</span>
+                    <span class="en-text">{svc.projects} proj.</span>
+                  </span>
+                </div>
+              </div>
+              {svc.clientsSv !== 'TBA' && (
+                <div class="card-clients">
+                  <span class="clients-label sv-text">Referenskunder: </span>
+                  <span class="clients-label en-text">Reference customers: </span>
+                  <span class="clients-value">
+                    <span class="sv-text">{svc.clientsSv}</span>
+                    <span class="en-text">{svc.clientsEn}</span>
+                  </span>
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- ===== CTA ===== -->
+  <section class="services-cta">
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <img src="/images/logos/S_white.png" alt="SCG" class="cta-logo" width="64" height="64" />
+        <h2>
+          <span class="sv-text">Redo att ta nästa steg?</span>
+          <span class="en-text">Ready to take the next step?</span>
+        </h2>
+        <p class="sv-text">Samtliga projekt har omedelbar effekt och ROI. Vi startar i lagom skala, lär oss och bygger upp kompetens tillsammans.</p>
+        <p class="en-text">All projects have immediate effect and ROI. We start at the right scale, learn and build competence together.</p>
+        <div class="cta-buttons">
+          <a href="/Contact/" class="btn btn-light sv-text">Kontakta oss</a>
+          <a href="/Contact/" class="btn btn-light en-text">Contact us</a>
+          <a href="/our-process/" class="btn btn-outline sv-text">Vår process →</a>
+          <a href="/our-process/" class="btn btn-outline en-text">Our process →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  /* ===== HERO ===== */
+  .services-hero {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+    color: var(--color-white);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(144,162,207,0.15) 0%, transparent 60%),
+                      radial-gradient(circle at 10% 80%, rgba(42,78,169,0.2) 0%, transparent 50%);
+  }
+
+  .services-hero .container { position: relative; z-index: 1; }
+
+  .services-hero .section-label {
+    color: var(--color-blue-lite);
+    margin-bottom: 1rem;
+  }
+
+  .services-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    color: var(--color-white);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  /* Category quick nav */
+  .category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .cat-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--color-white);
+    padding: 0.5rem 1.1rem;
+    border-radius: 100px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .cat-pill:hover {
+    background: rgba(255,255,255,0.22);
+    transform: translateY(-2px);
+  }
+
+  .cat-icon { font-size: 1rem; }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    background: var(--color-off-white);
+    padding: 2.5rem 2rem;
+    border-bottom: 1px solid rgba(1,13,96,0.08);
+  }
+
+  .stats-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--color-blue-mid);
+    margin-top: 0.25rem;
+  }
+
+  /* ===== CATEGORY SECTIONS ===== */
+  .category-section {
+    padding: 5rem 2rem;
+  }
+
+  .category-alt {
+    background: var(--color-off-white);
+  }
+
+  .category-header {
+    margin-bottom: 3rem;
+  }
+
+  .cat-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .cat-emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+
+  .cat-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--color-navy);
+    margin-bottom: 0.6rem;
+  }
+
+  .cat-desc {
+    color: var(--color-blue-mid);
+    max-width: 700px;
+    line-height: 1.65;
+    font-size: 1rem;
+  }
+
+  /* ===== SERVICE CARDS ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    border: 1px solid rgba(1,13,96,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .category-alt .service-card {
+    background: var(--color-white);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(1,13,96,0.12);
+  }
+
+  .card-accent {
+    height: 4px;
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 1.5rem 1.5rem 1rem;
+    flex: 1;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    color: var(--color-navy);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    color: rgba(1,13,96,0.65);
+    line-height: 1.65;
+  }
+
+  .card-footer {
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid rgba(1,13,96,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-effect {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .effect-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-blue-lite);
+    font-family: 'Chakra Petch', sans-serif;
+  }
+
+  .effect-value {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--color-navy);
+  }
+
+  .meta-projects {
+    font-size: 0.75rem;
+    color: var(--color-blue-mid);
+    background: var(--color-off-white);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+  }
+
+  .card-clients {
+    padding: 0.6rem 1.5rem;
+    background: rgba(144,162,207,0.08);
+    font-size: 0.75rem;
+    color: var(--color-blue-mid);
+    border-top: 1px solid rgba(1,13,96,0.04);
+  }
+
+  .clients-label {
+    font-weight: 300;
+  }
+
+  .clients-value {
+    font-weight: 400;
+    color: var(--color-navy-mid);
+  }
+
+  /* ===== CTA ===== */
+  .services-cta {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.5rem;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    margin-bottom: 1rem;
+  }
+
+  .cta-inner p {
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-light {
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+  }
+
+  .btn-light:hover {
+    background: var(--color-off-white);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    border: 2px solid rgba(255,255,255,0.35);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.95rem;
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.7);
+    color: var(--color-white);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .cat-header-left { flex-direction: column; gap: 0.75rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  }
+</style>

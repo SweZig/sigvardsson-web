@@ -1,0 +1,267 @@
+---
+// Footer.astro
+---
+
+<footer class="site-footer">
+  <!-- Wave divider -->
+  <div class="wave-top">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,44 L1440,80 L0,80 Z" fill="#010D60"/>
+    </svg>
+  </div>
+
+  <div class="footer-body">
+    <div class="footer-inner">
+
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo-link">
+          <img src="/images/logos/S_white.png" alt="SCG" class="footer-logo" width="52" height="52" />
+          <div>
+            <div class="footer-logo-name">Sigvardsson</div>
+            <div class="footer-logo-sub">Consulting Group</div>
+          </div>
+        </a>
+        <p class="footer-tagline sv-text">Ledande konsultbyrå inom retail — vi hjälper dig öka lönsamhet och effektivitet.</p>
+        <p class="footer-tagline en-text">Leading retail consultancy — helping you increase profitability and efficiency.</p>
+
+        <!-- Global 100 Awards -->
+        <div class="footer-awards">
+          <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="footer-award" />
+          <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="footer-award" />
+          <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="footer-award" />
+        </div>
+      </div>
+
+      <!-- Services Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading sv-text">Tjänster</h4>
+        <h4 class="footer-heading en-text">Services</h4>
+        <nav>
+          <a href="/services/#retail-optimization" class="footer-link">
+            <span class="sv-text">Retail Optimering</span>
+            <span class="en-text">Retail Optimization</span>
+          </a>
+          <a href="/services/#technology" class="footer-link">
+            <span class="sv-text">Teknologi & System</span>
+            <span class="en-text">Technology & Systems</span>
+          </a>
+          <a href="/services/#advisory" class="footer-link">
+            <span class="sv-text">Rådgivning</span>
+            <span class="en-text">Advisory</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading sv-text">Företaget</h4>
+        <h4 class="footer-heading en-text">Company</h4>
+        <nav>
+          <a href="/what-we-do/" class="footer-link">
+            <span class="sv-text">Vad vi gör</span>
+            <span class="en-text">What We Do</span>
+          </a>
+          <a href="/our-process/" class="footer-link">
+            <span class="sv-text">Vår process</span>
+            <span class="en-text">Our Process</span>
+          </a>
+          <a href="/our-people/" class="footer-link">
+            <span class="sv-text">Vårt team</span>
+            <span class="en-text">Our Team</span>
+          </a>
+          <a href="/customer-satisfaction/" class="footer-link">
+            <span class="sv-text">Kundnöjdhet</span>
+            <span class="en-text">Customer Satisfaction</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading sv-text">Kontakt</h4>
+        <h4 class="footer-heading en-text">Contact</h4>
+        <p class="footer-contact-text">
+          <a href="/Contact/" class="footer-link footer-cta-link">
+            <span class="sv-text">Kontakta oss →</span>
+            <span class="en-text">Get in touch →</span>
+          </a>
+        </p>
+        <p class="footer-contact-item">info@sigvardsson.org</p>
+        <p class="footer-contact-item sv-text">Stockholm, Sverige</p>
+        <p class="footer-contact-item en-text">Stockholm, Sweden</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p class="footer-copy sv-text">© {new Date().getFullYear()} Sigvardsson Consulting Group. Alla rättigheter förbehållna.</p>
+      <p class="footer-copy en-text">© {new Date().getFullYear()} Sigvardsson Consulting Group. All rights reserved.</p>
+    </div>
+  </div>
+
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-navy);
+    color: rgba(255,255,255,0.85);
+  }
+
+  .wave-top {
+    margin-top: -1px;
+    line-height: 0;
+  }
+
+  .wave-top svg {
+    width: 100%;
+    height: 80px;
+    background: var(--color-white);
+    display: block;
+  }
+
+  .footer-body {
+    padding: 3.5rem 2rem 2.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  /* Brand */
+  .footer-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: var(--color-white);
+  }
+
+  .footer-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-logo-name {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+  }
+
+  .footer-logo-sub {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    font-size: 0.72rem;
+    color: var(--color-blue-lite);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-tagline {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.6);
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-awards {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .footer-award {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .footer-award:hover {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  /* Columns */
+  .footer-heading {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-blue-lite);
+    margin-bottom: 1.1rem;
+  }
+
+  .footer-col nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+
+  .footer-link:hover { color: var(--color-white); }
+
+  .footer-cta-link {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-blue-lite);
+    margin-bottom: 0.75rem;
+    display: inline-block;
+  }
+
+  .footer-contact-item {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.35rem;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1.25rem 2rem;
+  }
+
+  .footer-bottom-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  @media (max-width: 900px) {
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 560px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-body { padding: 2.5rem 1.25rem 2rem; }
+  }
+</style>
