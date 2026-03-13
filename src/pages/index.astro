@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SCGLogo from '../components/SCGLogo.astro';
 ---
 
 <Layout
@@ -38,15 +39,9 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
       <div class="hero-visual">
-        <!-- Animated logo: S_blue.png inverted to white, CSS draw-in animation -->
+        <!-- Animated SVG logo -->
         <div class="hero-logo-wrap">
-          <img
-            src="/images/logos/S_blue.png"
-            alt="Sigvardsson Consulting Group"
-            class="hero-logo-img"
-            width="160"
-            height="160"
-          />
+          <SCGLogo size={160} color="white" animated={true} />
         </div>
         <!-- Awards in hero — fixed containers normalize different badge sizes -->
         <div class="hero-awards">
@@ -325,22 +320,7 @@ import Footer from '../components/Footer.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .hero-logo-img {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
-    /* Invert navy-on-white to white-on-transparent for dark hero bg */
-    filter: brightness(0) invert(1);
-    opacity: 0;
-    animation: logo-enter 1.0s cubic-bezier(0.2, 0, 0.3, 1) 0.2s forwards;
-  }
-
-  @keyframes logo-enter {
-    0%   { opacity: 0; transform: scale(0.82); }
-    60%  { opacity: 1; transform: scale(1.04); }
-    100% { opacity: 0.92; transform: scale(1); }
+    padding: 1rem;
   }
 
   .hero-awards {

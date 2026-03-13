@@ -1,33 +1,16 @@
 ---
-// SCGLogo.astro — Inline SVG logo, no image files needed
-// Props: size (px), color ('navy'|'white'|'blue'), animated (bool)
+// SCGLogo.astro — Coordinates from pixel-analysis of S_blue.png (1890x1890)
+// All values in 200x200 viewBox
 interface Props {
   size?: number;
   color?: 'navy' | 'white' | 'blue';
   animated?: boolean;
   id?: string;
 }
-const {
-  size = 44,
-  color = 'navy',
-  animated = false,
-  id = 'scg-logo',
-} = Astro.props;
-
-const colorMap = {
-  navy:  '#010D60',
-  white: '#FFFFFF',
-  blue:  '#2A4EA9',
-};
-const stroke = colorMap[color] ?? colorMap.navy;
-const fill   = colorMap[color] ?? colorMap.navy;
+const { size = 44, color = 'navy', animated = false, id = `scg-${Math.random().toString(36).slice(2,7)}` } = Astro.props;
+const colorMap: Record<string,string> = { navy: '#010D60', white: '#FFFFFF', blue: '#2A4EA9' };
+const c = colorMap[color] ?? '#010D60';
 ---
-
-<!--
-  SCG Logo SVG — 200x200 viewBox, center at (100,100)
-  5 elements: center square + 4 directional arms + S text
-  "S" is perfectly centered using text-anchor + dominant-baseline
--->
 <svg
   id={id}
   viewBox="0 0 200 200"
@@ -36,100 +19,65 @@ const fill   = colorMap[color] ?? colorMap.navy;
   xmlns="http://www.w3.org/2000/svg"
   aria-label="Sigvardsson Consulting Group"
   role="img"
-  class:list={['scg-logo', animated && 'scg-logo--animated']}
-  style={`flex-shrink:0`}
+  style="flex-shrink:0"
 >
-  <!-- Center square -->
-  <rect
-    class="logo-square"
-    x="72" y="72" width="56" height="56"
-    fill="none"
-    stroke={stroke}
-    stroke-width="5"
-    stroke-linejoin="round"
-  />
+  <!-- Square: 69,67 → 131,134  (33–65% x, 33.5–67% y) -->
+  <rect class="p sq" x="69" y="67" width="62" height="67"
+    fill="none" stroke={c} stroke-width="6" stroke-linejoin="miter"/>
 
-  <!-- Top spike (pentagon pointing up) -->
-  <polygon
-    class="logo-arm logo-arm-top"
-    points="84,72 84,30 100,8 116,30 116,72"
-    fill="none"
-    stroke={stroke}
-    stroke-width="5"
-    stroke-linejoin="round"
-  />
+  <!-- Top arm: straight sides to y=40, then 3-step taper to tip (100,8) -->
+  <polygon class="p tp"
+    points="69,67 131,67 131,40 122,30 108,16 100,8 92,16 78,30 69,40"
+    fill="none" stroke={c} stroke-width="6" stroke-linejoin="miter"/>
 
-  <!-- Bottom spike (pentagon pointing down) -->
-  <polygon
-    class="logo-arm logo-arm-bottom"
-    points="84,128 84,170 100,192 116,170 116,128"
-    fill="none"
-    stroke={stroke}
-    stroke-width="5"
-    stroke-linejoin="round"
-  />
+  <!-- Bottom arm: mirror of top -->
+  <polygon class="p bt"
+    points="69,134 131,134 131,160 122,170 108,184 100,192 92,184 78,170 69,160"
+    fill="none" stroke={c} stroke-width="6" stroke-linejoin="miter"/>
 
-  <!-- Left arrow (pointing left) -->
-  <polygon
-    class="logo-arm logo-arm-left"
-    points="72,84 30,84 8,100 30,116 72,116"
-    fill="none"
-    stroke={stroke}
-    stroke-width="5"
-    stroke-linejoin="round"
-  />
+  <!-- Left arm: shoulder at x=42, tip at (8,100) -->
+  <polygon class="p lf"
+    points="69,69 69,131 42,131 30,122 16,108 8,100 16,92 30,78 42,69"
+    fill="none" stroke={c} stroke-width="6" stroke-linejoin="miter"/>
 
-  <!-- Right arrow (pointing right) -->
-  <polygon
-    class="logo-arm logo-arm-right"
-    points="128,84 170,84 192,100 170,116 128,116"
-    fill="none"
-    stroke={stroke}
-    stroke-width="5"
-    stroke-linejoin="round"
-  />
+  <!-- Right arm: mirror of left -->
+  <polygon class="p rt"
+    points="131,69 131,131 158,131 170,122 184,108 192,100 184,92 170,78 158,69"
+    fill="none" stroke={c} stroke-width="6" stroke-linejoin="miter"/>
 
-  <!-- S — perfectly centered at (100,100) -->
-  <text
-    class="logo-s"
-    x="100"
-    y="100"
+  <!-- S: y=103 (≈center of square 67–134=100.5) with dominant-baseline=central -->
+  <text class="p sl"
+    x="100" y="103"
     text-anchor="middle"
     dominant-baseline="central"
     font-family="'Chakra Petch', sans-serif"
-    font-weight="600"
-    font-size="42"
-    fill={fill}
-    letter-spacing="-1"
-  >S</text>
+    font-weight="700"
+    font-size="40"
+    fill={c}>S</text>
 </svg>
 
 {animated && (
   <style>{`
-    .scg-logo--animated .logo-arm,
-    .scg-logo--animated .logo-square {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      animation: draw-path 1.4s cubic-bezier(0.4,0,0.2,1) forwards;
+    #${id} .p { transform-box: fill-box; }
+    #${id} .sq, #${id} .tp, #${id} .bt, #${id} .lf, #${id} .rt {
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+      animation: scg-draw 0.85s cubic-bezier(0.4,0,0.2,1) forwards;
     }
-    .scg-logo--animated .logo-arm-top    { animation-delay: 0.0s; }
-    .scg-logo--animated .logo-square     { animation-delay: 0.2s; }
-    .scg-logo--animated .logo-arm-right  { animation-delay: 0.35s; }
-    .scg-logo--animated .logo-arm-bottom { animation-delay: 0.5s; }
-    .scg-logo--animated .logo-arm-left   { animation-delay: 0.65s; }
-
-    .scg-logo--animated .logo-s {
+    #${id} .tp { animation-delay: 0.00s; }
+    #${id} .sq { animation-delay: 0.22s; }
+    #${id} .rt { animation-delay: 0.42s; }
+    #${id} .bt { animation-delay: 0.62s; }
+    #${id} .lf { animation-delay: 0.82s; }
+    #${id} .sl {
       opacity: 0;
-      animation: fade-in-s 0.5s ease forwards;
-      animation-delay: 1.1s;
+      animation: scg-s 0.45s ease forwards 1.28s;
     }
-
-    @keyframes draw-path {
-      to { stroke-dashoffset: 0; }
-    }
-    @keyframes fade-in-s {
-      from { opacity: 0; transform: scale(0.8); transform-origin: 100px 100px; }
-      to   { opacity: 1; transform: scale(1);   transform-origin: 100px 100px; }
+    @keyframes scg-draw { to { stroke-dashoffset: 0; } }
+    @keyframes scg-s {
+      0%   { opacity:0; transform:scale(0.65); }
+      65%  { opacity:1; transform:scale(1.1);  }
+      100% { opacity:1; transform:scale(1);    }
     }
   `}</style>
 )}
