@@ -1,6 +1,5 @@
 ---
 // Footer.astro
-import SCGLogo from './SCGLogo.astro';
 ---
 
 <footer class="site-footer">
@@ -17,7 +16,7 @@ import SCGLogo from './SCGLogo.astro';
       <!-- Brand Column -->
       <div class="footer-brand">
         <a href="/" class="footer-logo-link">
-          <SCGLogo size={52} color="white" />
+          <img src="/images/logos/S_white.png" alt="SCG" class="footer-logo" width="52" height="52" />
           <div>
             <div class="footer-logo-name">Sigvardsson</div>
             <div class="footer-logo-sub">Consulting Group</div>
@@ -149,6 +148,7 @@ import SCGLogo from './SCGLogo.astro';
   .footer-logo {
     width: 52px;
     height: 52px;
+    object-fit: contain;
     flex-shrink: 0;
   }
 

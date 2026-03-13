@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import SCGLogo from '../../components/SCGLogo.astro';
 
 // Services for the dropdown
 const servicesSv = [
@@ -129,7 +128,7 @@ const servicesEn = [
       <!-- Contact Info -->
       <div class="contact-info fade-up" style="animation-delay:120ms">
         <div class="info-card">
-          <SCGLogo size={48} color="navy" />
+          <img src="/images/logos/S_blue.png" alt="SCG" class="info-logo" width="48" height="48" />
           <h3>Sigvardsson Consulting Group</h3>
           <p class="sv-text">Stockholm, Sverige</p>
           <p class="en-text">Stockholm, Sweden</p>
@@ -268,7 +267,13 @@ const servicesEn = [
     margin-bottom: 1.5rem;
   }
 
-  .info-card .scg-logo { margin-bottom: 1rem; opacity: 0.8; }
+  .info-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
 
   .info-card h3 {
     font-size: 1rem;
