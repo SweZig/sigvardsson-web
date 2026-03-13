@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SCGLogo from '../components/SCGLogo.astro';
 ---
 
 <Layout
@@ -38,19 +39,22 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
       <div class="hero-visual">
-        <img src="/images/logos/S_white.png" alt="Sigvardsson Consulting Group" class="hero-logo" />
-        <!-- Awards in hero -->
+        <!-- Animated logo -->
+        <div class="hero-logo-wrap">
+          <SCGLogo size={160} color="white" animated={true} id="hero-logo" />
+        </div>
+        <!-- Awards in hero — fixed containers normalize different badge sizes -->
         <div class="hero-awards">
           <div class="award-item">
-            <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="hero-award" />
+            <div class="hero-award-wrap"><img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="hero-award" /></div>
             <span class="award-year">2024</span>
           </div>
           <div class="award-item">
-            <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="hero-award" />
+            <div class="hero-award-wrap"><img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="hero-award" /></div>
             <span class="award-year">2025</span>
           </div>
           <div class="award-item">
-            <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="hero-award" />
+            <div class="hero-award-wrap"><img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="hero-award" /></div>
             <span class="award-year">2026</span>
           </div>
         </div>
@@ -105,7 +109,7 @@ import Footer from '../components/Footer.astro';
       </div>
       <div class="about-visual fade-up" style="animation-delay:120ms">
         <div class="about-card">
-          <img src="/images/logos/S_blue-trans.png" alt="SCG" class="about-card-logo" />
+          <SCGLogo size={56} color="navy" />
           <div class="about-card-text">
             <p class="sv-text">"Ge en man en fisk och du mättar honom för en dag. Lär en man att fiska och du mättar honom för livet."</p>
             <p class="en-text">"Give a man a fish and you feed him for a day. Teach a man to fish and you feed him for a lifetime."</p>
@@ -312,12 +316,10 @@ import Footer from '../components/Footer.astro';
     gap: 1.5rem;
   }
 
-  .hero-logo {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
+  .hero-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-awards {
@@ -334,15 +336,25 @@ import Footer from '../components/Footer.astro';
     gap: 0.35rem;
   }
 
-  .hero-award {
+  /* Fixed wrap normalizes different badge sizes */
+  .hero-award-wrap {
     width: 72px;
     height: 72px;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
-    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hero-award:hover { transform: scale(1.06); }
+  .hero-award {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+    transition: transform 0.2s;
+    display: block;
+  }
+
+  .award-item:hover .hero-award { transform: scale(1.06); }
 
   .award-year {
     font-family: 'Chakra Petch', sans-serif;

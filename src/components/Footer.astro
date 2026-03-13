@@ -1,5 +1,6 @@
 ---
 // Footer.astro
+import SCGLogo from './SCGLogo.astro';
 ---
 
 <footer class="site-footer">
@@ -16,7 +17,7 @@
       <!-- Brand Column -->
       <div class="footer-brand">
         <a href="/" class="footer-logo-link">
-          <img src="/images/logos/S_white.png" alt="SCG" class="footer-logo" width="52" height="52" />
+          <SCGLogo size={52} color="white" />
           <div>
             <div class="footer-logo-name">Sigvardsson</div>
             <div class="footer-logo-sub">Consulting Group</div>
@@ -27,9 +28,9 @@
 
         <!-- Global 100 Awards -->
         <div class="footer-awards">
-          <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="footer-award" />
-          <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="footer-award" />
-          <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="footer-award" />
+          <div class="footer-award-wrap"><img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="footer-award" /></div>
+          <div class="footer-award-wrap"><img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="footer-award" /></div>
+          <div class="footer-award-wrap"><img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="footer-award" /></div>
         </div>
       </div>
 
@@ -148,8 +149,7 @@
   .footer-logo {
     width: 52px;
     height: 52px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
+    flex-shrink: 0;
   }
 
   .footer-logo-name {
@@ -182,15 +182,24 @@
     align-items: center;
   }
 
-  .footer-award {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    opacity: 0.85;
-    transition: opacity 0.2s, transform 0.2s;
+  .footer-award-wrap {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .footer-award:hover {
+  .footer-award {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.82;
+    transition: opacity 0.2s, transform 0.2s;
+    display: block;
+  }
+
+  .footer-award-wrap:hover .footer-award {
     opacity: 1;
     transform: scale(1.08);
   }

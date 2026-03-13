@@ -1,5 +1,6 @@
 ---
 // Header.astro - Sticky header with language toggle and Global 100 awards
+import SCGLogo from './SCGLogo.astro';
 ---
 
 <header class="site-header" id="site-header">
@@ -7,20 +8,7 @@
 
     <!-- Logo -->
     <a href="/" class="logo-link" aria-label="Sigvardsson Consulting Group">
-      <img
-        src="/images/logos/S_blue-trans.png"
-        alt="SCG Logo"
-        class="logo-img logo-dark"
-        width="44"
-        height="44"
-      />
-      <img
-        src="/images/logos/S_white.png"
-        alt="SCG Logo"
-        class="logo-img logo-light"
-        width="44"
-        height="44"
-      />
+      <SCGLogo size={44} color="navy" />
       <span class="logo-text">
         <span class="logo-sigvardsson">Sigvardsson</span>
         <span class="logo-consulting sv-text">Consulting Group</span>
@@ -65,9 +53,9 @@
 
       <!-- Global 100 Awards (desktop) -->
       <div class="awards-strip desktop-only" aria-label="Global 100 Awards">
-        <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="award-badge" />
-        <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="award-badge" />
-        <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="award-badge" />
+        <div class="award-wrap"><img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="award-badge" /></div>
+        <div class="award-wrap"><img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="award-badge" /></div>
+        <div class="award-wrap"><img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="award-badge" /></div>
       </div>
 
       <!-- Language Toggle -->
@@ -115,9 +103,9 @@
 
       <!-- Awards in mobile menu -->
       <div class="mobile-awards">
-        <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="mobile-award-badge" />
-        <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="mobile-award-badge" />
-        <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="mobile-award-badge" />
+        <div class="award-wrap award-wrap-mobile"><img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="mobile-award-badge" /></div>
+        <div class="award-wrap award-wrap-mobile"><img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="mobile-award-badge" /></div>
+        <div class="award-wrap award-wrap-mobile"><img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="mobile-award-badge" /></div>
       </div>
     </nav>
   </div>
@@ -242,16 +230,34 @@
     gap: 0.35rem;
   }
 
-  .award-badge {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    opacity: 0.9;
-    transition: opacity 0.2s, transform 0.2s;
-    cursor: default;
+  /* Award wrap normalizes different badge sizes */
+  .award-wrap {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
-  .award-badge:hover {
+  .award-wrap-mobile {
+    width: 56px;
+    height: 56px;
+  }
+
+  .award-badge,
+  .mobile-award-badge {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.88;
+    transition: opacity 0.2s, transform 0.2s;
+    cursor: default;
+    display: block;
+  }
+
+  .award-wrap:hover .award-badge,
+  .award-wrap:hover .mobile-award-badge {
     opacity: 1;
     transform: scale(1.08);
   }

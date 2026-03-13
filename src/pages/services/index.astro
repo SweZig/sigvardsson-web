@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import SCGLogo from '../../components/SCGLogo.astro';
 
 // Service data - Swedish and English, grouped by category
 const categories = [
@@ -386,7 +387,7 @@ const categories = [
   <section class="services-cta">
     <div class="container">
       <div class="cta-inner fade-up">
-        <img src="/images/logos/S_white.png" alt="SCG" class="cta-logo" width="64" height="64" />
+        <SCGLogo size={64} color="white" />
         <h2>
           <span class="sv-text">Redo att ta nästa steg?</span>
           <span class="en-text">Ready to take the next step?</span>
@@ -660,14 +661,8 @@ const categories = [
     margin: 0 auto;
   }
 
-  .cta-logo {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 1.5rem;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.85;
-  }
+  /* cta logo uses inline SVG - no img needed */
+  .cta-inner .scg-logo { margin: 0 auto 1.5rem; }
 
   .cta-inner h2 {
     font-size: clamp(1.6rem, 3vw, 2.25rem);

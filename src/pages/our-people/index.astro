@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import SCGLogo from '../../components/SCGLogo.astro';
 ---
 <Layout
   titleSv="Vårt team — Sigvardsson Consulting Group"
@@ -33,7 +34,7 @@ import Footer from '../../components/Footer.astro';
         {Array.from({length: 4}).map((_, i) => (
           <div class="team-card fade-up" style={`animation-delay:${i*80}ms`}>
             <div class="team-avatar">
-              <img src="/images/logos/S_blue-trans.png" alt="Team member" class="avatar-placeholder" />
+              <SCGLogo size={56} color="navy" />
             </div>
             <div class="team-info">
               <h3 class="sv-text">Konsultnamn</h3>

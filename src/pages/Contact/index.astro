@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import SCGLogo from '../../components/SCGLogo.astro';
 
 // Services for the dropdown
 const servicesSv = [
@@ -128,7 +129,7 @@ const servicesEn = [
       <!-- Contact Info -->
       <div class="contact-info fade-up" style="animation-delay:120ms">
         <div class="info-card">
-          <img src="/images/logos/S_blue-trans.png" alt="SCG" class="info-logo" />
+          <SCGLogo size={48} color="navy" />
           <h3>Sigvardsson Consulting Group</h3>
           <p class="sv-text">Stockholm, Sverige</p>
           <p class="en-text">Stockholm, Sweden</p>
@@ -139,9 +140,9 @@ const servicesEn = [
           <p class="awards-title sv-text">Utmärkelser</p>
           <p class="awards-title en-text">Awards</p>
           <div class="awards-row">
-            <img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="info-award" />
-            <img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="info-award" />
-            <img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="info-award" />
+            <div class="contact-award-wrap"><img src="/images/awards/global_100_2024.png" alt="Global 100 Winner 2024" class="info-award" /></div>
+            <div class="contact-award-wrap"><img src="/images/awards/global_100_2025.png" alt="Global 100 Winner 2025" class="info-award" /></div>
+            <div class="contact-award-wrap"><img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="info-award" /></div>
           </div>
           <p class="awards-desc sv-text">Global 100 Winner 2024, 2025 & 2026</p>
           <p class="awards-desc en-text">Global 100 Winner 2024, 2025 & 2026</p>
@@ -267,13 +268,7 @@ const servicesEn = [
     margin-bottom: 1.5rem;
   }
 
-  .info-logo {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-    opacity: 0.7;
-  }
+  .info-card .scg-logo { margin-bottom: 1rem; opacity: 0.8; }
 
   .info-card h3 {
     font-size: 1rem;
@@ -314,14 +309,25 @@ const servicesEn = [
 
   .awards-row {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.6rem;
     margin-bottom: 0.75rem;
+    align-items: center;
+  }
+
+  .contact-award-wrap {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
   .info-award {
-    width: 52px;
-    height: 52px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    display: block;
   }
 
   .awards-desc {

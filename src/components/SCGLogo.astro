@@ -1,0 +1,135 @@
+---
+// SCGLogo.astro — Inline SVG logo, no image files needed
+// Props: size (px), color ('navy'|'white'|'blue'), animated (bool)
+interface Props {
+  size?: number;
+  color?: 'navy' | 'white' | 'blue';
+  animated?: boolean;
+  id?: string;
+}
+const {
+  size = 44,
+  color = 'navy',
+  animated = false,
+  id = 'scg-logo',
+} = Astro.props;
+
+const colorMap = {
+  navy:  '#010D60',
+  white: '#FFFFFF',
+  blue:  '#2A4EA9',
+};
+const stroke = colorMap[color] ?? colorMap.navy;
+const fill   = colorMap[color] ?? colorMap.navy;
+---
+
+<!--
+  SCG Logo SVG — 200x200 viewBox, center at (100,100)
+  5 elements: center square + 4 directional arms + S text
+  "S" is perfectly centered using text-anchor + dominant-baseline
+-->
+<svg
+  id={id}
+  viewBox="0 0 200 200"
+  width={size}
+  height={size}
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="Sigvardsson Consulting Group"
+  role="img"
+  class:list={['scg-logo', animated && 'scg-logo--animated']}
+  style={`flex-shrink:0`}
+>
+  <!-- Center square -->
+  <rect
+    class="logo-square"
+    x="72" y="72" width="56" height="56"
+    fill="none"
+    stroke={stroke}
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Top spike (pentagon pointing up) -->
+  <polygon
+    class="logo-arm logo-arm-top"
+    points="84,72 84,30 100,8 116,30 116,72"
+    fill="none"
+    stroke={stroke}
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Bottom spike (pentagon pointing down) -->
+  <polygon
+    class="logo-arm logo-arm-bottom"
+    points="84,128 84,170 100,192 116,170 116,128"
+    fill="none"
+    stroke={stroke}
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Left arrow (pointing left) -->
+  <polygon
+    class="logo-arm logo-arm-left"
+    points="72,84 30,84 8,100 30,116 72,116"
+    fill="none"
+    stroke={stroke}
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Right arrow (pointing right) -->
+  <polygon
+    class="logo-arm logo-arm-right"
+    points="128,84 170,84 192,100 170,116 128,116"
+    fill="none"
+    stroke={stroke}
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+
+  <!-- S — perfectly centered at (100,100) -->
+  <text
+    class="logo-s"
+    x="100"
+    y="100"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="'Chakra Petch', sans-serif"
+    font-weight="600"
+    font-size="42"
+    fill={fill}
+    letter-spacing="-1"
+  >S</text>
+</svg>
+
+{animated && (
+  <style>{`
+    .scg-logo--animated .logo-arm,
+    .scg-logo--animated .logo-square {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: draw-path 1.4s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+    .scg-logo--animated .logo-arm-top    { animation-delay: 0.0s; }
+    .scg-logo--animated .logo-square     { animation-delay: 0.2s; }
+    .scg-logo--animated .logo-arm-right  { animation-delay: 0.35s; }
+    .scg-logo--animated .logo-arm-bottom { animation-delay: 0.5s; }
+    .scg-logo--animated .logo-arm-left   { animation-delay: 0.65s; }
+
+    .scg-logo--animated .logo-s {
+      opacity: 0;
+      animation: fade-in-s 0.5s ease forwards;
+      animation-delay: 1.1s;
+    }
+
+    @keyframes draw-path {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes fade-in-s {
+      from { opacity: 0; transform: scale(0.8); transform-origin: 100px 100px; }
+      to   { opacity: 1; transform: scale(1);   transform-origin: 100px 100px; }
+    }
+  `}</style>
+)}
