@@ -99,7 +99,7 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
 
             <div class="team-avatar" style={`background:${accents[i]}`}>
               {person.photo
-                ? <img src={person.photo} alt={person.name} class="avatar-photo" style={`object-position:${person.photoPos || 'center 8%'}`} />
+                ? <img src={person.photo} alt={person.name} class="avatar-photo" style={`object-position:${person.photoPos || 'center 8%'};${person.name === 'Sebastian Fauné' ? 'transform:scale(0.82);transform-origin:center 30%' : ''}`} />
                 : <span class="avatar-initials">{person.initials}</span>
               }
             </div>
