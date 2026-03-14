@@ -12,6 +12,7 @@ const team = [
     specs: ['Retail Strategy'],
     initials: 'PS',
     photo: '/images/team/per-sigvardsson.jpg',
+    photoPos: 'center 2%',
   },
   {
     name: 'Lars Lundqvist',
@@ -21,6 +22,7 @@ const team = [
     specs: ['Retail Operations Excellence'],
     initials: 'LL',
     photo: '/images/team/lars-lundqvist.jpg',
+    photoPos: 'center 8%',
   },
   {
     name: 'Sebastian Fauné',
@@ -30,6 +32,7 @@ const team = [
     specs: ['Commercial Excellence'],
     initials: 'SF',
     photo: '/images/team/sebastian-faune.jpg',
+    photoPos: 'center 18%',
   },
   {
     name: 'Peter Wilén',
@@ -39,6 +42,7 @@ const team = [
     specs: ['People Development', 'Change Management'],
     initials: 'PW',
     photo: '/images/team/peter-wilen.jpg',
+    photoPos: 'center 8%',
   },
   {
     name: 'Emil Sigvardsson',
@@ -48,6 +52,7 @@ const team = [
     specs: ['Tech'],
     initials: 'ES',
     photo: '/images/team/emil-sigvardsson.jpg',
+    photoPos: 'center 22%',
   },
   {
     name: 'Felix Johansson',
@@ -57,6 +62,7 @@ const team = [
     specs: ['Tech'],
     initials: 'FJ',
     photo: '/images/team/felix-johansson.jpg',
+    photoPos: 'center 8%',
   },
 ];
 
@@ -93,7 +99,7 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
 
             <div class="team-avatar" style={`background:${accents[i]}`}>
               {person.photo
-                ? <img src={person.photo} alt={person.name} class="avatar-photo" />
+                ? <img src={person.photo} alt={person.name} class="avatar-photo" style={`object-position:${person.photoPos || 'center 8%'}`} />
                 : <span class="avatar-initials">{person.initials}</span>
               }
             </div>
@@ -223,7 +229,6 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 8%;
   }
 
   .avatar-initials {
