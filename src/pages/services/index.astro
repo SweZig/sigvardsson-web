@@ -78,7 +78,32 @@ const categories = [
     descEn: 'Digital technologies that modernize the store — from automated pricing systems and RFID scanning to self-service kiosks and NPS platforms.',
     services: [
       {
-        id: 'rfid-scanning',
+        id: 'video-heatmap',
+        titleSv: 'Video Analytics & Heatmapping',
+        titleEn: 'Video Analytics & Heatmapping',
+        descSv: 'Kamerabaserad analys som skapar detaljerade värmekartor över kundflöden i varuhus och gallerior. Mäter var kunder stannar, hur länge och vilka vägar de väljer. Ger konkret beslutsunderlag för butiksplanering, skyltning och flödesoptimering — utan integritetspåverkan.',
+        descEn: 'Camera-based analysis creating detailed heat maps of customer flows in department stores and shopping malls. Measures where customers stop, how long and which paths they choose. Provides concrete decision support for store planning, signage and flow optimization — without privacy impact.',
+        effectSv: 'Optimerad butiksupplevelse',
+        effectEn: 'Optimized store experience',
+        clientsSv: 'TBA',
+        clientsEn: 'TBA',
+        projects: 'Ny',
+        color: '#2A4EA9',
+      },
+      {
+        id: 'video-shelf-analytics',
+        titleSv: 'Video Shelf Analytics',
+        titleEn: 'Video Shelf Analytics',
+        descSv: 'Kamerabaserad mätning av gavelexponeringar, störtkorgar och hyllor i realtid. Analyserar exponeringens effektivitet och kundinteraktion längs hela kundresan — från entré till kassa. Gör det möjligt att mäta och aktivt påverka hela shoppingupplevelsen.',
+        descEn: 'Camera-based measurement of end-cap exposures, dump bins and shelves in real time. Analyzes exposure effectiveness and customer interaction throughout the entire customer journey — from entrance to checkout. Makes it possible to measure and actively influence the entire shopping experience.',
+        effectSv: 'Mätbar exponeringseffekt',
+        effectEn: 'Measurable exposure impact',
+        clientsSv: 'TBA',
+        clientsEn: 'TBA',
+        projects: 'Ny',
+        color: '#1A277A',
+      },
+      {
         titleSv: 'RFID & Scanning',
         titleEn: 'RFID & Scanning',
         descSv: 'RFID-baserade lösningar för automatisk lagerinventering, spårning av varor och stöldskydd. Reducerar manuellt arbete och ökar lageraccuratessen.',
@@ -142,6 +167,7 @@ const categories = [
     services: [
       {
         id: 'perfekt-hylla',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="20" x2="22" y2="20"/><line x1="2" y1="13" x2="22" y2="13"/><rect x="4" y="14" width="3" height="6"/><rect x="10" y="14" width="4" height="6"/><rect x="16" y="14" width="4" height="6"/><rect x="3" y="6" width="4" height="7"/><rect x="17" y="5" width="3" height="8"/></svg>`,
         titleSv: 'Perfekt hylla',
         titleEn: 'Perfect Shelf',
         descSv: 'Mobil-first verktyg som genomför, mäter och justerar hylloptimering i realtid — direkt kopplat till POS-data. Optimerar antal artiklar, ansikten och varuläggning för att maximera varje hyllmeter. Goda resultat i samtliga 100+ genomförda projekt hos ledande nordiska kedjor.',
@@ -155,6 +181,7 @@ const categories = [
       },
       {
         id: 'perfekt-varuplacering',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.24 2 7 4.24 7 7c0 3.94 5 10 5 10s5-6.06 5-10c0-2.76-2.24-5-5-5z"/><circle cx="12" cy="7" r="2"/></svg>`,
         titleSv: 'Perfekt varuplacering',
         titleEn: 'Perfect Product Placement',
         descSv: 'Placera rätt produkt på rätt plats — verktyget identifierar hyllvinnare, produkter med hög snittmarginal och optimala varuplaceringar i butiken. Visuell försäljningsrapport baserad på POS-data med konkreta actions för daglig drift. Ökar omsättning, kvantiteter och bruttomarginal.',
@@ -168,6 +195,7 @@ const categories = [
       },
       {
         id: 'perfekt-kampanj',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7" stroke-width="3"/></svg>`,
         titleSv: 'Perfekt kampanj',
         titleEn: 'Perfect Campaign',
         descSv: 'Mixa kampanjprodukter med hög snittmarginal, identifiera rätt merförsäljning och optimera varuplacering för maximal kampanjeffekt. Visuell POS-baserad försäljningsrapport säkerställer att kampanjmixen fungerar parallellt med ordinarie försäljning. Bevisad effekt i 80+ genomförda projekt.',
@@ -181,6 +209,7 @@ const categories = [
       },
       {
         id: 'perfekt-kundflode',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h5a3 3 0 013 3v6a3 3 0 003 3h7"/><polyline points="17 14 22 18 17 22"/></svg>`,
         titleSv: 'Perfekt kundflöde',
         titleEn: 'Perfect Customer Flow',
         descSv: 'Värmekarta kompatibel med alla CCTV-system som mäter alla dimensioner av kundbeteende — flöden, zoner, genvägar, intryck och besökstid. Ger en detaljerad bild av hur kunder rör sig i butiken och identifierar var förbättringspotentialen finns. Goda resultat i 80+ genomförda projekt.',
@@ -194,6 +223,7 @@ const categories = [
       },
       {
         id: 'perfekt-ko',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><path d="M3 22v-6a2 2 0 012-2h4a2 2 0 012 2v6"/><path d="M10 22v-6a2 2 0 012-2h4a2 2 0 012 2v6"/></svg>`,
         titleSv: 'Perfekt kö',
         titleEn: 'Perfect Queue',
         descSv: 'Realtidsövervakning av kundtrafik som identifierar antal kunder i butik, mäter genomsnittlig handlartid och räknar ut när kö uppstår — och varslar personalen innan det händer. Bygger på first-in-first-out-principen och integreras med befintliga kassasystem. Kostnadsreduktion på 6–9% i samtliga genomförda projekt.',
@@ -207,8 +237,9 @@ const categories = [
       },
       {
         id: 'perfekt-feedback',
-        titleSv: 'Perfekt Feedback — FeedbackApp',
-        titleEn: 'Perfect Feedback — FeedbackApp',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M9.5 11a3 3 0 005 0"/></svg>`,
+        titleSv: 'Perfekt Feedback',
+        titleEn: 'Perfect Feedback',
         descSv: 'FeedbackApp mäter kundnöjdhet (cNPS) i flera dimensioner och medarbetarnöjdhet (eNPS) för en komplett 360°-vy av var utmaningarna i kundmötet finns. Genom att koppla ihop kund- och medarbetardata skapar verktyget konkreta actions på vad teamet behöver arbeta med — inte bara mätningar, utan verklig förändring.',
         descEn: 'FeedbackApp measures customer satisfaction (cNPS) across multiple dimensions and employee satisfaction (eNPS) for a complete 360° view of where challenges in the customer meeting exist. By connecting customer and employee data, the tool creates concrete actions on what the team needs to work on — not just measurements, but real change.',
         effectSv: '4–8% försäljningsökning',
@@ -220,6 +251,7 @@ const categories = [
       },
       {
         id: 'minimera-matsvinnet',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22c3-8 5-10 10-10 0-5.5 3.5-9 10-10-1 7-5 11-10 11-1 4-4 7-10 9z"/></svg>`,
         titleSv: 'Minimera Matsvinnet',
         titleEn: 'Minimize Food Waste',
         descSv: 'Bättre prognostisering i realtid möjliggör on-demand beställning och produktion för bröd och frukt & grönt. Verktyget säkrar tillgänglighet och reducerar svinn samtidigt — och ger anställda konkreta actions i den dagliga driften. Normalt 30% minskat svinn i samtliga genomförda projekt.',
@@ -233,8 +265,9 @@ const categories = [
       },
       {
         id: 'perfekt-lager',
-        titleSv: 'Perfekt lager — SALDO4',
-        titleEn: 'Perfect Inventory — SALDO4',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+        titleSv: 'Perfekt lager',
+        titleEn: 'Perfect Inventory',
         descSv: 'SALDO4 är ett API som kopplas direkt till ditt affärssystem och ger en 4-dimensionell analys av lagret — volym, värde, rörlighet och åldersstruktur. Identifierar döda, långsamma och felbalanserade lagerpositioner och skapar konkreta dagliga actions. Utvecklat och förfinat under 5–6 år med bevisad effekt.',
         descEn: 'SALDO4 is an API that connects directly to your business system and provides a 4-dimensional analysis of inventory — volume, value, velocity and age structure. Identifies dead, slow-moving and unbalanced inventory positions with concrete daily actions. Developed and refined over 5–6 years with proven results.',
         effectSv: 'Friskare lager · Ökad stockturn',
@@ -343,6 +376,7 @@ const categories = [
             >
               <div class="card-accent" style={`background: ${svc.color}`}></div>
               <div class="card-body">
+                {svc.icon && <div class="card-icon" set:html={svc.icon} />}
                 <h3 class="card-title">
                   <span class="sv-text">{svc.titleSv}</span>
                   <span class="en-text">{svc.titleEn}</span>
@@ -580,6 +614,19 @@ const categories = [
   .card-body {
     padding: 1.5rem 1.5rem 1rem;
     flex: 1;
+  }
+
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-blue);
+    margin-bottom: 0.75rem;
+    opacity: 0.85;
+  }
+
+  .card-icon svg {
+    width: 100%;
+    height: 100%;
   }
 
   .card-title {
