@@ -12,6 +12,7 @@ import Footer from '../../components/Footer.astro';
 >
   <Header slot="header" />
 
+  <!-- ===== HERO ===== -->
   <section class="page-hero">
     <div class="container">
       <span class="section-label sv-text">Vår approach</span>
@@ -25,6 +26,7 @@ import Footer from '../../components/Footer.astro';
     </div>
   </section>
 
+  <!-- ===== THREE PILLARS (vertical cards) ===== -->
   <section class="pillars">
     <div class="container">
       <div class="section-intro fade-up">
@@ -35,11 +37,27 @@ import Footer from '../../components/Footer.astro';
         <p class="sv-text">Vi identifierar rätt utmaning, genomför rätt projekt och bygger rätt process — i den ordningen, alltid.</p>
         <p class="en-text">We identify the right challenge, execute the right project and build the right process — in that order, always.</p>
       </div>
-      <div class="pillar-card fade-up">
-        <div class="pillar-number">01</div>
-        <div class="pillar-content">
-          <h3 class="sv-text">Utmaningen</h3>
-          <h3 class="en-text">The Challenge</h3>
+
+      <div class="pillars-grid">
+
+        <!-- Pillar 01 -->
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+              <path d="M16 32 C16 24 20 18 24 14 C28 18 32 24 32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="13" y1="21" x2="10" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="35" y1="21" x2="38" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M19 32 L24 26 L29 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="12" y1="35" x2="36" y2="35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pillar-num">01</div>
+          <h3>
+            <span class="sv-text">Utmaningen</span>
+            <span class="en-text">The Challenge</span>
+          </h3>
           <p class="sv-text">Vi börjar alltid med att förstå din verkliga utmaning. Inte symptomen — utan grundorsaken. Genom djupgående analys av data, processer och organisation kartlägger vi var den verkliga förbättringspotentialen finns.</p>
           <p class="en-text">We always start by understanding your real challenge. Not the symptoms — but the root cause. Through in-depth analysis of data, processes and organization, we map out where the real improvement potential lies.</p>
           <ul class="pillar-list">
@@ -51,12 +69,24 @@ import Footer from '../../components/Footer.astro';
             <li class="en-text">Prioritization of initiatives with highest ROI</li>
           </ul>
         </div>
-      </div>
-      <div class="pillar-card fade-up">
-        <div class="pillar-number">02</div>
-        <div class="pillar-content">
-          <h3 class="sv-text">Projektet</h3>
-          <h3 class="en-text">The Project</h3>
+
+        <!-- Pillar 02 -->
+        <div class="pillar-card fade-up" style="animation-delay:120ms">
+          <div class="pillar-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+              <rect x="13" y="16" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+              <line x1="13" y1="21" x2="35" y2="21" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="18" y1="26" x2="24" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="18" y1="29" x2="22" y2="29" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M28 25 L31 28 L36 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="pillar-num">02</div>
+          <h3>
+            <span class="sv-text">Projektet</span>
+            <span class="en-text">The Project</span>
+          </h3>
           <p class="sv-text">Vi genomför varje projekt med tydliga mål, ansvar och tidplaner. Mobil-first, datadrivet och med fokus på omedelbar effekt. Varje projekt levererar mätbar ROI — från dag ett.</p>
           <p class="en-text">We execute every project with clear goals, accountability and timelines. Mobile-first, data-driven and focused on immediate impact. Every project delivers measurable ROI — from day one.</p>
           <ul class="pillar-list">
@@ -68,12 +98,24 @@ import Footer from '../../components/Footer.astro';
             <li class="en-text">Continuous measurement and adjustment</li>
           </ul>
         </div>
-      </div>
-      <div class="pillar-card fade-up">
-        <div class="pillar-number">03</div>
-        <div class="pillar-content">
-          <h3 class="sv-text">Processen</h3>
-          <h3 class="en-text">The Process</h3>
+
+        <!-- Pillar 03 -->
+        <div class="pillar-card fade-up" style="animation-delay:240ms">
+          <div class="pillar-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+              <path d="M14 34 C14 28 18 24 24 24 C30 24 34 28 34 34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="18" r="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 34 C20 30 22 28 24 28 C26 28 28 30 28 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <path d="M34 22 C36 20 38 19 38 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M14 22 C12 20 10 19 10 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="pillar-num">03</div>
+          <h3>
+            <span class="sv-text">Processen</span>
+            <span class="en-text">The Process</span>
+          </h3>
           <p class="sv-text">Vi bygger inte bara resultat — vi bygger förmåga. Genom att involvera hela din organisation och skapa strukturerade processer säkerställer vi att förändringen håller långsiktigt.</p>
           <p class="en-text">We don't just build results — we build capability. By involving your entire organization and creating structured processes, we ensure that the change lasts long-term.</p>
           <ul class="pillar-list">
@@ -85,10 +127,12 @@ import Footer from '../../components/Footer.astro';
             <li class="en-text">Follow-up systems and KPIs</li>
           </ul>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- ===== PROVEN PROCESS ===== -->
   <section class="process-steps-section">
     <div class="container">
       <div class="section-intro fade-up">
@@ -104,41 +148,92 @@ import Footer from '../../components/Footer.astro';
           <div class="step-num">01</div>
           <div class="step-content">
             <h3><span class="sv-text">Analys & kartläggning</span><span class="en-text">Analysis & mapping</span></h3>
-            <p><span class="sv-text">Vi analyserar din verksamhet på djupet — data, processer, organisation och marknad. Vi identifierar var den verkliga förbättringspotentialen finns och prioriterar åtgärder med högst ROI.</span><span class="en-text">We deeply analyze your business — data, processes, organization and market. We identify where the real improvement potential lies and prioritize actions with the highest ROI.</span></p>
+            <p><span class="sv-text">Vi analyserar din verksamhet på djupet — data, processer, organisation och marknad. Vi identifierar var den verkliga förbättringspotentialen finns och prioriterar åtgärder med högst ROI. Tidigt i analysen kartlägger vi också organisationens förändringskapacitet — vilka nyckelpersoner som driver förändring och var potentiellt motstånd kan uppstå.</span><span class="en-text">We deeply analyze your business — data, processes, organization and market. We identify where the real improvement potential lies and prioritize actions with the highest ROI. Early in the analysis we also map the organization's change capacity — which key people drive change and where potential resistance may arise.</span></p>
           </div>
         </div>
         <div class="step-row fade-up" style="animation-delay:80ms">
           <div class="step-num">02</div>
           <div class="step-content">
             <h3><span class="sv-text">Strategi & plan</span><span class="en-text">Strategy & plan</span></h3>
-            <p><span class="sv-text">Baserat på analysen tar vi fram en konkret strategi med tydliga mål, ansvar och tidplan. Vi definierar vilka av våra verktyg och metoder som passar bäst för din specifika situation.</span><span class="en-text">Based on the analysis, we develop a concrete strategy with clear goals, accountability and timeline. We define which of our tools and methods best fit your specific situation.</span></p>
+            <p><span class="sv-text">Baserat på analysen tar vi fram en konkret strategi med tydliga mål, ansvar och tidplan. Vi definierar vilka av våra verktyg och metoder som passar bäst för din specifika situation. Change management-planen tas fram parallellt med projektplanen — med tydliga kommunikationsvägar, utbildningsspår och ägarskap på alla nivåer i organisationen.</span><span class="en-text">Based on the analysis, we develop a concrete strategy with clear goals, accountability and timeline. We define which of our tools and methods best fit your specific situation. The change management plan is developed in parallel with the project plan — with clear communication channels, training tracks and ownership at all levels of the organization.</span></p>
           </div>
         </div>
         <div class="step-row fade-up" style="animation-delay:160ms">
           <div class="step-num">03</div>
           <div class="step-content">
             <h3><span class="sv-text">Implementering</span><span class="en-text">Implementation</span></h3>
-            <p><span class="sv-text">Hands-on genomförande av projektet med ditt team. Mobil-first, datadrivet och med fokus på omedelbar effekt. Vi är med i butiken, inte bara i mötesrummet.</span><span class="en-text">Hands-on project execution with your team. Mobile-first, data-driven and focused on immediate impact. We are in the store, not just in the meeting room.</span></p>
+            <p><span class="sv-text">Hands-on genomförande av projektet med ditt team. Mobil-first, datadrivet och med fokus på omedelbar effekt. Vi är med i butiken, inte bara i mötesrummet. Personalen involveras aktivt från dag ett — vi tror att bestående förändring uppstår när medarbetarna förstår varför, ser resultaten direkt och känner ägarskap över den nya arbetssättet.</span><span class="en-text">Hands-on project execution with your team. Mobile-first, data-driven and focused on immediate impact. We are in the store, not just in the meeting room. Staff are actively involved from day one — we believe lasting change happens when employees understand why, see results immediately and feel ownership of the new way of working.</span></p>
           </div>
         </div>
         <div class="step-row fade-up" style="animation-delay:240ms">
           <div class="step-num">04</div>
           <div class="step-content">
             <h3><span class="sv-text">Mät & justera</span><span class="en-text">Measure & adjust</span></h3>
-            <p><span class="sv-text">Kontinuerlig mätning av resultat mot uppsatta mål. Vi justerar löpande baserat på data och insikter för att maximera effekten. Transparens och evidensbaserat beslutsfattande.</span><span class="en-text">Continuous measurement of results against set targets. We continuously adjust based on data and insights to maximize impact. Transparency and evidence-based decision making.</span></p>
+            <p><span class="sv-text">Kontinuerlig mätning av resultat mot uppsatta mål. Vi justerar löpande baserat på data och insikter för att maximera effekten. Data används även som förändringskommunikation — när personalen ser konkreta siffror på vad det nya arbetssättet ger, stärks engagemanget och förändringen förankras djupare i organisationen.</span><span class="en-text">Continuous measurement of results against set targets. We continuously adjust based on data and insights to maximize impact. Data is also used as change communication — when staff see concrete numbers showing what the new way of working delivers, engagement strengthens and change becomes more deeply embedded in the organization.</span></p>
           </div>
         </div>
         <div class="step-row fade-up" style="animation-delay:320ms">
           <div class="step-num">05</div>
           <div class="step-content">
             <h3><span class="sv-text">Skala upp & befäst</span><span class="en-text">Scale up & consolidate</span></h3>
-            <p><span class="sv-text">När resultaten är bevisade skalar vi upp till fler butiker och kategorier. Vi bygger intern kompetens, dokumenterar processer och säkerställer att förändringen håller långsiktigt.</span><span class="en-text">When results are proven, we scale up to more stores and categories. We build internal competence, document processes and ensure the change lasts long-term.</span></p>
+            <p><span class="sv-text">När resultaten är bevisade skalar vi upp till fler butiker och kategorier. Vi bygger intern kompetens, dokumenterar processer och säkerställer att förändringen håller långsiktigt. Målet är att organisationen till slut inte behöver oss — att kompetensen, verktygen och kulturen för kontinuerlig förbättring lever vidare på egen hand.</span><span class="en-text">When results are proven, we scale up to more stores and categories. We build internal competence, document processes and ensure the change lasts long-term. The goal is for the organization to ultimately no longer need us — that the competence, tools and culture for continuous improvement live on independently.</span></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== CHANGE MANAGEMENT CALLOUT ===== -->
+  <section class="change-mgmt fade-up">
+    <div class="container">
+      <div class="change-inner">
+        <div class="change-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+            <path d="M18 28 C18 22 22 18 28 18 C34 18 38 22 38 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M38 28 C38 34 34 38 28 38 C22 38 18 34 18 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+            <polyline points="35,25 38,28 35,31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="21,25 18,28 21,31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="28" cy="28" r="3" fill="currentColor" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="change-text">
+          <h2>
+            <span class="sv-text">Change management — genom hela resan</span>
+            <span class="en-text">Change management — throughout the journey</span>
+          </h2>
+          <p class="sv-text">Förändring misslyckas sällan på grund av fel verktyg. Den misslyckas för att människorna inte är med. Därför behandlar vi change management inte som ett separat steg — det är en röd tråd genom hela vår process, från första analysen till sista uppföljningen.</p>
+          <p class="en-text">Change rarely fails because of the wrong tools. It fails because the people aren't on board. That's why we treat change management not as a separate step — it's a thread running through our entire process, from the first analysis to the final follow-up.</p>
+          <p class="sv-text" style="margin-top:1rem">Vi stöttar er organisation med kommunikationsplaner, ledarskapscoachning, utbildningsprogram och strukturerade uppföljningsrutiner. Vi bygger förändringskapacitet inifrån — så att nästa förändring går snabbare och lättare.</p>
+          <p class="en-text" style="margin-top:1rem">We support your organization with communication plans, leadership coaching, training programs and structured follow-up routines. We build change capacity from within — so that the next change goes faster and more smoothly.</p>
+          <ul class="change-list">
+            <li>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8 L6 11 L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="sv-text">Kommunikationsplan och stakeholder-hantering</span>
+              <span class="en-text">Communication plan and stakeholder management</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8 L6 11 L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="sv-text">Ledarskapscoachning på alla nivåer</span>
+              <span class="en-text">Leadership coaching at all levels</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8 L6 11 L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="sv-text">Utbildningsprogram och kompetensöverföring</span>
+              <span class="en-text">Training programs and knowledge transfer</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8 L6 11 L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="sv-text">Kulturbygge och affärsmannaskap i hela organisationen</span>
+              <span class="en-text">Culture building and business acumen across the organization</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRINCIPLES ===== -->
   <section class="principles">
     <div class="container">
       <h2 class="fade-up"><span class="sv-text">Våra principer</span><span class="en-text">Our principles</span></h2>
@@ -163,6 +258,7 @@ import Footer from '../../components/Footer.astro';
     </div>
   </section>
 
+  <!-- ===== CTA ===== -->
   <section class="cta-band">
     <div class="container" style="text-align:center">
       <h2 class="fade-up">
@@ -172,8 +268,8 @@ import Footer from '../../components/Footer.astro';
       <div class="cta-row fade-up">
         <a href="/Contact/" class="btn btn-light sv-text">Kontakta oss</a>
         <a href="/Contact/" class="btn btn-light en-text">Contact us</a>
-        <a href="/services/" class="btn btn-outline sv-text">Se tjänster →</a>
-        <a href="/services/" class="btn btn-outline en-text">See services →</a>
+        <a href="/services/" class="btn btn-outline sv-text">Våra tjänster →</a>
+        <a href="/services/" class="btn btn-outline en-text">Our services →</a>
       </div>
     </div>
   </section>
@@ -182,35 +278,186 @@ import Footer from '../../components/Footer.astro';
 </Layout>
 
 <style>
+/* ===== HERO ===== */
 .page-hero { background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-blue) 100%);color:var(--color-white);padding:5rem 2rem 4rem; }
 .page-hero .section-label { color:var(--color-blue-lite); }
 .page-hero h1 { font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;margin:.75rem 0 1.25rem; }
 .hero-sub { font-size:1.05rem;color:rgba(255,255,255,.75);max-width:640px;line-height:1.7; }
+
+/* ===== SECTION INTRO ===== */
 .section-intro { margin-bottom:3rem; }
 .section-intro h2 { font-size:clamp(1.5rem,3vw,2rem);color:var(--color-navy);margin-bottom:.75rem; }
 .section-intro p { color:rgba(1,13,96,.65);max-width:600px;line-height:1.7; }
+
+/* ===== PILLARS (vertical cards) ===== */
 .pillars { padding:5rem 2rem; }
-.pillar-card { display:grid;grid-template-columns:100px 1fr;gap:3rem;padding:3rem 0;border-bottom:1px solid rgba(1,13,96,.08); }
-.pillar-card:last-child { border-bottom:none; }
-.pillar-number { font-family:'Chakra Petch',sans-serif;font-size:3.5rem;font-weight:600;color:var(--color-blue-lite);line-height:1; }
-.pillar-content h3 { font-size:1.75rem;color:var(--color-navy);margin-bottom:1rem; }
-.pillar-content p { color:rgba(1,13,96,.7);line-height:1.75;max-width:640px;margin-bottom:1.25rem; }
-.pillar-list { list-style:none;display:flex;flex-direction:column;gap:.5rem; }
-.pillar-list li { font-size:.9rem;color:var(--color-navy-mid);padding-left:1.25rem;position:relative; }
-.pillar-list li::before { content:'→';position:absolute;left:0;color:var(--color-blue-lite); }
+
+.pillars-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:2rem;
+}
+
+.pillar-card {
+  background:var(--color-white);
+  border:1px solid rgba(1,13,96,.08);
+  border-radius:16px;
+  padding:2.5rem 2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pillar-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(1,13,96,.1);
+}
+
+.pillar-icon-wrap {
+  width:56px;
+  height:56px;
+  color:var(--color-blue);
+  background:rgba(42,78,169,.07);
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+  flex-shrink:0;
+}
+
+.pillar-icon-wrap svg { width:100%;height:100%; }
+
+.pillar-num {
+  font-family:'Chakra Petch',sans-serif;
+  font-size:2.25rem;
+  font-weight:600;
+  color:var(--color-blue-lite);
+  line-height:1;
+  margin-top:.25rem;
+}
+
+.pillar-card h3 {
+  font-size:1.35rem;
+  color:var(--color-navy);
+  margin:0;
+  line-height:1.2;
+}
+
+.pillar-card p {
+  color:rgba(1,13,96,.68);
+  line-height:1.72;
+  font-size:.95rem;
+  flex:1;
+}
+
+.pillar-list {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  margin-top:.25rem;
+  padding-top:1rem;
+  border-top:1px solid rgba(1,13,96,.06);
+}
+
+.pillar-list li {
+  font-size:.875rem;
+  color:var(--color-navy-mid);
+  padding-left:1.25rem;
+  position:relative;
+}
+
+.pillar-list li::before {
+  content:'→';
+  position:absolute;
+  left:0;
+  color:var(--color-blue-lite);
+}
+
+/* ===== 5-STEP PROCESS ===== */
 .process-steps-section { background:var(--color-off-white);padding:5rem 2rem; }
 .steps-list { display:flex;flex-direction:column; }
 .step-row { display:grid;grid-template-columns:80px 1fr;gap:2.5rem;padding:2.5rem 0;border-bottom:1px solid rgba(1,13,96,.08); }
 .step-row:last-child { border-bottom:none; }
 .step-num { font-family:'Chakra Petch',sans-serif;font-size:2.5rem;font-weight:600;color:var(--color-blue-lite);line-height:1; }
 .step-content h3 { font-size:1.4rem;color:var(--color-navy);margin-bottom:.75rem; }
-.step-content p { color:rgba(1,13,96,.7);line-height:1.75;max-width:640px; }
+.step-content p { color:rgba(1,13,96,.7);line-height:1.75;max-width:680px; }
+
+/* ===== CHANGE MANAGEMENT CALLOUT ===== */
+.change-mgmt {
+  background:linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
+  padding:5rem 2rem;
+  color:var(--color-white);
+}
+
+.change-inner {
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:100px 1fr;
+  gap:3rem;
+  align-items:start;
+}
+
+.change-icon {
+  width:80px;
+  height:80px;
+  color:var(--color-blue-lite);
+  flex-shrink:0;
+  margin-top:.5rem;
+}
+.change-icon svg { width:100%;height:100%; }
+
+.change-text h2 {
+  font-size:clamp(1.4rem,3vw,2rem);
+  color:var(--color-white);
+  margin-bottom:1.25rem;
+  line-height:1.25;
+}
+
+.change-text p {
+  color:rgba(255,255,255,.78);
+  line-height:1.75;
+  max-width:680px;
+  font-size:1rem;
+}
+
+.change-list {
+  list-style:none;
+  margin-top:1.75rem;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:.75rem 2rem;
+}
+
+.change-list li {
+  display:flex;
+  align-items:flex-start;
+  gap:.6rem;
+  font-size:.9rem;
+  color:rgba(255,255,255,.85);
+  line-height:1.5;
+}
+
+.change-list li svg {
+  width:16px;
+  height:16px;
+  flex-shrink:0;
+  margin-top:2px;
+  color:var(--color-blue-lite);
+}
+
+/* ===== PRINCIPLES ===== */
 .principles { padding:5rem 2rem; }
 .principles h2 { font-size:1.75rem;color:var(--color-navy);margin-bottom:2.5rem; }
 .principles-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem; }
 .principle { background:var(--color-off-white);border-radius:12px;padding:1.75rem;border:1px solid rgba(1,13,96,.08); }
 .principle h3 { font-size:1rem;color:var(--color-navy);margin-bottom:.6rem; }
 .principle p { font-size:.875rem;color:rgba(1,13,96,.65);line-height:1.65; }
+
+/* ===== CTA ===== */
 .cta-band { background:var(--color-navy);padding:4.5rem 2rem;color:var(--color-white); }
 .cta-band h2 { font-size:clamp(1.5rem,3vw,2.25rem);margin-bottom:2rem; }
 .cta-row { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; }
@@ -218,10 +465,16 @@ import Footer from '../../components/Footer.astro';
 .btn-light:hover { background:var(--color-off-white);transform:translateY(-2px); }
 .btn-outline { background:transparent;color:rgba(255,255,255,.85);border:2px solid rgba(255,255,255,.35);font-family:'Chakra Petch',sans-serif;font-weight:500;padding:.75rem 2rem;border-radius:8px;font-size:.95rem;transition:all .2s;display:inline-block; }
 .btn-outline:hover { border-color:rgba(255,255,255,.7);color:var(--color-white); }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px) {
+  .pillars-grid { grid-template-columns:1fr; gap:1.5rem; }
+  .change-inner { grid-template-columns:1fr; gap:1.5rem; }
+  .change-icon { width:56px;height:56px; }
+  .change-list { grid-template-columns:1fr; }
+}
 @media(max-width:900px) { .principles-grid { grid-template-columns:repeat(2,1fr); } }
 @media(max-width:600px) {
-  .pillar-card { grid-template-columns:1fr;gap:.75rem; }
-  .pillar-number { font-size:2rem; }
   .step-row { grid-template-columns:1fr;gap:1rem; }
   .principles-grid { grid-template-columns:1fr; }
 }
