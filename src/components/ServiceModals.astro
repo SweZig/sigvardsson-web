@@ -81,8 +81,8 @@
     <div class="modal-body">
       <div class="modal-images trio">
         <div class="modal-img-wrap"><img src="/images/services/rfid-tags.jpg" alt="RFID tags" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>rfid-tags.jpg</span></div>'" /></div>
-        <div class="modal-img-wrap"><img src="/images/services/rfid-handheld.jpg" alt="Handheld RFID scanner" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>rfid-handheld.jpg</span></div>'" /></div>
-        <div class="modal-img-wrap"><img src="/images/services/rfid-warehouse.jpg" alt="Warehouse RFID tunnel" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>rfid-warehouse.jpg</span></div>'" /></div>
+        <div class="modal-img-wrap contain"><img src="/images/services/rfid-handheld.jpg" alt="Handheld RFID scanner" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>rfid-handheld.jpg</span></div>'" /></div>
+        <div class="modal-img-wrap contain"><img src="/images/services/rfid-warehouse.jpg" alt="Warehouse RFID tunnel" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>rfid-warehouse.jpg</span></div>'" /></div>
       </div>
       <div class="modal-features">
         <div class="feature-item"><div class="feature-dot"></div><p><strong class="sv-text">RFID-taggar på alla produkter</strong><strong class="en-text">RFID tags on all products</strong><span class="sv-text">Tagga varor i hela värdekedjan. Läs av upp till 8 meters räckvidd utan siktlinje – oavsett förpackning.</span><span class="en-text">Tag products throughout the value chain. Read up to 8 metres range without line of sight – regardless of packaging.</span></p></div>
@@ -149,7 +149,7 @@
       <div class="modal-images trio">
         <div class="modal-img-wrap"><img src="/images/services/kiosk-app.jpg" alt="Self-checkout app" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>kiosk-app.jpg</span></div>'" /></div>
         <div class="modal-img-wrap"><img src="/images/services/kiosk-tablet.jpg" alt="Tablet POS" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>kiosk-tablet.jpg</span></div>'" /></div>
-        <div class="modal-img-wrap tall"><img src="/images/services/kiosk-cabinet.jpg" alt="All-in-one kiosk cabinet" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>kiosk-cabinet.jpg</span></div>'" /></div>
+        <div class="modal-img-wrap tall contain"><img src="/images/services/kiosk-cabinet.jpg" alt="All-in-one kiosk cabinet" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>kiosk-cabinet.jpg</span></div>'" /></div>
       </div>
       <div class="modal-features">
         <div class="feature-item"><div class="feature-dot"></div><p><strong class="sv-text">App-baserad scanning</strong><strong class="en-text">App-based scanning</strong><span class="sv-text">Låt kunden använda sin egen smartphone. Minimal hårdvarukostnad och maximal flexibilitet.</span><span class="en-text">Let customers use their own smartphone. Minimal hardware cost and maximum flexibility.</span></p></div>
@@ -280,7 +280,7 @@
     </div>
     <div class="modal-body">
       <div class="modal-images">
-        <div class="modal-img-wrap tall"><img src="/images/services/campaign-pos.jpg" alt="Campaign POS data" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>campaign-pos.jpg</span></div>'" /></div>
+        <div class="modal-img-wrap tall contain"><img src="/images/services/campaign-pos.jpg" alt="Campaign POS data" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>campaign-pos.jpg</span></div>'" /></div>
         <div class="modal-img-wrap tall"><img src="/images/services/campaign-dashboard.jpg" alt="Campaign management dashboard" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>campaign-dashboard.jpg</span></div>'" /></div>
       </div>
       <div class="modal-features">
@@ -346,8 +346,8 @@
     </div>
     <div class="modal-body">
       <div class="modal-images">
-        <div class="modal-img-wrap tall"><img src="/images/services/queue-monitor.jpg" alt="Queue monitoring dashboard" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>queue-monitor.jpg</span></div>'" /></div>
-        <div class="modal-img-wrap tall"><img src="/images/services/queue-dashboard.jpg" alt="Queue analytics" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>queue-dashboard.jpg</span></div>'" /></div>
+        <div class="modal-img-wrap queue-wide contain"><img src="/images/services/queue-monitor.jpg" alt="Queue monitoring dashboard" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>queue-monitor.jpg</span></div>'" /></div>
+        <div class="modal-img-wrap queue-wide contain"><img src="/images/services/queue-dashboard.jpg" alt="Queue analytics" onerror="this.parentNode.innerHTML='<div class=img-placeholder><span>queue-dashboard.jpg</span></div>'" /></div>
       </div>
       <div class="modal-features">
         <div class="feature-item"><div class="feature-dot"></div><p><strong class="sv-text">Realtidsövervakning</strong><strong class="en-text">Real-time monitoring</strong><span class="sv-text">Se antalet kunder i butiken och vid kassorna live – uppdateras kontinuerligt utan manuella räkningar.</span><span class="en-text">See the number of customers in-store and at checkouts live – updated continuously without manual counting.</span></p></div>
@@ -484,6 +484,8 @@
 .modal-img-wrap{border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:#F5F6FA;border:1px solid rgba(42,78,169,.1)}
 .modal-img-wrap.tall{aspect-ratio:4/3}
 .modal-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.modal-img-wrap.contain img{object-fit:contain;background:#f0f2f9}
+.modal-img-wrap.queue-wide{aspect-ratio:16/7}
 .img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#e8ebf7 0%,#c8d0ef 100%);display:flex;align-items:center;justify-content:center}
 .img-placeholder span{font-family:var(--font-heading,'Chakra Petch',sans-serif);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#3D4893;text-align:center;padding:0 1rem}
 .modal-features{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
