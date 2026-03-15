@@ -16,7 +16,6 @@ import Footer from '../components/Footer.astro';
   <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-photo"></div>
     <div class="container hero-inner">
       <div class="hero-content">
         <span class="section-label sv-text">Sigvardsson Consulting Group</span>
@@ -96,26 +95,6 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- ===== CLIENTS ===== -->
-  <section class="clients fade-up">
-    <div class="container">
-      <p class="clients-label sv-text">Referenskunder</p>
-      <p class="clients-label en-text">Reference clients</p>
-      <div class="clients-grid">
-        <span class="client-tag">Norgesgruppen</span>
-        <span class="client-tag">Kiwi</span>
-        <span class="client-tag">Meny</span>
-        <span class="client-tag">Coop</span>
-        <span class="client-tag">XL Bygg</span>
-        <span class="client-tag">Toys 'R' Us</span>
-        <span class="client-tag">Elgiganten</span>
-        <span class="client-tag">Media-Saturn</span>
-        <span class="client-tag">Ceconomy AG</span>
-        <span class="client-tag">TOP-TOY</span>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== ABOUT ===== -->
   <section class="about">
     <div class="container about-inner">
@@ -132,9 +111,6 @@ import Footer from '../components/Footer.astro';
         <a href="/our-process/" class="btn btn-primary en-text" style="margin-top:1.75rem;display:inline-block">Our approach →</a>
       </div>
       <div class="about-visual fade-up" style="animation-delay:120ms">
-        <div class="about-img-wrap">
-          <img src="/images/retail/staff-tablet-shelf.jpg" alt="Retail consultant working in store" loading="lazy" />
-        </div>
         <div class="about-card">
           <img src="/images/logos/S_blue.png" alt="SCG" class="about-card-logo" width="56" height="56" />
           <div class="about-card-text">
@@ -193,30 +169,6 @@ import Footer from '../components/Footer.astro';
       <div class="services-cta-wrap fade-up">
         <a href="/services/" class="btn btn-primary sv-text">Se hela tjänsteportföljen</a>
         <a href="/services/" class="btn btn-primary en-text">See full service portfolio</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== VISUAL BAND ===== -->
-  <section class="visual-band">
-    <div class="visual-band-overlay"></div>
-    <div class="container visual-band-inner">
-      <div class="vb-block fade-up">
-        <strong>250+</strong>
-        <span class="sv-text">Genomförda projekt<br/>i hela Norden</span>
-        <span class="en-text">Completed projects<br/>across the Nordics</span>
-      </div>
-      <div class="vb-divider"></div>
-      <div class="vb-block fade-up" style="animation-delay:100ms">
-        <strong>30+</strong>
-        <span class="sv-text">År av bevisad<br/>retailexpertis</span>
-        <span class="en-text">Years of proven<br/>retail expertise</span>
-      </div>
-      <div class="vb-divider"></div>
-      <div class="vb-block fade-up" style="animation-delay:200ms">
-        <strong>100%</strong>
-        <span class="sv-text">ROI levererat<br/>i varje projekt</span>
-        <span class="en-text">ROI delivered<br/>in every project</span>
       </div>
     </div>
   </section>
@@ -367,147 +319,7 @@ import Footer from '../components/Footer.astro';
     gap: 1.5rem;
   }
 
-  .hero-photo {
-    position: absolute;
-    inset: 0;
-    background-image: url('/images/retail/fresh-produce-aisle.jpg');
-    background-size: cover;
-    background-position: center 40%;
-    opacity: 0.13;
-    mix-blend-mode: luminosity;
-  }
-
-  /* ===== CLIENTS ===== */
-  .clients {
-    background: #fff;
-    padding: 2.25rem 2rem;
-    border-bottom: 1px solid rgba(1,13,96,0.07);
-  }
-
-  .clients-label {
-    text-align: center;
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-blue-lite);
-    margin-bottom: 1.25rem;
-  }
-
-  .clients-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    justify-content: center;
-    align-items: center;
-    max-width: 860px;
-    margin: 0 auto;
-  }
-
-  .client-tag {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    color: var(--color-navy-mid);
-    background: var(--color-off-white);
-    border: 1px solid rgba(1,13,96,0.1);
-    border-radius: 100px;
-    padding: 0.35rem 1rem;
-    transition: all 0.15s;
-  }
-
-  .client-tag:hover {
-    background: rgba(42,78,169,0.07);
-    border-color: rgba(42,78,169,0.25);
-    color: var(--color-navy);
-  }
-
-  /* ===== ABOUT IMAGE ===== */
-  .about-img-wrap {
-    border-radius: 16px;
-    overflow: hidden;
-    aspect-ratio: 16/10;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 12px 40px rgba(1,13,96,0.12);
-  }
-
-  .about-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-
-  .about-img-wrap:hover img {
-    transform: scale(1.03);
-  }
-
-  /* ===== VISUAL BAND ===== */
-  .visual-band {
-    position: relative;
-    background-image: url('/images/retail/retail-overview-birds-eye.jpg');
-    background-size: cover;
-    background-position: center 25%;
-    background-attachment: fixed;
-    padding: 5rem 2rem;
-    overflow: hidden;
-  }
-
-  .visual-band-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(1,13,96,0.88) 0%, rgba(42,78,169,0.82) 100%);
-  }
-
-  .visual-band-inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-  }
-
-  .vb-block {
-    flex: 1;
-    text-align: center;
-    padding: 1.5rem 2rem;
-    color: #fff;
-  }
-
-  .vb-block strong {
-    display: block;
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.75rem);
-    font-weight: 600;
-    color: #fff;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .vb-block span {
-    display: block;
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.72);
-    line-height: 1.5;
-  }
-
-  .vb-divider {
-    width: 1px;
-    height: 80px;
-    background: rgba(255,255,255,0.2);
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 700px) {
-    .visual-band-inner { flex-direction: column; gap: 2rem; }
-    .vb-divider { width: 60px; height: 1px; }
-    .visual-band { background-attachment: scroll; }
-    .clients-grid { gap: 0.5rem; }
-  }
+  .hero-logo-mark {
     width: 240px;
     height: 240px;
     opacity: 0.6;
