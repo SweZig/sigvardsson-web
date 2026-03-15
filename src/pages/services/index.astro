@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import ServiceModals from '../../components/ServiceModals.astro';
 
 // Service data - Swedish and English, grouped by category
 const categories = [
@@ -398,6 +399,7 @@ const categories = [
             <article
               class="service-card fade-up"
               style={`animation-delay: ${i * 80}ms`}
+              onclick={`openModal('${svc.id}')`}
             >
               <div class="card-accent" style={`background: ${svc.color}`}></div>
               <div class="card-body">
@@ -465,6 +467,7 @@ const categories = [
   </section>
 
   <Footer slot="footer" />
+<ServiceModals />
 </Layout>
 
 <style>
