@@ -133,7 +133,7 @@ import Footer from '../../components/Footer.astro';
     </div>
   </section>
 
-  <!-- ===== PROVEN PROCESS ===== -->
+  <!-- ===== INTERACTIVE PROCESS STEPPER ===== -->
   <section class="process-steps-section">
     <div class="container">
       <div class="section-intro fade-up">
@@ -144,43 +144,171 @@ import Footer from '../../components/Footer.astro';
         <p class="sv-text">En strukturerad 5-stegsprocess som säkerställer rätt resultat — varje gång.</p>
         <p class="en-text">A structured 5-step process that ensures the right results — every time.</p>
       </div>
-      <div class="steps-list">
-        <div class="step-row fade-up">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h3><span class="sv-text">Analys & kartläggning</span><span class="en-text">Analysis & mapping</span></h3>
-            <p><span class="sv-text">Vi analyserar din verksamhet på djupet — data, processer, organisation och marknad. Vi identifierar var den verkliga förbättringspotentialen finns och prioriterar åtgärder med högst ROI. Tidigt i analysen kartlägger vi också organisationens förändringskapacitet — vilka nyckelpersoner som driver förändring och var potentiellt motstånd kan uppstå.</span><span class="en-text">We deeply analyze your business — data, processes, organization and market. We identify where the real improvement potential lies and prioritize actions with the highest ROI. Early in the analysis we also map the organization's change capacity — which key people drive change and where potential resistance may arise.</span></p>
-          </div>
+
+      <!-- Stepper component -->
+      <div class="stepper-wrap fade-up">
+
+        <!-- Progress bar -->
+        <div class="stepper-bar" id="stepperBar">
+          <button class="step-btn active" data-step="0" onclick="stepGoTo(0)">
+            <div class="step-dot-wrap">
+              <div class="s-connector s-conn-left active" id="scl0"></div>
+              <div class="step-dot">01</div>
+              <div class="s-connector s-conn-right" id="scr0"></div>
+            </div>
+            <span class="step-short-label sv-text">Analys</span>
+            <span class="step-short-label en-text">Analysis</span>
+          </button>
+          <button class="step-btn" data-step="1" onclick="stepGoTo(1)">
+            <div class="step-dot-wrap">
+              <div class="s-connector s-conn-left" id="scl1"></div>
+              <div class="step-dot">02</div>
+              <div class="s-connector s-conn-right" id="scr1"></div>
+            </div>
+            <span class="step-short-label sv-text">Strategi</span>
+            <span class="step-short-label en-text">Strategy</span>
+          </button>
+          <button class="step-btn" data-step="2" onclick="stepGoTo(2)">
+            <div class="step-dot-wrap">
+              <div class="s-connector s-conn-left" id="scl2"></div>
+              <div class="step-dot">03</div>
+              <div class="s-connector s-conn-right" id="scr2"></div>
+            </div>
+            <span class="step-short-label sv-text">Genomförande</span>
+            <span class="step-short-label en-text">Implementation</span>
+          </button>
+          <button class="step-btn" data-step="3" onclick="stepGoTo(3)">
+            <div class="step-dot-wrap">
+              <div class="s-connector s-conn-left" id="scl3"></div>
+              <div class="step-dot">04</div>
+              <div class="s-connector s-conn-right" id="scr3"></div>
+            </div>
+            <span class="step-short-label sv-text">Mät & justera</span>
+            <span class="step-short-label en-text">Measure</span>
+          </button>
+          <button class="step-btn" data-step="4" onclick="stepGoTo(4)">
+            <div class="step-dot-wrap">
+              <div class="s-connector s-conn-left" id="scl4"></div>
+              <div class="step-dot">05</div>
+              <div class="s-connector s-conn-right" id="scr4"></div>
+            </div>
+            <span class="step-short-label sv-text">Skala upp</span>
+            <span class="step-short-label en-text">Scale up</span>
+          </button>
         </div>
-        <div class="step-row fade-up" style="animation-delay:80ms">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h3><span class="sv-text">Strategi & plan</span><span class="en-text">Strategy & plan</span></h3>
-            <p><span class="sv-text">Baserat på analysen tar vi fram en konkret strategi med tydliga mål, ansvar och tidplan. Vi definierar vilka av våra verktyg och metoder som passar bäst för din specifika situation. Change management-planen tas fram parallellt med projektplanen — med tydliga kommunikationsvägar, utbildningsspår och ägarskap på alla nivåer i organisationen.</span><span class="en-text">Based on the analysis, we develop a concrete strategy with clear goals, accountability and timeline. We define which of our tools and methods best fit your specific situation. The change management plan is developed in parallel with the project plan — with clear communication channels, training tracks and ownership at all levels of the organization.</span></p>
+
+        <!-- Content panels -->
+        <div class="stepper-content">
+
+          <div class="stepper-panel active" id="spanel-0">
+            <div class="sp-header">
+              <span class="sp-num">01</span>
+              <h3 class="sp-title sv-text">Analys & kartläggning</h3>
+              <h3 class="sp-title en-text">Analysis & mapping</h3>
+            </div>
+            <p class="sp-desc sv-text">Vi analyserar din verksamhet på djupet — data, processer, organisation och marknad. Vi identifierar var den verkliga förbättringspotentialen finns och prioriterar åtgärder med högst ROI. Tidigt kartlägger vi också organisationens förändringskapacitet — vilka nyckelpersoner som driver förändring och var potentiellt motstånd kan uppstå.</p>
+            <p class="sp-desc en-text">We deeply analyze your business — data, processes, organization and market. We identify where the real improvement potential lies and prioritize actions with the highest ROI. Early on we also map the organization's change capacity — which key people drive change and where potential resistance may arise.</p>
+            <div class="sp-points">
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Affärsanalys och datakartläggning</span><span class="en-text">Business analysis and data mapping</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Identifiering av förbättringsområden</span><span class="en-text">Identification of improvement areas</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Kartläggning av förändringskapacitet</span><span class="en-text">Mapping of change capacity</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Prioritering med högst ROI</span><span class="en-text">Prioritization of highest ROI initiatives</span></div>
+            </div>
+            <span class="sp-badge sv-text">📊 Datadriven insiktsrapport</span>
+            <span class="sp-badge en-text">📊 Data-driven insight report</span>
           </div>
-        </div>
-        <div class="step-row fade-up" style="animation-delay:160ms">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h3><span class="sv-text">Implementering</span><span class="en-text">Implementation</span></h3>
-            <p><span class="sv-text">Hands-on genomförande av projektet med ditt team. Mobil-first, datadrivet och med fokus på omedelbar effekt. Vi är med i butiken, inte bara i mötesrummet. Personalen involveras aktivt från dag ett — vi tror att bestående förändring uppstår när medarbetarna förstår varför, ser resultaten direkt och känner ägarskap över den nya arbetssättet.</span><span class="en-text">Hands-on project execution with your team. Mobile-first, data-driven and focused on immediate impact. We are in the store, not just in the meeting room. Staff are actively involved from day one — we believe lasting change happens when employees understand why, see results immediately and feel ownership of the new way of working.</span></p>
+
+          <div class="stepper-panel" id="spanel-1">
+            <div class="sp-header">
+              <span class="sp-num">02</span>
+              <h3 class="sp-title sv-text">Strategi & plan</h3>
+              <h3 class="sp-title en-text">Strategy & plan</h3>
+            </div>
+            <p class="sp-desc sv-text">Baserat på analysen tar vi fram en konkret strategi med tydliga mål, ansvar och tidplan. Vi definierar vilka av våra verktyg och metoder som passar bäst för din specifika situation. Change management-planen tas fram parallellt — med kommunikationsvägar, utbildningsspår och ägarskap på alla nivåer.</p>
+            <p class="sp-desc en-text">Based on the analysis, we develop a concrete strategy with clear goals, accountability and timeline. We define which of our tools and methods best fit your specific situation. The change management plan is developed in parallel — with communication channels, training tracks and ownership at all levels.</p>
+            <div class="sp-points">
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Tydlig projektplan med milstolpar</span><span class="en-text">Clear project plan with milestones</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Förändringsledningsplan i parallell</span><span class="en-text">Change management plan in parallel</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Val av verktyg och metoder</span><span class="en-text">Selection of tools and methods</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Kommunikation och ägarskap</span><span class="en-text">Communication channels and ownership</span></div>
+            </div>
+            <span class="sp-badge sv-text">🎯 Konkret handlingsplan dag 1</span>
+            <span class="sp-badge en-text">🎯 Concrete action plan from day 1</span>
           </div>
-        </div>
-        <div class="step-row fade-up" style="animation-delay:240ms">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h3><span class="sv-text">Mät & justera</span><span class="en-text">Measure & adjust</span></h3>
-            <p><span class="sv-text">Kontinuerlig mätning av resultat mot uppsatta mål. Vi justerar löpande baserat på data och insikter för att maximera effekten. Data används även som förändringskommunikation — när personalen ser konkreta siffror på vad det nya arbetssättet ger, stärks engagemanget och förändringen förankras djupare i organisationen.</span><span class="en-text">Continuous measurement of results against set targets. We continuously adjust based on data and insights to maximize impact. Data is also used as change communication — when staff see concrete numbers showing what the new way of working delivers, engagement strengthens and change becomes more deeply embedded in the organization.</span></p>
+
+          <div class="stepper-panel" id="spanel-2">
+            <div class="sp-header">
+              <span class="sp-num">03</span>
+              <h3 class="sp-title sv-text">Implementering</h3>
+              <h3 class="sp-title en-text">Implementation</h3>
+            </div>
+            <p class="sp-desc sv-text">Hands-on genomförande av projektet med ditt team. Mobil-first, datadrivet och fokuserat på omedelbar effekt. Vi är med i butiken, inte bara i mötesrummet. Personalen involveras aktivt från dag ett — bestående förändring uppstår när medarbetarna förstår varför och ser resultaten direkt.</p>
+            <p class="sp-desc en-text">Hands-on project execution with your team. Mobile-first, data-driven and focused on immediate impact. We are in the store, not just in the meeting room. Staff are actively involved from day one — lasting change happens when employees understand why and see results immediately.</p>
+            <div class="sp-points">
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Hands-on genomförande med ert team</span><span class="en-text">Hands-on execution with your team</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Kontinuerlig mätning och justering</span><span class="en-text">Continuous measurement and adjustment</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Utbildning och kompetensutveckling</span><span class="en-text">Training and competence development</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Mobila verktyg — se resultat direkt</span><span class="en-text">Mobile tools — see results immediately</span></div>
+            </div>
+            <span class="sp-badge sv-text">⚡ ROI från dag ett</span>
+            <span class="sp-badge en-text">⚡ ROI from day one</span>
           </div>
-        </div>
-        <div class="step-row fade-up" style="animation-delay:320ms">
-          <div class="step-num">05</div>
-          <div class="step-content">
-            <h3><span class="sv-text">Skala upp & befäst</span><span class="en-text">Scale up & consolidate</span></h3>
-            <p><span class="sv-text">När resultaten är bevisade skalar vi upp till fler butiker och kategorier. Vi bygger intern kompetens, dokumenterar processer och säkerställer att förändringen håller långsiktigt. Målet är att organisationen till slut inte behöver oss — att kompetensen, verktygen och kulturen för kontinuerlig förbättring lever vidare på egen hand.</span><span class="en-text">When results are proven, we scale up to more stores and categories. We build internal competence, document processes and ensure the change lasts long-term. The goal is for the organization to ultimately no longer need us — that the competence, tools and culture for continuous improvement live on independently.</span></p>
+
+          <div class="stepper-panel" id="spanel-3">
+            <div class="sp-header">
+              <span class="sp-num">04</span>
+              <h3 class="sp-title sv-text">Mät & justera</h3>
+              <h3 class="sp-title en-text">Measure & adjust</h3>
+            </div>
+            <p class="sp-desc sv-text">Kontinuerlig mätning av resultat mot uppsatta mål. Vi justerar löpande baserat på data och insikter för att maximera effekten. Data används också som förändringskommunikation — när personalen ser konkreta siffror på vad det nya arbetssättet ger, stärks engagemanget och förändringen förankras djupare.</p>
+            <p class="sp-desc en-text">Continuous measurement of results against set targets. We continuously adjust based on data and insights to maximize impact. Data is also used as change communication — when staff see concrete numbers showing what the new way of working delivers, engagement strengthens and change embeds more deeply.</p>
+            <div class="sp-points">
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Mätning mot satta mål och KPI:er</span><span class="en-text">Measurement against targets and KPIs</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Datadriven justering av insatser</span><span class="en-text">Data-driven adjustment of actions</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Synliga resultat stärker engagemanget</span><span class="en-text">Visible results strengthen engagement</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Regelbunden uppföljning med ledning</span><span class="en-text">Regular follow-up with management</span></div>
+            </div>
+            <span class="sp-badge sv-text">📈 Transparent resultatuppföljning</span>
+            <span class="sp-badge en-text">📈 Transparent result tracking</span>
           </div>
+
+          <div class="stepper-panel" id="spanel-4">
+            <div class="sp-header">
+              <span class="sp-num">05</span>
+              <h3 class="sp-title sv-text">Skala upp & befäst</h3>
+              <h3 class="sp-title en-text">Scale up & consolidate</h3>
+            </div>
+            <p class="sp-desc sv-text">När resultaten är bevisade skalar vi upp till fler butiker och kategorier. Vi bygger intern kompetens, dokumenterar processer och säkerställer att förändringen håller långsiktigt. Målet är att organisationen till slut inte behöver oss — att kompetensen, verktygen och kulturen för kontinuerlig förbättring lever vidare på egen hand.</p>
+            <p class="sp-desc en-text">When results are proven, we scale up to more stores and categories. We build internal competence, document processes and ensure the change lasts long-term. The goal is for the organization to ultimately no longer need us — that the competence, tools and culture for continuous improvement live on independently.</p>
+            <div class="sp-points">
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Utrullning till hela kedjan</span><span class="en-text">Rollout to the entire chain</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Intern kompetensuppbyggnad</span><span class="en-text">Internal competence building</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Processdokumentation och rutiner</span><span class="en-text">Process documentation and routines</span></div>
+              <div class="sp-point"><div class="sp-dot"></div><span class="sv-text">Målet: ni klarar er utan oss</span><span class="en-text">The goal: you thrive without us</span></div>
+            </div>
+            <span class="sp-badge sv-text">🚀 Bestående förändring</span>
+            <span class="sp-badge en-text">🚀 Lasting change</span>
+          </div>
+
         </div>
-      </div>
+
+        <!-- Navigation -->
+        <div class="stepper-nav">
+          <button class="snav-btn" id="sPrevBtn" onclick="stepNavigate(-1)" disabled>
+            <span class="sv-text">← Föregående</span>
+            <span class="en-text">← Previous</span>
+          </button>
+          <span class="step-counter" id="sStepCounter">
+            <span class="sv-text">Steg 1 av 5</span>
+            <span class="en-text">Step 1 of 5</span>
+          </span>
+          <button class="snav-btn snav-primary" id="sNextBtn" onclick="stepNavigate(1)">
+            <span class="sv-text">Nästa →</span>
+            <span class="en-text">Next →</span>
+          </button>
+        </div>
+
+      </div><!-- /.stepper-wrap -->
     </div>
   </section>
 
@@ -287,6 +415,84 @@ import Footer from '../../components/Footer.astro';
   </section>
 
   <Footer slot="footer" />
+
+  <script is:inline>
+    var sCurrent = 0;
+    var sTotal = 5;
+
+    function stepGoTo(n) {
+      var panels = document.querySelectorAll('.stepper-panel');
+      var btns   = document.querySelectorAll('.step-btn');
+
+      panels[sCurrent].classList.remove('active');
+      btns[sCurrent].classList.remove('active');
+
+      sCurrent = n;
+
+      panels[sCurrent].classList.add('active');
+      btns.forEach(function(b, i) {
+        b.classList.remove('active', 'done');
+        if (i < sCurrent) b.classList.add('done');
+        if (i === sCurrent) b.classList.add('active');
+      });
+
+      // Update connectors
+      for (var i = 0; i < sTotal; i++) {
+        var cl = document.getElementById('scl' + i);
+        var cr = document.getElementById('scr' + i);
+        if (!cl || !cr) continue;
+        if (i < sCurrent) { cl.classList.add('active'); cr.classList.add('active'); }
+        else if (i === sCurrent) { cl.classList.add('active'); cr.classList.remove('active'); }
+        else { cl.classList.remove('active'); cr.classList.remove('active'); }
+      }
+
+      // Buttons
+      var prevBtn = document.getElementById('sPrevBtn');
+      var nextBtn = document.getElementById('sNextBtn');
+      var counter = document.getElementById('sStepCounter');
+      if (prevBtn) prevBtn.disabled = sCurrent === 0;
+
+      var isLast = sCurrent === sTotal - 1;
+      var lang = document.documentElement.getAttribute('data-lang') || 'sv';
+
+      if (nextBtn) {
+        if (isLast) {
+          nextBtn.innerHTML = lang === 'en'
+            ? '<span class="en-text">Contact us →</span>'
+            : '<span class="sv-text">Kontakta oss →</span>';
+        } else {
+          nextBtn.innerHTML = '<span class="sv-text">Nästa →</span><span class="en-text">Next →</span>';
+        }
+        nextBtn.disabled = false;
+      }
+
+      if (counter) {
+        counter.innerHTML = lang === 'en'
+          ? '<span class="en-text">Step ' + (sCurrent + 1) + ' of ' + sTotal + '</span>'
+          : '<span class="sv-text">Steg ' + (sCurrent + 1) + ' av ' + sTotal + '</span>';
+      }
+    }
+
+    function stepNavigate(dir) {
+      if (dir === 1 && sCurrent === sTotal - 1) {
+        window.location.href = '/Contact/';
+        return;
+      }
+      var next = Math.max(0, Math.min(sTotal - 1, sCurrent + dir));
+      if (next !== sCurrent) stepGoTo(next);
+    }
+
+    // Keyboard navigation when stepper is in view
+    document.addEventListener('keydown', function(e) {
+      var stepper = document.querySelector('.stepper-wrap');
+      if (!stepper) return;
+      var rect = stepper.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      if (e.key === 'ArrowRight') stepNavigate(1);
+      if (e.key === 'ArrowLeft')  stepNavigate(-1);
+    });
+  </script>
 </Layout>
 
 <style>
@@ -390,7 +596,230 @@ import Footer from '../../components/Footer.astro';
 }
 
 /* ===== 5-STEP PROCESS ===== */
-.process-steps-section { background:var(--color-off-white);padding:5rem 2rem; }
+/* ===== INTERACTIVE STEPPER ===== */
+.stepper-wrap {
+  background: var(--color-white, #fff);
+  border-radius: 20px;
+  border: 1px solid rgba(42,78,169,0.12);
+  overflow: hidden;
+  margin-top: 3rem;
+  box-shadow: 0 4px 32px rgba(1,13,96,0.07);
+}
+
+.stepper-bar {
+  display: flex;
+  background: var(--color-navy, #010D60);
+  padding: 0 2rem;
+}
+
+.step-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 1.1rem 0.4rem 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s;
+}
+.step-btn:hover { opacity: 0.82; }
+
+.step-dot-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.s-connector {
+  position: absolute;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 0.35s;
+  background: rgba(144,162,207,0.4);
+}
+.s-conn-left  { left: 0; right: 50%; }
+.s-conn-right { left: 50%; right: 0; }
+.s-connector.active { background: #fff; }
+
+.step-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(144,162,207,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  background: var(--color-navy, #010D60);
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.step-btn.active .step-dot {
+  background: #fff;
+  border-color: #fff;
+  color: var(--color-navy, #010D60);
+  box-shadow: 0 0 0 5px rgba(255,255,255,0.18);
+}
+.step-btn.done .step-dot {
+  background: var(--color-blue-mid, #4867B6);
+  border-color: var(--color-blue-mid, #4867B6);
+  color: #fff;
+}
+
+.step-short-label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.4);
+  padding-bottom: 0.9rem;
+  transition: color 0.3s;
+  text-align: center;
+  white-space: nowrap;
+}
+.step-btn.active .step-short-label { color: rgba(255,255,255,0.9); }
+.step-btn.done  .step-short-label { color: rgba(255,255,255,0.6); }
+
+/* Content */
+.stepper-content { padding: 2.25rem 2.5rem 1.5rem; min-height: 300px; }
+
+.stepper-panel { display: none; }
+.stepper-panel.active {
+  display: block;
+  animation: spFadeUp 0.28s ease both;
+}
+
+@keyframes spFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sp-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.sp-num {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: rgba(1,13,96,0.1);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sp-title {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  color: var(--color-navy, #010D60);
+}
+
+.sp-desc {
+  font-size: 0.9rem;
+  color: rgba(1,13,96,0.65);
+  line-height: 1.78;
+  margin-bottom: 1.35rem;
+  max-width: 620px;
+}
+
+.sp-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.sp-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.855rem;
+  color: rgba(1,13,96,0.7);
+  line-height: 1.5;
+}
+
+.sp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-blue, #2A4EA9);
+  flex-shrink: 0;
+  margin-top: 0.42rem;
+}
+
+.sp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-off-white, #F5F6FA);
+  border: 1px solid rgba(42,78,169,0.15);
+  border-radius: 100px;
+  padding: 0.35rem 1rem;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-navy-mid, #1A277A);
+}
+
+/* Navigation */
+.stepper-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem 1.75rem;
+  border-top: 1px solid rgba(42,78,169,0.08);
+}
+
+.snav-btn {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  background: none;
+  border: 1px solid rgba(42,78,169,0.22);
+  color: var(--color-blue, #2A4EA9);
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.snav-btn:hover { background: var(--color-off-white, #F5F6FA); }
+.snav-btn:disabled { opacity: 0.28; cursor: default; pointer-events: none; }
+.snav-btn.snav-primary {
+  background: var(--color-navy, #010D60);
+  color: #fff;
+  border-color: var(--color-navy, #010D60);
+}
+.snav-btn.snav-primary:hover { background: var(--color-navy-mid, #1A277A); }
+
+.step-counter {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(1,13,96,0.4);
+}
+
+@media(max-width:700px) {
+  .step-short-label { display: none; }
+  .stepper-bar { padding: 0 0.75rem; }
+  .stepper-content { padding: 1.5rem 1.25rem 1rem; }
+  .stepper-nav { padding: 0.75rem 1.25rem 1.25rem; }
+  .sp-points { grid-template-columns: 1fr; }
+  .sp-num { font-size: 1.6rem; }
+  .snav-btn { padding: 0.55rem 0.9rem; font-size: 0.72rem; }
+}
 .steps-list { display:flex;flex-direction:column; }
 .step-row { display:grid;grid-template-columns:80px 1fr;gap:2.5rem;padding:2.5rem 0;border-bottom:1px solid rgba(1,13,96,.08); }
 .step-row:last-child { border-bottom:none; }
