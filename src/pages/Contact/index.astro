@@ -55,7 +55,8 @@ const servicesEn = [
   <Header slot="header" />
 
   <section class="contact-hero">
-    <div class="container">
+    <div class="hero-photo-bg"></div>
+    <div class="container" style="position:relative;z-index:1">
       <span class="section-label sv-text">Kontakt</span>
       <span class="section-label en-text">Contact</span>
       <h1>
@@ -75,15 +76,22 @@ const servicesEn = [
         <h2 class="sv-text">Skicka ett meddelande</h2>
         <h2 class="en-text">Send a message</h2>
 
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✓</div>
+          <h3 class="sv-text">Meddelande skickat!</h3>
+          <h3 class="en-text">Message sent!</h3>
+          <p class="sv-text">Tack för ditt meddelande. Vi återkommer vanligtvis inom 24 timmar.</p>
+          <p class="en-text">Thank you for your message. We usually respond within 24 hours.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mldnjqdv" method="POST">
+          <input type="hidden" name="_subject" value="Ny kontaktförfrågan — sigvardsson.org" />
 
           <div class="form-row">
             <div class="form-group">
-              <label class="sv-text" for="name-sv">Namn</label>
-              <label class="en-text" for="name-en">Name</label>
-              <input type="text" id="name-sv" name="name" required placeholder="Anna Andersson" />
+              <label class="sv-text" for="name">Namn</label>
+              <label class="en-text" for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Anna Andersson" />
             </div>
             <div class="form-group">
               <label class="sv-text" for="company">Företag</label>
@@ -101,13 +109,9 @@ const servicesEn = [
             <label class="sv-text" for="service">Tjänst / Intresse</label>
             <label class="en-text" for="service">Service / Interest</label>
             <select id="service" name="service">
-              <option value="" class="sv-text">Välj tjänst...</option>
-              <option value="" class="en-text">Select service...</option>
-              {servicesSv.map((svc, i) => (
-                <option value={svc} class="sv-text">{svc}</option>
-              ))}
-              {servicesEn.map((svc, i) => (
-                <option value={svc} class="en-text">{svc}</option>
+              <option value="">Välj tjänst / Select service...</option>
+              {servicesSv.map((svc) => (
+                <option value={svc}>{svc}</option>
               ))}
             </select>
           </div>
@@ -118,9 +122,10 @@ const servicesEn = [
             <textarea id="message" name="message" rows="5" placeholder="Berätta om era utmaningar och vad ni vill uppnå..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary submit-btn">
-            <span class="sv-text">Skicka meddelande</span>
-            <span class="en-text">Send message</span>
+          <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+            <span class="btn-text sv-text">Skicka meddelande</span>
+            <span class="btn-text en-text">Send message</span>
+            <span class="btn-loading" style="display:none">⟳</span>
           </button>
         </form>
       </div>
@@ -165,6 +170,42 @@ const servicesEn = [
   </section>
 
   <Footer slot="footer" />
+
+  <script is:inline>
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btnText = submitBtn.querySelectorAll('.btn-text');
+        const spinner = submitBtn.querySelector('.btn-loading');
+        submitBtn.disabled = true;
+        btnText.forEach(el => el.style.display = 'none');
+        spinner.style.display = 'inline-block';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            success.classList.add('visible');
+          } else {
+            throw new Error('Server error');
+          }
+        } catch {
+          btnText.forEach(el => el.style.display = '');
+          spinner.style.display = 'none';
+          submitBtn.disabled = false;
+          alert('Det gick inte att skicka. Försök igen eller maila oss direkt på info@sigvardsson.org');
+        }
+      });
+    }
+  </script>
 </Layout>
 
 <style>
@@ -174,6 +215,18 @@ const servicesEn = [
     background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
     color: var(--color-white);
     padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/retail/self-checkout-ica.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    opacity: 0.10;
+    mix-blend-mode: luminosity;
   }
 
   .contact-hero .section-label { color: var(--color-blue-lite); }
@@ -257,6 +310,47 @@ const servicesEn = [
     padding: 0.9rem;
     font-size: 1rem;
     margin-top: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+  .btn-loading { display: inline-block; animation: spin 0.8s linear infinite; font-size: 1.2rem; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--color-off-white);
+    border-radius: 16px;
+    border: 1px solid rgba(42,78,169,0.15);
+  }
+
+  .form-success.visible { display: block; }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-navy);
+    color: #fff;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+  }
+
+  .form-success h3 {
+    font-size: 1.4rem;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .form-success p {
+    color: rgba(1,13,96,0.65);
+    line-height: 1.7;
   }
 
   /* Info */
