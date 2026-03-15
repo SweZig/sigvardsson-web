@@ -9,6 +9,7 @@ const categories = [
 
   {
     id: 'advisory',
+    bgImage: '/images/retail/staff-tablet-shelf.jpg',
     iconSv: '💡',
     labelSv: 'Rådgivning & Strategi',
     labelEn: 'Advisory & Strategy',
@@ -97,6 +98,7 @@ const categories = [
 
   {
     id: 'technology',
+    bgImage: '/images/retail/self-checkout-ica.jpg',
     iconSv: '⚙️',
     labelSv: 'Teknologi & System',
     labelEn: 'Technology & Systems',
@@ -186,6 +188,7 @@ const categories = [
 
   {
     id: 'retail-optimization',
+    bgImage: '/images/retail/dry-goods-aisle.jpg',
     iconSv: '🛒',
     labelSv: 'Retail Optimering',
     labelEn: 'Retail Optimization',
@@ -376,26 +379,26 @@ const categories = [
   <!-- ===== SERVICE CATEGORIES ===== -->
   {categories.map((cat, catIdx) => (
     <section class={`category-section ${catIdx % 2 === 1 ? 'category-alt' : ''}`} id={cat.id}>
-      <div class="container">
 
-        <!-- Category Header -->
-        <div class="category-header fade-up">
-          <div class="cat-header-left">
-            <span class="cat-emoji">{cat.iconSv}</span>
-            <div>
-              <h2 class="cat-title">
-                <span class="sv-text">{cat.labelSv}</span>
-                <span class="en-text">{cat.labelEn}</span>
-              </h2>
-              <p class="cat-desc">
-                <span class="sv-text">{cat.descSv}</span>
-                <span class="en-text">{cat.descEn}</span>
-              </p>
-            </div>
+      <!-- Category header with photo band -->
+      <div class="cat-photo-band" style={`background-image: url('${cat.bgImage}')`}>
+        <div class="cat-photo-overlay"></div>
+        <div class="container cat-photo-inner">
+          <span class="cat-photo-icon">{cat.iconSv}</span>
+          <div>
+            <h2 class="cat-photo-title">
+              <span class="sv-text">{cat.labelSv}</span>
+              <span class="en-text">{cat.labelEn}</span>
+            </h2>
+            <p class="cat-photo-desc">
+              <span class="sv-text">{cat.descSv}</span>
+              <span class="en-text">{cat.descEn}</span>
+            </p>
           </div>
         </div>
+      </div>
 
-        <!-- Services Grid -->
+      <div class="container">
         <div class="services-grid">
           {cat.services.map((svc, i) => (
             <article
@@ -582,42 +585,60 @@ const categories = [
   }
 
   /* ===== CATEGORY SECTIONS ===== */
+  /* ===== CATEGORY PHOTO BANDS ===== */
+  .cat-photo-band {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    overflow: hidden;
+  }
+
+  .cat-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(1,13,96,0.93) 0%, rgba(26,39,122,0.88) 55%, rgba(42,78,169,0.75) 100%);
+  }
+
+  .cat-photo-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .cat-photo-icon {
+    font-size: 2.75rem;
+    line-height: 1;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  }
+
+  .cat-photo-title {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .cat-photo-desc {
+    color: rgba(255,255,255,0.75);
+    max-width: 680px;
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+
   .category-section {
-    padding: 5rem 2rem;
+    padding: 0 0 4rem;
   }
 
   .category-alt {
     background: var(--color-off-white);
   }
 
-  .category-header {
-    margin-bottom: 3rem;
-  }
-
-  .cat-header-left {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-
-  .cat-emoji {
-    font-size: 2.5rem;
-    line-height: 1;
-    margin-top: 0.2rem;
-    flex-shrink: 0;
-  }
-
-  .cat-title {
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
-    color: var(--color-navy);
-    margin-bottom: 0.6rem;
-  }
-
-  .cat-desc {
-    color: var(--color-blue-mid);
-    max-width: 700px;
-    line-height: 1.65;
-    font-size: 1rem;
+  .category-section .container {
+    padding-top: 3rem;
   }
 
   /* ===== SERVICE CARDS ===== */
@@ -634,7 +655,8 @@ const categories = [
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
   }
 
   .category-alt .service-card {
@@ -642,13 +664,19 @@ const categories = [
   }
 
   .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(1,13,96,0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(1,13,96,0.14);
+    border-color: rgba(1,13,96,0.18);
   }
 
   .card-accent {
     height: 4px;
     width: 100%;
+    transition: height 0.25s ease;
+  }
+
+  .service-card:hover .card-accent {
+    height: 6px;
   }
 
   .card-body {

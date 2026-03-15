@@ -159,7 +159,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="service-pillars">
-        <a href="/services/#advisory" class="pillar fade-up">
+        <a href="/services/#advisory" class="pillar pillar-advisory fade-up">
           <div class="pillar-icon">💡</div>
           <h3 class="sv-text">Rådgivning & Strategi</h3>
           <h3 class="en-text">Advisory & Strategy</h3>
@@ -169,7 +169,7 @@ import Footer from '../components/Footer.astro';
           <span class="pillar-cta en-text">Learn more →</span>
         </a>
 
-        <a href="/services/#technology" class="pillar fade-up" style="animation-delay:120ms">
+        <a href="/services/#technology" class="pillar pillar-tech fade-up" style="animation-delay:120ms">
           <div class="pillar-icon">⚙️</div>
           <h3 class="sv-text">Teknologi & System</h3>
           <h3 class="en-text">Technology & Systems</h3>
@@ -179,7 +179,7 @@ import Footer from '../components/Footer.astro';
           <span class="pillar-cta en-text">Learn more →</span>
         </a>
 
-        <a href="/services/#retail-optimization" class="pillar fade-up" style="animation-delay:240ms">
+        <a href="/services/#retail-optimization" class="pillar pillar-retail fade-up" style="animation-delay:240ms">
           <div class="pillar-icon">🛒</div>
           <h3 class="sv-text">Retail Optimering</h3>
           <h3 class="en-text">Retail Optimization</h3>
@@ -689,20 +689,60 @@ import Footer from '../components/Footer.astro';
     padding: 2.5rem 2rem;
     border: 1px solid rgba(1,13,96,0.08);
     text-decoration: none;
-    transition: all 0.25s ease;
+    transition: all 0.28s ease;
     display: block;
+    position: relative;
+    overflow: hidden;
   }
 
-  .pillar:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(1,13,96,0.12);
-    border-color: var(--color-blue-lite);
+  .pillar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transition: height 0.28s ease, opacity 0.28s ease;
+    opacity: 0;
+    border-radius: 0 0 16px 16px;
   }
+
+  .pillar-advisory::before { background: linear-gradient(90deg, #010D60, #2A4EA9); }
+  .pillar-tech::before     { background: linear-gradient(90deg, #1A277A, #4867B6); }
+  .pillar-retail::before   { background: linear-gradient(90deg, #3D4893, #90A2CF); }
+
+  .pillar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(1,13,96,0.13);
+  }
+
+  .pillar:hover::before {
+    height: 4px;
+    opacity: 1;
+  }
+
+  .pillar-advisory:hover {
+    border-color: rgba(1,13,96,0.25);
+    background: linear-gradient(160deg, #fff 60%, rgba(1,13,96,0.03));
+  }
+  .pillar-tech:hover {
+    border-color: rgba(26,39,122,0.25);
+    background: linear-gradient(160deg, #fff 60%, rgba(42,78,169,0.04));
+  }
+  .pillar-retail:hover {
+    border-color: rgba(61,72,147,0.25);
+    background: linear-gradient(160deg, #fff 60%, rgba(144,162,207,0.08));
+  }
+
+  .pillar:hover .pillar-cta { color: var(--color-navy); }
+  .pillar:hover .pillar-icon { transform: scale(1.15); }
 
   .pillar-icon {
     font-size: 2.25rem;
     margin-bottom: 1.1rem;
     line-height: 1;
+    display: inline-block;
+    transition: transform 0.28s ease;
   }
 
   .pillar h3 {
@@ -724,6 +764,7 @@ import Footer from '../components/Footer.astro';
     font-weight: 500;
     color: var(--color-blue);
     letter-spacing: 0.03em;
+    transition: color 0.2s;
   }
 
   .services-cta-wrap {

@@ -6,7 +6,9 @@
     { "source": "/retail-optimering", "destination": "/services/", "permanent": true },
     { "source": "/retail-optimering/", "destination": "/services/", "permanent": true },
     { "source": "/what-we-do", "destination": "/our-process/", "permanent": true },
-    { "source": "/what-we-do/", "destination": "/our-process/", "permanent": true }
+    { "source": "/what-we-do/", "destination": "/our-process/", "permanent": true },
+    { "source": "/customer-satisfaction", "destination": "/services/", "permanent": true },
+    { "source": "/customer-satisfaction/", "destination": "/services/", "permanent": true }
   ],
   "headers": [
     {
