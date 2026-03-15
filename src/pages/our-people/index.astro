@@ -79,7 +79,8 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
   <Header slot="header" />
 
   <section class="page-hero">
-    <div class="container">
+    <div class="hero-photo-bg"></div>
+    <div class="container" style="position:relative;z-index:1">
       <span class="section-label sv-text">Vårt team</span>
       <span class="section-label en-text">Our team</span>
       <h1>
@@ -189,6 +190,17 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
     background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
     color: var(--color-white);
     padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/retail/staff-tablet-shelf.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    opacity: 0.12;
+    mix-blend-mode: luminosity;
   }
   .page-hero .section-label { color: var(--color-blue-lite); }
   .page-hero h1 { font-size: clamp(2.2rem,5vw,3.5rem); line-height: 1.1; margin: .75rem 0 1.25rem; }

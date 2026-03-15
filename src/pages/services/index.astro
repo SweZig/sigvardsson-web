@@ -321,6 +321,7 @@ const categories = [
   <!-- ===== PAGE HERO ===== -->
   <section class="services-hero">
     <div class="hero-bg-pattern"></div>
+    <div class="hero-photo-bg"></div>
     <div class="container">
       <span class="section-label sv-text">Vår tjänsteportfölj</span>
       <span class="section-label en-text">Our service portfolio</span>
@@ -479,6 +480,16 @@ const categories = [
     padding: 5rem 2rem 4rem;
     position: relative;
     overflow: hidden;
+  }
+
+  .hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/retail/dry-goods-aisle.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.11;
+    mix-blend-mode: luminosity;
   }
 
   .hero-bg-pattern {

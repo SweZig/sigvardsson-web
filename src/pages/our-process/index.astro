@@ -14,7 +14,8 @@ import Footer from '../../components/Footer.astro';
 
   <!-- ===== HERO ===== -->
   <section class="page-hero">
-    <div class="container">
+    <div class="hero-photo-bg"></div>
+    <div class="container" style="position:relative;z-index:1">
       <span class="section-label sv-text">Vår approach</span>
       <span class="section-label en-text">Our Approach</span>
       <h1>
@@ -183,6 +184,17 @@ import Footer from '../../components/Footer.astro';
     </div>
   </section>
 
+  <!-- ===== VISUAL BAND ===== -->
+  <section class="retail-band">
+    <div class="retail-band-overlay"></div>
+    <div class="container retail-band-inner fade-up">
+      <p class="retail-band-label sv-text">Beprövad metodik</p>
+      <p class="retail-band-label en-text">Proven methodology</p>
+      <h2 class="retail-band-heading sv-text">Från dag ett till bestående resultat</h2>
+      <h2 class="retail-band-heading en-text">From day one to lasting results</h2>
+    </div>
+  </section>
+
   <!-- ===== CHANGE MANAGEMENT CALLOUT ===== -->
   <section class="change-mgmt fade-up">
     <div class="container">
@@ -279,7 +291,8 @@ import Footer from '../../components/Footer.astro';
 
 <style>
 /* ===== HERO ===== */
-.page-hero { background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-blue) 100%);color:var(--color-white);padding:5rem 2rem 4rem; }
+.page-hero { background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-blue) 100%);color:var(--color-white);padding:5rem 2rem 4rem;position:relative;overflow:hidden; }
+.hero-photo-bg { position:absolute;inset:0;background-image:url('/images/retail/dry-goods-aisle.jpg');background-size:cover;background-position:center;opacity:0.10;mix-blend-mode:luminosity; }
 .page-hero .section-label { color:var(--color-blue-lite); }
 .page-hero h1 { font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;margin:.75rem 0 1.25rem; }
 .hero-sub { font-size:1.05rem;color:rgba(255,255,255,.75);max-width:640px;line-height:1.7; }
@@ -477,5 +490,39 @@ import Footer from '../../components/Footer.astro';
 @media(max-width:600px) {
   .step-row { grid-template-columns:1fr;gap:1rem; }
   .principles-grid { grid-template-columns:1fr; }
+}
+
+/* ===== RETAIL BAND ===== */
+.retail-band {
+  position: relative;
+  background-image: url('/images/retail/supermarket-aisle-wide.jpg');
+  background-size: cover;
+  background-position: center 60%;
+  padding: 5rem 2rem;
+  overflow: hidden;
+}
+.retail-band-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(1,13,96,0.87) 0%, rgba(61,72,147,0.83) 100%);
+}
+.retail-band-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.retail-band-label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-blue-lite);
+  margin-bottom: 1rem;
+  display: block;
+}
+.retail-band-heading {
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  color: #fff;
+  line-height: 1.2;
 }
 </style>
