@@ -144,7 +144,11 @@ const schemaProduct = {
         <span class="en-text">A product by</span>
         <a href="/" class="powered-link">Sigvardsson Consulting Group</a>
       </div>
-      <img src="/images/products/retail-apps-logo-transparent.png" alt="Retail Apps" class="product-logo" /></div>
+      <img src="/images/products/retail-apps-logo-transparent.png" alt="Retail Apps" class="product-logo" />
+      <h1 class="hero-tagline">
+        <span class="sv-text">9 appar. En plattform. Mätbara resultat.</span>
+        <span class="en-text">9 apps. One platform. Measurable results.</span>
+      </h1>
       <p class="hero-desc sv-text">
         En svit av datadrivna mobilapplikationer för nordisk detaljhandel. Mobil-first, kopplad till POS-data och bevisad effekt i 100+ genomförda projekt hos ledande nordiska kedjor.
       </p>
@@ -296,6 +300,8 @@ const schemaProduct = {
     background: linear-gradient(135deg, var(--ra-dark) 0%, var(--ra-color) 100%);
   }
   .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+  .hero-tagline { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 500; color: #fff; margin: 0 0 1.5rem; line-height: 1.15; }
+
   .powered-by {
     font-family: var(--font-heading);
     font-size: 0.72rem;
@@ -309,7 +315,7 @@ const schemaProduct = {
   }
   .powered-link { color: rgba(255,255,255,0.75); text-decoration: none; }
   .powered-link:hover { color: #fff; }
-  .product-logo { height: 56px; width: auto; margin-bottom: 1.75rem; }
+  .product-logo { height: 72px; width: auto; margin-bottom: 1rem; }
   .hero-desc {
     font-size: 1.1rem;
     color: rgba(255,255,255,0.82);
