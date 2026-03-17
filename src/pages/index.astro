@@ -254,6 +254,58 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- ===== CTA BAND ===== -->
+
+  <!-- ===== PRODUCTS BAND ===== -->
+  <section class="products-band">
+    <div class="container">
+      <div class="pb-header fade-up">
+        <span class="section-label sv-text">Våra produkter</span>
+        <span class="section-label en-text">Our products</span>
+        <h2>
+          <span class="sv-text">Bevisad mjukvara. Mätbara resultat.</span>
+          <span class="en-text">Proven software. Measurable results.</span>
+        </h2>
+        <p class="sv-text">Utöver konsulttjänster har SCG utvecklat egna mjukvaruprodukter för nordisk detaljhandel.</p>
+        <p class="en-text">Beyond consulting, SCG has developed its own software products for Nordic retail.</p>
+      </div>
+      <div class="pb-grid fade-up">
+        <a href="/products/retail-apps/" class="pb-card">
+          <div class="pb-logo pb-logo-teal">
+            <img src="/images/products/retail-apps-logo-transparent.png" alt="Retail Apps" />
+          </div>
+          <div class="pb-body">
+            <p class="sv-text">9 datadrivna mobilappar för butiksdrift — hylloptimering, kampanj, kundflöde, kö, prissättning och mer.</p>
+            <p class="en-text">9 data-driven mobile apps for store operations — shelf optimization, campaigns, customer flow, queue management, pricing and more.</p>
+            <span class="pb-link sv-text">Utforska Retail Apps →</span>
+            <span class="pb-link en-text">Explore Retail Apps →</span>
+          </div>
+        </a>
+        <a href="/products/feedback-app/" class="pb-card">
+          <div class="pb-logo pb-logo-teal">
+            <img src="/images/products/feedback-app-logo-transparent.png" alt="Feedback App" />
+          </div>
+          <div class="pb-body">
+            <p class="sv-text">Systematiserad kundnöjdhetsmätning med realtids-dashboard, automatiska alerts och korrelationsanalys mot KPI:er.</p>
+            <p class="en-text">Systematized customer satisfaction measurement with real-time dashboard, automatic alerts and correlation analysis against KPIs.</p>
+            <span class="pb-link sv-text">Utforska Feedback App →</span>
+            <span class="pb-link en-text">Explore Feedback App →</span>
+          </div>
+        </a>
+        <a href="/products/saldo4/" class="pb-card">
+          <div class="pb-logo pb-logo-dark">
+            <img src="/images/products/saldo4-logo-transparent.png" alt="Saldo4" />
+          </div>
+          <div class="pb-body">
+            <p class="sv-text">Datadrivet lagerhanteringssystem — konkreta dagliga åtgärdslistor som reducerar kapitalbindning och ökar stockturn.</p>
+            <p class="en-text">Data-driven inventory management — concrete daily action lists that reduce capital tied up and increase stock turn.</p>
+            <span class="pb-link sv-text">Utforska Saldo4 →</span>
+            <span class="pb-link en-text">Explore Saldo4 →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="container">
       <div class="cta-band-inner fade-up">
@@ -865,4 +917,33 @@ import Footer from '../components/Footer.astro';
     .pillar { padding: 1.5rem 1.25rem; }
     .cta-band { padding: 3rem 1.25rem; }
   }
+
+  /* ===== PRODUCTS BAND ===== */
+  .products-band { padding: var(--section-pad); background: var(--color-off-white); }
+  .pb-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+  .pb-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--color-navy); margin: 0.5rem 0 1rem; }
+  .pb-header p { color: #555; font-size: 1rem; line-height: 1.7; }
+  .pb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .pb-card {
+    display: flex; flex-direction: column;
+    background: #fff; border: 1px solid rgba(1,13,96,0.1);
+    border-radius: 12px; overflow: hidden; text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .pb-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(1,13,96,0.12); border-color: #215168; }
+  .pb-logo {
+    height: 90px; display: flex; align-items: center;
+    justify-content: center; padding: 1rem 1.5rem;
+  }
+  .pb-logo-teal { background: #215168; }
+  .pb-logo-dark { background: #193d50; }
+  .pb-logo img { max-height: 46px; width: auto; mix-blend-mode: screen; }
+  .pb-body { padding: 1.25rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+  .pb-body p { font-size: 0.88rem; color: #555; line-height: 1.65; margin: 0; flex: 1; }
+  .pb-link { font-family: var(--font-heading); font-size: 0.8rem; color: #215168; letter-spacing: 0.03em; }
+  .pb-card:hover .pb-link { color: var(--color-navy); }
+
+  @media (max-width: 900px) { .pb-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .products-band { padding: 3rem 1.25rem; } }
+
 </style>

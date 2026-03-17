@@ -478,6 +478,17 @@ const categories = [
                   <span class="en-text">Read more →</span>
                 </a>
               )}
+              {svc.poweredBy && (
+                <a
+                  href={svc.poweredBy.href}
+                  class="card-powered-by"
+                  onclick="event.stopPropagation()"
+                  title={`Powered by ${svc.poweredBy.label}`}
+                >
+                  <span>Powered by</span>
+                  <strong>{svc.poweredBy.label}</strong>
+                </a>
+              )}
             </article>
           ))}
         </div>
@@ -899,4 +910,15 @@ const categories = [
     .services-cta { padding: 3rem 1.25rem; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
   }
+
+  .card-powered-by {
+    display: flex; align-items: center; gap: 0.35rem;
+    padding: 0.35rem 0.75rem 0.6rem;
+    font-family: var(--font-heading); font-size: 0.65rem;
+    letter-spacing: 0.07em; color: #888; text-decoration: none;
+    border-top: 1px solid rgba(1,13,96,0.06);
+    transition: color 0.2s;
+  }
+  .card-powered-by:hover { color: #215168; }
+  .card-powered-by strong { color: #215168; font-weight: 500; }
 </style>

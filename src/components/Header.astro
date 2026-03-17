@@ -37,6 +37,39 @@
         <span class="sv-text" data-no="Vår tilnærming" data-da="Vores tilgang" data-fi="Lähestymistapamme">Vår approach</span>
         <span class="en-text">Our Approach</span>
       </a>
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-btn" aria-expanded="false">
+          <span class="sv-text">Produkter</span>
+          <span class="en-text">Products</span>
+          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="/products/retail-apps/" class="dropdown-item">
+            <span class="di-logo di-logo-dark"><img src="/images/products/retail-apps-logo-transparent.png" alt="" /></span>
+            <span class="di-text">
+              <strong>Retail Apps</strong>
+              <em class="sv-text">9 appar för butiksdrift</em>
+              <em class="en-text">9 apps for store operations</em>
+            </span>
+          </a>
+          <a href="/products/feedback-app/" class="dropdown-item">
+            <span class="di-logo di-logo-dark"><img src="/images/products/feedback-app-logo-transparent.png" alt="" /></span>
+            <span class="di-text">
+              <strong>Feedback App</strong>
+              <em class="sv-text">Kundnöjdhetsmätning i realtid</em>
+              <em class="en-text">Real-time customer satisfaction</em>
+            </span>
+          </a>
+          <a href="/products/saldo4/" class="dropdown-item">
+            <span class="di-logo di-logo-dark"><img src="/images/products/saldo4-logo-transparent.png" alt="" /></span>
+            <span class="di-text">
+              <strong>Saldo4</strong>
+              <em class="sv-text">Datadrivet lagerhanteringssystem</em>
+              <em class="en-text">Data-driven inventory management</em>
+            </span>
+          </a>
+        </div>
+      </div>
       <a href="/our-people/" class="nav-link">
         <span class="sv-text" data-no="Vårt team" data-da="Vores team" data-fi="Tiimimme">Vårt team</span>
         <span class="en-text">Our Team</span>
@@ -94,6 +127,13 @@
       <a href="/our-people/" class="mobile-nav-link">
         <span class="sv-text" data-no="Vårt team" data-da="Vores team" data-fi="Tiimimme">Vårt team</span><span class="en-text">Our Team</span>
       </a>
+      <div class="mobile-nav-section">
+        <span class="mobile-nav-section-label sv-text">Produkter</span>
+        <span class="mobile-nav-section-label en-text">Products</span>
+      </div>
+      <a href="/products/retail-apps/" class="mobile-nav-link">Retail Apps</a>
+      <a href="/products/feedback-app/" class="mobile-nav-link">Feedback App</a>
+      <a href="/products/saldo4/" class="mobile-nav-link">Saldo4</a>
       <a href="/Contact/" class="mobile-nav-link mobile-nav-cta">
         <span class="sv-text" data-no="Kontakt" data-da="Kontakt" data-fi="Yhteystiedot">Kontakt</span><span class="en-text">Contact</span>
       </a>
@@ -450,6 +490,50 @@
     .lang-current { padding: 0.25rem 0.5rem; font-size: 0.72rem; min-width: 60px; }
     .lang-menu { min-width: 130px; }
   }
+
+  /* ===== PRODUCTS DROPDOWN ===== */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-btn {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Chakra Petch', sans-serif; font-weight: 500;
+    font-size: 0.82rem; letter-spacing: 0.04em;
+    color: var(--color-navy-mid); padding: 0.45rem 0.75rem;
+    border-radius: 6px; display: flex; align-items: center; gap: 0.35rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-dropdown-btn:hover { background: var(--color-off-white); color: var(--color-navy); }
+  .dropdown-arrow { transition: transform 0.2s; flex-shrink: 0; }
+  .nav-dropdown.open .dropdown-arrow { transform: rotate(180deg); }
+  .nav-dropdown-menu {
+    display: none; position: absolute; top: calc(100% + 6px); left: 50%;
+    transform: translateX(-50%); background: #fff;
+    border: 1px solid rgba(1,13,96,0.1); border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(1,13,96,0.12); padding: 0.5rem;
+    min-width: 260px; z-index: 200;
+  }
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .dropdown-item {
+    display: flex; align-items: center; gap: 0.85rem;
+    padding: 0.6rem 0.75rem; border-radius: 8px; text-decoration: none;
+    transition: background 0.15s; color: inherit;
+  }
+  .dropdown-item:hover { background: var(--color-off-white); }
+  .di-logo {
+    width: 80px; height: 28px; flex-shrink: 0;
+    display: flex; align-items: center;
+    background: #215168; border-radius: 4px; overflow: hidden; padding: 4px 6px;
+  }
+  .di-logo-dark { background: #193d50; }
+  .di-logo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; }
+  .di-text { display: flex; flex-direction: column; gap: 0.1rem; }
+  .di-text strong { font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; color: var(--color-navy); font-weight: 500; }
+  .di-text em { font-style: normal; font-size: 0.72rem; color: #888; }
+
+  .mobile-nav-section { padding: 0.75rem 1.25rem 0.25rem; }
+  .mobile-nav-section-label {
+    font-family: 'Chakra Petch', sans-serif; font-size: 0.65rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; font-weight: 500;
+  }
 </style>
 
 <script>
@@ -579,4 +663,25 @@
     picker?.classList.remove('open');
     currentBtn?.setAttribute('aria-expanded', 'false');
   });
+
+  // ===== PRODUCTS DROPDOWN =====
+  const dropdownWrap = document.querySelector('.nav-dropdown');
+  const dropdownBtn = document.querySelector('.nav-dropdown-btn');
+  if (dropdownBtn) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownWrap.classList.toggle('open');
+      dropdownBtn.setAttribute('aria-expanded', dropdownWrap.classList.contains('open'));
+    });
+    document.addEventListener('click', () => {
+      dropdownWrap.classList.remove('open');
+      dropdownBtn.setAttribute('aria-expanded', 'false');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdownWrap.classList.remove('open');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 </script>
