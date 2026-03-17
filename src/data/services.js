@@ -357,7 +357,7 @@ export const services = [
     clientsSv: 'Toys R Us, XL-Bygg, Ultimate Padel',
     clientsEn: 'Toys R Us, XL-Bygg, Ultimate Padel',
     projects: '30+',
-    poweredBy: { label: 'Feedback App', href: '/products/feedback-app/' },
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'NPS-insamling via digitala knappar och QR-koder',
       'Realtids-dashboard för hela organisationen',
@@ -546,7 +546,7 @@ export const services = [
     clientsSv: 'XL Bygg, Toys R Us',
     clientsEn: 'XL Bygg, Toys R Us',
     projects: '80+',
-    poweredBy: { label: 'Feedback App', href: '/products/feedback-app/' },
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Analoga och digitala feedbacklösningar',
       'CSI-temperaturindikatorer för hela organisationen',
