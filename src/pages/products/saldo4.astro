@@ -55,9 +55,7 @@ const schemaProduct = {
         <span class="en-text">Part of</span>
         <a href="/products/retail-apps/" class="powered-link">Retail Apps</a>
       </div>
-      <div class="saldo4-wordmark">
-        <span class="s4-name">Saldo</span><span class="s4-num">4</span>
-      </div>
+      <img src="/images/products/saldo4-logo.png" alt="Saldo4" class="saldo4-logo" />
       <p class="hero-tagline sv-text">Perfekt lager. Varje dag.</p>
       <p class="hero-tagline en-text">Perfect inventory. Every day.</p>
       <p class="hero-desc sv-text">
@@ -141,9 +139,7 @@ const schemaProduct = {
         </div>
       </div>
       <div class="s4-badge-wrap">
-        <div class="s4-badge-large">
-          <span class="s4-name-lg">Saldo</span><span class="s4-num-lg">4</span>
-        </div>
+        <img src="/images/products/saldo4-logo.png" alt="Saldo4" class="saldo4-logo-md" />
         <p class="scg-attribution sv-text">En produkt från <a href="/">Sigvardsson Consulting Group</a></p>
         <p class="scg-attribution en-text">A product by <a href="/">Sigvardsson Consulting Group</a></p>
         <p class="ra-attribution"><a href="/products/retail-apps/">Del av Retail Apps-sviten →</a></p>
@@ -180,10 +176,13 @@ const schemaProduct = {
   .powered-link:hover { color: #fff; }
   .separator { opacity: 0.3; }
 
-  /* Saldo4 wordmark */
-  .saldo4-wordmark { display: flex; align-items: baseline; gap: 0; margin-bottom: 0.5rem; }
-  .s4-name { font-family: var(--font-heading); font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 500; color: #fff; letter-spacing: -0.02em; }
-  .s4-num { font-family: var(--font-heading); font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 500; color: #4ecfa0; letter-spacing: -0.02em; }
+  /* Saldo4 logo — mix-blend-mode:screen removes black bg, keeps white+blue */
+  .saldo4-logo {
+    height: 72px;
+    width: auto;
+    margin-bottom: 1.25rem;
+    mix-blend-mode: screen;
+  }
   .hero-tagline { font-family: var(--font-heading); font-size: 1.1rem; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; margin-bottom: 1.5rem; }
   .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 600px; margin-bottom: 1.5rem; }
   .hero-results { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem; }
@@ -215,9 +214,7 @@ const schemaProduct = {
   .client-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
   .client-pill { font-family: var(--font-heading); font-size: 0.78rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); }
   .s4-badge-wrap { text-align: center; }
-  .s4-badge-large { display: flex; align-items: baseline; justify-content: center; margin-bottom: 1.25rem; }
-  .s4-name-lg { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 500; color: rgba(255,255,255,0.85); }
-  .s4-num-lg { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 500; color: #4ecfa0; }
+  .saldo4-logo-md { width: 200px; margin-bottom: 1.25rem; mix-blend-mode: screen; }
   .scg-attribution { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 0.35rem; }
   .scg-attribution a { color: rgba(255,255,255,0.55); text-decoration: none; }
   .scg-attribution a:hover { color: #fff; }

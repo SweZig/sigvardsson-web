@@ -51,7 +51,7 @@ const schemaProduct = {
         <span class="en-text">A product by</span>
         <a href="/" class="powered-link">Sigvardsson Consulting Group</a>
       </div>
-      <img src="/images/products/feedback-app-logo-white.png" alt="Feedback App" class="product-logo" />
+      <img src="/images/products/feedback-app-logo-blue.png" alt="Feedback App" class="product-logo" />
       <p class="hero-desc sv-text">
         Systematiserad kundnöjdhetsmätning som gör feedback synlig för hela organisationen — i realtid. De mest framgångsrika retailers lyssnar aktivt på kunder och vidtar åtgärder dagligen.
       </p>
@@ -217,8 +217,12 @@ const schemaProduct = {
   .powered-by { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
   .powered-link { color: rgba(255,255,255,0.75); text-decoration: none; }
   .powered-link:hover { color: #fff; }
-  .product-logo { height: 52px; width: auto; margin-bottom: 1.75rem; mix-blend-mode: screen; }
-  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
+  .product-logo {
+    height: 52px;
+    width: auto;
+    margin-bottom: 1.75rem;
+    filter: brightness(0) invert(1);
+  }  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
   .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
   .hero-stat { display: flex; flex-direction: column; }
   .hero-stat strong { font-family: var(--font-heading); font-size: 1.3rem; color: #fff; }
@@ -249,7 +253,7 @@ const schemaProduct = {
   .how-steps li::before { content: counter(steps); counter-increment: steps; position: absolute; left: 0; width: 22px; height: 22px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.72rem; color: #fff; font-weight: 500; }
   .how-steps li strong { color: #fff; }
   .how-logo { text-align: center; }
-  .how-symbol { width: 140px; margin-bottom: 1.25rem; opacity: 0.9; mix-blend-mode: screen; }
+  .how-symbol { width: 140px; margin-bottom: 1.25rem; filter: brightness(0) invert(1); opacity: 0.85; }
   .clients-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
   .scg-attribution { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
   .scg-attribution a { color: rgba(255,255,255,0.6); text-decoration: none; }
