@@ -86,6 +86,10 @@ const servicesEn = [
 
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/mldnjqdv" method="POST">
           <input type="hidden" name="_subject" value="Ny kontaktförfrågan — sigvardsson.org" />
+          <!-- Honeypot: hidden from humans, bots fill it in — submission rejected client-side -->
+          <input type="text" id="website" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <!-- Tell Formspree to also filter spam server-side -->
+          <input type="hidden" name="_captcha" value="false" />
 
           <div class="form-row">
             <div class="form-group">
@@ -135,9 +139,14 @@ const servicesEn = [
         <div class="info-card">
           <img src="/images/logos/S_blue.png" alt="SCG" class="info-logo" width="48" height="48" />
           <h3>Sigvardsson Consulting Group</h3>
-          <p class="sv-text" data-no="Stockholm, Sverige" data-da="Stockholm, Sverige" data-fi="Tukholma, Ruotsi">Stockholm, Sverige</p>
-          <p class="en-text">Stockholm, Sweden</p>
-          <a href="mailto:info@sigvardsson.org" class="info-email">info@sigvardsson.org</a>
+          <p>Beckholmen 526</p>
+          <p>115 21 Stockholm</p>
+          <p class="sv-text" data-no="Sverige" data-da="Sverige" data-fi="Ruotsi">Sverige</p>
+          <p class="en-text">Sweden</p>
+          <!-- Email obfuscated — assembled by JS to prevent harvesting by bots -->
+          <a href="#" class="info-email" id="contact-email-link">
+            <span id="contact-email-display">&#x69;&#x6E;&#x66;&#x6F;&#x40;&#x73;&#x69;&#x67;&#x76;&#x61;&#x72;&#x64;&#x73;&#x73;&#x6F;&#x6E;&#x2E;&#x6F;&#x72;&#x67;</span>
+          </a>
         </div>
 
         <div class="awards-info">
@@ -172,6 +181,14 @@ const servicesEn = [
   <Footer slot="footer" />
 
   <script is:inline>
+    // Email obfuscation — assembles mailto in browser only, never in static HTML
+    (function() {
+      var u = 'info';
+      var d = 'sigvardsson.org';
+      var el = document.getElementById('contact-email-link');
+      if (el) el.href = 'mailto:' + u + '@' + d;
+    })();
+
     const form = document.getElementById('contactForm');
     const success = document.getElementById('formSuccess');
     const submitBtn = document.getElementById('submitBtn');
@@ -179,6 +196,9 @@ const servicesEn = [
     if (form) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        // Honeypot — bots fill hidden fields, humans don't
+        if (form.querySelector('#website') && form.querySelector('#website').value) return;
+
         const btnText = submitBtn.querySelectorAll('.btn-text');
         const spinner = submitBtn.querySelector('.btn-loading');
         submitBtn.disabled = true;
@@ -201,7 +221,7 @@ const servicesEn = [
           btnText.forEach(el => el.style.display = '');
           spinner.style.display = 'none';
           submitBtn.disabled = false;
-          alert('Det gick inte att skicka. Försök igen eller maila oss direkt på info@sigvardsson.org');
+          alert('Det gick inte att skicka. Försök igen eller kontakta oss direkt.');
         }
       });
     }
