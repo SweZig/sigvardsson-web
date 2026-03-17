@@ -56,11 +56,11 @@
           <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <ul class="lang-menu" id="lang-menu" role="menu">
-          <li role="menuitem"><button data-lang-pick="sv">🇸🇪 SV</button></li>
-          <li role="menuitem"><button data-lang-pick="en">🇬🇧 EN</button></li>
-          <li role="menuitem"><button data-lang-pick="no">🇳🇴 NO</button></li>
-          <li role="menuitem"><button data-lang-pick="da">🇩🇰 DA</button></li>
-          <li role="menuitem"><button data-lang-pick="fi">🇫🇮 FI</button></li>
+          <li role="menuitem"><button data-lang-pick="sv">🇸🇪 Svenska</button></li>
+          <li role="menuitem"><button data-lang-pick="en">🇬🇧 English</button></li>
+          <li role="menuitem"><button data-lang-pick="no">🇳🇴 Norsk</button></li>
+          <li role="menuitem"><button data-lang-pick="da">🇩🇰 Dansk</button></li>
+          <li role="menuitem"><button data-lang-pick="fi">🇫🇮 Suomi</button></li>
         </ul>
       </div>
 
@@ -269,15 +269,16 @@
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 500;
     font-size: 0.78rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     color: var(--color-navy);
     background: var(--color-off-white);
     border: 1px solid rgba(1,13,96,0.15);
     border-radius: 6px;
-    padding: 0.3rem 0.65rem;
+    padding: 0.3rem 0.75rem;
     cursor: pointer;
     transition: all 0.2s;
     white-space: nowrap;
+    min-width: 72px;
   }
 
   .lang-current:hover,
@@ -477,7 +478,7 @@
   const currentLabel = document.getElementById('lang-current-label');
   const langMenu  = document.getElementById('lang-menu');
 
-  const labels = { sv: 'SV', en: 'EN', no: 'NO', da: 'DA', fi: 'FI' };
+  const labels = { sv: '🇸🇪 SV', en: '🇬🇧 EN', no: '🇳🇴 NO', da: '🇩🇰 DA', fi: '🇫🇮 FI' };
 
   // Page meta: title/desc stored in data attributes by each page
   const metaTitles = {

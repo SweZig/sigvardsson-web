@@ -15,6 +15,13 @@ const { svc } = Astro.props;
 const catLabel = categories[svc.category];
 const canonicalURL = `https://www.sigvardsson.org/services/tjanster/${svc.slug}/`;
 
+// Hero image per category — matches services page
+const heroBg = {
+  'advisory':            '/images/retail/staff-tablet-shelf.jpg',
+  'technology':          '/images/retail/self-checkout-ica.jpg',
+  'retail-optimization': '/images/retail/dry-goods-aisle.jpg',
+}[svc.category] ?? '/images/retail/dry-goods-aisle.jpg';
+
 // Service-specific Schema.org
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -46,6 +53,8 @@ const serviceSchema = {
   <!-- ===== HERO ===== -->
   <section class="svc-hero">
     <div class="hero-bg"></div>
+    <div class="hero-photo-bg" style={`background-image: url('${heroBg}')`}></div>
+    <div class="hero-bg-pattern"></div>
     <div class="container hero-inner">
       <div class="breadcrumb">
         <a href="/" class="sv-text">Hem</a><a href="/" class="en-text">Home</a>
@@ -232,7 +241,21 @@ const serviceSchema = {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
-    opacity: 0.95;
+  }
+  .hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.11;
+    mix-blend-mode: luminosity;
+  }
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba(144,162,207,0.15) 0%, transparent 60%),
+      radial-gradient(circle at 10% 80%, rgba(42,78,169,0.2) 0%, transparent 50%);
   }
   .hero-inner {
     position: relative;
