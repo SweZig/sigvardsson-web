@@ -161,14 +161,29 @@ const schemaOrg = {
     }
 
     /* ===== LANGUAGE TOGGLE — 5 languages ===== */
-    /* SV/EN: pure CSS visibility */
-    [data-lang="sv"] .en-text { display: none !important; }
-    [data-lang="en"] .sv-text { display: none !important; }
+    /* Hide everything that doesn't match current lang */
+    [data-lang="sv"] .en-text,
+    [data-lang="sv"] .no-text,
+    [data-lang="sv"] .da-text,
+    [data-lang="sv"] .fi-text { display: none !important; }
 
-    /* NO/DA/FI: sv-text stays visible (JS replaces its content), en-text hidden */
+    [data-lang="en"] .sv-text,
+    [data-lang="en"] .no-text,
+    [data-lang="en"] .da-text,
+    [data-lang="en"] .fi-text { display: none !important; }
+
+    /* NO/DA/FI: en-text hidden; sv-text stays visible (JS swaps its innerHTML) */
     [data-lang="no"] .en-text,
+    [data-lang="no"] .da-text,
+    [data-lang="no"] .fi-text { display: none !important; }
+
     [data-lang="da"] .en-text,
-    [data-lang="fi"] .en-text { display: none !important; }
+    [data-lang="da"] .no-text,
+    [data-lang="da"] .fi-text { display: none !important; }
+
+    [data-lang="fi"] .en-text,
+    [data-lang="fi"] .no-text,
+    [data-lang="fi"] .da-text { display: none !important; }
 
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
