@@ -202,6 +202,7 @@ export const services = [
     clientsSv: 'Heinermann Group',
     clientsEn: 'Heinermann Group',
     projects: '20+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Kompatibelt med alla befintliga CCTV-system',
       'Realtids- och historiska värmekartor',
@@ -232,6 +233,7 @@ export const services = [
     clientsSv: 'Heinermann Group',
     clientsEn: 'Heinermann Group',
     projects: '20+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Realtidsmätning av gavelexponeringar och störtkorgar',
       'Kundinteraktionsanalys per exponering',
@@ -262,6 +264,7 @@ export const services = [
     clientsSv: 'Toys R Us, XXL',
     clientsEn: 'Toys R Us, XXL',
     projects: '30+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Taggning av produkter längs hela värdekedjan',
       'Handhållna och fasta RFID-läsare',
@@ -292,6 +295,7 @@ export const services = [
     clientsSv: 'Toys R Us',
     clientsEn: 'Toys R Us',
     projects: '20+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Elektroniska hylletiketter (ESL) för alla produkter',
       'Centraliserad prissättning via ett system',
@@ -322,6 +326,7 @@ export const services = [
     clientsSv: 'Toys R Us',
     clientsEn: 'Toys R Us',
     projects: '20+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Självkassor — appar, iPads och all-in-one-lösningar',
       'Informationsterminaler med produktinfo och lagersaldo',
@@ -352,6 +357,7 @@ export const services = [
     clientsSv: 'Toys R Us, XL-Bygg, Ultimate Padel',
     clientsEn: 'Toys R Us, XL-Bygg, Ultimate Padel',
     projects: '30+',
+    poweredBy: { label: 'Feedback App', href: '/products/feedback-app/' },
     bulletsSv: [
       'NPS-insamling via digitala knappar och QR-koder',
       'Realtids-dashboard för hela organisationen',
@@ -383,6 +389,7 @@ export const services = [
     clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
     clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
     projects: '100+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Mobil-first: genomför, mät, justera, se resultat direkt',
       'Visuell försäljningsrapport baserad på POS-data',
@@ -415,6 +422,7 @@ export const services = [
     clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
     clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
     projects: '100+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Bästa produkt — på bästa placering',
       'Varma och kalla zoner identifieras och utnyttjas',
@@ -445,6 +453,7 @@ export const services = [
     clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
     clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
     projects: '80+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Mixa kampanjprodukt med hög snittmarginal',
       'Hitta rätt merförsäljning och korsförsäljning',
@@ -475,6 +484,7 @@ export const services = [
     clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
     clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
     projects: '80+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Värmekarta kompatibel med alla CCTV-system',
       'Mäter flöden, zoner och genvägar',
@@ -505,6 +515,7 @@ export const services = [
     clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
     clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
     projects: '80+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Realtidsövervakning av trafik och köer',
       'Identifierar antalet kunder i butiken',
@@ -535,6 +546,7 @@ export const services = [
     clientsSv: 'XL Bygg, Toys R Us',
     clientsEn: 'XL Bygg, Toys R Us',
     projects: '80+',
+    poweredBy: { label: 'Feedback App', href: '/products/feedback-app/' },
     bulletsSv: [
       'Analoga och digitala feedbacklösningar',
       'CSI-temperaturindikatorer för hela organisationen',
@@ -565,6 +577,7 @@ export const services = [
     clientsSv: 'Norgesgruppen Kiwi, Meny, Coop',
     clientsEn: 'Norgesgruppen Kiwi, Meny, Coop',
     projects: '80+',
+    poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
       'Bättre prognostisering i realtid',
       'On-demand beställning och produktion',
@@ -595,6 +608,7 @@ export const services = [
     clientsSv: 'Media Markt, Elgiganten, Toys R Us',
     clientsEn: 'Media Markt, Elgiganten, Toys R Us',
     projects: '50+',
+    poweredBy: { label: 'Saldo4', href: '/products/saldo4/' },
     bulletsSv: [
       'Konkret daglig åtgärdslista för lagerpersonal',
       'Lägre kapitalbindning',

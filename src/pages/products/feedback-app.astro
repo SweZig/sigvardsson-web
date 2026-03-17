@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const canonical = 'https://www.sigvardsson.org/products/feedback-app/';
+
+const features = [
+  { icon: '📲', titleSv: 'Analoga & digitala knappar', titleEn: 'Analog & digital buttons', descSv: 'Enkla feedbacklösningar — från fysiska knappar till QR-koder och digitala terminaler.', descEn: 'Simple feedback solutions — from physical buttons to QR codes and digital terminals.' },
+  { icon: '📊', titleSv: 'Realtids-dashboard', titleEn: 'Real-time dashboard', descSv: 'Hela organisationen ser kundnöjdheten live — från butiksgolvet till ledningsgruppen.', descEn: 'The entire organization sees customer satisfaction live — from the shop floor to management.' },
+  { icon: '🔗', titleSv: 'Korrelationsanalys', titleEn: 'Correlation analysis', descSv: 'Kopplar kundfeedback direkt till KPI:er och affärsprestanda.', descEn: 'Links customer feedback directly to KPIs and business performance.' },
+  { icon: '🔔', titleSv: 'Automatiska alerts', titleEn: 'Automatic alerts', descSv: 'Omedelbar varning vid kritisk feedback — agera innan det eskalerar.', descEn: 'Immediate alert on critical feedback — act before it escalates.' },
+  { icon: '🎯', titleSv: 'CSI-temperaturindikator', titleEn: 'CSI temperature indicator', descSv: 'Enkel visualisering som hela organisationen förstår direkt.', descEn: 'Simple visualization that the entire organization understands immediately.' },
+  { icon: '📈', titleSv: 'Benchmarking', titleEn: 'Benchmarking', descSv: 'Jämför mot branschstandard och dina egna historiska värden.', descEn: 'Compare against industry standard and your own historical values.' },
+];
+
+const schemaProduct = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Feedback App",
+  "applicationCategory": "BusinessApplication",
+  "description": "Feedback App systematiserar kundnöjdhetsmätning och gör feedback synlig för hela organisationen. Realtids-dashboard, korrelationsanalys och automatiska alerts.",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" },
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://www.sigvardsson.org/#organization",
+    "name": "Sigvardsson Consulting Group"
+  },
+  "url": canonical
+};
+---
+
+<Layout
+  titleSv="Feedback App — Systematiserad kundnöjdhetsmätning för retail"
+  titleEn="Feedback App — Systematized customer satisfaction for retail"
+  descriptionSv="Feedback App gör kundnöjdhet synlig för hela organisationen i realtid. Dashboard, korrelationsanalys, automatiska alerts och benchmarking för nordisk retail."
+  descriptionEn="Feedback App makes customer satisfaction visible to the entire organization in real time. Dashboard, correlation analysis, automatic alerts and benchmarking for Nordic retail."
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaProduct)} />
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="product-hero fa-hero">
+    <div class="hero-photo-bg" style="background-image:url('/images/retail/self-checkout-ica.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="powered-by">
+        <span class="sv-text">En produkt från</span>
+        <span class="en-text">A product by</span>
+        <a href="/" class="powered-link">Sigvardsson Consulting Group</a>
+      </div>
+      <img src="/images/products/feedback-app-logo-white.png" alt="Feedback App" class="product-logo" />
+      <p class="hero-desc sv-text">
+        Systematiserad kundnöjdhetsmätning som gör feedback synlig för hela organisationen — i realtid. De mest framgångsrika retailers lyssnar aktivt på kunder och vidtar åtgärder dagligen.
+      </p>
+      <p class="hero-desc en-text">
+        Systematized customer satisfaction measurement that makes feedback visible to the entire organization — in real time. The most successful retailers actively listen to customers and take action daily.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-stat">
+          <strong>4–8%</strong>
+          <span class="sv-text">försäljningsökning</span>
+          <span class="en-text">sales increase</span>
+        </div>
+        <div class="hero-stat">
+          <strong>80+</strong>
+          <span class="sv-text">genomförda projekt</span>
+          <span class="en-text">completed projects</span>
+        </div>
+        <div class="hero-stat">
+          <strong>XL Bygg, Toys 'R' Us</strong>
+          <span class="sv-text">referenskunder</span>
+          <span class="en-text">reference clients</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="/Contact/" class="btn btn-white sv-text">Kontakta oss</a>
+        <a href="/Contact/" class="btn btn-white en-text">Contact us</a>
+        <a href="/services/tjanster/perfekt-feedback/" class="btn btn-outline-white sv-text">Läs mer om tjänsten</a>
+        <a href="/services/tjanster/nps-kundanalys/" class="btn btn-outline-white en-text">Read about NPS Analytics</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-intro fade-up">
+        <span class="section-label fa-label sv-text">Funktioner</span>
+        <span class="section-label fa-label en-text">Features</span>
+        <h2>
+          <span class="sv-text">Allt du behöver för att förstå dina kunder</span>
+          <span class="en-text">Everything you need to understand your customers</span>
+        </h2>
+      </div>
+      <div class="features-grid">
+        {features.map((f, i) => (
+          <div class="feature-card fade-up" style={`animation-delay:${i*60}ms`}>
+            <div class="feature-icon">{f.icon}</div>
+            <h3>
+              <span class="sv-text">{f.titleSv}</span>
+              <span class="en-text">{f.titleEn}</span>
+            </h3>
+            <p>
+              <span class="sv-text">{f.descSv}</span>
+              <span class="en-text">{f.descEn}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-section fa-bg">
+    <div class="container how-inner fade-up">
+      <div class="how-text">
+        <span class="section-label fa-label-light sv-text">Hur det fungerar</span>
+        <span class="section-label fa-label-light en-text">How it works</span>
+        <h2>
+          <span class="sv-text">Från feedback till förändring</span>
+          <span class="en-text">From feedback to change</span>
+        </h2>
+        <ol class="how-steps">
+          <li>
+            <span class="sv-text"><strong>Samla</strong> — Kunder lämnar feedback via knappar, QR eller digitala terminaler</span>
+            <span class="en-text"><strong>Collect</strong> — Customers leave feedback via buttons, QR or digital terminals</span>
+          </li>
+          <li>
+            <span class="sv-text"><strong>Visualisera</strong> — Realtids-dashboard synlig för hela organisationen</span>
+            <span class="en-text"><strong>Visualize</strong> — Real-time dashboard visible to the entire organization</span>
+          </li>
+          <li>
+            <span class="sv-text"><strong>Analysera</strong> — Korrelationsanalys kopplar feedback till KPI:er</span>
+            <span class="en-text"><strong>Analyze</strong> — Correlation analysis links feedback to KPIs</span>
+          </li>
+          <li>
+            <span class="sv-text"><strong>Agera</strong> — Automatiska alerts gör att rätt person agerar direkt</span>
+            <span class="en-text"><strong>Act</strong> — Automatic alerts ensure the right person acts immediately</span>
+          </li>
+        </ol>
+      </div>
+      <div class="how-logo">
+        <img src="/images/products/feedback-app-symbol.png" alt="Feedback App" class="how-symbol" />
+        <p class="clients-note sv-text">Referenskunder: XL Bygg, Toys 'R' Us</p>
+        <p class="clients-note en-text">Reference clients: XL Bygg, Toys 'R' Us</p>
+        <p class="scg-attribution sv-text">En produkt från <a href="/">Sigvardsson Consulting Group</a></p>
+        <p class="scg-attribution en-text">A product by <a href="/">Sigvardsson Consulting Group</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <section class="related-section">
+    <div class="container">
+      <span class="section-label fa-label sv-text">Relaterade tjänster på sigvardsson.org</span>
+      <span class="section-label fa-label en-text">Related services on sigvardsson.org</span>
+      <h2>
+        <span class="sv-text">Drivs av Feedback App</span>
+        <span class="en-text">Powered by Feedback App</span>
+      </h2>
+      <div class="related-grid">
+        <a href="/services/tjanster/perfekt-feedback/" class="related-card">
+          <span class="ra-badge sv-text">Feedback App</span>
+          <h4 class="sv-text">Perfekt Feedback</h4>
+          <h4 class="en-text">Perfect Feedback</h4>
+          <p class="sv-text">Systematisering av kundnöjdhetsmätning i daglig drift.</p>
+          <p class="en-text">Systematization of customer satisfaction in daily operations.</p>
+          <span class="related-link">Läs mer →</span>
+        </a>
+        <a href="/services/tjanster/nps-kundanalys/" class="related-card">
+          <span class="ra-badge sv-text">Feedback App</span>
+          <h4 class="sv-text">NPS & Kundanalys</h4>
+          <h4 class="en-text">NPS & Customer Analytics</h4>
+          <p class="sv-text">Net Promoter Score med djupgående korrelationsanalys.</p>
+          <p class="en-text">Net Promoter Score with in-depth correlation analysis.</p>
+          <span class="related-link">Läs mer →</span>
+        </a>
+        <a href="/products/retail-apps/" class="related-card related-card-ra">
+          <span class="ra-badge-ra">Retail Apps</span>
+          <h4 class="sv-text">Feedback App ingår i Retail Apps</h4>
+          <h4 class="en-text">Feedback App is part of Retail Apps</h4>
+          <p class="sv-text">Utforska hela sviten av retail-appar.</p>
+          <p class="en-text">Explore the complete suite of retail apps.</p>
+          <span class="related-link">Se Retail Apps →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="product-cta fa-cta">
+    <div class="container">
+      <h2>
+        <span class="sv-text">Redo att lyssna på dina kunder?</span>
+        <span class="en-text">Ready to listen to your customers?</span>
+      </h2>
+      <p class="sv-text">Kontakta oss för en demo av Feedback App och se hur det förändrar kulturen i din organisation.</p>
+      <p class="en-text">Contact us for a Feedback App demo and see how it transforms the culture in your organization.</p>
+      <a href="/Contact/" class="btn btn-white sv-text">Boka demo</a>
+      <a href="/Contact/" class="btn btn-white en-text">Book a demo</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  :root { --fa-color: #215168; --fa-dark: #193d50; }
+
+  .product-hero { position: relative; background: var(--fa-color); padding: 7rem 2rem 5rem; overflow: hidden; }
+  .hero-photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.1; mix-blend-mode: luminosity; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, var(--fa-dark) 0%, var(--fa-color) 100%); }
+  .hero-inner { position: relative; z-index: 1; max-width: 800px; }
+  .powered-by { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+  .powered-link { color: rgba(255,255,255,0.75); text-decoration: none; }
+  .powered-link:hover { color: #fff; }
+  .product-logo { height: 52px; width: auto; margin-bottom: 1.75rem; }
+  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
+  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .hero-stat { display: flex; flex-direction: column; }
+  .hero-stat strong { font-family: var(--font-heading); font-size: 1.3rem; color: #fff; }
+  .hero-stat span { font-size: 0.72rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.07em; font-family: var(--font-heading); }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-white { background: #fff; color: var(--fa-dark); display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+  .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.45); display: inline-block; padding: 0.73rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  .features-section { padding: var(--section-pad); background: #fff; }
+  .section-intro { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
+  .section-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--fa-color); margin: 0.5rem 0 1rem; }
+  .fa-label { color: var(--fa-color) !important; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+  .feature-card { background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.1); border-radius: 12px; padding: 1.5rem; transition: all 0.25s; }
+  .feature-card:hover { border-color: var(--fa-color); box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
+  .feature-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .feature-card h3 { font-size: 1rem; color: var(--fa-color); margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.88rem; color: #666; line-height: 1.6; }
+
+  .how-section { padding: var(--section-pad); background: var(--fa-dark); }
+  .how-inner { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: center; }
+  .how-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: #fff; margin: 0.5rem 0 1.5rem; }
+  .fa-label-light { color: rgba(255,255,255,0.6) !important; }
+  .how-steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; counter-reset: steps; }
+  .how-steps li { display: flex; gap: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.6; padding-left: 2rem; position: relative; }
+  .how-steps li::before { content: counter(steps); counter-increment: steps; position: absolute; left: 0; width: 22px; height: 22px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.72rem; color: #fff; font-weight: 500; }
+  .how-steps li strong { color: #fff; }
+  .how-logo { text-align: center; }
+  .how-symbol { width: 140px; margin-bottom: 1.5rem; opacity: 0.9; }
+  .clients-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
+  .scg-attribution { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+  .scg-attribution a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .scg-attribution a:hover { color: #fff; }
+
+  .related-section { padding: var(--section-pad); background: #fff; }
+  .related-section h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); color: var(--fa-color); margin: 0.5rem 0 2rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .related-card { display: block; background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.1); border-radius: 12px; padding: 1.5rem; text-decoration: none; transition: all 0.25s; }
+  .related-card:hover { border-color: var(--fa-color); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(33,81,104,0.1); }
+  .ra-badge { display: inline-block; background: var(--fa-color); color: #fff; font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; }
+  .ra-badge-ra { display: inline-block; background: var(--ra-color, #215168); color: #fff; font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; }
+  .related-card h4 { font-size: 1rem; color: var(--color-navy); margin-bottom: 0.5rem; }
+  .related-card p { font-size: 0.85rem; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
+  .related-link { font-family: var(--font-heading); font-size: 0.78rem; color: var(--fa-color); }
+
+  .product-cta { background: var(--fa-color); padding: 5rem 2rem; text-align: center; }
+  .product-cta h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #fff; margin-bottom: 0.75rem; }
+  .product-cta p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 900px) { .how-inner { grid-template-columns: 1fr; } .how-logo { order: -1; } }
+  @media (max-width: 480px) {
+    .product-hero { padding: 5rem 1.25rem 3rem; }
+    .product-logo { height: 40px; }
+    .hero-meta { gap: 1.5rem; }
+    .hero-actions { flex-direction: column; gap: 0.6rem; }
+    .hero-actions .btn-white, .hero-actions .btn-outline-white { display: block; text-align: center; }
+    .features-grid, .related-grid { grid-template-columns: 1fr; }
+    .product-cta { padding: 3rem 1.25rem; }
+  }
+</style>

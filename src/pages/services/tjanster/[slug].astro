@@ -63,6 +63,12 @@ const serviceSchema = {
         <span>›</span>
         <span class="sv-text">{catLabel.sv}</span><span class="en-text">{catLabel.en}</span>
       </div>
+      {svc.poweredBy && (
+        <a href={svc.poweredBy.href} class="powered-badge">
+          <span>Powered by</span>
+          <strong>{svc.poweredBy.label}</strong>
+        </a>
+      )}
       <span class="section-label sv-text">{catLabel.sv}</span>
       <span class="section-label en-text">{catLabel.en}</span>
       <h1>
@@ -274,6 +280,31 @@ const serviceSchema = {
   }
   .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
   .breadcrumb a:hover { color: var(--color-white); }
+
+  .powered-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+  }
+  .powered-badge:hover {
+    background: rgba(255,255,255,0.2);
+    color: var(--color-white);
+  }
+  .powered-badge strong {
+    color: var(--color-white);
+    font-weight: 500;
+  }
   .svc-hero .section-label { color: var(--color-blue-lite); }
   .svc-hero h1 {
     font-family: var(--font-heading);

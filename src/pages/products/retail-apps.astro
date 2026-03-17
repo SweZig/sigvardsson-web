@@ -1,0 +1,425 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const canonical = 'https://www.sigvardsson.org/products/retail-apps/';
+
+const apps = [
+  {
+    icon: '🛒',
+    titleSv: 'Perfekt hylla',
+    titleEn: 'Perfect Shelf',
+    descSv: 'Mobil-first hylloptimering kopplad direkt till POS-data.',
+    descEn: 'Mobile-first shelf optimization linked directly to POS data.',
+    effect: '4–15%',
+    effectLabelSv: 'försäljningsväxt',
+    effectLabelEn: 'sales growth',
+    href: '/services/tjanster/perfekt-hylla/',
+  },
+  {
+    icon: '📍',
+    titleSv: 'Perfekt varuplacering',
+    titleEn: 'Perfect Placement',
+    descSv: 'Optimera hyllvinnare och varma zoner med värmekartor.',
+    descEn: 'Optimize shelf winners and hot zones with heat maps.',
+    effect: '10–20%',
+    effectLabelSv: 'marginalväxt',
+    effectLabelEn: 'margin growth',
+    href: '/services/tjanster/perfekt-varuplacering/',
+  },
+  {
+    icon: '📣',
+    titleSv: 'Perfekt kampanj',
+    titleEn: 'Perfect Campaign',
+    descSv: 'Kampanjoptimering med rätt produkt på rätt plats.',
+    descEn: 'Campaign optimization with the right product in the right place.',
+    effect: '12–18%',
+    effectLabelSv: 'försäljningsväxt',
+    effectLabelEn: 'sales growth',
+    href: '/services/tjanster/perfekt-kampanj/',
+  },
+  {
+    icon: '🚶',
+    titleSv: 'Perfekt kundflöde',
+    titleEn: 'Perfect Customer Flow',
+    descSv: 'Värmekartebaserad analys av flöden och zoner i butiken.',
+    descEn: 'Heat map analysis of flows and zones in the store.',
+    effect: '4–15%',
+    effectLabelSv: 'försäljningsväxt',
+    effectLabelEn: 'sales growth',
+    href: '/services/tjanster/perfekt-kundflode/',
+  },
+  {
+    icon: '⏱',
+    titleSv: 'Perfekt kö',
+    titleEn: 'Perfect Queue',
+    descSv: 'Prediktiv köhantering som varslar innan kön uppstår.',
+    descEn: 'Predictive queue management that alerts before queues form.',
+    effect: '6–9%',
+    effectLabelSv: 'kostnadsreduktion',
+    effectLabelEn: 'cost reduction',
+    href: '/services/tjanster/perfekt-ko/',
+  },
+  {
+    icon: '🌿',
+    titleSv: 'Minimera Matsvinnet',
+    titleEn: 'Minimize Food Waste',
+    descSv: 'Realtidsprognostisering och on-demand beställning.',
+    descEn: 'Real-time forecasting and on-demand ordering.',
+    effect: '30%',
+    effectLabelSv: 'minskat svinn',
+    effectLabelEn: 'waste reduction',
+    href: '/services/tjanster/minimera-matsvinnet/',
+  },
+  {
+    icon: '🏷',
+    titleSv: 'Digital prissättning',
+    titleEn: 'Digital Pricing',
+    descSv: 'Elektroniska hylletiketter och centraliserad realtidsprissättning.',
+    descEn: 'Electronic shelf labels and centralized real-time pricing.',
+    effect: '0',
+    effectLabelSv: 'prisfel',
+    effectLabelEn: 'pricing errors',
+    href: '/services/tjanster/digital-prissattning/',
+  },
+  {
+    icon: '📡',
+    titleSv: 'RFID & Scanning',
+    titleEn: 'RFID & Scanning',
+    descSv: 'Automatisk lagerinventering och stöldskydd via RFID.',
+    descEn: 'Automated inventory counting and theft protection via RFID.',
+    effect: '99%+',
+    effectLabelSv: 'lageraccuratess',
+    effectLabelEn: 'inventory accuracy',
+    href: '/services/tjanster/rfid/',
+  },
+  {
+    icon: '🖥',
+    titleSv: 'Kiosk & Självbetjäning',
+    titleEn: 'Kiosk & Self-Service',
+    descSv: 'Interaktiva självbetjäningslösningar för snabbare service.',
+    descEn: 'Interactive self-service solutions for faster customer service.',
+    effect: '',
+    effectLabelSv: 'kortare väntetider',
+    effectLabelEn: 'shorter waiting times',
+    href: '/services/tjanster/kiosk-sjalvbetjaning/',
+  },
+];
+
+const schemaProduct = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Retail Apps",
+  "applicationCategory": "BusinessApplication",
+  "description": "Retail Apps är en svit av datadrivna mobilapplikationer för nordisk detaljhandel — hylloptimering, kampanjhantering, kundflödesanalys, köhantering, svinnreduktion och mer.",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" },
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://www.sigvardsson.org/#organization",
+    "name": "Sigvardsson Consulting Group"
+  },
+  "url": canonical
+};
+---
+
+<Layout
+  titleSv="Retail Apps — Datadrivna verktyg för nordisk retail"
+  titleEn="Retail Apps — Data-driven tools for Nordic retail"
+  descriptionSv="Retail Apps är en svit av mobilapplikationer för butiksdrift — hylloptimering, kampanj, kundflöde, kö, prissättning, RFID och mer. Bevisad effekt i 100+ projekt."
+  descriptionEn="Retail Apps is a suite of mobile applications for store operations — shelf optimization, campaigns, customer flow, queue management, pricing, RFID and more."
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaProduct)} />
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="product-hero ra-hero">
+    <div class="hero-photo-bg" style="background-image:url('/images/retail/dry-goods-aisle.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="powered-by">
+        <span class="sv-text">En produkt från</span>
+        <span class="en-text">A product by</span>
+        <a href="/" class="powered-link">Sigvardsson Consulting Group</a>
+      </div>
+      <img src="/images/products/retail-apps-logo-white.png" alt="Retail Apps" class="product-logo" />
+      <p class="hero-desc sv-text">
+        En svit av datadrivna mobilapplikationer för nordisk detaljhandel. Mobil-first, kopplad till POS-data och bevisad effekt i 100+ genomförda projekt hos ledande nordiska kedjor.
+      </p>
+      <p class="hero-desc en-text">
+        A suite of data-driven mobile applications for Nordic retail. Mobile-first, linked to POS data and proven impact in 100+ completed projects at leading Nordic chains.
+      </p>
+      <div class="hero-actions">
+        <a href="/Contact/" class="btn btn-white sv-text">Kontakta oss</a>
+        <a href="/Contact/" class="btn btn-white en-text">Contact us</a>
+        <a href="/services/" class="btn btn-outline-white sv-text">Alla tjänster</a>
+        <a href="/services/" class="btn btn-outline-white en-text">All services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="product-stats ra-stats">
+    <div class="container stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">9</span>
+        <span class="stat-lbl sv-text">Appar i sviten</span>
+        <span class="stat-lbl en-text">Apps in suite</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">100+</span>
+        <span class="stat-lbl sv-text">Genomförda projekt</span>
+        <span class="stat-lbl en-text">Completed projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-lbl sv-text">ROI-leverans</span>
+        <span class="stat-lbl en-text">ROI delivery</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">6</span>
+        <span class="stat-lbl sv-text">Nordiska länder</span>
+        <span class="stat-lbl en-text">Nordic countries</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPS GRID ===== -->
+  <section class="apps-section">
+    <div class="container">
+      <div class="section-intro fade-up">
+        <span class="section-label ra-label sv-text">Applikationssviten</span>
+        <span class="section-label ra-label en-text">The application suite</span>
+        <h2>
+          <span class="sv-text">9 verktyg. En plattform.</span>
+          <span class="en-text">9 tools. One platform.</span>
+        </h2>
+        <p class="sv-text">Varje app löser ett specifikt problem i butiksdriften — och de fungerar ännu bättre tillsammans.</p>
+        <p class="en-text">Each app solves a specific problem in store operations — and they work even better together.</p>
+      </div>
+
+      <div class="apps-grid">
+        {apps.map((app, i) => (
+          <a href={app.href} class="app-card fade-up" style={`animation-delay:${i*60}ms`}>
+            <div class="app-icon">{app.icon}</div>
+            <h3>
+              <span class="sv-text">{app.titleSv}</span>
+              <span class="en-text">{app.titleEn}</span>
+            </h3>
+            <p>
+              <span class="sv-text">{app.descSv}</span>
+              <span class="en-text">{app.descEn}</span>
+            </p>
+            <div class="app-effect">
+              <strong>{app.effect}</strong>
+              <span class="sv-text">{app.effectLabelSv}</span>
+              <span class="en-text">{app.effectLabelEn}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY RETAIL APPS ===== -->
+  <section class="why-section">
+    <div class="container why-inner fade-up">
+      <div class="why-text">
+        <span class="section-label ra-label sv-text">Varför Retail Apps</span>
+        <span class="section-label ra-label en-text">Why Retail Apps</span>
+        <h2>
+          <span class="sv-text">Byggt av retailledare, för retailpersonal</span>
+          <span class="en-text">Built by retail leaders, for store staff</span>
+        </h2>
+        <p class="sv-text">Retail Apps är inte byggt av mjukvaruutvecklare som studerat retail — det är byggt av personer som drev kedjor i 6 länder och visste exakt vad som saknades. Varje app är mobil-first, designad för butiksmedarbetare i rörelse och kopplad direkt till era affärssystem.</p>
+        <p class="en-text">Retail Apps wasn't built by software developers who studied retail — it was built by people who ran chains in 6 countries and knew exactly what was missing. Every app is mobile-first, designed for store staff on the move and linked directly to your business systems.</p>
+        <ul class="why-list">
+          <li class="sv-text">Mobil-first — fungerar i butiken, inte bara i mötesrummet</li>
+          <li class="en-text">Mobile-first — works in the store, not just the meeting room</li>
+          <li class="sv-text">Kopplad till POS-data — beslut baserade på fakta</li>
+          <li class="en-text">Linked to POS data — decisions based on facts</li>
+          <li class="sv-text">Omedelbar ROI — mätbar effekt från dag ett</li>
+          <li class="en-text">Immediate ROI — measurable impact from day one</li>
+          <li class="sv-text">Nordisk erfarenhet — 100+ projekt i 6 länder</li>
+          <li class="en-text">Nordic experience — 100+ projects in 6 countries</li>
+        </ul>
+      </div>
+      <div class="why-logo">
+        <img src="/images/products/retail-apps-logo-blue.png" alt="Retail Apps" />
+        <p class="scg-attribution sv-text">En produkt från <a href="/">Sigvardsson Consulting Group</a></p>
+        <p class="scg-attribution en-text">A product by <a href="/">Sigvardsson Consulting Group</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="product-cta ra-cta">
+    <div class="container">
+      <h2>
+        <span class="sv-text">Redo att modernisera din butiksdrift?</span>
+        <span class="en-text">Ready to modernize your store operations?</span>
+      </h2>
+      <p class="sv-text">Kontakta oss för en demo och ett förutsättningslöst samtal om hur Retail Apps kan ge er mätbara resultat.</p>
+      <p class="en-text">Contact us for a demo and a no-obligation conversation about how Retail Apps can deliver measurable results for you.</p>
+      <a href="/Contact/" class="btn btn-white sv-text">Boka demo</a>
+      <a href="/Contact/" class="btn btn-white en-text">Book a demo</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  /* ===== BRAND COLOR ===== */
+  :root { --ra-color: #215168; --ra-dark: #193d50; --ra-light: #2d6b8a; }
+
+  /* ===== HERO ===== */
+  .product-hero {
+    position: relative;
+    background: var(--ra-color);
+    padding: 7rem 2rem 5rem;
+    overflow: hidden;
+  }
+  .hero-photo-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    opacity: 0.1; mix-blend-mode: luminosity;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--ra-dark) 0%, var(--ra-color) 100%);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+  .powered-by {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .powered-link { color: rgba(255,255,255,0.75); text-decoration: none; }
+  .powered-link:hover { color: #fff; }
+  .product-logo { height: 56px; width: auto; margin-bottom: 1.75rem; }
+  .hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.7;
+    max-width: 620px;
+    margin-bottom: 2rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-white {
+    background: #fff; color: var(--ra-dark);
+    display: inline-block; padding: 0.75rem 2rem;
+    border-radius: 8px; font-family: var(--font-heading);
+    font-size: 0.9rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+  .btn-outline-white {
+    background: transparent; color: #fff;
+    border: 2px solid rgba(255,255,255,0.45);
+    display: inline-block; padding: 0.73rem 2rem;
+    border-radius: 8px; font-family: var(--font-heading);
+    font-size: 0.9rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  /* ===== STATS ===== */
+  .product-stats { background: var(--ra-dark); padding: 2rem; }
+  .stats-inner {
+    display: flex; align-items: center;
+    justify-content: center; flex-wrap: wrap; gap: 0;
+  }
+  .stat-item {
+    display: flex; flex-direction: column;
+    align-items: center; padding: 0.75rem 2.5rem; text-align: center;
+  }
+  .stat-num {
+    font-family: var(--font-heading); font-size: 1.7rem;
+    font-weight: 500; color: #fff; line-height: 1.1;
+  }
+  .stat-lbl {
+    font-family: var(--font-heading); font-size: 0.7rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-top: 0.2rem;
+  }
+  .stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); }
+
+  /* ===== APPS GRID ===== */
+  .apps-section { padding: var(--section-pad); background: var(--color-white); }
+  .section-intro { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
+  .section-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--ra-color); margin: 0.5rem 0 1rem; }
+  .section-intro p { color: #555; font-size: 1rem; line-height: 1.7; }
+  .ra-label { color: var(--ra-color) !important; }
+
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .app-card {
+    display: block; text-decoration: none;
+    background: var(--color-off-white);
+    border: 1px solid rgba(33,81,104,0.1);
+    border-radius: 12px; padding: 1.5rem;
+    transition: all 0.25s ease;
+  }
+  .app-card:hover {
+    border-color: var(--ra-color);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(33,81,104,0.12);
+  }
+  .app-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .app-card h3 { font-size: 1rem; color: var(--ra-color); margin-bottom: 0.5rem; }
+  .app-card p { font-size: 0.88rem; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
+  .app-effect { display: flex; align-items: baseline; gap: 0.4rem; }
+  .app-effect strong { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ra-dark); }
+  .app-effect span { font-size: 0.78rem; color: #888; }
+
+  /* ===== WHY ===== */
+  .why-section { padding: var(--section-pad); background: var(--color-off-white); }
+  .why-inner { display: grid; grid-template-columns: 1fr 340px; gap: 4rem; align-items: center; }
+  .why-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--ra-color); margin: 0.5rem 0 1.25rem; }
+  .why-text p { font-size: 1rem; color: #555; line-height: 1.75; margin-bottom: 1.25rem; }
+  .why-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .why-list li { font-size: 0.95rem; color: #444; padding-left: 1.25rem; position: relative; }
+  .why-list li::before { content: '→'; position: absolute; left: 0; color: var(--ra-color); font-family: var(--font-heading); }
+  .why-logo { text-align: center; }
+  .why-logo img { max-width: 280px; width: 100%; margin-bottom: 1.5rem; }
+  .scg-attribution { font-size: 0.8rem; color: #888; }
+  .scg-attribution a { color: var(--ra-color); text-decoration: none; }
+  .scg-attribution a:hover { text-decoration: underline; }
+
+  /* ===== CTA ===== */
+  .product-cta {
+    background: var(--ra-color); padding: 5rem 2rem; text-align: center; color: #fff;
+  }
+  .product-cta h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 0.75rem; color: #fff; }
+  .product-cta p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) { .why-inner { grid-template-columns: 1fr; } .why-logo { order: -1; } }
+  @media (max-width: 480px) {
+    .product-hero { padding: 5rem 1.25rem 3rem; }
+    .product-logo { height: 44px; }
+    .hero-actions { flex-direction: column; gap: 0.6rem; }
+    .hero-actions .btn-white, .hero-actions .btn-outline-white { display: block; text-align: center; }
+    .stat-item { padding: 0.5rem 1.25rem; }
+    .stat-divider { display: none; }
+    .apps-grid { grid-template-columns: 1fr; }
+    .product-cta { padding: 3rem 1.25rem; }
+  }
+</style>

@@ -1,0 +1,241 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const canonical = 'https://www.sigvardsson.org/products/saldo4/';
+
+const features = [
+  { icon: '📋', titleSv: 'Daglig åtgärdslista', titleEn: 'Daily action list', descSv: 'Konkreta åtgärder varje dag — lagerpersonal vet exakt vad som ska göras.', descEn: 'Concrete actions every day — warehouse staff know exactly what to do.' },
+  { icon: '📉', titleSv: 'Lägre kapitalbindning', titleEn: 'Lower capital tied up', descSv: 'Optimera lagervolymer och frigör kapital som kan användas bättre.', descEn: 'Optimize stock volumes and free up capital for better use.' },
+  { icon: '🔄', titleSv: 'Ökad stockturn', titleEn: 'Increased stock turn', descSv: 'Varor rör sig snabbare — friskare lager med bättre kassaflöde.', descEn: 'Goods move faster — healthier inventory with better cash flow.' },
+  { icon: '✅', titleSv: 'Friskare lager', titleEn: 'Healthier inventory', descSv: 'Bättre tillgänglighet och färre döda produkter i sortimentet.', descEn: 'Better availability and fewer dead products in the assortment.' },
+  { icon: '🔌', titleSv: 'ERP-integration', titleEn: 'ERP integration', descSv: 'Integreras med befintliga ERP- och WMS-system utan krångel.', descEn: 'Integrates with existing ERP and WMS systems without hassle.' },
+  { icon: '📱', titleSv: 'Mobil-first', titleEn: 'Mobile-first', descSv: 'Designad för personal som rör sig i lagret — inte för skrivbordet.', descEn: 'Designed for staff moving around the warehouse — not for the desk.' },
+];
+
+const schemaProduct = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Saldo4",
+  "applicationCategory": "BusinessApplication",
+  "description": "Saldo4 är ett datadrivet lagerhanteringssystem för retail. Reducerar kapitalbindning, ökar stockturn och ger ett friskare lager med konkreta dagliga åtgärder.",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" },
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://www.sigvardsson.org/#organization",
+    "name": "Sigvardsson Consulting Group"
+  },
+  "url": canonical
+};
+---
+
+<Layout
+  titleSv="Saldo4 — Datadrivet lagerhanteringssystem för retail"
+  titleEn="Saldo4 — Data-driven inventory management for retail"
+  descriptionSv="Saldo4 ger lageravdelningen en konkret daglig åtgärdslista. Reducerar kapitalbindning, ökar stockturn och levererar ett friskare lager med bättre tillgänglighet."
+  descriptionEn="Saldo4 gives the warehouse team a concrete daily action list. Reduces capital tied up, increases stock turn and delivers a healthier inventory with better availability."
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaProduct)} />
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="product-hero s4-hero">
+    <div class="hero-photo-bg" style="background-image:url('/images/retail/dry-goods-aisle.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="powered-by">
+        <span class="sv-text">En produkt från</span>
+        <span class="en-text">A product by</span>
+        <a href="/" class="powered-link">Sigvardsson Consulting Group</a>
+        <span class="separator">·</span>
+        <span class="sv-text">Del av</span>
+        <span class="en-text">Part of</span>
+        <a href="/products/retail-apps/" class="powered-link">Retail Apps</a>
+      </div>
+      <div class="saldo4-wordmark">
+        <span class="s4-name">Saldo</span><span class="s4-num">4</span>
+      </div>
+      <p class="hero-tagline sv-text">Perfekt lager. Varje dag.</p>
+      <p class="hero-tagline en-text">Perfect inventory. Every day.</p>
+      <p class="hero-desc sv-text">
+        Saldo4 talar om för lageravdelningen exakt vilka åtgärder som måste tas — varje dag. Reducerar kapitalbindning, ökar stockturn och ger ett friskare lager med bättre tillgänglighet.
+      </p>
+      <p class="hero-desc en-text">
+        Saldo4 tells the warehouse team exactly what actions need to be taken — every day. Reduces capital tied up, increases stock turn and delivers a healthier inventory with better availability.
+      </p>
+      <div class="hero-results">
+        <div class="result-item">
+          <span class="sv-text">Lägre kapitalbindning</span>
+          <span class="en-text">Lower capital tied up</span>
+        </div>
+        <div class="result-sep">·</div>
+        <div class="result-item">
+          <span class="sv-text">Ökad stockturn</span>
+          <span class="en-text">Increased stock turn</span>
+        </div>
+        <div class="result-sep">·</div>
+        <div class="result-item">
+          <span class="sv-text">Friskare lager</span>
+          <span class="en-text">Healthier inventory</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="/Contact/" class="btn btn-white sv-text">Kontakta oss</a>
+        <a href="/Contact/" class="btn btn-white en-text">Contact us</a>
+        <a href="/services/tjanster/perfekt-lager/" class="btn btn-outline-white sv-text">Tjänstesidan →</a>
+        <a href="/services/tjanster/perfekt-lager/" class="btn btn-outline-white en-text">Service page →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-intro fade-up">
+        <span class="section-label s4-label sv-text">Funktioner</span>
+        <span class="section-label s4-label en-text">Features</span>
+        <h2>
+          <span class="sv-text">Konkret. Enkelt. Effektivt.</span>
+          <span class="en-text">Concrete. Simple. Effective.</span>
+        </h2>
+        <p class="sv-text">Saldo4 är inte ett komplext ERP-system — det är ett fokuserat verktyg som ger lagerpersonal svar på en fråga: vad ska jag göra idag?</p>
+        <p class="en-text">Saldo4 isn't a complex ERP system — it's a focused tool that gives warehouse staff the answer to one question: what should I do today?</p>
+      </div>
+      <div class="features-grid">
+        {features.map((f, i) => (
+          <div class="feature-card fade-up" style={`animation-delay:${i*60}ms`}>
+            <div class="feature-icon">{f.icon}</div>
+            <h3>
+              <span class="sv-text">{f.titleSv}</span>
+              <span class="en-text">{f.titleEn}</span>
+            </h3>
+            <p>
+              <span class="sv-text">{f.descSv}</span>
+              <span class="en-text">{f.descEn}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLIENTS ===== -->
+  <section class="clients-section s4-bg">
+    <div class="container clients-inner fade-up">
+      <div>
+        <span class="section-label s4-label-light sv-text">Referenskunder</span>
+        <span class="section-label s4-label-light en-text">Reference clients</span>
+        <h2>
+          <span class="sv-text">Bevisad effekt hos ledande CE-kedjor</span>
+          <span class="en-text">Proven impact at leading CE chains</span>
+        </h2>
+        <p class="sv-text">Saldo4 har implementerats hos några av Nordens mest krävande retailorganisationer med komplexa sortiment och höga krav på lagerprecision.</p>
+        <p class="en-text">Saldo4 has been implemented at some of the Nordic region's most demanding retail organizations with complex assortments and high demands for inventory precision.</p>
+        <div class="client-pills">
+          <span class="client-pill">Media Markt</span>
+          <span class="client-pill">Elgiganten</span>
+          <span class="client-pill">Toys 'R' Us</span>
+        </div>
+      </div>
+      <div class="s4-badge-wrap">
+        <div class="s4-badge-large">
+          <span class="s4-name-lg">Saldo</span><span class="s4-num-lg">4</span>
+        </div>
+        <p class="scg-attribution sv-text">En produkt från <a href="/">Sigvardsson Consulting Group</a></p>
+        <p class="scg-attribution en-text">A product by <a href="/">Sigvardsson Consulting Group</a></p>
+        <p class="ra-attribution"><a href="/products/retail-apps/">Del av Retail Apps-sviten →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="product-cta s4-cta">
+    <div class="container">
+      <h2>
+        <span class="sv-text">Redo att optimera ert lager?</span>
+        <span class="en-text">Ready to optimize your inventory?</span>
+      </h2>
+      <p class="sv-text">Kontakta oss för att diskutera hur Saldo4 kan reducera er kapitalbindning och öka stockturn.</p>
+      <p class="en-text">Contact us to discuss how Saldo4 can reduce your capital tied up and increase stock turn.</p>
+      <a href="/Contact/" class="btn btn-white sv-text">Kontakta oss</a>
+      <a href="/Contact/" class="btn btn-white en-text">Contact us</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  :root { --s4-color: #215168; --s4-dark: #193d50; --s4-accent: #2d8a6b; }
+
+  .product-hero { position: relative; background: var(--s4-dark); padding: 7rem 2rem 5rem; overflow: hidden; }
+  .hero-photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.08; mix-blend-mode: luminosity; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, var(--s4-dark) 0%, #1a4a3d 100%); }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+  .powered-by { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .powered-link { color: rgba(255,255,255,0.65); text-decoration: none; }
+  .powered-link:hover { color: #fff; }
+  .separator { opacity: 0.3; }
+
+  /* Saldo4 wordmark */
+  .saldo4-wordmark { display: flex; align-items: baseline; gap: 0; margin-bottom: 0.5rem; }
+  .s4-name { font-family: var(--font-heading); font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 500; color: #fff; letter-spacing: -0.02em; }
+  .s4-num { font-family: var(--font-heading); font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 500; color: #4ecfa0; letter-spacing: -0.02em; }
+  .hero-tagline { font-family: var(--font-heading); font-size: 1.1rem; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 600px; margin-bottom: 1.5rem; }
+  .hero-results { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .result-item { font-family: var(--font-heading); font-size: 0.78rem; letter-spacing: 0.06em; color: #4ecfa0; }
+  .result-sep { color: rgba(255,255,255,0.2); }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-white { background: #fff; color: var(--s4-dark); display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+  .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); display: inline-block; padding: 0.73rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+
+  .features-section { padding: var(--section-pad); background: #fff; }
+  .section-intro { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
+  .section-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--s4-dark); margin: 0.5rem 0 1rem; }
+  .section-intro p { font-size: 1rem; color: #555; line-height: 1.7; }
+  .s4-label { color: var(--s4-color) !important; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+  .feature-card { background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.1); border-radius: 12px; padding: 1.5rem; transition: all 0.25s; }
+  .feature-card:hover { border-color: var(--s4-color); box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
+  .feature-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .feature-card h3 { font-size: 1rem; color: var(--s4-dark); margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.88rem; color: #666; line-height: 1.6; }
+
+  .clients-section { padding: var(--section-pad); background: var(--s4-dark); }
+  .clients-inner { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: center; }
+  .clients-inner h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: #fff; margin: 0.5rem 0 1.25rem; }
+  .clients-inner p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1.5rem; }
+  .s4-label-light { color: rgba(255,255,255,0.5) !important; }
+  .client-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .client-pill { font-family: var(--font-heading); font-size: 0.78rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); }
+  .s4-badge-wrap { text-align: center; }
+  .s4-badge-large { display: flex; align-items: baseline; justify-content: center; margin-bottom: 1.25rem; }
+  .s4-name-lg { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 500; color: rgba(255,255,255,0.85); }
+  .s4-num-lg { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 500; color: #4ecfa0; }
+  .scg-attribution { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 0.35rem; }
+  .scg-attribution a { color: rgba(255,255,255,0.55); text-decoration: none; }
+  .scg-attribution a:hover { color: #fff; }
+  .ra-attribution { font-size: 0.78rem; margin-top: 0.75rem; }
+  .ra-attribution a { color: #4ecfa0; text-decoration: none; font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.04em; }
+  .ra-attribution a:hover { color: #fff; }
+
+  .product-cta { background: var(--s4-color); padding: 5rem 2rem; text-align: center; }
+  .product-cta h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #fff; margin-bottom: 0.75rem; }
+  .product-cta p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 900px) { .clients-inner { grid-template-columns: 1fr; } .s4-badge-wrap { order: -1; } }
+  @media (max-width: 480px) {
+    .product-hero { padding: 5rem 1.25rem 3rem; }
+    .hero-results { gap: 0.5rem; }
+    .hero-actions { flex-direction: column; gap: 0.6rem; }
+    .hero-actions .btn-white, .hero-actions .btn-outline-white { display: block; text-align: center; }
+    .features-grid { grid-template-columns: 1fr; }
+    .product-cta { padding: 3rem 1.25rem; }
+  }
+</style>
