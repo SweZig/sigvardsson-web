@@ -1,0 +1,574 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { services, categories } from '../../../data/services.js';
+
+export async function getStaticPaths() {
+  return services.map(svc => ({
+    params: { slug: svc.slug },
+    props: { svc },
+  }));
+}
+
+const { svc } = Astro.props;
+const catLabel = categories[svc.category];
+const canonicalURL = `https://www.sigvardsson.org/services/tjanster/${svc.slug}/`;
+
+// Service-specific Schema.org
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": svc.titleSv,
+  "alternateName": svc.titleEn,
+  "description": svc.metaDescSv,
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://www.sigvardsson.org/#organization",
+    "name": "Sigvardsson Consulting Group"
+  },
+  "areaServed": ["SE","NO","DK","FI"],
+  "serviceType": catLabel.sv,
+  "url": canonicalURL
+};
+---
+
+<Layout
+  titleSv={`${svc.titleSv} — Sigvardsson Consulting Group`}
+  titleEn={`${svc.titleEn} — Sigvardsson Consulting Group`}
+  descriptionSv={svc.metaDescSv}
+  descriptionEn={svc.metaDescEn}
+  canonical={canonicalURL}
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceSchema)} />
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="svc-hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="breadcrumb">
+        <a href="/" class="sv-text">Hem</a><a href="/" class="en-text">Home</a>
+        <span>›</span>
+        <a href="/services/" class="sv-text">Tjänster</a><a href="/services/" class="en-text">Services</a>
+        <span>›</span>
+        <span class="sv-text">{catLabel.sv}</span><span class="en-text">{catLabel.en}</span>
+      </div>
+      <span class="section-label sv-text">{catLabel.sv}</span>
+      <span class="section-label en-text">{catLabel.en}</span>
+      <h1>
+        <span class="sv-text">{svc.titleSv}</span>
+        <span class="en-text">{svc.titleEn}</span>
+      </h1>
+      <p class="hero-desc sv-text">{svc.heroDescSv}</p>
+      <p class="hero-desc en-text">{svc.heroDescEn}</p>
+      <div class="hero-actions">
+        <a href="/Contact/" class="btn btn-light sv-text">Kontakta oss</a>
+        <a href="/Contact/" class="btn btn-light en-text">Contact us</a>
+        <a href="/services/" class="btn btn-outline sv-text">Alla tjänster</a>
+        <a href="/services/" class="btn btn-outline en-text">All services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY METRICS ===== -->
+  <section class="metrics-bar">
+    <div class="container metrics-inner">
+      <div class="metric">
+        <span class="metric-num">{svc.effectSv}</span>
+        <span class="metric-lbl sv-text">Normal effekt</span>
+        <span class="metric-lbl en-text">Typical impact</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric">
+        <span class="metric-num">{svc.projects}</span>
+        <span class="metric-lbl sv-text">Genomförda projekt</span>
+        <span class="metric-lbl en-text">Completed projects</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric">
+        <span class="metric-num-sm">{svc.clientsSv}</span>
+        <span class="metric-lbl sv-text">Referenskunder</span>
+        <span class="metric-lbl en-text">Reference clients</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO ===== -->
+  <section class="content-section">
+    <div class="container content-grid">
+
+      <div class="content-main fade-up">
+        <span class="section-label sv-text">Vad vi gör</span>
+        <span class="section-label en-text">What we do</span>
+        <h2 class="sv-text">{svc.titleSv}</h2>
+        <h2 class="en-text">{svc.titleEn}</h2>
+        <p class="lead sv-text">{svc.heroDescSv}</p>
+        <p class="lead en-text">{svc.heroDescEn}</p>
+
+        <ul class="bullet-list">
+          {svc.bulletsSv.map(b => (
+            <li class="sv-text">{b}</li>
+          ))}
+          {svc.bulletsEn.map(b => (
+            <li class="en-text">{b}</li>
+          ))}
+        </ul>
+      </div>
+
+      <aside class="content-aside fade-up">
+        <div class="aside-card">
+          <h3 class="sv-text">Redo att komma igång?</h3>
+          <h3 class="en-text">Ready to get started?</h3>
+          <p class="sv-text">Kontakta oss för ett förutsättningslöst samtal om hur {svc.titleSv} kan ge er mätbara resultat.</p>
+          <p class="en-text">Contact us for a no-obligation conversation about how {svc.titleEn} can deliver measurable results for you.</p>
+          <a href="/Contact/" class="btn btn-primary sv-text">Kontakta oss</a>
+          <a href="/Contact/" class="btn btn-primary en-text">Contact us</a>
+        </div>
+
+        <div class="aside-card aside-card-stats">
+          <div class="stat-row">
+            <span class="stat-icon">📈</span>
+            <div>
+              <strong>{svc.effectSv}</strong>
+              <span class="sv-text">Normal effekt</span>
+              <span class="en-text">Typical impact</span>
+            </div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-icon">✓</span>
+            <div>
+              <strong>{svc.projects}</strong>
+              <span class="sv-text">Genomförda projekt</span>
+              <span class="en-text">Completed projects</span>
+            </div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-icon">⭐</span>
+            <div>
+              <strong class="sv-text">{svc.clientsSv}</strong>
+              <strong class="en-text">{svc.clientsEn}</strong>
+              <span class="sv-text">Referenskunder</span>
+              <span class="en-text">Reference clients</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== APPROACH ===== -->
+  <section class="approach-section">
+    <div class="container">
+      <div class="approach-inner fade-up">
+        <span class="section-label sv-text">Vår approach</span>
+        <span class="section-label en-text">Our approach</span>
+        <h2 class="sv-text">Starta litet, lär, skala upp</h2>
+        <h2 class="en-text">Start small, learn, scale up</h2>
+        <p class="sv-text">Samtliga projekt har omedelbar effekt och ROI. Vi startar i rätt skala — lär, erfar och bygger upp kompetens — sedan tar vi nästa steg. Vi involverar alla i personalen och bygger affärsmannaskap.</p>
+        <p class="en-text">All projects have immediate impact and ROI. We start at the right scale — learn, experience and build competence — then take the next step. We involve all staff and build business acumen.</p>
+        <a href="/our-process/" class="btn btn-primary sv-text">Se vår approach →</a>
+        <a href="/our-process/" class="btn btn-primary en-text">See our approach →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RELATED SERVICES ===== -->
+  <section class="related-section">
+    <div class="container">
+      <span class="section-label sv-text">Fler tjänster</span>
+      <span class="section-label en-text">More services</span>
+      <h2 class="sv-text">Relaterade tjänster</h2>
+      <h2 class="en-text">Related services</h2>
+      <div class="related-grid">
+        {services
+          .filter(s => s.category === svc.category && s.slug !== svc.slug)
+          .slice(0, 3)
+          .map(related => (
+            <a href={`/services/tjanster/${related.slug}/`} class="related-card">
+              <span class="related-effect sv-text">{related.effectSv}</span>
+              <span class="related-effect en-text">{related.effectEn}</span>
+              <h4 class="sv-text">{related.titleSv}</h4>
+              <h4 class="en-text">{related.titleEn}</h4>
+              <p class="sv-text">{related.heroDescSv.substring(0, 100)}…</p>
+              <p class="en-text">{related.heroDescEn.substring(0, 100)}…</p>
+              <span class="related-link sv-text">Läs mer →</span>
+              <span class="related-link en-text">Read more →</span>
+            </a>
+          ))
+        }
+      </div>
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="/services/" class="btn btn-primary sv-text">Alla tjänster</a>
+        <a href="/services/" class="btn btn-primary en-text">All services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-band">
+    <div class="container">
+      <h2 class="sv-text">Redo att öka din lönsamhet?</h2>
+      <h2 class="en-text">Ready to increase your profitability?</h2>
+      <p class="sv-text">Kontakta oss för ett förutsättningslöst samtal om {svc.titleSv}.</p>
+      <p class="en-text">Contact us for a no-obligation conversation about {svc.titleEn}.</p>
+      <a href="/Contact/" class="btn btn-light sv-text">Kontakta oss</a>
+      <a href="/Contact/" class="btn btn-light en-text">Contact us</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  /* ===== HERO ===== */
+  .svc-hero {
+    position: relative;
+    background: var(--color-navy);
+    padding: 7rem 2rem 5rem;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
+    opacity: 0.95;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+  }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--color-white); }
+  .svc-hero .section-label { color: var(--color-blue-lite); }
+  .svc-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0.5rem 0 1.25rem;
+    line-height: 1.15;
+  }
+  .hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 2rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-light {
+    background: var(--color-white);
+    color: var(--color-navy);
+  }
+  .btn-light:hover {
+    background: var(--color-off-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(255,255,255,0.45);
+  }
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--color-white);
+  }
+
+  /* ===== METRICS BAR ===== */
+  .metrics-bar {
+    background: var(--color-navy-mid);
+    padding: 2rem;
+  }
+  .metrics-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 2.5rem;
+    text-align: center;
+  }
+  .metric-num {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--color-white);
+    line-height: 1.1;
+  }
+  .metric-num-sm {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-white);
+    line-height: 1.2;
+  }
+  .metric-lbl {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-blue-lite);
+    font-family: var(--font-heading);
+    margin-top: 0.25rem;
+  }
+  .metric-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  /* ===== CONTENT SECTION ===== */
+  .content-section {
+    padding: var(--section-pad);
+    background: var(--color-white);
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: start;
+  }
+  .content-main h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: var(--color-navy);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .lead {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  .bullet-list li::before {
+    content: '→';
+    color: var(--color-blue);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+
+  /* ===== ASIDE ===== */
+  .aside-card {
+    background: var(--color-off-white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(1,13,96,0.07);
+  }
+  .aside-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+  .aside-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .aside-card .btn-primary {
+    display: block;
+    text-align: center;
+    background: var(--color-navy);
+    color: var(--color-white);
+  }
+  .aside-card .btn-primary:hover {
+    background: var(--color-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(1,13,96,0.25);
+  }
+  .aside-card-stats {
+    background: var(--color-navy);
+  }
+  .stat-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+  .stat-row strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--color-white);
+    margin-bottom: 0.1rem;
+  }
+  .stat-row span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-blue-lite);
+    font-family: var(--font-heading);
+  }
+
+  /* ===== APPROACH ===== */
+  .approach-section {
+    background: var(--color-off-white);
+    padding: var(--section-pad);
+  }
+  .approach-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .approach-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--color-navy);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .approach-inner p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+  .approach-inner .btn-primary {
+    background: var(--color-navy);
+    color: var(--color-white);
+    display: inline-block;
+  }
+  .approach-inner .btn-primary:hover {
+    background: var(--color-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(1,13,96,0.25);
+  }
+
+  /* ===== RELATED ===== */
+  .related-section {
+    padding: var(--section-pad);
+    background: var(--color-white);
+  }
+  .related-section h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-navy);
+    margin: 0.5rem 0 2rem;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .related-card {
+    display: block;
+    background: var(--color-off-white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(1,13,96,0.07);
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .related-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(1,13,96,0.1);
+  }
+  .related-effect {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .related-card h4 {
+    font-size: 1.05rem;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+  }
+  .related-card p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .related-link {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--color-blue);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== CTA BAND ===== */
+  .cta-band {
+    background: var(--color-navy);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .cta-band h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+  .cta-band p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-band .btn-light {
+    background: var(--color-white);
+    color: var(--color-navy);
+  }
+  .cta-band .btn-light:hover {
+    background: var(--color-off-white);
+    transform: translateY(-2px);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+    .content-aside {
+      order: -1;
+    }
+    .aside-card-stats { display: none; }
+    .metrics-inner { gap: 1rem; }
+    .metric-divider { display: none; }
+    .metric { padding: 0.5rem 1rem; }
+  }
+</style>
