@@ -350,13 +350,13 @@ const categories = [
     <div class="hero-bg-pattern"></div>
     <div class="hero-photo-bg"></div>
     <div class="container">
-      <span class="section-label sv-text">Vår tjänsteportfölj</span>
+      <span class="section-label sv-text" data-no="Vår tjenesteportefølje" data-da="Vores ydelsesportefølje" data-fi="Palveluvalikoimamme">Vår tjänsteportfölj</span>
       <span class="section-label en-text">Our service portfolio</span>
       <h1>
-        <span class="sv-text">Allt vi gör<br/>för din butik</span>
+        <span class="sv-text" data-no="Alt vi gjør<br/>for butikken din" data-da="Alt vi gør<br/>for din butik" data-fi="Kaikki mitä teemme<br/>kaupallesi">Allt vi gör<br/>för din butik</span>
         <span class="en-text">Everything we do<br/>for your store</span>
       </h1>
-      <p class="hero-sub sv-text">Från datadrivna hyllverktyg till strategisk rådgivning — ett sammanhållet erbjudande för hela din retailverksamhet.</p>
+      <p class="hero-sub sv-text" data-no="Fra datadrevne hylleverktøy til strategisk rådgivning — et sammenhengende tilbud for hele din retailvirksomhet." data-da="Fra datadrevne hyldeværktøjer til strategisk rådgivning — et sammenhængende tilbud for hele din detailvirksomhed." data-fi="Dataohjattuista hyllytyökaluista strategiseen neuvontaan — yhtenäinen tarjonta koko vähittäiskauppatoiminnallesi.">Från datadrivna hyllverktyg till strategisk rådgivning — ett sammanhållet erbjudande för hela din retailverksamhet.</p>
       <p class="hero-sub en-text">From data-driven shelf tools to strategic advisory — a coherent offer for your entire retail operation.</p>
 
       <!-- Category quick-nav -->
@@ -444,7 +444,7 @@ const categories = [
               </div>
               <div class="card-footer">
                 <div class="card-effect">
-                  <span class="effect-label sv-text">Effekt</span>
+                  <span class="effect-label sv-text" data-no="Effekt" data-da="Effekt" data-fi="Vaikutus">Effekt</span>
                   <span class="effect-label en-text">Effect</span>
                   <span class="effect-value">
                     <span class="sv-text">{svc.effectSv}</span>
@@ -460,7 +460,7 @@ const categories = [
               </div>
               {svc.clientsSv !== 'TBA' && (
                 <div class="card-clients">
-                  <span class="clients-label sv-text">Referenskunder: </span>
+                  <span class="clients-label sv-text" data-no="Referansekunder: " data-da="Referencekunder: " data-fi="Referenssiasiakkaat: ">Referenskunder: </span>
                   <span class="clients-label en-text">Reference customers: </span>
                   <span class="clients-value">
                     <span class="sv-text">{svc.clientsSv}</span>
@@ -474,7 +474,7 @@ const categories = [
                   class="card-readmore"
                   onclick="event.stopPropagation()"
                 >
-                  <span class="sv-text">Läs mer →</span>
+                  <span class="sv-text" data-no="Les mer →" data-da="Læs mere →" data-fi="Lue lisää →">Läs mer →</span>
                   <span class="en-text">Read more →</span>
                 </a>
               )}
@@ -490,15 +490,15 @@ const categories = [
     <div class="container">
       <div class="cta-inner fade-up">
 <h2>
-          <span class="sv-text">Redo att ta nästa steg?</span>
+          <span class="sv-text" data-no="Klar til å ta neste steg?" data-da="Klar til at tage næste skridt?" data-fi="Valmis ottamaan seuraavan askeleen?">Redo att ta nästa steg?</span>
           <span class="en-text">Ready to take the next step?</span>
         </h2>
-        <p class="sv-text">Samtliga projekt har omedelbar effekt och ROI. Vi startar i lagom skala, lär oss och bygger upp kompetens tillsammans.</p>
+        <p class="sv-text" data-no="Alle prosjekter har umiddelbar effekt og ROI. Vi starter i passelig skala, lærer oss og bygger opp kompetanse sammen." data-da="Alle projekter har øjeblikkelig effekt og ROI. Vi starter i passende skala, lærer os og opbygger kompetence sammen." data-fi="Kaikilla projekteilla on välitön vaikutus ja ROI. Aloitamme sopivassa mittakaavassa, opimme ja rakennamme osaamista yhdessä.">Samtliga projekt har omedelbar effekt och ROI. Vi startar i lagom skala, lär oss och bygger upp kompetens tillsammans.</p>
         <p class="en-text">All projects have immediate effect and ROI. We start at the right scale, learn and build competence together.</p>
         <div class="cta-buttons">
           <a href="/Contact/" class="btn btn-light sv-text" data-no="Kontakt oss" data-da="Kontakt os" data-fi="Ota yhteyttä">Kontakta oss</a>
           <a href="/Contact/" class="btn btn-light en-text">Contact us</a>
-          <a href="/services/" class="btn btn-outline sv-text">Våra tjänster →</a>
+          <a href="/services/" class="btn btn-outline sv-text" data-no="Våre tjenester →" data-da="Vores ydelser →" data-fi="Palvelumme →">Våra tjänster →</a>
           <a href="/services/" class="btn btn-outline en-text">Our Services →</a>
         </div>
       </div>
