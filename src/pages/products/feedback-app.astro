@@ -210,14 +210,14 @@ const schemaProduct = {
 <style>
   :root { --fa-color: #215168; --fa-dark: #193d50; }
 
-  .product-hero { position: relative; background: var(--fa-color); padding: 7rem 2rem 5rem; overflow: hidden; isolation: isolate; }
+  .product-hero { position: relative; background: var(--fa-color); padding: 7rem 2rem 5rem; overflow: hidden; }
   .hero-photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.1; mix-blend-mode: luminosity; }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, var(--fa-dark) 0%, var(--fa-color) 100%); }
   .hero-inner { position: relative; z-index: 1; max-width: 800px; }
   .powered-by { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
   .powered-link { color: rgba(255,255,255,0.75); text-decoration: none; }
   .powered-link:hover { color: #fff; }
-  .product-logo { height: 52px; width: auto; margin-bottom: 1.75rem; mix-blend-mode: screen; }  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
+  .product-logo { height: 52px; width: auto; margin-bottom: 1.75rem; }  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
   .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
   .hero-stat { display: flex; flex-direction: column; }
   .hero-stat strong { font-family: var(--font-heading); font-size: 1.3rem; color: #fff; }
@@ -248,7 +248,7 @@ const schemaProduct = {
   .how-steps li::before { content: counter(steps); counter-increment: steps; position: absolute; left: 0; width: 22px; height: 22px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.72rem; color: #fff; font-weight: 500; }
   .how-steps li strong { color: #fff; }
   .how-logo { text-align: center; }
-  .how-symbol { width: 140px; margin-bottom: 1.25rem; mix-blend-mode: screen; opacity: 0.95; }
+  .how-symbol { width: 140px; margin-bottom: 1.25rem; opacity: 0.95; }
   .clients-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
   .scg-attribution { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
   .scg-attribution a { color: rgba(255,255,255,0.6); text-decoration: none; }
