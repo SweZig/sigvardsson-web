@@ -776,4 +776,17 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
     .team-grid { grid-template-columns: 1fr; }
     .team-avatar { height: 150px; }
   }
+
+  @media (max-width: 480px) {
+    .page-hero { padding: 5rem 1.25rem 3rem; }
+    .page-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+    .hero-sub { font-size: 0.9rem; }
+    .founder-img-frame { width: 140px; height: 180px; }
+    .bio-body p, .bio-body li { font-size: 0.88rem; }
+    .career-timeline { padding-left: 1rem; }
+    .career-item { padding-left: 1rem; }
+    .network-section { padding: 3rem 1.25rem; }
+    .capability-tags { gap: 0.4rem; }
+    .cap-tag { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+  }
 </style>

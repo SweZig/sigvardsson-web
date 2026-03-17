@@ -850,4 +850,19 @@ import Footer from '../components/Footer.astro';
     .process-steps { flex-direction: column; align-items: center; }
     .process-step::after { display: none; }
   }
+
+  @media (max-width: 480px) {
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero-title { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+    .hero-desc { font-size: 0.95rem; }
+    .hero-actions { flex-direction: column; gap: 0.75rem; }
+    .hero-actions .btn { display: block; text-align: center; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .stat-num { font-size: 2rem; }
+    .section-label { font-size: 0.68rem; }
+    .clients-grid { gap: 0.4rem; }
+    .client-tag { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
+    .pillar { padding: 1.5rem 1.25rem; }
+    .cta-band { padding: 3rem 1.25rem; }
+  }
 </style>

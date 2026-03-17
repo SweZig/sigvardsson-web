@@ -160,6 +160,12 @@ const schemaOrg = {
       --section-pad: 5rem 2rem;
     }
 
+    @media (max-width: 480px) {
+      :root { --section-pad: 3rem 1.25rem; }
+      .container { padding: 0 1.25rem; }
+      .btn { padding: 0.7rem 1.5rem; font-size: 0.88rem; }
+    }
+
     /* ===== LANGUAGE TOGGLE — 5 languages ===== */
     /* Hide everything that doesn't match current lang */
     [data-lang="sv"] .en-text,

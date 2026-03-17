@@ -441,8 +441,14 @@
     .hamburger { display: flex; }
     .mobile-menu { display: block; }
     .header-inner { padding: 0 1.25rem; }
-
     .logo-consulting { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .header-inner { padding: 0 1rem; height: 56px; }
+    .header-logo { width: 36px; height: 36px; }
+    .lang-current { padding: 0.25rem 0.5rem; font-size: 0.72rem; min-width: 60px; }
+    .lang-menu { min-width: 130px; }
   }
 </style>
 
