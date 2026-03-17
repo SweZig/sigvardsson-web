@@ -8,7 +8,17 @@
     { "source": "/what-we-do", "destination": "/our-process/", "permanent": true },
     { "source": "/what-we-do/", "destination": "/our-process/", "permanent": true },
     { "source": "/customer-satisfaction", "destination": "/services/", "permanent": true },
-    { "source": "/customer-satisfaction/", "destination": "/services/", "permanent": true }
+    { "source": "/customer-satisfaction/", "destination": "/services/", "permanent": true },
+    { "source": "/self-service-checkout", "destination": "/services/", "permanent": true },
+    { "source": "/self-service-checkout/", "destination": "/services/", "permanent": true },
+    { "source": "/rfid-technology", "destination": "/services/", "permanent": true },
+    { "source": "/rfid-technology/", "destination": "/services/", "permanent": true },
+    { "source": "/customer-feedback", "destination": "/services/", "permanent": true },
+    { "source": "/customer-feedback/", "destination": "/services/", "permanent": true },
+    { "source": "/electronic-shelf-label", "destination": "/services/", "permanent": true },
+    { "source": "/electronic-shelf-label/", "destination": "/services/", "permanent": true },
+    { "source": "/pricing-software", "destination": "/services/", "permanent": true },
+    { "source": "/pricing-software/", "destination": "/services/", "permanent": true }
   ],
   "headers": [
     {

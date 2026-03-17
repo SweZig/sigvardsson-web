@@ -19,6 +19,61 @@ const {
 } = Astro.props;
 
 const canonicalURL = canonical || `https://www.sigvardsson.org${Astro.url.pathname}`;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.sigvardsson.org/#organization",
+      "name": "Sigvardsson Consulting Group",
+      "alternateName": "SCG",
+      "url": "https://www.sigvardsson.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.sigvardsson.org/images/logos/S_blue.png"
+      },
+      "description": "Leading Nordic retail management consultancy with 30+ years of proven results. We help retailers increase profitability through advisory, technology and retail optimization.",
+      "foundingDate": "2017",
+      "areaServed": ["SE", "NO", "DK", "FI"],
+      "knowsLanguage": ["sv", "en", "no", "da", "fi"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Beckholmen, hus 526",
+        "addressLocality": "Stockholm",
+        "postalCode": "115 21",
+        "addressCountry": "SE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46790200300",
+        "contactType": "customer service",
+        "availableLanguage": ["Swedish", "English", "Norwegian"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/sigvardsson-consulting-group"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.sigvardsson.org/#website",
+      "url": "https://www.sigvardsson.org/",
+      "name": "Sigvardsson Consulting Group",
+      "publisher": { "@id": "https://www.sigvardsson.org/#organization" },
+      "inLanguage": ["sv", "en", "no", "da", "fi"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "isPartOf": { "@id": "https://www.sigvardsson.org/#website" },
+      "about": { "@id": "https://www.sigvardsson.org/#organization" },
+      "name": titleSv,
+      "description": descriptionSv,
+      "inLanguage": ["sv", "en", "no", "da", "fi"]
+    }
+  ]
+};
 ---
 <!doctype html>
 <html lang="sv">
@@ -31,29 +86,56 @@ const canonicalURL = canonical || `https://www.sigvardsson.org${Astro.url.pathna
   <meta name="description" id="page-description" content={descriptionSv} />
   <link rel="canonical" href={canonicalURL} />
 
+  <!-- Hreflang — same URL serves all 5 languages via CSS+JS -->
+  <link rel="alternate" hreflang="sv" href={canonicalURL} />
+  <link rel="alternate" hreflang="en" href={canonicalURL} />
+  <link rel="alternate" hreflang="no" href={canonicalURL} />
+  <link rel="alternate" hreflang="da" href={canonicalURL} />
+  <link rel="alternate" hreflang="fi" href={canonicalURL} />
+  <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" id="og-title" content={titleSv} />
   <meta property="og:description" id="og-description" content={descriptionSv} />
-  <meta property="og:image" content="https://www.sigvardsson.org/images/logos/S_blue.png" />
+  <meta property="og:image" content="https://www.sigvardsson.org/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:site_name" content="Sigvardsson Consulting Group" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content={titleSv} />
+  <meta name="twitter:description" id="tw-description" content={descriptionSv} />
+  <meta name="twitter:image" content="https://www.sigvardsson.org/images/og-image.jpg" />
 
   <!-- Sitemap + Robots -->
   <link rel="sitemap" href="/sitemap.xml" />
 
-  <!-- Favicon -->
+  <!-- Favicon + App icons -->
   <link rel="icon" type="image/png" href="/images/logos/S_blue-trans.png" />
+  <link rel="apple-touch-icon" href="/images/logos/S_blue.png" />
+  <meta name="theme-color" content="#010D60" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Nunito:wght@200;300;400&display=swap" rel="stylesheet" />
 
-  <!-- Language init - must run before page renders to avoid flash -->
+  <!-- Language init — runs before render to avoid flash -->
   <script is:inline>
     (function() {
-      const saved = localStorage.getItem('scg-lang') || 'sv';
-      document.documentElement.setAttribute('data-lang', saved);
+      var valid = ['sv','en','no','da','fi'];
+      var saved = localStorage.getItem('scg-lang') || 'sv';
+      var lang = valid.indexOf(saved) >= 0 ? saved : 'sv';
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
     })();
   </script>
 
@@ -78,9 +160,15 @@ const canonicalURL = canonical || `https://www.sigvardsson.org${Astro.url.pathna
       --section-pad: 5rem 2rem;
     }
 
-    /* ===== LANGUAGE TOGGLE ===== */
+    /* ===== LANGUAGE TOGGLE — 5 languages ===== */
+    /* SV/EN: pure CSS visibility */
     [data-lang="sv"] .en-text { display: none !important; }
     [data-lang="en"] .sv-text { display: none !important; }
+
+    /* NO/DA/FI: sv-text stays visible (JS replaces its content), en-text hidden */
+    [data-lang="no"] .en-text,
+    [data-lang="da"] .en-text,
+    [data-lang="fi"] .en-text { display: none !important; }
 
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

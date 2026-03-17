@@ -20,22 +20,37 @@
       <a href="/" class="nav-link">
         <span class="sv-text">Hem</span>
         <span class="en-text">Home</span>
+        <span class="no-text">Hjem</span>
+        <span class="da-text">Hjem</span>
+        <span class="fi-text">Etusivu</span>
       </a>
       <a href="/services/" class="nav-link">
         <span class="sv-text">Våra tjänster</span>
         <span class="en-text">Our Services</span>
+        <span class="no-text">Våre tjenester</span>
+        <span class="da-text">Vores ydelser</span>
+        <span class="fi-text">Palvelumme</span>
       </a>
       <a href="/our-process/" class="nav-link">
         <span class="sv-text">Vår approach</span>
         <span class="en-text">Our Approach</span>
+        <span class="no-text">Vår tilnærming</span>
+        <span class="da-text">Vores tilgang</span>
+        <span class="fi-text">Lähestymistapamme</span>
       </a>
       <a href="/our-people/" class="nav-link">
         <span class="sv-text">Vårt team</span>
         <span class="en-text">Our Team</span>
+        <span class="no-text">Vårt team</span>
+        <span class="da-text">Vores team</span>
+        <span class="fi-text">Tiimimme</span>
       </a>
       <a href="/Contact/" class="nav-link nav-cta">
         <span class="sv-text">Kontakt</span>
         <span class="en-text">Contact</span>
+        <span class="no-text">Kontakt</span>
+        <span class="da-text">Kontakt</span>
+        <span class="fi-text">Yhteystiedot</span>
       </a>
     </nav>
 
@@ -49,16 +64,20 @@
         <div class="award-wrap"><img src="/images/awards/global_100_2026.png" alt="Global 100 Winner 2026" class="award-badge" /></div>
       </div>
 
-      <!-- Language Toggle -->
-      <button
-        class="lang-toggle"
-        id="lang-toggle"
-        aria-label="Switch language"
-        title="Switch language / Byt språk"
-      >
-        <span class="lang-sv sv-text">EN</span>
-        <span class="lang-en en-text">SV</span>
-      </button>
+      <!-- Language Picker -->
+      <div class="lang-picker" id="lang-picker">
+        <button class="lang-current" id="lang-current" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
+          <span id="lang-current-label">SV</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu" role="menu">
+          <li role="menuitem"><button data-lang-pick="sv">🇸🇪 SV</button></li>
+          <li role="menuitem"><button data-lang-pick="en">🇬🇧 EN</button></li>
+          <li role="menuitem"><button data-lang-pick="no">🇳🇴 NO</button></li>
+          <li role="menuitem"><button data-lang-pick="da">🇩🇰 DA</button></li>
+          <li role="menuitem"><button data-lang-pick="fi">🇫🇮 FI</button></li>
+        </ul>
+      </div>
 
       <!-- Hamburger (mobile) -->
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -71,19 +90,19 @@
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mobile-nav">
       <a href="/" class="mobile-nav-link">
-        <span class="sv-text">Hem</span><span class="en-text">Home</span>
+        <span class="sv-text">Hem</span><span class="en-text">Home</span><span class="no-text">Hjem</span><span class="da-text">Hjem</span><span class="fi-text">Etusivu</span>
       </a>
       <a href="/services/" class="mobile-nav-link">
-        <span class="sv-text">Våra tjänster</span><span class="en-text">Our Services</span>
+        <span class="sv-text">Våra tjänster</span><span class="en-text">Our Services</span><span class="no-text">Våre tjenester</span><span class="da-text">Vores ydelser</span><span class="fi-text">Palvelumme</span>
       </a>
       <a href="/our-process/" class="mobile-nav-link">
-        <span class="sv-text">Vår approach</span><span class="en-text">Our Approach</span>
+        <span class="sv-text">Vår approach</span><span class="en-text">Our Approach</span><span class="no-text">Vår tilnærming</span><span class="da-text">Vores tilgang</span><span class="fi-text">Lähestymistapamme</span>
       </a>
       <a href="/our-people/" class="mobile-nav-link">
-        <span class="sv-text">Vårt team</span><span class="en-text">Our Team</span>
+        <span class="sv-text">Vårt team</span><span class="en-text">Our Team</span><span class="no-text">Vårt team</span><span class="da-text">Vores team</span><span class="fi-text">Tiimimme</span>
       </a>
       <a href="/Contact/" class="mobile-nav-link mobile-nav-cta">
-        <span class="sv-text">Kontakt</span><span class="en-text">Contact</span>
+        <span class="sv-text">Kontakt</span><span class="en-text">Contact</span><span class="no-text">Kontakt</span><span class="da-text">Kontakt</span><span class="fi-text">Yhteystiedot</span>
       </a>
 
       <!-- Awards in mobile menu -->
@@ -252,8 +271,16 @@
     transform: scale(1.08);
   }
 
-  /* ===== LANGUAGE TOGGLE ===== */
-  .lang-toggle {
+  /* ===== LANGUAGE PICKER ===== */
+  .lang-picker {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .lang-current {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 500;
     font-size: 0.78rem;
@@ -262,16 +289,69 @@
     background: var(--color-off-white);
     border: 1px solid rgba(1,13,96,0.15);
     border-radius: 6px;
-    padding: 0.3rem 0.7rem;
+    padding: 0.3rem 0.65rem;
     cursor: pointer;
     transition: all 0.2s;
-    flex-shrink: 0;
+    white-space: nowrap;
   }
 
-  .lang-toggle:hover {
+  .lang-current:hover,
+  .lang-picker.open .lang-current {
     background: var(--color-navy);
     color: var(--color-white);
     border-color: var(--color-navy);
+  }
+
+  .lang-current svg {
+    transition: transform 0.2s;
+  }
+
+  .lang-picker.open .lang-current svg {
+    transform: rotate(180deg);
+  }
+
+  .lang-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    background: var(--color-white);
+    border: 1px solid rgba(1,13,96,0.12);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(1,13,96,0.12);
+    list-style: none;
+    min-width: 110px;
+    z-index: 200;
+    overflow: hidden;
+  }
+
+  .lang-picker.open .lang-menu {
+    display: block;
+  }
+
+  .lang-menu li button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--color-navy);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .lang-menu li button:hover {
+    background: var(--color-off-white);
+  }
+
+  .lang-menu li button.active {
+    background: var(--color-navy);
+    color: var(--color-white);
   }
 
   /* ===== HAMBURGER ===== */
@@ -373,6 +453,22 @@
 </style>
 
 <script>
+  // ===== CACHE sv-text originals before any swap =====
+  document.querySelectorAll('.sv-text[data-no]').forEach(el => {
+    if (!el.dataset.sv) el.dataset.sv = el.innerHTML;
+  });
+
+  // Apply stored language immediately (CSS handles sv/en, JS handles no/da/fi)
+  (function() {
+    const stored = localStorage.getItem('scg-lang') || 'sv';
+    if (stored === 'no' || stored === 'da' || stored === 'fi') {
+      document.querySelectorAll('.sv-text[data-' + stored + ']').forEach(el => {
+        if (!el.dataset.sv) el.dataset.sv = el.innerHTML;
+        el.innerHTML = el.dataset[stored];
+      });
+    }
+  })();
+
   // ===== SCROLL SHADOW =====
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
@@ -390,17 +486,97 @@
     mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
   });
 
-  // ===== LANGUAGE TOGGLE =====
-  const langToggle = document.getElementById('lang-toggle');
+  // ===== LANGUAGE PICKER =====
+  const picker    = document.getElementById('lang-picker');
+  const currentBtn = document.getElementById('lang-current');
+  const currentLabel = document.getElementById('lang-current-label');
+  const langMenu  = document.getElementById('lang-menu');
 
-  langToggle?.addEventListener('click', () => {
+  const labels = { sv: 'SV', en: 'EN', no: 'NO', da: 'DA', fi: 'FI' };
+
+  // Page meta: title/desc stored in data attributes by each page
+  const metaTitles = {
+    sv: document.getElementById('page-title')?.dataset?.sv || document.title,
+    en: document.getElementById('page-title')?.dataset?.en || document.title,
+    no: document.getElementById('page-title')?.dataset?.no || document.title,
+    da: document.getElementById('page-title')?.dataset?.da || document.title,
+    fi: document.getElementById('page-title')?.dataset?.fi || document.title,
+  };
+  const metaDescs = {
+    sv: document.getElementById('page-description')?.dataset?.sv || '',
+    en: document.getElementById('page-description')?.dataset?.en || '',
+    no: document.getElementById('page-description')?.dataset?.no || '',
+    da: document.getElementById('page-description')?.dataset?.da || '',
+    fi: document.getElementById('page-description')?.dataset?.fi || '',
+  };
+
+  function applyLang(lang) {
     const html = document.documentElement;
-    const current = html.getAttribute('data-lang') || 'sv';
-    const next = current === 'sv' ? 'en' : 'sv';
-    html.setAttribute('data-lang', next);
-    localStorage.setItem('scg-lang', next);
+    html.setAttribute('data-lang', lang);
+    html.setAttribute('lang', lang);
+    localStorage.setItem('scg-lang', lang);
 
-    // Update meta for SEO (optional, for single-page reference)
-    document.documentElement.setAttribute('lang', next);
+    if (currentLabel) currentLabel.textContent = labels[lang] || lang.toUpperCase();
+
+    // Mark active in menu
+    document.querySelectorAll('[data-lang-pick]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.langPick === lang);
+    });
+
+    // Swap innerHTML on all sv-text elements for NO/DA/FI
+    document.querySelectorAll('.sv-text[data-no]').forEach(el => {
+      const key = lang === 'no' ? 'no' : lang === 'da' ? 'da' : lang === 'fi' ? 'fi' : null;
+      if (key && el.dataset[key]) {
+        if (!el.dataset.sv) el.dataset.sv = el.innerHTML;
+        el.innerHTML = el.dataset[key];
+      } else if (lang === 'sv' || lang === 'en') {
+        if (el.dataset.sv) el.innerHTML = el.dataset.sv;
+      }
+    });
+
+    // Update meta tags
+    const t = metaTitles[lang] || metaTitles.sv;
+    const d = metaDescs[lang]  || metaDescs.sv;
+    const titleEl = document.getElementById('page-title');
+    const descEl  = document.getElementById('page-description');
+    const ogT  = document.getElementById('og-title');
+    const ogD  = document.getElementById('og-description');
+    const twT  = document.getElementById('tw-title');
+    const twD  = document.getElementById('tw-description');
+    if (titleEl) titleEl.textContent = t;
+    if (descEl)  descEl.setAttribute('content', d);
+    if (ogT)     ogT.setAttribute('content', t);
+    if (ogD)     ogD.setAttribute('content', d);
+    if (twT)     twT.setAttribute('content', t);
+    if (twD)     twD.setAttribute('content', d);
+  }
+
+  // Init label from stored lang
+  const storedLang = localStorage.getItem('scg-lang') || 'sv';
+  if (currentLabel) currentLabel.textContent = labels[storedLang] || 'SV';
+  document.querySelectorAll('[data-lang-pick]').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.langPick === storedLang);
+  });
+
+  // Toggle dropdown
+  currentBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    picker?.classList.toggle('open');
+    currentBtn.setAttribute('aria-expanded', String(picker?.classList.contains('open')));
+  });
+
+  // Pick language
+  document.querySelectorAll('[data-lang-pick]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLang(btn.dataset.langPick);
+      picker?.classList.remove('open');
+      currentBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    picker?.classList.remove('open');
+    currentBtn?.setAttribute('aria-expanded', 'false');
   });
 </script>
