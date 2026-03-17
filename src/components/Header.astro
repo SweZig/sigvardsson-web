@@ -3,6 +3,14 @@
 ---
 
 <header class="site-header" id="site-header">
+  <script is:inline>
+    (function() {
+      var flags = { sv: '🇸🇪 SV', en: '🇬🇧 EN', no: '🇳🇴 NO', da: '🇩🇰 DA', fi: '🇫🇮 FI' };
+      var lang = localStorage.getItem('scg-lang') || 'sv';
+      var el = document.getElementById('lang-current-label');
+      if (el) el.textContent = flags[lang] || '🇸🇪 SV';
+    })();
+  </script>
   <div class="header-inner">
 
     <!-- Logo -->
@@ -52,7 +60,7 @@
       <!-- Language Picker -->
       <div class="lang-picker" id="lang-picker">
         <button class="lang-current" id="lang-current" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
-          <span id="lang-current-label">SV</span>
+          <span id="lang-current-label">🇸🇪 SV</span>
           <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <ul class="lang-menu" id="lang-menu" role="menu">
