@@ -199,8 +199,8 @@ export const services = [
     heroDescEn: 'Camera-based analysis creating detailed heat maps of customer flows in department stores and malls. Measures where customers stop, how long and which paths they choose — without privacy impact.',
     effectSv: 'Optimerad butiksupplevelse',
     effectEn: 'Optimized store experience',
-    clientsSv: 'Heinermann Group',
-    clientsEn: 'Heinermann Group',
+    clientsSv: 'Ledande Nordic kedjor',
+    clientsEn: 'Leading Nordic chains',
     projects: '20+',
     poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
@@ -230,8 +230,8 @@ export const services = [
     heroDescEn: 'Camera-based measurement of end-cap exposures, dump bins and shelves in real time. Analyzes exposure effectiveness and customer interaction throughout the entire customer journey — from entrance to checkout.',
     effectSv: 'Mätbar exponeringseffekt',
     effectEn: 'Measurable exposure impact',
-    clientsSv: 'Heinermann Group',
-    clientsEn: 'Heinermann Group',
+    clientsSv: 'Ledande Nordic kedjor',
+    clientsEn: 'Leading Nordic chains',
     projects: '20+',
     poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
     bulletsSv: [
