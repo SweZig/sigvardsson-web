@@ -306,6 +306,33 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <!-- ===== LINK RETAIL PARTNER PLUG ===== -->
+  <section class="lr-plug">
+    <div class="container lr-plug-inner fade-up">
+      <div class="lr-plug-text">
+        <span class="lr-plug-label sv-text">Teknikpartner</span>
+        <span class="lr-plug-label en-text">Technology partner</span>
+        <h2>
+          <span class="sv-text">Officiell Link Retail-partner i Sverige</span>
+          <span class="en-text">Official Link Retail Partner in Sweden</span>
+        </h2>
+        <p class="sv-text">Link Retail är en global pionjär inom retailteknologi — verksamma i 25+ länder med lösningar för food waste management, video analytics och space management. SCG är deras officiella partner i Sverige och implementerar deras plattform i nordiska butikskedjor.</p>
+        <p class="en-text">Link Retail is a global pioneer in retail technology — operating in 25+ countries with solutions for food waste management, video analytics and space management. SCG is their official partner in Sweden, implementing their platform in Nordic retail chains.</p>
+        <a href="/products/link-retail/" class="lr-plug-btn sv-text">Läs mer om Link Retail →</a>
+        <a href="/products/link-retail/" class="lr-plug-btn en-text">Read more about Link Retail →</a>
+      </div>
+      <div class="lr-plug-badge">
+        <div class="lr-badge-box">
+          <span class="lr-badge-name">Link Retail</span>
+          <span class="lr-badge-tagline">MEASURE. LEARN. STAY AHEAD.</span>
+          <div class="lr-badge-divider"></div>
+          <span class="lr-badge-partner sv-text">Officiell partner · Sverige</span>
+          <span class="lr-badge-partner en-text">Official partner · Sweden</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="container">
       <div class="cta-band-inner fade-up">
@@ -869,6 +896,98 @@ import Footer from '../components/Footer.astro';
   .process-cta { text-align: center; }
 
   /* ===== CTA BAND ===== */
+  /* ===== LINK RETAIL PLUG ===== */
+  .lr-plug {
+    padding: var(--section-pad);
+    background: #f0f7f4;
+    border-top: 1px solid rgba(14,92,64,0.1);
+  }
+  .lr-plug-inner {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    align-items: center;
+  }
+  .lr-plug-label {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0E5C40;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .lr-plug-text h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    color: #0E5C40;
+    margin: 0 0 1rem;
+  }
+  .lr-plug-text p {
+    font-size: 0.97rem;
+    color: #445;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    max-width: 560px;
+  }
+  .lr-plug-btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #0E5C40;
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(14,92,64,0.35);
+    padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .lr-plug-btn:hover { color: #094730; border-color: #094730; }
+
+  .lr-badge-box {
+    background: #0E5C40;
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .lr-badge-name {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .lr-badge-tagline {
+    font-family: var(--font-heading);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+  }
+  .lr-badge-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin: 0.5rem 0;
+  }
+  .lr-badge-partner {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  @media (max-width: 760px) {
+    .lr-plug-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .lr-plug-badge { display: flex; justify-content: center; }
+    .lr-badge-box { max-width: 280px; }
+  }
+  @media (max-width: 480px) { .lr-plug { padding: 3rem 1.25rem; } }
+
   .cta-band {
     background: var(--color-navy);
     padding: 4rem 2rem;
