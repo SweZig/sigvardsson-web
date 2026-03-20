@@ -253,6 +253,7 @@ export const services = [
   {
     slug: 'rfid',
     appIcon: '/images/products/icon-rfid.png',
+    youtubeIds: ['CI4UVWrbSNs'],
     category: 'technology',
     titleSv: 'RFID & Scanning',
     titleEn: 'RFID & Scanning',

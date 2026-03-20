@@ -134,6 +134,28 @@ const serviceSchema = {
             <li class="en-text">{b}</li>
           ))}
         </ul>
+
+      {svc.youtubeIds && svc.youtubeIds.length > 0 && (
+        <div class="video-section fade-up">
+          <span class="section-label sv-text">Se hur det fungerar</span>
+          <span class="section-label en-text">See how it works</span>
+          <div class={`video-grid video-grid-${svc.youtubeIds.length}`}>
+            {svc.youtubeIds.map((vid, i) => (
+              <div class="video-wrap">
+                <iframe
+                  src={`https://www.youtube.com/embed/${vid}?rel=0&modestbranding=1`}
+                  title={`${svc.titleSv} video ${i + 1}`}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       </div>
 
       <aside class="content-aside fade-up">
@@ -242,6 +264,37 @@ const serviceSchema = {
 
 <style>
   /* ===== HERO ===== */
+
+
+  /* ===== YOUTUBE VIDEOS ===== */
+  .video-section { margin-top: 2.5rem; }
+  .video-section .section-label { display: block; margin-bottom: 1rem; }
+  .video-grid { display: grid; gap: 1.25rem; }
+  .video-grid-1 { grid-template-columns: 1fr; }
+  .video-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .video-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .video-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 8px 28px rgba(1,13,96,0.15);
+  }
+  .video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  @media (max-width: 700px) {
+    .video-grid-2,
+    .video-grid-3,
+    .video-grid-4 { grid-template-columns: 1fr; }
+  }
 
   /* ===== APP ICON IN HERO ===== */
   .hero-title-row {
