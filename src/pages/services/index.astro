@@ -417,7 +417,24 @@ const categories = [
 
   <!-- ===== SERVICE CATEGORIES ===== -->
   {categories.map((cat, catIdx) => (
-    <section class={`category-section ${catIdx % 2 === 1 ? 'category-alt' : ''}`} id={cat.id}>
+    <>
+      {catIdx === 2 && (
+        <div class="video-band">
+          <video autoplay muted loop playsinline preload="none" class="video-bg" aria-hidden="true">
+            <source src="/videos/smart-cart.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay"></div>
+          <div class="container video-content">
+            <p class="video-eyebrow sv-text">Framtidens butik</p>
+            <p class="video-eyebrow en-text">The future of retail</p>
+            <h2 class="video-title sv-text">Teknologi som förändrar hur kunder handlar</h2>
+            <h2 class="video-title en-text">Technology that changes how customers shop</h2>
+            <p class="video-sub sv-text">Smarta kundvagnar, självbetjäning och digitala pristaggar — retail-teknologi som ger bättre upplevelser och mätbar lönsamhet.</p>
+            <p class="video-sub en-text">Smart carts, self-checkout and digital price tags — retail technology that delivers better experiences and measurable profitability.</p>
+          </div>
+        </div>
+      )}
+      <section class={`category-section ${catIdx % 2 === 1 ? 'category-alt' : ''}`} id={cat.id}>
 
       <!-- Category header with photo band -->
       <div class="cat-photo-band" style={`background-image: url('${cat.bgImage}')`}>
@@ -509,6 +526,7 @@ const categories = [
         </div>
       </div>
     </section>
+    </>
   ))}
 
   <!-- ===== CTA ===== -->
@@ -536,6 +554,68 @@ const categories = [
 </Layout>
 
 <style>
+  /* ===== VIDEO BAND ===== */
+  .video-band {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom,
+        rgba(1,13,96,0.72) 0%,
+        rgba(1,13,96,0.45) 40%,
+        rgba(1,13,96,0.45) 60%,
+        rgba(1,13,96,0.72) 100%);
+  }
+  .video-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    color: #fff;
+    padding: 3rem 2rem;
+  }
+  .video-eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin: 0 0 0.75rem;
+  }
+  .video-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 1rem;
+    line-height: 1.15;
+  }
+  .video-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 540px;
+  }
+  @media (max-width: 600px) {
+    .video-band { height: 360px; }
+    .video-content { padding: 2rem 1.25rem; }
+  }
+
+
   /* ===== HERO ===== */
   .services-hero {
     background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
