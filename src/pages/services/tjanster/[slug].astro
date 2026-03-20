@@ -139,20 +139,47 @@ const serviceSchema = {
         <div class="video-section fade-up">
           <span class="section-label sv-text">Se hur det fungerar</span>
           <span class="section-label en-text">See how it works</span>
-          <div class={`video-grid video-grid-${svc.youtubeIds.length}`}>
-            {svc.youtubeIds.map((vid, i) => (
-              <div class="video-wrap">
+          {svc.youtubeIds.length === 1 ? (
+            <div class="video-wrap">
+              <iframe
+                src={`https://www.youtube.com/embed/${svc.youtubeIds[0]}?rel=0&modestbranding=1&vq=hd1080`}
+                title={`${svc.titleSv} video 1`}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          ) : (
+            <>
+              <div class="video-wrap video-wrap-featured">
                 <iframe
-                  src={`https://www.youtube.com/embed/${vid}?rel=0&modestbranding=1&vq=hd1080`}
-                  title={`${svc.titleSv} video ${i + 1}`}
+                  src={`https://www.youtube.com/embed/${svc.youtubeIds[0]}?rel=0&modestbranding=1&vq=hd1080`}
+                  title={`${svc.titleSv} — konceptfilm`}
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                   loading="lazy"
                 ></iframe>
               </div>
-            ))}
-          </div>
+              {svc.youtubeIds.length > 1 && (
+                <div class={`video-grid video-grid-${Math.min(svc.youtubeIds.length - 1, 3)}`}>
+                  {svc.youtubeIds.slice(1).map((vid, i) => (
+                    <div class="video-wrap">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${vid}?rel=0&modestbranding=1&vq=hd1080`}
+                        title={`${svc.titleSv} video ${i + 2}`}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
         </div>
       )}
 
@@ -269,6 +296,10 @@ const serviceSchema = {
   /* ===== YOUTUBE VIDEOS ===== */
   .video-section { margin-top: 2.5rem; }
   .video-section .section-label { display: block; margin-bottom: 1rem; }
+  .video-wrap-featured {
+    margin-bottom: 1.25rem;
+    box-shadow: 0 12px 40px rgba(1,13,96,0.2);
+  }
   .video-grid { display: grid; gap: 1.25rem; }
   .video-grid-1 { grid-template-columns: 1fr; }
   .video-grid-2 { grid-template-columns: repeat(2, 1fr); }
