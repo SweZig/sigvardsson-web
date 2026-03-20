@@ -7,7 +7,7 @@ const canonical = 'https://www.sigvardsson.org/products/retail-apps/';
 
 const apps = [
   {
-    icon: '🛒',
+    icon: '/images/products/icon-optimization.png',
     titleSv: 'Perfekt hylla',
     titleEn: 'Perfect Shelf',
     descSv: 'Mobil-first hylloptimering kopplad direkt till POS-data.',
@@ -18,7 +18,7 @@ const apps = [
     href: '/services/tjanster/perfekt-hylla/',
   },
   {
-    icon: '📍',
+    icon: '/images/products/icon-optimization.png',
     titleSv: 'Perfekt varuplacering',
     titleEn: 'Perfect Placement',
     descSv: 'Optimera hyllvinnare och varma zoner med värmekartor.',
@@ -29,7 +29,7 @@ const apps = [
     href: '/services/tjanster/perfekt-varuplacering/',
   },
   {
-    icon: '📣',
+    icon: '/images/products/icon-optimization.png',
     titleSv: 'Perfekt kampanj',
     titleEn: 'Perfect Campaign',
     descSv: 'Kampanjoptimering med rätt produkt på rätt plats.',
@@ -40,7 +40,7 @@ const apps = [
     href: '/services/tjanster/perfekt-kampanj/',
   },
   {
-    icon: '🚶',
+    icon: '/images/products/icon-optimization.png',
     titleSv: 'Perfekt kundflöde',
     titleEn: 'Perfect Customer Flow',
     descSv: 'Värmekartebaserad analys av flöden och zoner i butiken.',
@@ -51,7 +51,7 @@ const apps = [
     href: '/services/tjanster/perfekt-kundflode/',
   },
   {
-    icon: '⏱',
+    icon: '/images/products/icon-ssc.png',
     titleSv: 'Perfekt kö',
     titleEn: 'Perfect Queue',
     descSv: 'Prediktiv köhantering som varslar innan kön uppstår.',
@@ -62,7 +62,7 @@ const apps = [
     href: '/services/tjanster/perfekt-ko/',
   },
   {
-    icon: '🌿',
+    icon: '/images/products/icon-optimization.png',
     titleSv: 'Minimera Matsvinnet',
     titleEn: 'Minimize Food Waste',
     descSv: 'Realtidsprognostisering och on-demand beställning.',
@@ -73,7 +73,7 @@ const apps = [
     href: '/services/tjanster/minimera-matsvinnet/',
   },
   {
-    icon: '🏷',
+    icon: '/images/products/icon-pricing.png',
     titleSv: 'Digital prissättning',
     titleEn: 'Digital Pricing',
     descSv: 'Elektroniska hylletiketter och centraliserad realtidsprissättning.',
@@ -84,7 +84,7 @@ const apps = [
     href: '/services/tjanster/digital-prissattning/',
   },
   {
-    icon: '📡',
+    icon: '/images/products/icon-rfid.png',
     titleSv: 'RFID & Scanning',
     titleEn: 'RFID & Scanning',
     descSv: 'Automatisk lagerinventering och stöldskydd via RFID.',
@@ -95,7 +95,7 @@ const apps = [
     href: '/services/tjanster/rfid/',
   },
   {
-    icon: '🖥',
+    icon: '/images/products/icon-ssc.png',
     titleSv: 'Kiosk & Självbetjäning',
     titleEn: 'Kiosk & Self-Service',
     descSv: 'Interaktiva självbetjäningslösningar för snabbare service.',
@@ -210,7 +210,7 @@ const schemaProduct = {
       <div class="apps-grid">
         {apps.map((app, i) => (
           <a href={app.href} class="app-card fade-up" style={`animation-delay:${i*60}ms`}>
-            <div class="app-icon">{app.icon}</div>
+            <div class="app-icon"><img src={app.icon} alt="" /></div>
             <h3>
               <span class="sv-text">{app.titleSv}</span>
               <span class="en-text">{app.titleEn}</span>
@@ -389,7 +389,8 @@ const schemaProduct = {
     transform: translateY(-3px);
     box-shadow: 0 12px 32px rgba(33,81,104,0.12);
   }
-  .app-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .app-icon { width: 52px; height: 52px; margin-bottom: 0.85rem; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+  .app-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .app-card h3 { font-size: 1rem; color: var(--ra-color); margin-bottom: 0.5rem; }
   .app-card p { font-size: 0.88rem; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
   .app-effect { display: flex; align-items: baseline; gap: 0.4rem; }
