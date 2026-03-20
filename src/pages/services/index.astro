@@ -227,7 +227,7 @@ const categories = [
     services: [
       {
         id: 'perfekt-hylla',
-        poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
+        poweredBy: { label: 'Link Retail', href: '/products/link-retail/' },
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="20" x2="22" y2="20"/><line x1="2" y1="13" x2="22" y2="13"/><rect x="4" y="14" width="3" height="6"/><rect x="10" y="14" width="4" height="6"/><rect x="16" y="14" width="4" height="6"/><rect x="3" y="6" width="4" height="7"/><rect x="17" y="5" width="3" height="8"/></svg>`,
         titleSv: 'Perfekt hylla',
         titleEn: 'Perfect Shelf',
@@ -242,7 +242,7 @@ const categories = [
       },
       {
         id: 'perfekt-varuplacering',
-        poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
+        poweredBy: { label: 'Link Retail', href: '/products/link-retail/' },
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.24 2 7 4.24 7 7c0 3.94 5 10 5 10s5-6.06 5-10c0-2.76-2.24-5-5-5z"/><circle cx="12" cy="7" r="2"/></svg>`,
         titleSv: 'Perfekt varuplacering',
         titleEn: 'Perfect Product Placement',
@@ -257,7 +257,7 @@ const categories = [
       },
       {
         id: 'perfekt-kampanj',
-        poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
+        poweredBy: { label: 'Link Retail', href: '/products/link-retail/' },
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7" stroke-width="3"/></svg>`,
         titleSv: 'Perfekt kampanj',
         titleEn: 'Perfect Campaign',
@@ -272,7 +272,7 @@ const categories = [
       },
       {
         id: 'perfekt-kundflode',
-        poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
+        poweredBy: { label: 'Link Retail', href: '/products/link-retail/' },
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h5a3 3 0 013 3v6a3 3 0 003 3h7"/><polyline points="17 14 22 18 17 22"/></svg>`,
         titleSv: 'Perfekt kundflöde',
         titleEn: 'Perfect Customer Flow',
@@ -287,7 +287,7 @@ const categories = [
       },
       {
         id: 'perfekt-ko',
-        poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
+        poweredBy: { label: 'Link Retail', href: '/products/link-retail/' },
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><path d="M3 22v-6a2 2 0 012-2h4a2 2 0 012 2v6"/><path d="M10 22v-6a2 2 0 012-2h4a2 2 0 012 2v6"/></svg>`,
         titleSv: 'Perfekt kö',
         titleEn: 'Perfect Queue',
@@ -317,7 +317,7 @@ const categories = [
       },
       {
         id: 'minimera-matsvinnet',
-        poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
+        poweredBy: { label: 'Link Retail', href: '/products/link-retail/' },
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22c3-8 5-10 10-10 0-5.5 3.5-9 10-10-1 7-5 11-10 11-1 4-4 7-10 9z"/></svg>`,
         titleSv: 'Minimera Matsvinnet',
         titleEn: 'Minimize Food Waste',
@@ -935,4 +935,6 @@ const categories = [
   }
   .card-powered-by:hover { color: #215168; }
   .card-powered-by strong { color: #215168; font-weight: 500; }
+  .card-powered-by[href="/products/link-retail/"]:hover { color: #0E5C40; }
+  .card-powered-by[href="/products/link-retail/"] strong { color: #0E5C40; }
 </style>
