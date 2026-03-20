@@ -88,316 +88,6 @@ const schemaProduct = {
     </div>
   </section>
 
-  <!-- ===== FEATURES ===== -->
-  <section class="features-section">
-    <div class="container">
-      <div class="section-intro fade-up">
-        <span class="section-label fa-label sv-text">Funktioner</span>
-        <span class="section-label fa-label en-text">Features</span>
-        <h2>
-          <span class="sv-text">Allt du behöver för att förstå dina kunder</span>
-          <span class="en-text">Everything you need to understand your customers</span>
-        </h2>
-      </div>
-      <div class="features-grid">
-        {features.map((f, i) => (
-          <div class="feature-card fade-up" style={`animation-delay:${i*60}ms`}>
-            <div class="feature-icon">{f.icon}</div>
-            <h3>
-              <span class="sv-text">{f.titleSv}</span>
-              <span class="en-text">{f.titleEn}</span>
-            </h3>
-            <p>
-              <span class="sv-text">{f.descSv}</span>
-              <span class="en-text">{f.descEn}</span>
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how-section fa-bg">
-    <div class="container how-inner fade-up">
-      <div class="how-text">
-        <span class="section-label fa-label-light sv-text">Hur det fungerar</span>
-        <span class="section-label fa-label-light en-text">How it works</span>
-        <h2>
-          <span class="sv-text">Från feedback till förändring</span>
-          <span class="en-text">From feedback to change</span>
-        </h2>
-        <ol class="how-steps">
-          <li>
-            <span class="sv-text"><strong>Samla</strong> — Kunder lämnar feedback via knappar, QR eller digitala terminaler</span>
-            <span class="en-text"><strong>Collect</strong> — Customers leave feedback via buttons, QR or digital terminals</span>
-          </li>
-          <li>
-            <span class="sv-text"><strong>Visualisera</strong> — Realtids-dashboard synlig för hela organisationen</span>
-            <span class="en-text"><strong>Visualize</strong> — Real-time dashboard visible to the entire organization</span>
-          </li>
-          <li>
-            <span class="sv-text"><strong>Analysera</strong> — Korrelationsanalys kopplar feedback till KPI:er</span>
-            <span class="en-text"><strong>Analyze</strong> — Correlation analysis links feedback to KPIs</span>
-          </li>
-          <li>
-            <span class="sv-text"><strong>Agera</strong> — Automatiska alerts gör att rätt person agerar direkt</span>
-            <span class="en-text"><strong>Act</strong> — Automatic alerts ensure the right person acts immediately</span>
-          </li>
-        </ol>
-      </div>
-      <div class="how-logo">
-        <img src="/images/products/feedback-app-logo-transparent.png" alt="Feedback App" class="how-symbol" />
-        <p class="clients-note sv-text">Referenskunder: XL Bygg, Toys 'R' Us</p>
-        <p class="clients-note en-text">Reference clients: XL Bygg, Toys 'R' Us</p>
-        <p class="scg-attribution sv-text">En produkt från <a href="/">Sigvardsson Consulting Group</a></p>
-        <p class="scg-attribution en-text">A product by <a href="/">Sigvardsson Consulting Group</a></p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===== SMART REPORTING SECTION ===== -->
-  <section class="smart-section">
-    <div class="container">
-
-      <!-- Mobile first block -->
-      <div class="smart-row fade-up">
-        <div class="smart-text">
-          <span class="section-label fa-label sv-text">Smart rapportering</span>
-          <span class="section-label fa-label en-text">Smart reporting</span>
-          <h2>
-            <span class="sv-text">Hela bilden. I fickan. I realtid.</span>
-            <span class="en-text">The full picture. In your pocket. In real time.</span>
-          </h2>
-          <p class="sv-text">Hemligheten med att förändra beteende är att ge konkret, korrekt och konstruktiv feedback — omedelbart. Feedback App bygger på en mobile-first-filosofi: så snart en kund lämnar sin återkoppling syns den i dashboarden. Butikschefen agerar innan skiftet är slut. Ledningsgruppen ser trender i realtid. Ingen väntar på veckans rapport.</p>
-          <p class="en-text">The secret to changing behavior is giving concrete, accurate and constructive feedback — immediately. Feedback App is built on a mobile-first philosophy: as soon as a customer submits their response, it appears in the dashboard. The store manager acts before the shift ends. The management team sees trends in real time. Nobody waits for the weekly report.</p>
-          <ul class="smart-list">
-            <li>
-              <span class="sv-text">📱 Telefon eller läsplatta — alltid tillgängligt, alltid uppdaterat</span>
-              <span class="en-text">📱 Phone or tablet — always accessible, always updated</span>
-            </li>
-            <li>
-              <span class="sv-text">⚡ Svar syns direkt — ingen fördröjning, ingen batch-process</span>
-              <span class="en-text">⚡ Responses visible immediately — no delay, no batch processing</span>
-            </li>
-            <li>
-              <span class="sv-text">🔔 Automatiska alerts — rätt person nås när det verkligen behövs</span>
-              <span class="en-text">🔔 Automatic alerts — the right person reached when it truly matters</span>
-            </li>
-            <li>
-              <span class="sv-text">🏪 Butiksnivå till kedjenivå — samma data, rätt granularitet för varje roll</span>
-              <span class="en-text">🏪 Store level to chain level — same data, right granularity for each role</span>
-            </li>
-          </ul>
-        </div>
-        <div class="smart-visual">
-          <div class="phone-mock">
-            <div class="phone-screen">
-              <div class="screen-header">
-                <span class="sv-text">NPS idag</span>
-                <span class="en-text">NPS today</span>
-              </div>
-              <div class="screen-score">+62</div>
-              <div class="screen-label sv-text">Utmärkt</div>
-              <div class="screen-label en-text">Excellent</div>
-              <div class="screen-bars">
-                <div class="bar-row">
-                  <span class="bar-name sv-text">Promotorer</span>
-                  <span class="bar-name en-text">Promoters</span>
-                  <div class="bar-track"><div class="bar-fill bar-p" style="width:71%"></div></div>
-                  <span class="bar-pct">71%</span>
-                </div>
-                <div class="bar-row">
-                  <span class="bar-name sv-text">Passiva</span>
-                  <span class="bar-name en-text">Passives</span>
-                  <div class="bar-track"><div class="bar-fill bar-pa" style="width:20%"></div></div>
-                  <span class="bar-pct">20%</span>
-                </div>
-                <div class="bar-row">
-                  <span class="bar-name sv-text">Detraktorer</span>
-                  <span class="bar-name en-text">Detractors</span>
-                  <div class="bar-track"><div class="bar-fill bar-d" style="width:9%"></div></div>
-                  <span class="bar-pct">9%</span>
-                </div>
-              </div>
-              <div class="screen-alert">
-                <span>🔔</span>
-                <span class="sv-text">2 kritiska svar — agera nu</span>
-                <span class="en-text">2 critical responses — act now</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Improvement over time block -->
-      <div class="improvement-block fade-up">
-        <div class="impr-text">
-          <h2>
-            <span class="sv-text">Förbättring som syns på sista raden</span>
-            <span class="en-text">Improvement that shows on the bottom line</span>
-          </h2>
-          <p class="sv-text">Vi har sett ett tydligt mönster: retailers och serviceföretag som arbetar aktivt och systematiskt med kundfeedback förbättrar inte bara kundnöjdheten — de förbättrar försäljning och marginal. Förklaringen är enkel. Varje åtgärd som svar på ett kundproblem skapar en förbättring. Ackumulerat över månader och år bygger det en fundamentalt bättre kundupplevelse — och en starkare affär.</p>
-          <p class="en-text">We have seen a clear pattern: retailers and service companies that actively and systematically work with customer feedback improve not just satisfaction — they improve sales and margin. The explanation is simple. Every action taken in response to a customer problem creates an improvement. Accumulated over months and years, it builds a fundamentally better customer experience — and a stronger business.</p>
-        </div>
-        <div class="impr-stats">
-          <div class="impr-stat">
-            <div class="impr-arrow">↗</div>
-            <strong>4–8%</strong>
-            <span class="sv-text">genomsnittlig försäljningsökning</span>
-            <span class="en-text">average sales increase</span>
-          </div>
-          <div class="impr-stat">
-            <div class="impr-arrow">↗</div>
-            <strong>80+</strong>
-            <span class="sv-text">genomförda projekt</span>
-            <span class="en-text">completed projects</span>
-          </div>
-          <div class="impr-stat">
-            <div class="impr-arrow">↗</div>
-            <strong class="sv-text">Dag 1</strong>
-            <strong class="en-text">Day 1</strong>
-            <span class="sv-text">omedelbar effekt möjlig</span>
-            <span class="en-text">immediate impact possible</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ===== TOUCHPOINTS ===== -->
-  <section class="touchpoints-section">
-    <div class="container">
-      <div class="tp-intro fade-up">
-        <span class="section-label fa-label sv-text">Insamlingskanaler</span>
-        <span class="section-label fa-label en-text">Collection channels</span>
-        <h2>
-          <span class="sv-text">Möt kunden där upplevelsen sitter färsk</span>
-          <span class="en-text">Meet the customer where the experience is freshest</span>
-        </h2>
-        <p class="sv-text">Feedback App mäter NPS via fyra kanaler — fysiskt, digitalt och inbyggt. Välj den kombination som passar er kundresa bäst, eller kör alla fyra parallellt för en komplett bild.</p>
-        <p class="en-text">Feedback App measures NPS via four channels — physical, digital and embedded. Choose the combination that best fits your customer journey, or run all four in parallel for a complete picture.</p>
-      </div>
-
-      <div class="tp-grid fade-up">
-
-        <!-- KIOSK -->
-        <div class="tp-card tp-kiosk">
-          <div class="tp-card-inner">
-            <div class="tp-text">
-              <div class="tp-num">01</div>
-              <h3 class="sv-text">Kiosk</h3>
-              <h3 class="en-text">Kiosk</h3>
-              <p class="tp-tag sv-text">Fysiskt ställ · Exit poll</p>
-              <p class="tp-tag en-text">Physical stand · Exit poll</p>
-              <p class="sv-text">Ett elegant friståendé ställ med touchskärm placeras vid utgången. Kunden betygsätter sitt besök i direktanslutning till upplevelsen — på skalan 0–10 med möjlighet till fritextsvar. Högst svarsfrekvens av alla kanaler.</p>
-              <p class="en-text">An elegant freestanding stand with a touchscreen is placed at the exit. The customer rates their visit immediately after the experience — on the 0–10 scale with the option for free-text responses. Highest response rate of all channels.</p>
-              <ul class="tp-bullets">
-                <li class="sv-text">Placeras vid kassan eller utgången</li>
-                <li class="en-text">Placed at checkout or exit</li>
-                <li class="sv-text">Inget krav på telefon eller app hos kunden</li>
-                <li class="en-text">No phone or app required from the customer</li>
-                <li class="sv-text">Svar direkt i realtids-dashboarden</li>
-                <li class="en-text">Responses directly in the real-time dashboard</li>
-              </ul>
-            </div>
-            <div class="tp-image">
-              <img src="/images/products/feedback-kiosk.jpg" alt="Feedback App kiosk" />
-            </div>
-          </div>
-        </div>
-
-        <!-- QR, LÄNK, INBÄDDAD -->
-        <div class="tp-three">
-          <div class="tp-card tp-small">
-            <div class="tp-num">02</div>
-            <div class="tp-icon">📄</div>
-            <h3 class="sv-text">QR-kod</h3>
-            <h3 class="en-text">QR code</h3>
-            <p class="tp-tag sv-text">Kvitto · Leveranssedel · Förpackning</p>
-            <p class="tp-tag en-text">Receipt · Delivery note · Packaging</p>
-            <p class="sv-text">Tryck en unik QR-kod på kvittot eller leveranssedeln. Kunden skannar och svarar i mobilen — perfekt för att fånga feedback från online-köp och hemleveranser när upplevelsen är komplett.</p>
-            <p class="en-text">Print a unique QR code on the receipt or delivery note. The customer scans and responds on their phone — perfect for capturing feedback from online purchases and home deliveries when the experience is complete.</p>
-          </div>
-
-          <div class="tp-card tp-small">
-            <div class="tp-num">03</div>
-            <div class="tp-icon">🔗</div>
-            <h3 class="sv-text">Länk</h3>
-            <h3 class="en-text">Link</h3>
-            <p class="tp-tag sv-text">Nyhetsbrev · E-post · SMS · Webbsida</p>
-            <p class="tp-tag en-text">Newsletter · Email · SMS · Website</p>
-            <p class="sv-text">En enkel länk som kan infogas i nyhetsbrev, uppföljningsmejl, SMS eller på valfri webbsida. Kunden klickar och besvarar NPS-enkäten direkt i webbläsaren — ingen app, inga inloggningar.</p>
-            <p class="en-text">A simple link that can be inserted in newsletters, follow-up emails, SMS or on any website. The customer clicks and answers the NPS survey directly in the browser — no app, no logins.</p>
-          </div>
-
-          <div class="tp-card tp-small">
-            <div class="tp-num">04</div>
-            <div class="tp-icon">{ }</div>
-            <h3 class="sv-text">Inbäddad kod</h3>
-            <h3 class="en-text">Embedded code</h3>
-            <p class="tp-tag sv-text">Webbsida · Kundportal · App</p>
-            <p class="tp-tag en-text">Website · Customer portal · App</p>
-            <p class="sv-text">Bädda in NPS-enkäten direkt i er webbplats, kundportal eller app med en kodsnutt. Upplevelsen sitter sömlöst i er digitala miljö — inga redirects, ingen extern sajt. All data samlas i samma dashboard.</p>
-            <p class="en-text">Embed the NPS survey directly in your website, customer portal or app with a code snippet. The experience sits seamlessly in your digital environment — no redirects, no external site. All data collected in the same dashboard.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom note -->
-      <div class="tp-note fade-up">
-        <span class="tp-note-icon">📊</span>
-        <p class="sv-text">Alla kanaler matas in i samma realtids-dashboard. Segmentera per kanal, butik eller tidsperiod — och se helheten på ett ställe.</p>
-        <p class="en-text">All channels feed into the same real-time dashboard. Segment by channel, store or time period — and see the full picture in one place.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== RELATED ===== -->
-  <section class="related-section">
-    <div class="container">
-      <span class="section-label fa-label sv-text">Relaterade tjänster på sigvardsson.org</span>
-      <span class="section-label fa-label en-text">Related services on sigvardsson.org</span>
-      <h2>
-        <span class="sv-text">Drivs av Retail Apps</span>
-        <span class="en-text">Powered by Retail Apps</span>
-      </h2>
-      <div class="related-grid">
-        <a href="/services/tjanster/perfekt-feedback/" class="related-card">
-          <span class="ra-badge-ra">Retail Apps</span>
-          <h4 class="sv-text">Perfekt Feedback</h4>
-          <h4 class="en-text">Perfect Feedback</h4>
-          <p class="sv-text">Systematisering av kundnöjdhetsmätning i daglig drift.</p>
-          <p class="en-text">Systematization of customer satisfaction in daily operations.</p>
-          <span class="related-link">Läs mer →</span>
-        </a>
-        <a href="/services/tjanster/nps-kundanalys/" class="related-card">
-          <span class="ra-badge-ra">Retail Apps</span>
-          <h4 class="sv-text">NPS & Kundanalys</h4>
-          <h4 class="en-text">NPS & Customer Analytics</h4>
-          <p class="sv-text">Net Promoter Score med djupgående korrelationsanalys.</p>
-          <p class="en-text">Net Promoter Score with in-depth correlation analysis.</p>
-          <span class="related-link">Läs mer →</span>
-        </a>
-        <a href="/products/retail-apps/" class="related-card related-card-ra">
-          <span class="ra-badge-ra">Retail Apps</span>
-          <h4 class="sv-text">Feedback App ingår i Retail Apps</h4>
-          <h4 class="en-text">Feedback App is part of Retail Apps</h4>
-          <p class="sv-text">Utforska hela sviten av retail-appar.</p>
-          <p class="en-text">Explore the complete suite of retail apps.</p>
-          <span class="related-link">Se Retail Apps →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-
   <!-- ===== NPS SECTION ===== -->
   <section class="nps-section">
     <div class="container">
@@ -531,7 +221,284 @@ const schemaProduct = {
     </div>
   </section>
 
-  <section class="product-cta fa-cta">
+  <!-- ===== TOUCHPOINTS ===== -->
+  <section class="touchpoints-section">
+    <div class="container">
+      <div class="tp-intro fade-up">
+        <span class="section-label fa-label sv-text">Insamlingskanaler</span>
+        <span class="section-label fa-label en-text">Collection channels</span>
+        <h2>
+          <span class="sv-text">Möt kunden där upplevelsen sitter färsk</span>
+          <span class="en-text">Meet the customer where the experience is freshest</span>
+        </h2>
+        <p class="sv-text">Feedback App mäter NPS via fyra kanaler — fysiskt, digitalt och inbyggt. Välj den kombination som passar er kundresa bäst, eller kör alla fyra parallellt för en komplett bild.</p>
+        <p class="en-text">Feedback App measures NPS via four channels — physical, digital and embedded. Choose the combination that best fits your customer journey, or run all four in parallel for a complete picture.</p>
+      </div>
+
+      <div class="tp-grid fade-up">
+
+        <!-- KIOSK -->
+        <div class="tp-card tp-kiosk">
+          <div class="tp-card-inner">
+            <div class="tp-text">
+              <div class="tp-num">01</div>
+              <h3 class="sv-text">Kiosk</h3>
+              <h3 class="en-text">Kiosk</h3>
+              <p class="tp-tag sv-text">Fysiskt ställ · Exit poll</p>
+              <p class="tp-tag en-text">Physical stand · Exit poll</p>
+              <p class="sv-text">Ett elegant friståendé ställ med touchskärm placeras vid utgången. Kunden betygsätter sitt besök i direktanslutning till upplevelsen — på skalan 0–10 med möjlighet till fritextsvar. Högst svarsfrekvens av alla kanaler.</p>
+              <p class="en-text">An elegant freestanding stand with a touchscreen is placed at the exit. The customer rates their visit immediately after the experience — on the 0–10 scale with the option for free-text responses. Highest response rate of all channels.</p>
+              <ul class="tp-bullets">
+                <li class="sv-text">Placeras vid kassan eller utgången</li>
+                <li class="en-text">Placed at checkout or exit</li>
+                <li class="sv-text">Inget krav på telefon eller app hos kunden</li>
+                <li class="en-text">No phone or app required from the customer</li>
+                <li class="sv-text">Svar direkt i realtids-dashboarden</li>
+                <li class="en-text">Responses directly in the real-time dashboard</li>
+              </ul>
+            </div>
+            <div class="tp-image">
+              <img src="/images/products/feedback-kiosk.jpg" alt="Feedback App kiosk" />
+            </div>
+          </div>
+        </div>
+
+        <!-- QR, LÄNK, INBÄDDAD -->
+        <div class="tp-three">
+          <div class="tp-card tp-small">
+            <div class="tp-num">02</div>
+            <div class="tp-icon">📄</div>
+            <h3 class="sv-text">QR-kod</h3>
+            <h3 class="en-text">QR code</h3>
+            <p class="tp-tag sv-text">Kvitto · Leveranssedel · Förpackning</p>
+            <p class="tp-tag en-text">Receipt · Delivery note · Packaging</p>
+            <p class="sv-text">Tryck en unik QR-kod på kvittot eller leveranssedeln. Kunden skannar och svarar i mobilen — perfekt för att fånga feedback från online-köp och hemleveranser när upplevelsen är komplett.</p>
+            <p class="en-text">Print a unique QR code on the receipt or delivery note. The customer scans and responds on their phone — perfect for capturing feedback from online purchases and home deliveries when the experience is complete.</p>
+          </div>
+
+          <div class="tp-card tp-small">
+            <div class="tp-num">03</div>
+            <div class="tp-icon">🔗</div>
+            <h3 class="sv-text">Länk</h3>
+            <h3 class="en-text">Link</h3>
+            <p class="tp-tag sv-text">Nyhetsbrev · E-post · SMS · Webbsida</p>
+            <p class="tp-tag en-text">Newsletter · Email · SMS · Website</p>
+            <p class="sv-text">En enkel länk som kan infogas i nyhetsbrev, uppföljningsmejl, SMS eller på valfri webbsida. Kunden klickar och besvarar NPS-enkäten direkt i webbläsaren — ingen app, inga inloggningar.</p>
+            <p class="en-text">A simple link that can be inserted in newsletters, follow-up emails, SMS or on any website. The customer clicks and answers the NPS survey directly in the browser — no app, no logins.</p>
+          </div>
+
+          <div class="tp-card tp-small">
+            <div class="tp-num">04</div>
+            <div class="tp-icon">{ }</div>
+            <h3 class="sv-text">Inbäddad kod</h3>
+            <h3 class="en-text">Embedded code</h3>
+            <p class="tp-tag sv-text">Webbsida · Kundportal · App</p>
+            <p class="tp-tag en-text">Website · Customer portal · App</p>
+            <p class="sv-text">Bädda in NPS-enkäten direkt i er webbplats, kundportal eller app med en kodsnutt. Upplevelsen sitter sömlöst i er digitala miljö — inga redirects, ingen extern sajt. All data samlas i samma dashboard.</p>
+            <p class="en-text">Embed the NPS survey directly in your website, customer portal or app with a code snippet. The experience sits seamlessly in your digital environment — no redirects, no external site. All data collected in the same dashboard.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom note -->
+      <div class="tp-note fade-up">
+        <span class="tp-note-icon">📊</span>
+        <p class="sv-text">Alla kanaler matas in i samma realtids-dashboard. Segmentera per kanal, butik eller tidsperiod — och se helheten på ett ställe.</p>
+        <p class="en-text">All channels feed into the same real-time dashboard. Segment by channel, store or time period — and see the full picture in one place.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== HUR DET FUNGERAR + SMART REPORTING ===== -->
+  <section class="how-smart-section fa-bg">
+    <div class="container">
+      <div class="hs-inner fade-up">
+        <div class="hs-text">
+          <span class="section-label fa-label-light sv-text">Från feedback till förändring</span>
+          <span class="section-label fa-label-light en-text">From feedback to change</span>
+          <h2>
+            <span class="sv-text">Hela bilden. I fickan. I realtid.</span>
+            <span class="en-text">The full picture. In your pocket. In real time.</span>
+          </h2>
+          <p class="sv-text">Feedback App bygger på en mobile-first-filosofi: så snart en kund lämnar sin återkoppling syns resultatet direkt i dashboarden. Butikschefen agerar innan skiftet är slut. Ledningsgruppen ser trender i realtid. Ingen väntar på veckans rapport.</p>
+          <p class="en-text">Feedback App is built on a mobile-first philosophy: as soon as a customer submits their response it appears in the dashboard immediately. The store manager acts before the shift ends. Management sees trends in real time. Nobody waits for the weekly report.</p>
+          <ol class="how-steps">
+            <li>
+              <span class="sv-text"><strong>Samla</strong> — Kunder lämnar feedback via kiosk, QR, länk eller inbäddad kod</span>
+              <span class="en-text"><strong>Collect</strong> — Customers leave feedback via kiosk, QR, link or embedded code</span>
+            </li>
+            <li>
+              <span class="sv-text"><strong>Visualisera</strong> — Realtids-dashboard synlig för hela organisationen — mobil, platta eller dator</span>
+              <span class="en-text"><strong>Visualize</strong> — Real-time dashboard visible to the entire organization — mobile, tablet or desktop</span>
+            </li>
+            <li>
+              <span class="sv-text"><strong>Analysera</strong> — Korrelationsanalys kopplar kundernas NPS direkt till KPI:er och butiksdata</span>
+              <span class="en-text"><strong>Analyze</strong> — Correlation analysis links customer NPS directly to KPIs and store data</span>
+            </li>
+            <li>
+              <span class="sv-text"><strong>Agera</strong> — Automatiska alerts säkerställer att rätt person agerar direkt vid kritisk feedback</span>
+              <span class="en-text"><strong>Act</strong> — Automatic alerts ensure the right person responds immediately to critical feedback</span>
+            </li>
+          </ol>
+        </div>
+        <div class="hs-phone">
+          <div class="phone-mock">
+            <div class="phone-screen">
+              <div class="screen-header">
+                <span class="sv-text">NPS idag</span>
+                <span class="en-text">NPS today</span>
+              </div>
+              <div class="screen-score">+62</div>
+              <div class="screen-label sv-text">Utmärkt</div>
+              <div class="screen-label en-text">Excellent</div>
+              <div class="screen-bars">
+                <div class="bar-row">
+                  <span class="bar-name sv-text">Promotorer</span>
+                  <span class="bar-name en-text">Promoters</span>
+                  <div class="bar-track"><div class="bar-fill bar-p" style="width:71%"></div></div>
+                  <span class="bar-pct">71%</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-name sv-text">Passiva</span>
+                  <span class="bar-name en-text">Passives</span>
+                  <div class="bar-track"><div class="bar-fill bar-pa" style="width:20%"></div></div>
+                  <span class="bar-pct">20%</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-name sv-text">Detraktorer</span>
+                  <span class="bar-name en-text">Detractors</span>
+                  <div class="bar-track"><div class="bar-fill bar-d" style="width:9%"></div></div>
+                  <span class="bar-pct">9%</span>
+                </div>
+              </div>
+              <div class="screen-alert">
+                <span>🔔</span>
+                <span class="sv-text">2 kritiska svar — agera nu</span>
+                <span class="en-text">2 critical responses — act now</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-intro fade-up">
+        <span class="section-label fa-label sv-text">Plattformsfunktioner</span>
+        <span class="section-label fa-label en-text">Platform features</span>
+        <h2>
+          <span class="sv-text">Fyra funktioner som gör skillnad</span>
+          <span class="en-text">Four features that make the difference</span>
+        </h2>
+      </div>
+      <div class="features-grid features-grid-4 fade-up">
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3><span class="sv-text">Korrelationsanalys</span><span class="en-text">Correlation analysis</span></h3>
+          <p><span class="sv-text">Kopplar kundfeedback direkt till KPI:er och affärsprestanda — se vad som faktiskt driver NPS-poängen.</span><span class="en-text">Links customer feedback directly to KPIs and business performance — see what actually drives the NPS score.</span></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3><span class="sv-text">Automatiska alerts</span><span class="en-text">Automatic alerts</span></h3>
+          <p><span class="sv-text">Omedelbar varning till rätt person vid kritisk feedback — agera innan missnöjet eskalerar eller sprider sig.</span><span class="en-text">Immediate alert to the right person on critical feedback — act before dissatisfaction escalates or spreads.</span></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3><span class="sv-text">CSI-temperaturindikator</span><span class="en-text">CSI temperature indicator</span></h3>
+          <p><span class="sv-text">Enkel visualisering som hela organisationen förstår direkt — ingen behöver tolka siffror för att förstå läget.</span><span class="en-text">Simple visualization the entire organization understands immediately — no one needs to interpret numbers to grasp the situation.</span></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3><span class="sv-text">Benchmarking</span><span class="en-text">Benchmarking</span></h3>
+          <p><span class="sv-text">Jämför mot branschstandard och era egna historiska värden — förstå om ni förbättras och hur ni står er mot marknaden.</span><span class="en-text">Compare against industry standards and your own historical values — understand if you are improving and how you stand in the market.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTAT ===== -->
+  <section class="results-section">
+    <div class="container fade-up">
+      <div class="results-inner">
+        <div class="results-text">
+          <span class="section-label fa-label sv-text">Bevisad effekt</span>
+          <span class="section-label fa-label en-text">Proven impact</span>
+          <h2>
+            <span class="sv-text">Förbättring som syns på sista raden</span>
+            <span class="en-text">Improvement that shows on the bottom line</span>
+          </h2>
+          <p class="sv-text">Retailers som arbetar aktivt och systematiskt med kundfeedback förbättrar inte bara kundnöjdheten — de förbättrar försäljning och marginal. Varje åtgärd på ett kundproblem skapar en förbättring. Ackumulerat över månader och år bygger det en fundamentalt starkare affär.</p>
+          <p class="en-text">Retailers who actively and systematically work with customer feedback improve not just satisfaction — they improve sales and margin. Every action taken in response to a customer problem creates an improvement. Accumulated over months and years, it builds a fundamentally stronger business.</p>
+        </div>
+        <div class="results-stats">
+          <div class="rs-stat">
+            <div class="rs-arrow">↗</div>
+            <strong>4–8%</strong>
+            <span class="sv-text">genomsnittlig försäljningsökning</span>
+            <span class="en-text">average sales increase</span>
+          </div>
+          <div class="rs-stat">
+            <div class="rs-arrow">↗</div>
+            <strong>80+</strong>
+            <span class="sv-text">genomförda projekt</span>
+            <span class="en-text">completed projects</span>
+          </div>
+          <div class="rs-stat">
+            <div class="rs-arrow">↗</div>
+            <strong class="sv-text">Dag 1</strong>
+            <strong class="en-text">Day 1</strong>
+            <span class="sv-text">omedelbar effekt möjlig</span>
+            <span class="en-text">immediate impact possible</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <section class="related-section">
+    <div class="container">
+      <span class="section-label fa-label sv-text">Relaterade tjänster på sigvardsson.org</span>
+      <span class="section-label fa-label en-text">Related services on sigvardsson.org</span>
+      <h2>
+        <span class="sv-text">Drivs av Retail Apps</span>
+        <span class="en-text">Powered by Retail Apps</span>
+      </h2>
+      <div class="related-grid">
+        <a href="/services/tjanster/perfekt-feedback/" class="related-card">
+          <span class="ra-badge-ra">Retail Apps</span>
+          <h4 class="sv-text">Perfekt Feedback</h4>
+          <h4 class="en-text">Perfect Feedback</h4>
+          <p class="sv-text">Systematisering av kundnöjdhetsmätning i daglig drift.</p>
+          <p class="en-text">Systematization of customer satisfaction in daily operations.</p>
+          <span class="related-link">Läs mer →</span>
+        </a>
+        <a href="/services/tjanster/nps-kundanalys/" class="related-card">
+          <span class="ra-badge-ra">Retail Apps</span>
+          <h4 class="sv-text">NPS & Kundanalys</h4>
+          <h4 class="en-text">NPS & Customer Analytics</h4>
+          <p class="sv-text">Net Promoter Score med djupgående korrelationsanalys.</p>
+          <p class="en-text">Net Promoter Score with in-depth correlation analysis.</p>
+          <span class="related-link">Läs mer →</span>
+        </a>
+        <a href="/products/retail-apps/" class="related-card related-card-ra">
+          <span class="ra-badge-ra">Retail Apps</span>
+          <h4 class="sv-text">Feedback App ingår i Retail Apps</h4>
+          <h4 class="en-text">Feedback App is part of Retail Apps</h4>
+          <p class="sv-text">Utforska hela sviten av retail-appar.</p>
+          <p class="en-text">Explore the complete suite of retail apps.</p>
+          <span class="related-link">Se Retail Apps →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-ctata fa-cta">
     <div class="container">
       <h2>
         <span class="sv-text">Redo att lyssna på dina kunder?</span>
@@ -548,208 +515,138 @@ const schemaProduct = {
 </Layout>
 
 <style>
-  :root { --fa-color: #215168; --fa-dark: #193d50; }
+  /* ===== BRAND COLOR ===== */
+  :root { --fa-color: #215168; --fa-dark: #193d50; --fa-light: #2d6b8a; }
 
-  .product-hero { position: relative; background: var(--fa-color); padding: 7rem 2rem 5rem; overflow: hidden; }
-  .hero-photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.1; mix-blend-mode: luminosity; }
-  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, var(--fa-dark) 0%, var(--fa-color) 100%); }
-  .hero-inner { position: relative; z-index: 1; max-width: 800px; }
+  /* ===== HERO ===== */
+  .product-hero {
+    position: relative;
+    background: var(--fa-color);
+    padding: 7rem 2rem 5rem;
+    overflow: hidden;
+  }
+  .hero-photo-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    opacity: 0.1; mix-blend-mode: luminosity;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--fa-dark) 0%, var(--fa-color) 100%);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; }
   .hero-tagline { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 500; color: #fff; margin: 0 0 1.5rem; line-height: 1.15; }
-
-  .powered-by { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+  .powered-by {
+    font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
   .powered-link { color: rgba(255,255,255,0.75); text-decoration: none; }
   .powered-link:hover { color: #fff; }
-  .product-logo { height: 68px; width: auto; margin-bottom: 1rem; }
-  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
-  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .product-logo { height: 72px; width: auto; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.1rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 620px; margin-bottom: 1.5rem; }
+  .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
   .hero-stat { display: flex; flex-direction: column; }
   .hero-stat strong { font-family: var(--font-heading); font-size: 1.3rem; color: #fff; }
-  .hero-stat span { font-size: 0.72rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.07em; font-family: var(--font-heading); }
+  .hero-stat span { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-white { background: #fff; color: var(--fa-dark); display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
-  .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
-  .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.45); display: inline-block; padding: 0.73rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
-  .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
 
-  .features-section { padding: var(--section-pad); background: #fff; }
-  .section-intro { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
-  .section-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--fa-color); margin: 0.5rem 0 1rem; }
-  .fa-label { color: var(--fa-color) !important; }
-  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
-  .feature-card { background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.1); border-radius: 12px; padding: 1.5rem; transition: all 0.25s; }
-  .feature-card:hover { border-color: var(--fa-color); box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
-  .feature-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
-  .feature-card h3 { font-size: 1rem; color: var(--fa-color); margin-bottom: 0.5rem; }
-  .feature-card p { font-size: 0.88rem; color: #666; line-height: 1.6; }
-
-  .how-section { padding: var(--section-pad); background: var(--fa-dark); }
-  .how-inner { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: center; }
-  .how-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: #fff; margin: 0.5rem 0 1.5rem; }
-  .fa-label-light { color: rgba(255,255,255,0.6) !important; }
-  .how-steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; counter-reset: steps; }
-  .how-steps li { display: flex; gap: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.6; padding-left: 2rem; position: relative; }
-  .how-steps li::before { content: counter(steps); counter-increment: steps; position: absolute; left: 0; width: 22px; height: 22px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.72rem; color: #fff; font-weight: 500; }
-  .how-steps li strong { color: #fff; }
-  .how-logo { text-align: center; }
-  .how-symbol { width: 140px; margin-bottom: 1.25rem; opacity: 0.95; }
-  .clients-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
-  .scg-attribution { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
-  .scg-attribution a { color: rgba(255,255,255,0.6); text-decoration: none; }
-  .scg-attribution a:hover { color: #fff; }
-
-  .related-section { padding: var(--section-pad); background: #fff; }
-  .related-section h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); color: var(--fa-color); margin: 0.5rem 0 2rem; }
-  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-  .related-card { display: block; background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.1); border-radius: 12px; padding: 1.5rem; text-decoration: none; transition: all 0.25s; }
-  .related-card:hover { border-color: var(--fa-color); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(33,81,104,0.1); }
-  .ra-badge { display: inline-block; background: var(--fa-color); color: #fff; font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; }
-  .ra-badge-ra { display: inline-block; background: var(--ra-color, #215168); color: #fff; font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; }
-  .related-card h4 { font-size: 1rem; color: var(--color-navy); margin-bottom: 0.5rem; }
-  .related-card p { font-size: 0.85rem; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
-  .related-link { font-family: var(--font-heading); font-size: 0.78rem; color: var(--fa-color); }
-
-
-
+  /* ===== NPS SECTION ===== */
+  .nps-section { padding: var(--section-pad); background: #f5f7fc; }
+  .nps-intro { max-width: 720px; margin: 0 auto 3.5rem; text-align: center; }
+  .nps-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--fa-color); margin: 0.5rem 0 1.25rem; }
+  .nps-lead { font-size: 1rem; color: #555; line-height: 1.8; max-width: 660px; margin: 0 auto; }
+  .nps-question-block {
+    background: var(--fa-color); border-radius: 16px; padding: 2.5rem 2rem;
+    max-width: 760px; margin: 0 auto 3rem; text-align: center; color: #fff;
+  }
+  .nps-q-label { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
+  .nps-question { font-family: var(--font-heading); font-size: clamp(1rem, 2vw, 1.3rem); color: #fff; line-height: 1.4; margin-bottom: 2rem; font-style: italic; }
+  .nps-scale { max-width: 560px; margin: 0 auto; }
+  .scale-row { display: flex; gap: 4px; justify-content: center; margin-bottom: 0.5rem; }
+  .scale-num { flex: 1; aspect-ratio: 1; max-width: 44px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 500; }
+  .scale-num.detractor { background: rgba(220,53,69,0.75); color: #fff; }
+  .scale-num.passive { background: rgba(255,193,7,0.8); color: #333; }
+  .scale-num.promoter { background: rgba(40,167,69,0.85); color: #fff; }
+  .scale-labels { display: flex; justify-content: space-between; font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.45); text-transform: uppercase; padding: 0 2px; }
+  .nps-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 860px; margin: 0 auto 3rem; }
+  .nps-group { border-radius: 12px; padding: 1.75rem 1.5rem; border-top: 4px solid transparent; }
+  .detractor-group { background: #fff3f4; border-color: #dc3545; }
+  .passive-group { background: #fffbf0; border-color: #ffc107; }
+  .promoter-group { background: #f0faf3; border-color: #28a745; }
+  .group-score { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.4rem; }
+  .detractor-group .group-score { color: #dc3545; }
+  .passive-group .group-score { color: #b8860b; }
+  .promoter-group .group-score { color: #28a745; }
+  .nps-group h3 { font-size: 0.95rem; color: #333; margin-bottom: 0.6rem; }
+  .nps-group p { font-size: 0.85rem; color: #666; line-height: 1.65; margin: 0; }
+  .nps-formula { background: var(--color-navy); border-radius: 16px; padding: 2rem; max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+  .formula-inner { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .formula-part { padding: 0.75rem 1.5rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; }
+  .promoter-f { background: rgba(40,167,69,0.25); color: #6ee48a; }
+  .detractor-f { background: rgba(220,53,69,0.25); color: #ff8a94; }
+  .formula-minus, .formula-equals { font-family: var(--font-heading); font-size: 1.5rem; color: rgba(255,255,255,0.4); }
+  .formula-result { display: flex; flex-direction: column; align-items: center; }
+  .f-nps { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; color: #fff; letter-spacing: 0.1em; }
+  .f-range { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+  .formula-note { font-size: 0.88rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto; line-height: 1.65; }
+  .nps-why { max-width: 860px; margin: 0 auto 3rem; }
+  .nps-why-intro { text-align: center; margin-bottom: 2rem; }
+  .nps-why-intro h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); color: var(--fa-color); margin: 0; }
+  .nps-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .why-card { background: #fff; border: 1px solid rgba(33,81,104,0.1); border-radius: 12px; padding: 1.5rem; transition: box-shadow 0.2s; }
+  .why-card:hover { box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
+  .why-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 500; color: rgba(33,81,104,0.15); line-height: 1; margin-bottom: 0.75rem; }
+  .why-card h3 { font-size: 0.95rem; color: var(--fa-color); margin-bottom: 0.6rem; line-height: 1.3; }
+  .why-card p { font-size: 0.85rem; color: #666; line-height: 1.7; margin: 0; }
+  .nps-followup { max-width: 760px; margin: 0 auto; }
+  .followup-inner { display: flex; gap: 1.5rem; align-items: flex-start; background: #fff; border: 1.5px solid var(--fa-color); border-radius: 14px; padding: 2rem; }
+  .followup-icon { font-size: 2.2rem; flex-shrink: 0; margin-top: 2px; }
+  .followup-text h3 { font-size: 1.05rem; color: var(--fa-color); margin-bottom: 0.6rem; }
+  .followup-text p { font-size: 0.9rem; color: #555; line-height: 1.75; margin: 0; }
 
   /* ===== TOUCHPOINTS ===== */
   .touchpoints-section { padding: var(--section-pad); background: var(--color-off-white); }
   .tp-intro { max-width: 680px; margin: 0 auto 3rem; text-align: center; }
   .tp-intro h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--fa-color); margin: 0.5rem 0 1rem; }
   .tp-intro p { font-size: 1rem; color: #555; line-height: 1.75; }
-
   .tp-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-
-  /* Kiosk card — big */
-  .tp-kiosk {
-    background: #fff;
-    border: 1px solid rgba(33,81,104,0.12);
-    border-radius: 16px;
-    overflow: hidden;
-  }
+  .tp-kiosk { background: #fff; border: 1px solid rgba(33,81,104,0.12); border-radius: 16px; overflow: hidden; }
   .tp-card-inner { display: grid; grid-template-columns: 1fr 300px; }
-  .tp-text { padding: 2.5rem 2.5rem 2.5rem 2.5rem; }
+  .tp-text { padding: 2.5rem; }
   .tp-image { position: relative; overflow: hidden; }
-  .tp-image img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-  }
-
-  /* Three small cards */
+  .tp-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .tp-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .tp-small {
-    background: #fff;
-    border: 1px solid rgba(33,81,104,0.12);
-    border-radius: 14px;
-    padding: 1.75rem 1.5rem;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
+  .tp-small { background: #fff; border: 1px solid rgba(33,81,104,0.12); border-radius: 14px; padding: 1.75rem 1.5rem; transition: box-shadow 0.2s, transform 0.2s; }
   .tp-small:hover { box-shadow: 0 8px 24px rgba(33,81,104,0.1); transform: translateY(-2px); }
-
-  /* Shared card styles */
-  .tp-num {
-    font-family: var(--font-heading);
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    color: var(--fa-color);
-    opacity: 0.4;
-    margin-bottom: 0.5rem;
-  }
-  .tp-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.75rem;
-    font-family: var(--font-heading);
-    color: var(--fa-color);
-    letter-spacing: -0.05em;
-  }
+  .tp-num { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.12em; color: var(--fa-color); opacity: 0.4; margin-bottom: 0.5rem; }
+  .tp-icon { font-size: 1.8rem; margin-bottom: 0.75rem; font-family: var(--font-heading); color: var(--fa-color); letter-spacing: -0.05em; }
   .tp-card h3 { font-size: 1.1rem; color: var(--fa-color); margin-bottom: 0.2rem; }
-  .tp-tag {
-    font-family: var(--font-heading);
-    font-size: 0.65rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: rgba(33,81,104,0.45);
-    margin-bottom: 0.85rem;
-    display: block;
-  }
+  .tp-tag { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(33,81,104,0.45); margin-bottom: 0.85rem; display: block; }
   .tp-card p:not(.tp-tag) { font-size: 0.88rem; color: #666; line-height: 1.7; margin-bottom: 0.75rem; }
   .tp-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
   .tp-bullets li { font-size: 0.83rem; color: #555; padding-left: 1rem; position: relative; }
-  .tp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--fa-color); font-family: var(--font-heading); font-size: 0.75rem; }
-
-  /* Bottom note */
-  .tp-note {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--fa-color);
-    color: #fff;
-    border-radius: 12px;
-    padding: 1.25rem 1.75rem;
-    margin-top: 0.5rem;
-  }
+  .tp-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--fa-color); font-family: var(--font-heading); font-size: 0.75rem; }
+  .tp-note { display: flex; align-items: center; gap: 1rem; background: var(--fa-color); color: #fff; border-radius: 12px; padding: 1.25rem 1.75rem; margin-top: 0.5rem; }
   .tp-note-icon { font-size: 1.4rem; flex-shrink: 0; }
   .tp-note p { font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0; }
 
-  @media (max-width: 900px) {
-    .tp-card-inner { grid-template-columns: 1fr; }
-    .tp-image { height: 260px; }
-    .tp-three { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 480px) {
-    .touchpoints-section { padding: 3rem 1.25rem; }
-    .tp-text { padding: 1.5rem; }
-  }
-
-  /* ===== SMART REPORTING ===== */
-  .smart-section { padding: var(--section-pad); background: #fff; }
-  .smart-row {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 4rem;
-  }
-  .smart-text h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--fa-color); margin: 0.5rem 0 1.25rem; }
-  .smart-text p { font-size: 1rem; color: #555; line-height: 1.78; margin-bottom: 1.5rem; }
-  .smart-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
-  .smart-list li { font-size: 0.92rem; color: #444; line-height: 1.5; }
+  /* ===== HOW + SMART (merged) ===== */
+  .how-smart-section { padding: var(--section-pad); background: var(--fa-dark); }
+  .hs-inner { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: center; }
+  .hs-text h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; margin: 0.5rem 0 1.25rem; }
+  .hs-text p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.78; margin-bottom: 1.5rem; }
+  .how-steps { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; margin: 0; }
+  .how-steps li { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+  .how-steps li strong { color: #fff; }
 
   /* Phone mockup */
-  .smart-visual { display: flex; justify-content: center; }
-  .phone-mock {
-    background: var(--fa-color);
-    border-radius: 28px;
-    padding: 20px 16px;
-    width: 240px;
-    box-shadow: 0 24px 60px rgba(33,81,104,0.25);
-  }
+  .hs-phone { display: flex; justify-content: center; }
+  .phone-mock { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; padding: 20px 16px; width: 220px; }
   .phone-screen { color: #fff; }
-  .screen-header {
-    font-family: var(--font-heading);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 0.25rem;
-  }
-  .screen-score {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    font-weight: 500;
-    color: #fff;
-    line-height: 1;
-    margin-bottom: 0.2rem;
-  }
-  .screen-label {
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 1.25rem;
-  }
+  .screen-header { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+  .screen-score { font-family: var(--font-heading); font-size: 3rem; font-weight: 500; color: #fff; line-height: 1; margin-bottom: 0.2rem; }
+  .screen-label { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1.25rem; }
   .screen-bars { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.25rem; }
   .bar-row { display: flex; align-items: center; gap: 6px; }
   .bar-name { font-family: var(--font-heading); font-size: 0.62rem; color: rgba(255,255,255,0.6); width: 60px; flex-shrink: 0; }
@@ -759,260 +656,80 @@ const schemaProduct = {
   .bar-pa { background: #f5c842; }
   .bar-d { background: #ff7b7b; }
   .bar-pct { font-family: var(--font-heading); font-size: 0.62rem; color: rgba(255,255,255,0.55); width: 26px; text-align: right; flex-shrink: 0; }
-  .screen-alert {
-    display: flex; align-items: center; gap: 6px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 0.5rem 0.65rem;
-    font-family: var(--font-heading);
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.75);
-  }
+  .screen-alert { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border-radius: 8px; padding: 0.5rem 0.65rem; font-family: var(--font-heading); font-size: 0.65rem; color: rgba(255,255,255,0.75); }
 
-  /* Improvement block */
-  .improvement-block {
-    background: var(--color-off-white);
-    border-radius: 16px;
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-  }
-  .impr-text h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); color: var(--fa-color); margin: 0 0 1rem; }
-  .impr-text p { font-size: 0.97rem; color: #555; line-height: 1.78; margin: 0; max-width: 560px; }
-  .impr-stats { display: flex; flex-direction: column; gap: 1.25rem; min-width: 180px; }
-  .impr-stat {
-    text-align: center;
-    background: #fff;
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    border: 1px solid rgba(33,81,104,0.1);
-  }
-  .impr-arrow { font-size: 1.1rem; color: #28a745; margin-bottom: 0.15rem; }
-  .impr-stat strong { font-family: var(--font-heading); font-size: 1.4rem; color: var(--fa-color); display: block; line-height: 1.1; }
-  .impr-stat span { font-size: 0.72rem; color: #888; font-family: var(--font-heading); letter-spacing: 0.04em; }
+  /* ===== FEATURES (compact 4) ===== */
+  .features-section { padding: var(--section-pad); background: #fff; }
+  .section-intro { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
+  .section-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--fa-color); margin: 0.5rem 0 1rem; }
+  .fa-label { color: var(--fa-color) !important; }
+  .fa-label-light { color: rgba(255,255,255,0.55) !important; }
+  .features-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  .feature-card { background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.08); border-radius: 12px; padding: 1.5rem; transition: all 0.2s; }
+  .feature-card:hover { border-color: var(--fa-color); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
+  .feature-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .feature-card h3 { font-size: 0.95rem; color: var(--fa-color); margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.84rem; color: #666; line-height: 1.65; margin: 0; }
 
-  @media (max-width: 900px) {
-    .smart-row { grid-template-columns: 1fr; gap: 2.5rem; }
-    .smart-visual { order: -1; }
-    .improvement-block { grid-template-columns: 1fr; }
-    .impr-stats { flex-direction: row; justify-content: center; }
-  }
-  @media (max-width: 480px) {
-    .smart-section { padding: 3rem 1.25rem; }
-    .improvement-block { padding: 1.75rem 1.25rem; }
-    .impr-stats { flex-direction: column; align-items: center; }
-    .phone-mock { width: 200px; }
-    .screen-score { font-size: 2.4rem; }
-  }
+  /* ===== RESULTS ===== */
+  .results-section { padding: var(--section-pad); background: var(--color-off-white); }
+  .results-inner { display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
+  .results-text h2 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); color: var(--fa-color); margin: 0.5rem 0 1rem; }
+  .results-text p { font-size: 0.97rem; color: #555; line-height: 1.78; margin: 0; max-width: 540px; }
+  .results-stats { display: flex; flex-direction: column; gap: 1.25rem; min-width: 180px; }
+  .rs-stat { text-align: center; background: #fff; border-radius: 12px; padding: 1rem 1.25rem; border: 1px solid rgba(33,81,104,0.1); }
+  .rs-arrow { font-size: 1.1rem; color: #28a745; margin-bottom: 0.15rem; }
+  .rs-stat strong { font-family: var(--font-heading); font-size: 1.4rem; color: var(--fa-color); display: block; line-height: 1.1; }
+  .rs-stat span { font-size: 0.72rem; color: #888; font-family: var(--font-heading); letter-spacing: 0.04em; }
 
-  /* ===== NPS SECTION ===== */
-  .nps-section { padding: var(--section-pad); background: #f5f7fc; }
-  .nps-intro { max-width: 720px; margin: 0 auto 3.5rem; text-align: center; }
-  .nps-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--fa-color); margin: 0.5rem 0 1.25rem; }
-  .nps-lead { font-size: 1rem; color: #555; line-height: 1.8; max-width: 660px; margin: 0 auto; }
+  /* ===== RELATED ===== */
+  .related-section { padding: var(--section-pad); background: #fff; }
+  .related-section h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); color: var(--fa-color); margin: 0.5rem 0 2rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .related-card { display: block; text-decoration: none; background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.1); border-radius: 12px; padding: 1.5rem; transition: all 0.2s; }
+  .related-card:hover { border-color: var(--fa-color); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
+  .ra-badge-ra { font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fa-color); opacity: 0.6; display: block; margin-bottom: 0.5rem; }
+  .related-card h4 { font-size: 1rem; color: var(--fa-color); margin-bottom: 0.4rem; }
+  .related-card p { font-size: 0.84rem; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
+  .related-link { font-family: var(--font-heading); font-size: 0.8rem; color: var(--fa-color); }
 
-  /* Question block */
-  .nps-question-block {
-    background: var(--fa-color);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    max-width: 760px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    color: #fff;
-  }
-  .nps-q-label {
-    font-family: var(--font-heading);
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 0.75rem;
-  }
-  .nps-question {
-    font-family: var(--font-heading);
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    color: #fff;
-    line-height: 1.4;
-    margin-bottom: 2rem;
-    font-style: italic;
-  }
-  .nps-scale { max-width: 560px; margin: 0 auto; }
-  .scale-row { display: flex; gap: 4px; justify-content: center; margin-bottom: 0.5rem; }
-  .scale-num {
-    flex: 1;
-    aspect-ratio: 1;
-    max-width: 44px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 6px;
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 500;
-  }
-  .scale-num.detractor { background: rgba(220,53,69,0.75); color: #fff; }
-  .scale-num.passive { background: rgba(255,193,7,0.8); color: #333; }
-  .scale-num.promoter { background: rgba(40,167,69,0.85); color: #fff; }
-  .scale-labels {
-    display: flex; justify-content: space-between;
-    font-family: var(--font-heading);
-    font-size: 0.65rem;
-    letter-spacing: 0.06em;
-    color: rgba(255,255,255,0.45);
-    text-transform: uppercase;
-    padding: 0 2px;
-  }
-
-  /* Three groups */
-  .nps-groups {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    max-width: 860px;
-    margin: 0 auto 3rem;
-  }
-  .nps-group {
-    border-radius: 12px;
-    padding: 1.75rem 1.5rem;
-    border-top: 4px solid transparent;
-  }
-  .detractor-group { background: #fff3f4; border-color: #dc3545; }
-  .passive-group { background: #fffbf0; border-color: #ffc107; }
-  .promoter-group { background: #f0faf3; border-color: #28a745; }
-  .group-score {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-  }
-  .detractor-group .group-score { color: #dc3545; }
-  .passive-group .group-score { color: #b8860b; }
-  .promoter-group .group-score { color: #28a745; }
-  .nps-group h3 { font-size: 0.95rem; color: #333; margin-bottom: 0.6rem; }
-  .nps-group p { font-size: 0.85rem; color: #666; line-height: 1.65; margin: 0; }
-
-  /* Formula */
-  .nps-formula {
-    background: var(--color-navy);
-    border-radius: 16px;
-    padding: 2rem;
-    max-width: 760px;
-    margin: 0 auto 3rem;
-    text-align: center;
-  }
-  .formula-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-  }
-  .formula-part {
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  .promoter-f { background: rgba(40,167,69,0.25); color: #6ee48a; }
-  .detractor-f { background: rgba(220,53,69,0.25); color: #ff8a94; }
-  .formula-minus, .formula-equals {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: rgba(255,255,255,0.4);
-  }
-  .formula-result {
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .f-nps {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: 0.1em;
-  }
-  .f-range {
-    font-family: var(--font-heading);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-  }
-  .formula-note {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.6);
-    max-width: 500px;
-    margin: 0 auto;
-    line-height: 1.65;
-  }
-
-  /* Why it works */
-  .nps-why { max-width: 860px; margin: 0 auto 3rem; }
-  .nps-why-intro { text-align: center; margin-bottom: 2rem; }
-  .nps-why-intro h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); color: var(--fa-color); margin: 0; }
-  .nps-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .why-card {
-    background: #fff;
-    border: 1px solid rgba(33,81,104,0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: box-shadow 0.2s;
-  }
-  .why-card:hover { box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
-  .why-num {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 500;
-    color: rgba(33,81,104,0.15);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-  .why-card h3 { font-size: 0.95rem; color: var(--fa-color); margin-bottom: 0.6rem; line-height: 1.3; }
-  .why-card p { font-size: 0.85rem; color: #666; line-height: 1.7; margin: 0; }
-
-  /* Follow-up callout */
-  .nps-followup { max-width: 760px; margin: 0 auto; }
-  .followup-inner {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    background: #fff;
-    border: 1.5px solid var(--fa-color);
-    border-radius: 14px;
-    padding: 2rem;
-  }
-  .followup-icon { font-size: 2.2rem; flex-shrink: 0; margin-top: 2px; }
-  .followup-text h3 { font-size: 1.05rem; color: var(--fa-color); margin-bottom: 0.6rem; }
-  .followup-text p { font-size: 0.9rem; color: #555; line-height: 1.75; margin: 0; }
-
-  /* Responsive */
-  @media (max-width: 760px) {
-    .nps-groups { grid-template-columns: 1fr; }
-    .nps-why-grid { grid-template-columns: 1fr; }
-    .followup-inner { flex-direction: column; gap: 1rem; }
-    .scale-num { font-size: 0.72rem; }
-  }
-  @media (max-width: 480px) {
-    .nps-section { padding: 3rem 1.25rem; }
-    .nps-question-block { padding: 1.75rem 1.25rem; }
-    .formula-inner { gap: 0.5rem; }
-    .formula-part { padding: 0.5rem 0.75rem; font-size: 0.8rem; }
-  }
-
+  /* ===== CTA ===== */
   .product-cta { background: var(--fa-color); padding: 5rem 2rem; text-align: center; }
   .product-cta h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #fff; margin-bottom: 0.75rem; }
   .product-cta p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; }
 
-  @media (max-width: 900px) { .how-inner { grid-template-columns: 1fr; } .how-logo { order: -1; } }
+  /* ===== BUTTONS ===== */
+  .btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-white { background: #fff; color: var(--fa-dark); }
+  .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+  .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.45); }
+  .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1100px) { .features-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) {
+    .nps-groups { grid-template-columns: 1fr; }
+    .nps-why-grid { grid-template-columns: 1fr; }
+    .followup-inner { flex-direction: column; gap: 1rem; }
+    .tp-card-inner { grid-template-columns: 1fr; }
+    .tp-image { height: 260px; }
+    .tp-three { grid-template-columns: 1fr; }
+    .hs-inner { grid-template-columns: 1fr; }
+    .hs-phone { order: -1; }
+    .results-inner { grid-template-columns: 1fr; }
+    .results-stats { flex-direction: row; justify-content: center; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
   @media (max-width: 480px) {
     .product-hero { padding: 5rem 1.25rem 3rem; }
-    .product-logo { height: 40px; }
-    .hero-meta { gap: 1.5rem; }
+    .product-logo { height: 44px; }
     .hero-actions { flex-direction: column; gap: 0.6rem; }
-    .hero-actions .btn-white, .hero-actions .btn-outline-white { display: block; text-align: center; }
-    .features-grid, .related-grid { grid-template-columns: 1fr; }
+    .nps-section, .touchpoints-section, .how-smart-section,
+    .features-section, .results-section, .related-section { padding: 3rem 1.25rem; }
+    .features-grid-4 { grid-template-columns: 1fr; }
+    .formula-inner { gap: 0.5rem; }
+    .scale-num { font-size: 0.72rem; }
     .product-cta { padding: 3rem 1.25rem; }
+    .results-stats { flex-direction: column; align-items: center; }
   }
 </style>
