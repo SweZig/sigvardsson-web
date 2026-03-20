@@ -252,6 +252,7 @@ export const services = [
 
   {
     slug: 'rfid',
+    appIcon: '/images/products/icon-rfid.png',
     category: 'technology',
     titleSv: 'RFID & Scanning',
     titleEn: 'RFID & Scanning',
@@ -283,6 +284,7 @@ export const services = [
 
   {
     slug: 'digital-prissattning',
+    appIcon: '/images/products/icon-pricing.png',
     category: 'technology',
     titleSv: 'Digital prissättning',
     titleEn: 'Digital Pricing',
@@ -314,6 +316,7 @@ export const services = [
 
   {
     slug: 'kiosk-sjalvbetjaning',
+    appIcon: '/images/products/icon-ssc.png',
     category: 'technology',
     titleSv: 'Kiosk & Självbetjäning',
     titleEn: 'Kiosk & Self-Service',
@@ -345,6 +348,7 @@ export const services = [
 
   {
     slug: 'nps-kundanalys',
+    appIcon: '/images/products/icon-feedback.png',
     category: 'technology',
     titleSv: 'NPS & Kundanalys',
     titleEn: 'NPS & Customer Analytics',
@@ -377,6 +381,7 @@ export const services = [
   // ── RETAIL OPTIMIZATION ─────────────────────────────────────────────────
   {
     slug: 'perfekt-hylla',
+    appIcon: '/images/products/icon-optimization.png',
     category: 'retail-optimization',
     titleSv: 'Perfekt hylla',
     titleEn: 'Perfect Shelf',
@@ -410,6 +415,7 @@ export const services = [
 
   {
     slug: 'perfekt-varuplacering',
+    appIcon: '/images/products/icon-optimization.png',
     category: 'retail-optimization',
     titleSv: 'Perfekt varuplacering',
     titleEn: 'Perfect Product Placement',
@@ -441,6 +447,7 @@ export const services = [
 
   {
     slug: 'perfekt-kampanj',
+    appIcon: '/images/products/icon-optimization.png',
     category: 'retail-optimization',
     titleSv: 'Perfekt kampanj',
     titleEn: 'Perfect Campaign',
@@ -472,6 +479,7 @@ export const services = [
 
   {
     slug: 'perfekt-kundflode',
+    appIcon: '/images/products/icon-optimization.png',
     category: 'retail-optimization',
     titleSv: 'Perfekt kundflöde',
     titleEn: 'Perfect Customer Flow',
@@ -503,6 +511,7 @@ export const services = [
 
   {
     slug: 'perfekt-ko',
+    appIcon: '/images/products/icon-optimization.png',
     category: 'retail-optimization',
     titleSv: 'Perfekt kö',
     titleEn: 'Perfect Queue',
@@ -534,6 +543,7 @@ export const services = [
 
   {
     slug: 'perfekt-feedback',
+    appIcon: '/images/products/icon-feedback.png',
     category: 'retail-optimization',
     titleSv: 'Perfekt Feedback',
     titleEn: 'Perfect Feedback',
@@ -565,6 +575,7 @@ export const services = [
 
   {
     slug: 'minimera-matsvinnet',
+    appIcon: '/images/products/icon-optimization.png',
     category: 'retail-optimization',
     titleSv: 'Minimera Matsvinnet',
     titleEn: 'Minimize Food Waste',

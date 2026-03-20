@@ -71,10 +71,15 @@ const serviceSchema = {
       )}
       <span class="section-label sv-text">{catLabel.sv}</span>
       <span class="section-label en-text">{catLabel.en}</span>
-      <h1>
-        <span class="sv-text">{svc.titleSv}</span>
-        <span class="en-text">{svc.titleEn}</span>
-      </h1>
+      <div class="hero-title-row">
+        {svc.appIcon && (
+          <img src={svc.appIcon} alt="" class="hero-app-icon" />
+        )}
+        <h1>
+          <span class="sv-text">{svc.titleSv}</span>
+          <span class="en-text">{svc.titleEn}</span>
+        </h1>
+      </div>
       <p class="hero-desc sv-text">{svc.heroDescSv}</p>
       <p class="hero-desc en-text">{svc.heroDescEn}</p>
       <div class="hero-actions">
@@ -237,6 +242,27 @@ const serviceSchema = {
 
 <style>
   /* ===== HERO ===== */
+
+  /* ===== APP ICON IN HERO ===== */
+  .hero-title-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0;
+  }
+  .hero-title-row h1 { margin: 0; }
+  .hero-app-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  @media (max-width: 480px) {
+    .hero-app-icon { width: 48px; height: 48px; border-radius: 11px; }
+  }
+
   .svc-hero {
     position: relative;
     background: var(--color-navy);

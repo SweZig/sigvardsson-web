@@ -51,7 +51,10 @@ const schemaProduct = {
         <span class="en-text">A product by</span>
         <a href="/" class="powered-link">Sigvardsson Consulting Group</a>
       </div>
-      <img src="/images/products/feedback-app-logo-transparent.png" alt="Feedback App" class="product-logo" />
+      <div class="hero-logo-row">
+        <img src="/images/products/feedback-app-logo-transparent.png" alt="Feedback App" class="product-logo" />
+        <img src="/images/products/icon-feedback.png" alt="" class="hero-app-icon" />
+      </div>
       <h1 class="hero-tagline">
         <span class="sv-text">Lyssna. Förstå. Agera.</span>
         <span class="en-text">Listen. Understand. Act.</span>
@@ -398,7 +401,7 @@ const schemaProduct = {
       </div>
       <div class="features-grid features-grid-4 fade-up">
         <div class="feature-card">
-          <div class="feature-icon"><img src="/images/products/icon-feedback.png" alt="" style="width:48px;height:48px;border-radius:11px;" /></div>
+          <div class="feature-icon">🔗</div>
           <h3><span class="sv-text">Korrelationsanalys</span><span class="en-text">Correlation analysis</span></h3>
           <p><span class="sv-text">Kopplar kundfeedback direkt till KPI:er och affärsprestanda — se vad som faktiskt driver NPS-poängen.</span><span class="en-text">Links customer feedback directly to KPIs and business performance — see what actually drives the NPS score.</span></p>
         </div>
@@ -550,6 +553,13 @@ const schemaProduct = {
   .hero-stat strong { font-family: var(--font-heading); font-size: 1.3rem; color: #fff; }
   .hero-stat span { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+
+  /* ===== APP ICONS ===== */
+  .hero-logo-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .hero-app-icon { width: 60px; height: 60px; border-radius: 14px; object-fit: cover; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+  .how-icon-pair { margin-bottom: 1rem; }
+  .how-app-icon { width: 72px; height: 72px; border-radius: 16px; object-fit: cover; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
 
   /* ===== NPS SECTION ===== */
   .nps-section { padding: var(--section-pad); background: #f5f7fc; }
