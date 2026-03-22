@@ -148,6 +148,38 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <!-- ===== COMPANY VIDEO ===== -->
+  <section class="company-video fade-up">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:2rem">
+        <span class="section-label sv-text">Om oss</span>
+        <span class="section-label en-text">About us</span>
+        <h2 class="sv-text">Se vilka vi är</h2>
+        <h2 class="en-text">See who we are</h2>
+      </div>
+      <div class="video-embed-wrap sv-text">
+        <iframe
+          src="https://www.youtube.com/embed/qZwhzXDqiEw?rel=0&modestbranding=1"
+          title="Sigvardsson Consulting Group — Presentation"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="video-embed-wrap en-text">
+        <iframe
+          src="https://www.youtube.com/embed/YwOBb13P0tU?rel=0&modestbranding=1"
+          title="Sigvardsson Consulting Group — Presentation"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== SERVICES OVERVIEW ===== -->
   <section class="services-overview">
     <div class="container">
@@ -734,6 +766,32 @@ import Footer from '../components/Footer.astro';
     color: var(--color-blue-mid);
     font-family: 'Chakra Petch', sans-serif;
     letter-spacing: 0.06em;
+  }
+
+  /* ===== COMPANY VIDEO ===== */
+  .company-video {
+    padding: var(--section-pad);
+    background: var(--color-white);
+  }
+  .company-video .section-header {
+    text-align: center;
+  }
+  .video-embed-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(1,13,96,0.13);
+  }
+  .video-embed-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   /* ===== SERVICES OVERVIEW ===== */
