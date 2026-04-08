@@ -558,6 +558,7 @@ export const services = [
     clientsEn: 'XL Bygg, Toys R Us',
     projects: '80+',
     poweredBy: { label: 'Retail Apps', href: '/products/retail-apps/' },
+    youtubeIds: ['iaibaOcnQm8', '76a1BVWkQng'],
     bulletsSv: [
       'Analoga och digitala feedbacklösningar',
       'CSI-temperaturindikatorer för hela organisationen',
