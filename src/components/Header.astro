@@ -36,7 +36,7 @@
           <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
         <div class="nav-dropdown-menu">
-          <a href="/products/retail-apps/" class="dropdown-item">
+          <a href="/products/retail-apps/" class="dropdown-item dropdown-item--parent">
             <span class="di-logo di-logo-dark"><img src="/images/products/retail-apps-logo-transparent.png" alt="" /></span>
             <span class="di-text">
               <strong>Retail Apps</strong>
@@ -44,7 +44,7 @@
               <em class="en-text">9 apps for store operations</em>
             </span>
           </a>
-          <a href="/products/feedback-app/" class="dropdown-item">
+          <a href="/products/feedback-app/" class="dropdown-item dropdown-item--child">
             <span class="di-logo di-logo-dark"><img src="/images/products/feedback-app-logo-transparent.png" alt="" /></span>
             <span class="di-text">
               <strong>Feedback App</strong>
@@ -52,7 +52,7 @@
               <em class="en-text">Real-time customer satisfaction</em>
             </span>
           </a>
-          <a href="/products/saldo4/" class="dropdown-item">
+          <a href="/products/saldo4/" class="dropdown-item dropdown-item--child">
             <span class="di-logo di-logo-dark"><img src="/images/products/saldo4-logo-transparent.png" alt="" /></span>
             <span class="di-text">
               <strong>Saldo4</strong>
@@ -60,24 +60,14 @@
               <em class="en-text">Data-driven inventory management</em>
             </span>
           </a>
-          <a href="/products/perfekt-hylla/" class="dropdown-item dropdown-item--partner">
+          <a href="/products/perfekt-hylla/" class="dropdown-item dropdown-item--child">
             <span class="di-logo di-logo-ph">
               <span class="ph-nav-badge">🛒</span>
             </span>
             <span class="di-text">
-              <strong>Perfekt hylla <span class="lr-pill">LR</span></strong>
+              <strong>Perfekt hylla</strong>
               <em class="sv-text">AI-driven hylloptimering</em>
               <em class="en-text">AI-driven shelf optimization</em>
-            </span>
-          </a>
-          <a href="/products/link-retail/" class="dropdown-item dropdown-item--partner">
-            <span class="di-logo di-logo-lr">
-              <span class="lr-pill" style="font-size:0.8rem;padding:0.25rem 0.5rem">LR</span>
-            </span>
-            <span class="di-text">
-              <strong>Link Retail</strong>
-              <em class="sv-text">Officiell partner i Sverige</em>
-              <em class="en-text">Official partner in Sweden</em>
             </span>
           </a>
         </div>
@@ -158,11 +148,10 @@
         <span class="mobile-nav-section-label sv-text">Våra produkter</span>
         <span class="mobile-nav-section-label en-text">Our Products</span>
       </div>
-      <a href="/products/retail-apps/" class="mobile-nav-link">Retail Apps</a>
-      <a href="/products/feedback-app/" class="mobile-nav-link">Feedback App</a>
-      <a href="/products/saldo4/" class="mobile-nav-link">Saldo4</a>
-      <a href="/products/perfekt-hylla/" class="mobile-nav-link">Perfekt hylla <span class="lr-pill">LR</span></a>
-      <a href="/products/link-retail/" class="mobile-nav-link">Link Retail</a>
+      <a href="/products/retail-apps/" class="mobile-nav-link mobile-nav-link--parent">Retail Apps</a>
+      <a href="/products/feedback-app/" class="mobile-nav-link mobile-nav-link--child">Feedback App</a>
+      <a href="/products/saldo4/" class="mobile-nav-link mobile-nav-link--child">Saldo4</a>
+      <a href="/products/perfekt-hylla/" class="mobile-nav-link mobile-nav-link--child">Perfekt hylla</a>
       <a href="/Contact/" class="mobile-nav-link mobile-nav-cta">
         <span class="sv-text" data-no="Kontakt" data-da="Kontakt" data-fi="Yhteystiedot">Kontakt</span><span class="en-text">Contact</span>
       </a>
@@ -554,18 +543,41 @@
   }
   .di-logo-dark { background: #193d50; }
   .di-logo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; }
-  .di-logo-lr { background: var(--color-lr-green); display: flex; align-items: center; justify-content: center; }
   .di-logo-ph { background: linear-gradient(135deg, var(--color-navy, #010D60) 0%, #2A4EA9 100%); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
   .ph-nav-badge { font-size: 1.05rem; }
-  .dropdown-item--partner { border-top: 1px solid rgba(0,0,0,0.06); margin-top: 2px; }
   .di-text { display: flex; flex-direction: column; gap: 0.1rem; }
   .di-text strong { font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; color: var(--color-navy); font-weight: 500; }
   .di-text em { font-style: normal; font-size: 0.72rem; color: #888; }
+
+  /* Hierarchy: Retail Apps = parent, three sub-products = indented children */
+  .dropdown-item--parent { border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .dropdown-item--parent .di-text strong { font-size: 0.85rem; }
+  .dropdown-item--child { padding-left: 1.65rem; position: relative; }
+  .dropdown-item--child::before {
+    content: '';
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    width: 0.5rem;
+    height: 1px;
+    background: rgba(1,13,96,0.25);
+  }
 
   .mobile-nav-section { padding: 0.75rem 1.25rem 0.25rem; }
   .mobile-nav-section-label {
     font-family: 'Chakra Petch', sans-serif; font-size: 0.65rem;
     letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; font-weight: 500;
+  }
+  .mobile-nav-link--parent { font-weight: 600; }
+  .mobile-nav-link--child { padding-left: 2.5rem; position: relative; font-size: 0.95rem; }
+  .mobile-nav-link--child::before {
+    content: '';
+    position: absolute;
+    left: 1.6rem;
+    top: 50%;
+    width: 0.55rem;
+    height: 1px;
+    background: rgba(1,13,96,0.25);
   }
 </style>
 
