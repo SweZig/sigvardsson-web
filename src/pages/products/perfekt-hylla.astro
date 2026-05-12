@@ -41,6 +41,39 @@ const objectives = [
   },
 ];
 
+const modes = [
+  {
+    num: '01',
+    titleSv: 'Endast POS-data',
+    titleEn: 'POS data only',
+    descSv: 'AI:n analyserar realtid POS-data och optimerar hyllan utan att ett planogram behöver finnas. Snabbast att komma igång, lägst tröskel.',
+    descEn: 'AI analyzes real-time POS data and optimizes the shelf without requiring a planogram. Fastest to get started, lowest threshold.',
+    bestForSv: 'Butiker som vill ha snabbt startsteg eller saknar planogram',
+    bestForEn: 'Stores that want a fast start or have no planogram',
+    icon: '📊',
+  },
+  {
+    num: '02',
+    titleSv: 'POS-data + befintligt planogram',
+    titleEn: 'POS data + existing planogram',
+    descSv: 'Ni kopplar ert befintliga planogram och AI:n optimerar det baserat på faktiskt säljutfall. Strukturen bevaras, men varje SKU mäts och rekommenderas.',
+    descEn: 'You connect your existing planogram and the AI optimizes it based on actual sales performance. Structure is preserved, but every SKU is measured and rated.',
+    bestForSv: 'Kedjor som redan arbetar planogramatiskt och vill lyfta effekten',
+    bestForEn: 'Chains already working with planograms who want to lift performance',
+    icon: '📐',
+  },
+  {
+    num: '03',
+    titleSv: 'Fotoidentifiering bygger planogrammet',
+    titleEn: 'Photo recognition builds the planogram',
+    descSv: 'Saknar ni planogram, eller är det ofullständigt? Fotoidentifiering scannar hyllan och genererar ett komplett digitalt planogram automatiskt — som sedan driver optimering och varupåfyllnad utifrån sell-out.',
+    descEn: 'No planogram, or only partial coverage? Photo recognition scans the shelf and auto-generates a complete digital planogram — which then drives optimization and replenishment based on sell-out.',
+    bestForSv: 'Kedjor med ofullständigt eller manuellt underhållet planogram',
+    bestForEn: 'Chains with incomplete or manually maintained planograms',
+    icon: '📸',
+  },
+];
+
 const techFeatures = [
   {
     icon: '🤖',
@@ -242,6 +275,47 @@ const schemaProduct = {
               <strong>{o.effect}</strong>
               <span class="sv-text">{o.effectLabelSv}</span>
               <span class="en-text">{o.effectLabelEn}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THREE MODES ===== -->
+  <section class="ph-section ph-section-modes">
+    <div class="container">
+      <div class="section-intro fade-up">
+        <span class="ph-label sv-text">Tre sätt att använda Perfekt hylla</span>
+        <span class="ph-label en-text">Three ways to use Perfect Shelf</span>
+        <h2>
+          <span class="sv-text">Anpassar sig efter er data — inte tvärtom.</span>
+          <span class="en-text">Adapts to your data — not the other way around.</span>
+        </h2>
+        <p class="sv-text">Perfekt hylla är inte en lösning som kräver att allt redan är på plats. Tre arbetssätt täcker hela spektrumet — från butiker utan planogram till etablerade kedjor med befintliga planogramflöden, och allt däremellan.</p>
+        <p class="en-text">Perfect Shelf isn't a solution that demands everything is already in place. Three working modes cover the full spectrum — from stores without a planogram to established chains with mature planogram processes, and everything in between.</p>
+      </div>
+
+      <div class="ph-modes">
+        {modes.map((m, i) => (
+          <div class="ph-mode fade-up" style={`animation-delay:${i*120}ms`}>
+            <div class="ph-mode-head">
+              <span class="ph-mode-num">{m.num}</span>
+              <span class="ph-mode-icon">{m.icon}</span>
+            </div>
+            <h3>
+              <span class="sv-text">{m.titleSv}</span>
+              <span class="en-text">{m.titleEn}</span>
+            </h3>
+            <p>
+              <span class="sv-text">{m.descSv}</span>
+              <span class="en-text">{m.descEn}</span>
+            </p>
+            <div class="ph-mode-best">
+              <span class="ph-mode-best-label sv-text">Passar bäst för</span>
+              <span class="ph-mode-best-label en-text">Best for</span>
+              <span class="ph-mode-best-text sv-text">{m.bestForSv}</span>
+              <span class="ph-mode-best-text en-text">{m.bestForEn}</span>
             </div>
           </div>
         ))}
@@ -462,6 +536,21 @@ const schemaProduct = {
   .ph-obj-effect strong { font-family: var(--font-heading); font-size: 1.5rem; color: var(--obj-color); line-height: 1; }
   .ph-obj-effect span { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
 
+  /* ===== THREE MODES ===== */
+  .ph-section-modes { background: #fff; padding-bottom: calc(var(--section-pad) - 1rem); }
+  .ph-modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .ph-mode { background: var(--color-off-white, #f7f8fb); border: 1px solid rgba(1,13,96,0.06); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: all 0.3s; }
+  .ph-mode::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--ph-blue) 0%, var(--ph-accent) 100%); }
+  .ph-mode:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(1,13,96,0.1); border-color: var(--ph-blue); }
+  .ph-mode-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; }
+  .ph-mode-num { font-family: var(--font-heading); font-size: 1.85rem; font-weight: 500; color: var(--ph-navy); line-height: 1; letter-spacing: -0.01em; }
+  .ph-mode-icon { font-size: 1.5rem; opacity: 0.7; }
+  .ph-mode h3 { font-size: 1.1rem; color: var(--ph-navy); margin: 0 0 0.85rem; line-height: 1.3; min-height: 2.6em; }
+  .ph-mode > p { font-size: 0.92rem; color: #555; line-height: 1.7; margin: 0 0 1.5rem; flex-grow: 1; }
+  .ph-mode-best { padding-top: 1rem; border-top: 1px dashed rgba(1,13,96,0.15); display: flex; flex-direction: column; gap: 0.2rem; }
+  .ph-mode-best-label { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ph-blue); }
+  .ph-mode-best-text { font-size: 0.85rem; color: var(--ph-navy); font-weight: 500; line-height: 1.5; }
+
   /* ===== TECH GRID ===== */
   .ph-tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1100px; margin: 0 auto; }
   .ph-tech-card { background: #fff; border: 1px solid rgba(1,13,96,0.08); border-radius: 12px; padding: 1.75rem; transition: all 0.25s; }
@@ -503,6 +592,8 @@ const schemaProduct = {
   @media (max-width: 900px) {
     .ph-questions { grid-template-columns: 1fr; }
     .ph-objectives { grid-template-columns: 1fr; }
+    .ph-modes { grid-template-columns: 1fr; }
+    .ph-mode h3 { min-height: 0; }
     .ph-tech-grid { grid-template-columns: 1fr 1fr; }
     .ph-proof-inner { grid-template-columns: 1fr; gap: 3rem; }
     .ph-proof-card { order: -1; }
