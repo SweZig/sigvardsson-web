@@ -92,6 +92,34 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
     </div>
   </section>
 
+  <!-- ===== INTRO VIDEO ===== -->
+  <section class="op-intro-video fade-up">
+    <div class="container">
+      <div class="op-video-header">
+        <span class="section-label sv-text">Se vilka vi är</span>
+        <span class="section-label en-text">See who we are</span>
+        <h2 class="sv-text">En kort presentation av SCG</h2>
+        <h2 class="en-text">A short introduction to SCG</h2>
+      </div>
+      <div class="op-video-wrap sv-text">
+        <video
+          src="/videos/intro-se.mp4"
+          controls
+          preload="metadata"
+          playsinline
+        ></video>
+      </div>
+      <div class="op-video-wrap en-text">
+        <video
+          src="/videos/intro-en.mp4"
+          controls
+          preload="metadata"
+          playsinline
+        ></video>
+      </div>
+    </div>
+  </section>
+
   <section class="team-section">
     <div class="container">
       <div class="team-grid">
@@ -789,4 +817,12 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
     .capability-tags { gap: 0.4rem; }
     .cap-tag { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
   }
+
+  /* ===== INTRO VIDEO ===== */
+  .op-intro-video { padding: 4rem 2rem 3rem; background: #f7f8fb; }
+  .op-video-header { max-width: 720px; margin: 0 auto 2rem; text-align: center; }
+  .op-video-header h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; color: var(--color-navy); margin: 0.5rem 0 0; }
+  .op-video-wrap { max-width: 860px; margin: 0 auto; }
+  .op-video-wrap video { width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(1,13,96,0.15); display: block; }
+  @media (max-width: 480px) { .op-intro-video { padding: 2.5rem 1.25rem; } }
 </style>

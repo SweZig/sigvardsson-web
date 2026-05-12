@@ -22,8 +22,46 @@ import Footer from '../../components/Footer.astro';
         <span class="sv-text" data-no="Filosofi, prosess<br/>og prinsipper." data-da="Filosofi, proces<br/>og principper." data-fi="Filosofia, prosessi<br/>ja periaatteet.">Filosofi, process<br/>och principer.</span>
         <span class="en-text">Philosophy, process<br/>and principles.</span>
       </h1>
-      <p class="hero-sub sv-text" data-no="Vår leveransemodell bygger på tre grunnpilarer og en beprøvd 5-trinns prosess — bygget på 30+ år med retail-erfaring og 250+ gjennomførte prosjekter." data-da="Vores leveringsmodel bygger på tre grundsøjler og en gennemprøvet 5-trins proces — bygget på 30+ år med retail-erfaring og 250+ gennemførte projekter." data-fi="Toimitusmalliimme perustuu kolmeen peruspilaariin ja todistetusti toimivaan 5-vaiheiseen prosessiin — 30+ vuoden kauppakokemukseen ja 250+ toteutettuun projektiin.">Vår leveransmodell bygger på tre grundpelare och en beprövad 5-stegsprocess — byggd på 30+ år av retailerfarenhet och 250+ genomförda projekt.</p>
-      <p class="hero-sub en-text">Our delivery model is built on three core pillars and a proven 5-step process — built on 30+ years of retail experience and 250+ completed projects.</p>
+      <p class="hero-sub sv-text" data-no="Vår leveransemodell bygger på tre grunnpilarer og en beprøvd 5-trinns prosess — bygget på 30+ år med retail-erfaring og 250+ gjennomførte prosjekter." data-da="Vores leveringsmodel bygger på tre grundsøjler og en gennemprøvet 5-trins proces — bygget på 30+ år med retail-erfaring og 250+ gennemførte projekter." data-fi="Toimitusmalliimme perustuu kolmeen peruspilaariin ja todistetusti toimivaan 5-vaiheiseen prosessiin — 30+ vuoden kauppakokemukseen ja 250+ toteutettuun projektiin.">Vår leveransmodell bygger på tre grundpelare och en beprövad 5-stegsprocess — byggd på 30+ år av retailerfarenhet och 100+ genomförda projekt.</p>
+      <p class="hero-sub en-text">Our delivery model is built on three core pillars and a proven 5-step process — built on 30+ years of retail experience and 100+ completed projects.</p>
+    </div>
+  </section>
+
+  <!-- ===== CHANGE MANAGEMENT VIDEO ===== -->
+  <section class="op-cm-video fade-up">
+    <div class="container">
+      <div class="op-cm-header">
+        <span class="section-label sv-text">Hur vi arbetar</span>
+        <span class="section-label en-text">How we work</span>
+        <h2 class="sv-text">Change Management i retail</h2>
+        <h2 class="en-text">Change Management in retail</h2>
+        <p class="sv-text">Förändring i retail handlar inte om PowerPoint-strategier. Det handlar om att människor i butiken ändrar hur de jobbar — varje dag, över tid. Här pratar vi om hur vi får det att hända i praktiken.</p>
+        <p class="en-text">Change in retail isn't about PowerPoint strategies. It's about people in the store changing how they work — every day, over time. Here we talk about how we make that happen in practice.</p>
+      </div>
+      <div class="op-cm-video-wrap sv-text">
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/RypF9Y_Q7XM?rel=0&modestbranding=1&vq=hd1080"
+            title="Change Management i retail — svenska"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      <div class="op-cm-video-wrap en-text">
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/jJTdTwhTPd8?rel=0&modestbranding=1&vq=hd1080"
+            title="Change Management in retail — English"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -968,4 +1006,14 @@ import Footer from '../../components/Footer.astro';
   color: #fff;
   line-height: 1.2;
 }
+
+/* ===== CM VIDEO ===== */
+.op-cm-video { padding: 4rem 2rem 3rem; background: #f7f8fb; }
+.op-cm-header { max-width: 720px; margin: 0 auto 2rem; text-align: center; }
+.op-cm-header h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; color: var(--color-navy); margin: 0.5rem 0 1rem; }
+.op-cm-header p { font-size: 1rem; color: #555; line-height: 1.7; margin: 0; }
+.op-cm-video-wrap { max-width: 860px; margin: 0 auto; }
+.op-cm-video-wrap .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(1,13,96,0.15); }
+.op-cm-video-wrap .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 480px) { .op-cm-video { padding: 2.5rem 1.25rem; } }
 </style>
