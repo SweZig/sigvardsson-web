@@ -1,0 +1,507 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const canonical = 'https://www.sigvardsson.org/products/perfekt-hylla/';
+
+const objectives = [
+  {
+    color: 'green',
+    icon: '📈',
+    titleSv: 'Öka försäljningen',
+    titleEn: 'Increase sales',
+    descSv: 'Bestsellers fram i ögonhöjd. Säkra att kunden hittar det hen söker — snabbt.',
+    descEn: 'Bestsellers at eye level. Make sure customers find what they want — fast.',
+    effect: '4–15%',
+    effectLabelSv: 'försäljningsväxt',
+    effectLabelEn: 'sales growth',
+  },
+  {
+    color: 'blue',
+    icon: '💎',
+    titleSv: 'Öka bruttomarginalen',
+    titleEn: 'Increase gross margin',
+    descSv: 'Premium- och högmarginal-produkter i bästa positionerna. Öka marginalen utan att tappa volym.',
+    descEn: 'Premium and high-margin products in the best positions. Grow margin without losing volume.',
+    effect: '10–20%',
+    effectLabelSv: 'marginaltillväxt',
+    effectLabelEn: 'margin growth',
+  },
+  {
+    color: 'yellow',
+    icon: '🛒',
+    titleSv: 'Öka antal sålda & trafik',
+    titleEn: 'Increase items sold & traffic',
+    descSv: 'Produkter som drar kunden in i kategorin. Bygg volym och korsförsäljning där det räknas.',
+    descEn: 'Products that pull customers into the category. Build volume and cross-sales where it counts.',
+    effect: 'Volym',
+    effectLabelSv: '& korsförsäljning',
+    effectLabelEn: '& cross-sales',
+  },
+];
+
+const techFeatures = [
+  {
+    icon: '🤖',
+    titleSv: 'AI-driven analys',
+    titleEn: 'AI-driven analysis',
+    descSv: 'Avancerade algoritmer kombinerar realtid POS-data med in-store scanning. Mönster som ingen människa hinner se.',
+    descEn: 'Advanced algorithms combine real-time POS data with in-store scanning. Patterns no human could spot in time.',
+  },
+  {
+    icon: '🧪',
+    titleSv: 'Systematisk A-B-testning',
+    titleEn: 'Systematic A-B testing',
+    descSv: 'Vi gissar inte — vi mäter. Varje konfiguration testas mot ett alternativ tills försäljningen avgör vinnaren.',
+    descEn: 'We don\'t guess — we measure. Every configuration is tested against an alternative until sales decide the winner.',
+  },
+  {
+    icon: '⏱',
+    titleSv: 'Realtidsövervakning',
+    titleEn: 'Real-time monitoring',
+    descSv: 'Varje hylla mäts kontinuerligt direkt i mobilen. Förlorad försäljning idag går inte att ta tillbaka imorgon.',
+    descEn: 'Every shelf is measured continuously, directly in the mobile app. Lost sales today can\'t be recovered tomorrow.',
+  },
+  {
+    icon: '🎨',
+    titleSv: 'Visuella färgkoder',
+    titleEn: 'Visual colour codes',
+    descSv: 'Vem som helst i butiken kan agera. Grönt, blått eller gult — beslutet syns direkt utan att tolka rådata.',
+    descEn: 'Anyone in the store can act. Green, blue or yellow — the decision is visible without parsing raw data.',
+  },
+  {
+    icon: '📱',
+    titleSv: 'Installeras på en smartphone',
+    titleEn: 'Installs on any smartphone',
+    descSv: 'Ingen specialhårdvara, inget IT-projekt. Krypterad data, säker installation, fungerar på vilken enhet som helst.',
+    descEn: 'No special hardware, no IT project. Encrypted data, secure installation, runs on any device.',
+  },
+  {
+    icon: '📊',
+    titleSv: 'Mäts på tre KPI:er',
+    titleEn: 'Measured on three KPIs',
+    descSv: 'Försäljning, kvantitet och bruttomarginal — per hylla, per kategori, per butik. Inga undanflykter.',
+    descEn: 'Sales, quantity and gross profit — per shelf, per category, per store. No place to hide.',
+  },
+];
+
+const schemaProduct = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Perfekt hylla",
+  "applicationCategory": "BusinessApplication",
+  "description": "Perfekt hylla är ett AI-drivet verktyg för hylloptimering i retail. Kombinerar realtid POS-data med in-store scanning och systematisk A-B-testning för att maximera försäljning och marginal.",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" },
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://www.sigvardsson.org/#organization",
+    "name": "Sigvardsson Consulting Group"
+  },
+  "url": canonical
+};
+---
+
+<Layout
+  titleSv="Perfekt hylla — AI-driven hylloptimering | Sigvardsson Consulting Group"
+  titleEn="Perfect Shelf — AI-driven shelf optimization | Sigvardsson Consulting Group"
+  descriptionSv="75% av butikens omsättning kommer från hyllorna. Perfekt hylla kombinerar AI, realtid POS-data och systematisk A-B-testning för att maximera försäljning och marginal. Minimum 2% försäljningsökning — garanterat."
+  descriptionEn="75% of store revenue comes from the shelves. Perfect Shelf combines AI, real-time POS data and systematic A-B testing to maximize sales and margin. Minimum 2% sales increase — guaranteed."
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaProduct)} />
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="ph-hero">
+    <div class="ph-hero-bg"></div>
+    <div class="ph-hero-grid"></div>
+    <div class="container ph-hero-inner">
+      <div class="powered-by">
+        <span class="sv-text">En tjänst från</span>
+        <span class="en-text">A service by</span>
+        <a href="/" class="powered-link">Sigvardsson Consulting Group</a>
+        <span class="separator">·</span>
+        <span class="sv-text">I partnerskap med</span>
+        <span class="en-text">In partnership with</span>
+        <a href="/products/link-retail/" class="powered-link powered-lr">
+          <span class="lr-mini-badge">LR</span> Link Retail
+        </a>
+      </div>
+
+      <div class="ph-hero-headline">
+        <span class="ph-hero-stat">75 %</span>
+        <h1>
+          <span class="sv-text">av butikens omsättning kommer från hyllorna.</span>
+          <span class="en-text">of store revenue comes from the shelves.</span>
+        </h1>
+        <p class="ph-hero-sub sv-text">När optimerade du dem senast?</p>
+        <p class="ph-hero-sub en-text">When did you last optimize them?</p>
+      </div>
+
+      <div class="ph-hero-tagline">
+        <span class="sv-text"><strong>Perfekt hylla</strong> — AI-driven hylloptimering byggd på 15 års erfarenhet och realtidsdata från kassasystem och scanning.</span>
+        <span class="en-text"><strong>Perfect Shelf</strong> — AI-driven shelf optimization built on 15 years of experience and real-time data from POS and scanning.</span>
+      </div>
+
+      <div class="ph-hero-pills">
+        <div class="ph-pill"><strong>+2 %</strong><span class="sv-text">garanterad min. försäljningsökning</span><span class="en-text">guaranteed min. sales increase</span></div>
+        <div class="ph-pill"><strong>4–15 %</strong><span class="sv-text">typisk försäljningsväxt</span><span class="en-text">typical sales growth</span></div>
+        <div class="ph-pill"><strong>100+</strong><span class="sv-text">genomförda projekt</span><span class="en-text">completed projects</span></div>
+      </div>
+
+      <div class="ph-hero-actions">
+        <a href="/Contact/" class="btn-ph-primary sv-text">Boka demo</a>
+        <a href="/Contact/" class="btn-ph-primary en-text">Book a demo</a>
+        <a href="#how" class="btn-ph-ghost sv-text">Så fungerar det ↓</a>
+        <a href="#how" class="btn-ph-ghost en-text">How it works ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TWO QUESTIONS ===== -->
+  <section class="ph-section ph-section-light">
+    <div class="container">
+      <div class="section-intro fade-up">
+        <span class="ph-label sv-text">Två frågor varje hylla måste svara på</span>
+        <span class="ph-label en-text">Two questions every shelf must answer</span>
+        <h2>
+          <span class="sv-text">Hylla är inte inredning. Hylla är försäljning.</span>
+          <span class="en-text">Shelves aren't furniture. Shelves are sales.</span>
+        </h2>
+        <p class="sv-text">De flesta hyllor är överlastade med för många artiklar på för lite plats. Synligheten per produkt sjunker. Försäljningen per SKU sjunker. Det enda som ökar är komplexiteten för butikspersonalen.</p>
+        <p class="en-text">Most shelves are overloaded with too many SKUs in too little space. Visibility per product drops. Sales per SKU drop. The only thing that grows is the complexity for store staff.</p>
+      </div>
+      <div class="ph-questions">
+        <div class="ph-question fade-up">
+          <span class="ph-q-num">01</span>
+          <h3 class="sv-text">Range — rätt antal SKU?</h3>
+          <h3 class="en-text">Range — the right number of SKUs?</h3>
+          <p class="sv-text">Vilket är det perfekta antalet artiklar i den här hyllan? För många och kunden tappar fokus. För få och du tappar försäljning. Det rätta svaret kan bara hittas i datan.</p>
+          <p class="en-text">What is the perfect number of items in this shelf? Too many and customers lose focus. Too few and you lose sales. The right answer only emerges from data.</p>
+        </div>
+        <div class="ph-question fade-up" style="animation-delay:120ms">
+          <span class="ph-q-num">02</span>
+          <h3 class="sv-text">Merchandising — hur exponeras de?</h3>
+          <h3 class="en-text">Merchandising — how are they displayed?</h3>
+          <p class="sv-text">Det finns ett oändligt antal sätt att presentera samma sortiment. Vissa säljer. De flesta gör det inte. Vilken konfiguration vinner — och varför?</p>
+          <p class="en-text">There are infinite ways to present the same assortment. Some sell. Most don't. Which configuration wins — and why?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THREE OBJECTIVES ===== -->
+  <section class="ph-section ph-section-dark">
+    <div class="container">
+      <div class="section-intro section-intro-light fade-up">
+        <span class="ph-label ph-label-light sv-text">Tre målbilder. Tre färger.</span>
+        <span class="ph-label ph-label-light en-text">Three objectives. Three colours.</span>
+        <h2>
+          <span class="sv-text">Innan vi rör hyllan måste vi veta vad vi optimerar för.</span>
+          <span class="en-text">Before touching the shelf, we need to know what we're optimizing for.</span>
+        </h2>
+        <p class="sv-text">Varje hylla kan optimeras för tre olika mål — och de kan stå i konflikt med varandra. Vår dashboard färgkodar varje hylla efter dess mål, så att butikschefen ser direkt i mobilen vad som gäller och vilken åtgärd som rekommenderas.</p>
+        <p class="en-text">Every shelf can be optimized for three different goals — and they can conflict with each other. Our dashboard colour-codes each shelf by its objective, so the store manager sees instantly in the mobile app what applies and which action is recommended.</p>
+      </div>
+
+      <div class="ph-objectives">
+        {objectives.map((o, i) => (
+          <div class={`ph-obj ph-obj-${o.color} fade-up`} style={`animation-delay:${i*100}ms`}>
+            <div class="ph-obj-icon">{o.icon}</div>
+            <h3>
+              <span class="sv-text">{o.titleSv}</span>
+              <span class="en-text">{o.titleEn}</span>
+            </h3>
+            <p>
+              <span class="sv-text">{o.descSv}</span>
+              <span class="en-text">{o.descEn}</span>
+            </p>
+            <div class="ph-obj-effect">
+              <strong>{o.effect}</strong>
+              <span class="sv-text">{o.effectLabelSv}</span>
+              <span class="en-text">{o.effectLabelEn}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how" class="ph-section ph-section-light">
+    <div class="container">
+      <div class="section-intro fade-up">
+        <span class="ph-label sv-text">Så fungerar tekniken</span>
+        <span class="ph-label en-text">How the technology works</span>
+        <h2>
+          <span class="sv-text">Mät. Lär. Ligg steget före.</span>
+          <span class="en-text">Measure. Learn. Stay ahead.</span>
+        </h2>
+        <p class="sv-text">Perfekt hylla är inte ett rapporteringsverktyg. Det är en optimerings-motor som lär sig din butik, testar förändringar och visar exakt vad som ska göras härnäst.</p>
+        <p class="en-text">Perfect Shelf isn't a reporting tool. It's an optimization engine that learns your store, tests changes and shows exactly what to do next.</p>
+      </div>
+
+      <div class="ph-tech-grid">
+        {techFeatures.map((f, i) => (
+          <div class="ph-tech-card fade-up" style={`animation-delay:${i*60}ms`}>
+            <div class="ph-tech-icon">{f.icon}</div>
+            <h3>
+              <span class="sv-text">{f.titleSv}</span>
+              <span class="en-text">{f.titleEn}</span>
+            </h3>
+            <p>
+              <span class="sv-text">{f.descSv}</span>
+              <span class="en-text">{f.descEn}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS / PROOF ===== -->
+  <section class="ph-section ph-section-proof">
+    <div class="container">
+      <div class="ph-proof-inner">
+        <div class="ph-proof-text fade-up">
+          <span class="ph-label sv-text">Bevisad effekt</span>
+          <span class="ph-label en-text">Proven impact</span>
+          <h2>
+            <span class="sv-text">Du kan inte ta tillbaka förlorad försäljning.</span>
+            <span class="en-text">You can never take back lost sales.</span>
+          </h2>
+          <p class="sv-text">Det är därför realtidsövervakning är viktigare än kvartalsrapporten. När butikschefen ser på sin telefon att en hylla underpresterar idag kan beslutet fattas idag — inte vid nästa månadsmöte.</p>
+          <p class="en-text">That's why real-time monitoring beats the quarterly report. When the store manager sees on their phone that a shelf is underperforming today, the decision happens today — not at next month's meeting.</p>
+
+          <div class="ph-proof-stats">
+            <div class="ph-stat-row">
+              <span class="ph-stat-num">+2 %</span>
+              <div>
+                <strong class="sv-text">Garanterad miniminivå</strong>
+                <strong class="en-text">Guaranteed minimum</strong>
+                <span class="sv-text">Link Retail garanterar minst 2 % försäljningsökning vid implementation.</span>
+                <span class="en-text">Link Retail guarantees at least 2% sales increase at implementation.</span>
+              </div>
+            </div>
+            <div class="ph-stat-row">
+              <span class="ph-stat-num">4–15 %</span>
+              <div>
+                <strong class="sv-text">Typisk försäljningsväxt</strong>
+                <strong class="en-text">Typical sales growth</strong>
+                <span class="sv-text">Vad de flesta projekt landar på i praktiken — beroende på utgångsläge.</span>
+                <span class="en-text">What most projects actually deliver — depending on the starting point.</span>
+              </div>
+            </div>
+            <div class="ph-stat-row">
+              <span class="ph-stat-num">100+</span>
+              <div>
+                <strong class="sv-text">Genomförda projekt</strong>
+                <strong class="en-text">Completed projects</strong>
+                <span class="sv-text">Bland Nordens mest krävande dagligvaru- och retailaktörer.</span>
+                <span class="en-text">Among the Nordic region's most demanding grocery and retail operators.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ph-clients">
+            <span class="ph-clients-label sv-text">Referenskunder</span>
+            <span class="ph-clients-label en-text">Reference clients</span>
+            <div class="ph-client-pills">
+              <span class="ph-client-pill">NorgesGruppen Kiwi</span>
+              <span class="ph-client-pill">NorgesGruppen Meny</span>
+              <span class="ph-client-pill">Coop</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ph-proof-card fade-up">
+          <div class="ph-proof-card-inner">
+            <div class="ph-proof-quote">
+              <span class="sv-text">"You can never take back lost sales."</span>
+              <span class="en-text">"You can never take back lost sales."</span>
+            </div>
+            <div class="ph-proof-attribution">— Link Retail</div>
+            <div class="ph-proof-divider"></div>
+            <p class="sv-text">Hylla = 75% av butikens omsättning. Varje vecka utan optimering är försäljning som aldrig kommer tillbaka.</p>
+            <p class="en-text">Shelves = 75% of store revenue. Every week without optimization is sales that never come back.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="ph-cta">
+    <div class="container">
+      <h2>
+        <span class="sv-text">Redo att se vad Perfekt hylla kan göra för din butik?</span>
+        <span class="en-text">Ready to see what Perfect Shelf can do for your store?</span>
+      </h2>
+      <p class="sv-text">Boka en demo så går vi igenom hur AI och systematisk A-B-testning kan börja ge effekt i din butik redan om några veckor.</p>
+      <p class="en-text">Book a demo and we'll walk through how AI and systematic A-B testing can start delivering impact in your store in just a few weeks.</p>
+      <div class="ph-cta-actions">
+        <a href="/Contact/" class="btn-ph-primary sv-text">Boka demo</a>
+        <a href="/Contact/" class="btn-ph-primary en-text">Book a demo</a>
+        <a href="/products/link-retail/" class="btn-ph-ghost sv-text">Mer om Link Retail-partnerskapet</a>
+        <a href="/products/link-retail/" class="btn-ph-ghost en-text">More about the Link Retail partnership</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  :root {
+    --ph-navy: #010D60;
+    --ph-mid: #1A277A;
+    --ph-blue: #2A4EA9;
+    --ph-sky: #4867B6;
+    --ph-light: #90A2CF;
+    --ph-accent: #00C9B7;
+    --ph-green: #2d8a6b;
+    --ph-yellow: #d4a82a;
+  }
+
+  /* ===== HERO ===== */
+  .ph-hero { position: relative; background: var(--ph-navy); padding: 7rem 2rem 5rem; overflow: hidden; color: #fff; }
+  .ph-hero-bg { position: absolute; inset: 0; background: radial-gradient(circle at 20% 30%, var(--ph-blue) 0%, transparent 55%), radial-gradient(circle at 80% 70%, var(--ph-mid) 0%, transparent 50%), var(--ph-navy); opacity: 0.95; }
+  .ph-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.5; }
+  .ph-hero-inner { position: relative; z-index: 1; max-width: 900px; }
+
+  .powered-by { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .powered-link { color: rgba(255,255,255,0.65); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
+  .powered-link:hover { color: #fff; }
+  .separator { opacity: 0.3; }
+  .lr-mini-badge { display: inline-block; background: #2d8a6b; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 3px; letter-spacing: 0.05em; }
+
+  .ph-hero-headline { margin-bottom: 2.5rem; }
+  .ph-hero-stat { display: block; font-family: var(--font-heading); font-size: clamp(4rem, 10vw, 7rem); font-weight: 500; line-height: 1; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+  .ph-hero-headline h1 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 400; color: rgba(255,255,255,0.92); margin: 0 0 1rem; line-height: 1.2; max-width: 720px; }
+  .ph-hero-sub { font-size: 1.15rem; color: var(--ph-light); font-style: italic; margin: 0; }
+
+  .ph-hero-tagline { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.85); max-width: 700px; margin-bottom: 2rem; padding-left: 1rem; border-left: 3px solid var(--ph-accent); padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  .ph-hero-tagline strong { color: #fff; }
+
+  .ph-hero-pills { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .ph-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 0.85rem 1.25rem; display: flex; flex-direction: column; min-width: 150px; }
+  .ph-pill strong { font-family: var(--font-heading); font-size: 1.4rem; color: var(--ph-accent); line-height: 1; margin-bottom: 0.3rem; }
+  .ph-pill span { font-size: 0.78rem; color: rgba(255,255,255,0.7); line-height: 1.3; }
+
+  .ph-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-ph-primary { background: #fff; color: var(--ph-navy); display: inline-block; padding: 0.85rem 2.25rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-ph-primary:hover { background: var(--ph-accent); color: var(--ph-navy); transform: translateY(-2px); }
+  .btn-ph-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); display: inline-block; padding: 0.83rem 2.25rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-ph-ghost:hover { border-color: var(--ph-accent); color: var(--ph-accent); }
+
+  /* ===== SECTIONS ===== */
+  .ph-section { padding: var(--section-pad); }
+  .ph-section-light { background: #fff; }
+  .ph-section-dark { background: linear-gradient(180deg, var(--ph-navy) 0%, var(--ph-mid) 100%); color: #fff; }
+
+  .section-intro { max-width: 720px; margin: 0 auto 3.5rem; text-align: center; }
+  .section-intro h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: var(--ph-navy); margin: 0.6rem 0 1.25rem; line-height: 1.25; }
+  .section-intro p { font-size: 1.05rem; color: #555; line-height: 1.75; }
+  .section-intro-light h2 { color: #fff; }
+  .section-intro-light p { color: rgba(255,255,255,0.78); }
+
+  .ph-label { display: inline-block; font-family: var(--font-heading); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ph-blue); }
+  .ph-label-light { color: var(--ph-accent) !important; }
+
+  /* ===== TWO QUESTIONS ===== */
+  .ph-questions { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; max-width: 1000px; margin: 0 auto; }
+  .ph-question { background: var(--color-off-white, #f7f8fb); border-left: 4px solid var(--ph-blue); border-radius: 0 12px 12px 0; padding: 2rem 2rem 2rem 2.5rem; position: relative; }
+  .ph-q-num { position: absolute; top: 1.5rem; right: 1.75rem; font-family: var(--font-heading); font-size: 2rem; color: var(--ph-light); opacity: 0.5; line-height: 1; }
+  .ph-question h3 { font-size: 1.25rem; color: var(--ph-navy); margin: 0 0 0.85rem; padding-right: 3rem; }
+  .ph-question p { font-size: 0.95rem; color: #555; line-height: 1.7; margin: 0; }
+
+  /* ===== OBJECTIVES ===== */
+  .ph-objectives { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .ph-obj { background: rgba(255,255,255,0.06); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden; }
+  .ph-obj::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--obj-color, var(--ph-accent)); }
+  .ph-obj-green { --obj-color: var(--ph-green); }
+  .ph-obj-blue { --obj-color: var(--ph-accent); }
+  .ph-obj-yellow { --obj-color: var(--ph-yellow); }
+  .ph-obj:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+  .ph-obj-icon { font-size: 2rem; margin-bottom: 0.85rem; }
+  .ph-obj h3 { font-size: 1.2rem; color: #fff; margin: 0 0 0.85rem; }
+  .ph-obj p { font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.65; margin: 0 0 1.5rem; min-height: 60px; }
+  .ph-obj-effect { display: flex; align-items: baseline; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
+  .ph-obj-effect strong { font-family: var(--font-heading); font-size: 1.5rem; color: var(--obj-color); line-height: 1; }
+  .ph-obj-effect span { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+
+  /* ===== TECH GRID ===== */
+  .ph-tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1100px; margin: 0 auto; }
+  .ph-tech-card { background: #fff; border: 1px solid rgba(1,13,96,0.08); border-radius: 12px; padding: 1.75rem; transition: all 0.25s; }
+  .ph-tech-card:hover { border-color: var(--ph-blue); box-shadow: 0 12px 32px rgba(1,13,96,0.08); transform: translateY(-3px); }
+  .ph-tech-icon { font-size: 1.85rem; margin-bottom: 0.85rem; }
+  .ph-tech-card h3 { font-size: 1.05rem; color: var(--ph-navy); margin: 0 0 0.6rem; }
+  .ph-tech-card p { font-size: 0.9rem; color: #555; line-height: 1.65; margin: 0; }
+
+  /* ===== PROOF ===== */
+  .ph-section-proof { background: #f7f8fb; }
+  .ph-proof-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .ph-proof-text h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--ph-navy); margin: 0.6rem 0 1.25rem; line-height: 1.25; }
+  .ph-proof-text > p { font-size: 1rem; color: #555; line-height: 1.75; margin: 0 0 2rem; }
+
+  .ph-proof-stats { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+  .ph-stat-row { display: grid; grid-template-columns: 110px 1fr; gap: 1.25rem; align-items: start; padding: 1rem 0; border-bottom: 1px solid rgba(1,13,96,0.08); }
+  .ph-stat-row:last-child { border-bottom: none; }
+  .ph-stat-num { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; color: var(--ph-blue); line-height: 1; }
+  .ph-stat-row strong { display: block; font-size: 0.95rem; color: var(--ph-navy); margin-bottom: 0.25rem; }
+  .ph-stat-row span { font-size: 0.88rem; color: #666; line-height: 1.55; }
+
+  .ph-clients-label { display: block; font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ph-light); margin-bottom: 0.75rem; }
+  .ph-client-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .ph-client-pill { font-family: var(--font-heading); font-size: 0.78rem; background: #fff; color: var(--ph-navy); padding: 0.35rem 0.85rem; border-radius: 20px; border: 1px solid rgba(1,13,96,0.12); }
+
+  .ph-proof-card { background: linear-gradient(135deg, var(--ph-navy) 0%, var(--ph-mid) 100%); border-radius: 20px; padding: 2.5rem; color: #fff; box-shadow: 0 20px 50px rgba(1,13,96,0.2); }
+  .ph-proof-quote { font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.65rem); font-weight: 400; line-height: 1.35; margin-bottom: 0.75rem; color: #fff; }
+  .ph-proof-attribution { font-size: 0.85rem; color: var(--ph-accent); letter-spacing: 0.05em; }
+  .ph-proof-divider { height: 1px; background: rgba(255,255,255,0.15); margin: 1.75rem 0; }
+  .ph-proof-card p { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin: 0; }
+
+  /* ===== CTA ===== */
+  .ph-cta { background: linear-gradient(135deg, var(--ph-mid) 0%, var(--ph-blue) 100%); padding: 5rem 2rem; text-align: center; color: #fff; }
+  .ph-cta h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); color: #fff; margin-bottom: 0.85rem; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .ph-cta p { color: rgba(255,255,255,0.85); font-size: 1.02rem; margin: 0 auto 2rem; max-width: 580px; line-height: 1.7; }
+  .ph-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .ph-questions { grid-template-columns: 1fr; }
+    .ph-objectives { grid-template-columns: 1fr; }
+    .ph-tech-grid { grid-template-columns: 1fr 1fr; }
+    .ph-proof-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .ph-proof-card { order: -1; }
+  }
+  @media (max-width: 560px) {
+    .ph-hero { padding: 5rem 1.25rem 3rem; }
+    .ph-hero-pills { gap: 0.6rem; }
+    .ph-pill { padding: 0.7rem 1rem; min-width: 130px; }
+    .ph-hero-actions { flex-direction: column; gap: 0.6rem; }
+    .ph-hero-actions .btn-ph-primary, .ph-hero-actions .btn-ph-ghost { display: block; text-align: center; }
+    .ph-tech-grid { grid-template-columns: 1fr; }
+    .ph-stat-row { grid-template-columns: 80px 1fr; gap: 0.85rem; }
+    .ph-stat-num { font-size: 1.3rem; }
+    .ph-proof-card { padding: 1.75rem; }
+    .ph-cta { padding: 3rem 1.25rem; }
+    .ph-cta-actions { flex-direction: column; }
+    .ph-obj p { min-height: auto; }
+  }
+</style>
+
+<script is:inline>
+  // Scroll reveal
+  (function() {
+    if (typeof window === 'undefined') return;
+    const els = document.querySelectorAll('.fade-up');
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('is-visible')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  })();
+</script>
