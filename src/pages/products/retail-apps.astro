@@ -158,8 +158,16 @@ const schemaProduct = {
       <div class="hero-actions">
         <a href="/Contact/" class="btn btn-white sv-text">Kontakta oss</a>
         <a href="/Contact/" class="btn btn-white en-text">Contact us</a>
-        <a href="/services/" class="btn btn-outline-white sv-text">Alla tjänster</a>
-        <a href="/services/" class="btn btn-outline-white en-text">All services</a>
+      </div>
+
+      <div class="ra-service-link">
+        <span class="sv-text">Levereras som tjänster inom</span>
+        <span class="en-text">Delivered as services within</span>
+        <a href="/services/#retail-optimization" class="ra-service-link-href sv-text">Retail Optimering</a>
+        <a href="/services/#retail-optimization" class="ra-service-link-href en-text">Retail Optimization</a>
+        <span class="ra-service-sep">·</span>
+        <a href="/services/#technology" class="ra-service-link-href sv-text">Teknologi & System</a>
+        <a href="/services/#technology" class="ra-service-link-href en-text">Technology & Systems</a>
       </div>
     </div>
   </section>
@@ -337,6 +345,11 @@ const schemaProduct = {
     margin-bottom: 2rem;
   }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .ra-service-link { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); font-family: var(--font-heading); font-size: 0.8rem; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; letter-spacing: 0.04em; }
+  .ra-service-link-href { color: #66d4e6; text-decoration: none; transition: color 0.2s; }
+  .ra-service-link-href:hover { color: #fff; text-decoration: underline; }
+  .ra-service-sep { color: rgba(255,255,255,0.25); }
   .btn-white {
     background: #fff; color: var(--ra-dark);
     display: inline-block; padding: 0.75rem 2rem;

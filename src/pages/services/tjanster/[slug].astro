@@ -64,10 +64,18 @@ const serviceSchema = {
         <span class="sv-text">{catLabel.sv}</span><span class="en-text">{catLabel.en}</span>
       </div>
       {svc.poweredBy && (
-        <a href={svc.poweredBy.href} class="powered-badge">
-          <span>Powered by</span>
-          <strong>{svc.poweredBy.label}</strong>
-        </a>
+        <div class="powered-row">
+          <a href={svc.poweredBy.href} class="powered-badge">
+            <span>Powered by</span>
+            <strong>{svc.poweredBy.label}</strong>
+          </a>
+          {svc.lrPowered && (
+            <a href="/products/link-retail/" class="powered-badge powered-badge-lr">
+              <span class="lr-mark">LR</span>
+              <strong>Link Retail</strong>
+            </a>
+          )}
+        </div>
       )}
       <span class="section-label sv-text">{catLabel.sv}</span>
       <span class="section-label en-text">{catLabel.en}</span>
@@ -391,6 +399,12 @@ const serviceSchema = {
   .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
   .breadcrumb a:hover { color: var(--color-white); }
 
+  .powered-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
   .powered-badge {
     display: inline-flex;
     align-items: center;
@@ -404,7 +418,6 @@ const serviceSchema = {
     letter-spacing: 0.06em;
     color: rgba(255,255,255,0.75);
     text-decoration: none;
-    margin-bottom: 1rem;
     transition: all 0.2s;
   }
   .powered-badge:hover {
@@ -414,6 +427,24 @@ const serviceSchema = {
   .powered-badge strong {
     color: var(--color-white);
     font-weight: 500;
+  }
+  .powered-badge-lr {
+    background: rgba(14,92,64,0.25);
+    border-color: rgba(45,138,107,0.4);
+  }
+  .powered-badge-lr:hover {
+    background: rgba(14,92,64,0.4);
+    border-color: rgba(45,138,107,0.6);
+  }
+  .lr-mark {
+    display: inline-block;
+    background: #0E5C40;
+    color: #fff !important;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
   }
   .svc-hero .section-label { color: var(--color-blue-lite); }
   .svc-hero h1 {

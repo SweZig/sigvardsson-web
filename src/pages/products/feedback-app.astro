@@ -85,8 +85,17 @@ const schemaProduct = {
       <div class="hero-actions">
         <a href="/Contact/" class="btn btn-white sv-text">Kontakta oss</a>
         <a href="/Contact/" class="btn btn-white en-text">Contact us</a>
-        <a href="/services/tjanster/perfekt-feedback/" class="btn btn-outline-white sv-text">Läs mer om tjänsten</a>
-        <a href="/services/tjanster/nps-kundanalys/" class="btn btn-outline-white en-text">Read about NPS Analytics</a>
+        <a href="#nps" class="btn btn-outline-white sv-text">Så fungerar NPS ↓</a>
+        <a href="#nps" class="btn btn-outline-white en-text">How NPS works ↓</a>
+      </div>
+
+      <div class="fa-service-link">
+        <span class="sv-text">Levereras som tjänst inom Teknologi & System:</span>
+        <span class="en-text">Delivered as a service within Technology & Systems:</span>
+        <a href="/services/tjanster/nps-kundanalys/" class="fa-service-link-href">NPS & Kundanalys</a>
+        <span class="fa-service-sep">·</span>
+        <a href="/services/tjanster/perfekt-feedback/" class="fa-service-link-href sv-text">Perfekt Feedback</a>
+        <a href="/services/tjanster/perfekt-feedback/" class="fa-service-link-href en-text">Perfekt Feedback</a>
       </div>
     </div>
   </section>
@@ -603,6 +612,11 @@ const schemaProduct = {
   .hero-stat strong { font-family: var(--font-heading); font-size: 1.3rem; color: #fff; }
   .hero-stat span { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .fa-service-link { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); font-family: var(--font-heading); font-size: 0.8rem; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; letter-spacing: 0.04em; }
+  .fa-service-link-href { color: #ffc966; text-decoration: none; transition: color 0.2s; }
+  .fa-service-link-href:hover { color: #fff; text-decoration: underline; }
+  .fa-service-sep { color: rgba(255,255,255,0.25); }
 
 
   /* ===== APP ICONS ===== */
