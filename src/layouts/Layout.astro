@@ -130,12 +130,30 @@ const schemaOrg = {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Nunito:wght@200;300;400&display=swap" rel="stylesheet" />
 
-  <!-- Language init — runs before render to avoid flash -->
+  <!-- Language init — runs before render to avoid flash.
+       First visit: detect from browser language preference (sv → sv, else en).
+       Subsequent visits & manual toggle: localStorage takes precedence. -->
   <script is:inline>
     (function() {
       var valid = ['sv','en','no','da','fi'];
-      var saved = localStorage.getItem('scg-lang') || 'sv';
-      var lang = valid.indexOf(saved) >= 0 ? saved : 'sv';
+      var saved = null;
+      try { saved = localStorage.getItem('scg-lang'); } catch(e) {}
+      var lang;
+      if (saved && valid.indexOf(saved) >= 0) {
+        lang = saved;
+      } else {
+        // First visit — match browser preference
+        lang = 'en';
+        var prefs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || ''];
+        for (var i = 0; i < prefs.length; i++) {
+          var p = (prefs[i] || '').toLowerCase();
+          if (p.indexOf('sv') === 0) { lang = 'sv'; break; }
+          if (p.indexOf('en') === 0) { lang = 'en'; break; }
+        }
+        try { localStorage.setItem('scg-lang', lang); } catch(e) {}
+      }
       document.documentElement.setAttribute('data-lang', lang);
       document.documentElement.setAttribute('lang', lang);
     })();
