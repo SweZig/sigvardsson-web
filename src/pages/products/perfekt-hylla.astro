@@ -160,6 +160,26 @@ const schemaProduct = {
     </div>
   </section>
 
+  <!-- ===== VISUAL BAND ===== -->
+  <section class="ph-visual">
+    <div class="container">
+      <div class="ph-visual-inner">
+        <div class="ph-visual-img fade-up">
+          <img src="/images/services/shelf-scanning.jpg" alt="Butiksmedarbetare scannar hylla med mobilen" loading="lazy" />
+          <div class="ph-visual-img-frame"></div>
+        </div>
+        <div class="ph-visual-text fade-up" style="animation-delay:120ms">
+          <span class="ph-label sv-text">Mobil först. I butiken. I realtid.</span>
+          <span class="ph-label en-text">Mobile first. In-store. Real time.</span>
+          <h2 class="sv-text">Verktygen är byggda för att användas <em>där</em> försäljningen sker.</h2>
+          <h2 class="en-text">The tools are built to be used <em>where</em> sales actually happen.</h2>
+          <p class="sv-text">Ingen avancerad hårdvara, inget IT-projekt. Butikspersonalen scannar hyllan med sin egen smartphone, AI-motorn matchar mot realtid POS-data, och rekommendationen visas direkt i appen. Beslut fattas på golvet — inte på huvudkontoret.</p>
+          <p class="en-text">No advanced hardware, no IT project. Store staff scan the shelf with their own smartphone, the AI engine matches against real-time POS data, and the recommendation appears directly in the app. Decisions happen on the shop floor — not at head office.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== TWO QUESTIONS ===== -->
   <section class="ph-section ph-section-light">
     <div class="container">
@@ -401,6 +421,16 @@ const schemaProduct = {
   .ph-section-light { background: #fff; }
   .ph-section-dark { background: linear-gradient(180deg, var(--ph-navy) 0%, var(--ph-mid) 100%); color: #fff; }
 
+  /* ===== VISUAL BAND ===== */
+  .ph-visual { padding: 5rem 2rem; background: linear-gradient(180deg, #f7f8fb 0%, #fff 100%); }
+  .ph-visual-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .ph-visual-img { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 60px rgba(1,13,96,0.18); aspect-ratio: 530/480; }
+  .ph-visual-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ph-visual-img-frame { position: absolute; inset: 0; border: 1px solid rgba(1,13,96,0.08); border-radius: 16px; pointer-events: none; }
+  .ph-visual-text h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 500; color: var(--ph-navy); margin: 0.85rem 0 1.25rem; line-height: 1.25; }
+  .ph-visual-text h2 em { font-style: italic; color: var(--ph-blue); font-weight: 500; }
+  .ph-visual-text p { font-size: 1.02rem; color: #555; line-height: 1.75; margin: 0; }
+
   .section-intro { max-width: 720px; margin: 0 auto 3.5rem; text-align: center; }
   .section-intro h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: var(--ph-navy); margin: 0.6rem 0 1.25rem; line-height: 1.25; }
   .section-intro p { font-size: 1.05rem; color: #555; line-height: 1.75; }
@@ -476,6 +506,7 @@ const schemaProduct = {
     .ph-tech-grid { grid-template-columns: 1fr 1fr; }
     .ph-proof-inner { grid-template-columns: 1fr; gap: 3rem; }
     .ph-proof-card { order: -1; }
+    .ph-visual-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   }
   @media (max-width: 560px) {
     .ph-hero { padding: 5rem 1.25rem 3rem; }
