@@ -1,0 +1,61 @@
+// insights.js — metadata for /insights/ articles
+// Article body lives in individual .astro files under src/pages/insights/
+
+export const categories = {
+  'space-management': { sv: 'Space Management', en: 'Space Management', color: '#2A4EA9' },
+  'sustainability': { sv: 'Sustainability', en: 'Sustainability', color: '#2d8a6b' },
+  'customer-experience': { sv: 'Customer Experience', en: 'Customer Experience', color: '#c5530b' },
+  'technology': { sv: 'Teknologi', en: 'Technology', color: '#6a3ea1' },
+  'strategy': { sv: 'Strategi', en: 'Strategy', color: '#1A277A' },
+};
+
+export const insights = [
+  {
+    slug: 'hyllan-75-procent',
+    category: 'space-management',
+    titleSv: 'Hyllan står för 75 procent av din omsättning. När optimerade du den senast?',
+    titleEn: '75 percent of your store revenue comes from one place. When did you last optimize it?',
+    excerptSv: 'Det finns en siffra varje retailchef borde ha tatuerad på handleden: 75 procent. Det är andelen av en typisk butiks omsättning som genereras från hyllorna — och ändå behandlas hyllan ofta som inredning snarare än det dynamiska försäljningsverktyg den är.',
+    excerptEn: 'There\'s a number every retail leader should have tattooed on their wrist: 75 percent. That\'s the share of a typical store\'s revenue generated from the shelves — yet shelves are often treated as furniture rather than the dynamic sales engine they are.',
+    coverImage: '/images/services/shelf-scanning.jpg',
+    author: 'Per Sigvardsson',
+    publishDate: '2026-05-13',
+    publishDateDisplay: { sv: '13 maj 2026', en: 'May 13, 2026' },
+    readingTime: 5,
+    tagsSv: ['Space Management', 'AI', 'Link Retail', 'Hylloptimering'],
+    tagsEn: ['Space Management', 'AI', 'Link Retail', 'Shelf Optimization'],
+    relatedProduct: { href: '/products/perfekt-hylla/', labelSv: 'Läs mer om Perfekt hylla', labelEn: 'Read more about Perfect Shelf' },
+  },
+  {
+    slug: 'matsvinn-30-procent',
+    category: 'sustainability',
+    titleSv: 'Matsvinn: 30 procents minskning är inte längre hjältevärde — det är ny baseline.',
+    titleEn: 'Food waste: a 30 percent reduction isn\'t heroic anymore — it\'s the new baseline.',
+    excerptSv: 'I de flesta livsmedelsbutiker har matsvinn länge behandlats som en miljöfråga. Det stämmer fortfarande. Men 2026 är det också en konkret lönsamhetsfråga — och en konkurrenskraftfråga gentemot den svenska konsumenten.',
+    excerptEn: 'In most grocery stores, food waste has long been treated as a sustainability issue. That\'s still true. But in 2026 it\'s also a hard profitability issue — and a competitive issue against the Swedish consumer.',
+    coverImage: '/images/services/food-waste-bread.jpg',
+    author: 'Per Sigvardsson',
+    publishDate: '2026-05-06',
+    publishDateDisplay: { sv: '6 maj 2026', en: 'May 6, 2026' },
+    readingTime: 4,
+    tagsSv: ['Sustainability', 'Matsvinn', 'AI', 'Link Retail'],
+    tagsEn: ['Sustainability', 'Food Waste', 'AI', 'Link Retail'],
+    relatedProduct: { href: '/services/tjanster/minimera-matsvinnet/', labelSv: 'Läs mer om Minimera Matsvinnet', labelEn: 'Read more about Minimize Food Waste' },
+  },
+  {
+    slug: 'nps-arendesystem',
+    category: 'customer-experience',
+    titleSv: 'NPS är inte en siffra. NPS är ett ärendesystem.',
+    titleEn: 'NPS isn\'t a number. NPS is a workflow.',
+    excerptSv: 'Åtta av tio retail-kedjor mäter NPS. Två av tio har en process för att faktiskt agera på enskilda svar. Och just där — i gapet mellan mätning och åtgärd — ligger hela värdet av kundnöjdhetsarbete.',
+    excerptEn: 'Eight out of ten retail chains measure NPS. Two out of ten have a process for actually acting on individual responses. And in that gap — between measurement and action — sits the entire value of customer satisfaction work.',
+    coverImage: '/images/services/nps-feedback-app.jpg',
+    author: 'Per Sigvardsson',
+    publishDate: '2026-04-29',
+    publishDateDisplay: { sv: '29 april 2026', en: 'April 29, 2026' },
+    readingTime: 5,
+    tagsSv: ['Customer Experience', 'NPS', 'Feedback App'],
+    tagsEn: ['Customer Experience', 'NPS', 'Feedback App'],
+    relatedProduct: { href: '/products/feedback-app/', labelSv: 'Läs mer om Feedback App', labelEn: 'Read more about Feedback App' },
+  },
+];

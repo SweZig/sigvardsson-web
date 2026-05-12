@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { insights, categories } from '../../data/insights.js';
+
+const canonical = 'https://www.sigvardsson.org/insights/';
+
+// Sort by date (newest first)
+const sortedInsights = [...insights].sort((a, b) => b.publishDate.localeCompare(a.publishDate));
+const featured = sortedInsights[0];
+const rest = sortedInsights.slice(1);
+---
+
+<Layout
+  titleSv="Insights — Retail-perspektiv från Sigvardsson Consulting Group"
+  titleEn="Insights — Retail perspectives from Sigvardsson Consulting Group"
+  descriptionSv="Tankar, analyser och praktiska perspektiv på retail-optimering, AI i butik, hylloptimering, kundupplevelse och sustainability — från SCG och vårt nätverk."
+  descriptionEn="Thinking, analysis and practical perspectives on retail optimization, AI in store, shelf optimization, customer experience and sustainability — from SCG and our network."
+  canonical={canonical}
+>
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="ins-hero">
+    <div class="container">
+      <span class="ins-hero-eyebrow">Insights</span>
+      <h1>
+        <span class="sv-text">Praktiska perspektiv på retail.</span>
+        <span class="en-text">Practical perspectives on retail.</span>
+      </h1>
+      <p class="ins-hero-lead sv-text">Tankar, analyser och konkreta lärdomar från 100+ retailprojekt i Norden. Skrivet för dig som leder retail — inte för dig som rapporterar om det.</p>
+      <p class="ins-hero-lead en-text">Thinking, analysis and concrete lessons from 100+ retail projects across the Nordics. Written for people leading retail — not for people writing about it.</p>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ARTICLE ===== -->
+  {featured && (
+    <section class="ins-featured-section">
+      <div class="container">
+        <span class="ins-section-label sv-text">Senast publicerat</span>
+        <span class="ins-section-label en-text">Latest publication</span>
+
+        <a href={`/insights/${featured.slug}/`} class="ins-featured fade-up">
+          <div class="ins-featured-img" style={`background-image:url('${featured.coverImage}')`}></div>
+          <div class="ins-featured-content">
+            <div class="ins-meta">
+              <span class="ins-category" style={`--cat-color:${categories[featured.category].color}`}>
+                <span class="sv-text">{categories[featured.category].sv}</span>
+                <span class="en-text">{categories[featured.category].en}</span>
+              </span>
+              <span class="ins-dot">·</span>
+              <span class="ins-read-time">
+                <span class="sv-text">{featured.readingTime} min läsning</span>
+                <span class="en-text">{featured.readingTime} min read</span>
+              </span>
+            </div>
+            <h2>
+              <span class="sv-text">{featured.titleSv}</span>
+              <span class="en-text">{featured.titleEn}</span>
+            </h2>
+            <p>
+              <span class="sv-text">{featured.excerptSv}</span>
+              <span class="en-text">{featured.excerptEn}</span>
+            </p>
+            <div class="ins-author-row">
+              <div class="ins-author-mini">
+                <span class="ins-author-name">{featured.author}</span>
+                <span class="ins-author-date">
+                  <span class="sv-text">{featured.publishDateDisplay.sv}</span>
+                  <span class="en-text">{featured.publishDateDisplay.en}</span>
+                </span>
+              </div>
+              <span class="ins-read-arrow">
+                <span class="sv-text">Läs artikeln →</span>
+                <span class="en-text">Read article →</span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- ===== ARTICLE GRID ===== -->
+  {rest.length > 0 && (
+    <section class="ins-grid-section">
+      <div class="container">
+        <span class="ins-section-label sv-text">Fler artiklar</span>
+        <span class="ins-section-label en-text">More articles</span>
+
+        <div class="ins-grid">
+          {rest.map((article, i) => (
+            <a href={`/insights/${article.slug}/`} class="ins-card fade-up" style={`animation-delay:${i*80}ms`}>
+              <div class="ins-card-img" style={`background-image:url('${article.coverImage}')`}>
+                <span class="ins-card-category" style={`--cat-color:${categories[article.category].color}`}>
+                  <span class="sv-text">{categories[article.category].sv}</span>
+                  <span class="en-text">{categories[article.category].en}</span>
+                </span>
+              </div>
+              <div class="ins-card-content">
+                <h3>
+                  <span class="sv-text">{article.titleSv}</span>
+                  <span class="en-text">{article.titleEn}</span>
+                </h3>
+                <p>
+                  <span class="sv-text">{article.excerptSv}</span>
+                  <span class="en-text">{article.excerptEn}</span>
+                </p>
+                <div class="ins-card-meta">
+                  <span>{article.author}</span>
+                  <span class="ins-dot">·</span>
+                  <span>
+                    <span class="sv-text">{article.publishDateDisplay.sv}</span>
+                    <span class="en-text">{article.publishDateDisplay.en}</span>
+                  </span>
+                  <span class="ins-dot">·</span>
+                  <span>
+                    <span class="sv-text">{article.readingTime} min</span>
+                    <span class="en-text">{article.readingTime} min</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ===== CTA ===== -->
+  <section class="ins-cta">
+    <div class="container">
+      <h2>
+        <span class="sv-text">Vill du diskutera något av detta i ert sammanhang?</span>
+        <span class="en-text">Want to discuss any of this in your context?</span>
+      </h2>
+      <p class="sv-text">Vi hjälper retail-organisationer i Norden lyfta lönsamhet genom konkret, datadriven optimering. Hör av dig om något av detta är relevant för er verksamhet.</p>
+      <p class="en-text">We help retail organizations across the Nordics lift profitability through concrete, data-driven optimization. Get in touch if any of this is relevant to your business.</p>
+      <a href="/Contact/" class="btn-ins sv-text">Kontakta oss</a>
+      <a href="/Contact/" class="btn-ins en-text">Contact us</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  :root {
+    --ins-navy: #010D60;
+    --ins-mid: #1A277A;
+    --ins-blue: #2A4EA9;
+    --ins-accent: #00C9B7;
+  }
+
+  /* ===== HERO ===== */
+  .ins-hero { background: linear-gradient(135deg, var(--ins-navy) 0%, var(--ins-mid) 100%); padding: 7rem 2rem 5rem; color: #fff; position: relative; overflow: hidden; }
+  .ins-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 30%, rgba(0,201,183,0.15) 0%, transparent 50%); }
+  .ins-hero > .container { position: relative; z-index: 1; max-width: 900px; }
+  .ins-hero-eyebrow { display: inline-block; font-family: var(--font-heading); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ins-accent); margin-bottom: 1.25rem; padding: 0.35rem 0.75rem; border: 1px solid rgba(0,201,183,0.3); border-radius: 4px; }
+  .ins-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 500; color: #fff; margin: 0 0 1.5rem; line-height: 1.15; letter-spacing: -0.01em; }
+  .ins-hero-lead { font-size: 1.2rem; color: rgba(255,255,255,0.78); line-height: 1.7; max-width: 720px; margin: 0; }
+
+  /* ===== SECTION COMMON ===== */
+  .ins-section-label { display: block; font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ins-blue); margin-bottom: 1.5rem; }
+
+  /* ===== FEATURED ===== */
+  .ins-featured-section { padding: 5rem 2rem 2rem; background: #fff; }
+  .ins-featured { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; align-items: stretch; background: #fff; border: 1px solid rgba(1,13,96,0.08); border-radius: 16px; overflow: hidden; text-decoration: none; color: inherit; transition: all 0.3s; box-shadow: 0 4px 24px rgba(1,13,96,0.04); }
+  .ins-featured:hover { box-shadow: 0 20px 50px rgba(1,13,96,0.12); transform: translateY(-3px); border-color: var(--ins-blue); }
+  .ins-featured-img { background-size: cover; background-position: center; min-height: 380px; }
+  .ins-featured-content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+  .ins-meta { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; font-size: 0.82rem; }
+  .ins-category { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cat-color, var(--ins-blue)); padding: 0.3rem 0.7rem; background: rgba(42,78,169,0.08); border-radius: 4px; }
+  .ins-category[style*="2d8a6b"] { background: rgba(45,138,107,0.08); }
+  .ins-category[style*="c5530b"] { background: rgba(197,83,11,0.08); }
+  .ins-dot { color: #ccc; }
+  .ins-read-time { color: #888; }
+  .ins-featured h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 2.8vw, 2.05rem); font-weight: 500; color: var(--ins-navy); margin: 0 0 1.25rem; line-height: 1.25; letter-spacing: -0.005em; }
+  .ins-featured p { font-size: 1.02rem; color: #555; line-height: 1.75; margin: 0 0 2rem; }
+  .ins-author-row { display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid rgba(1,13,96,0.08); }
+  .ins-author-mini { display: flex; flex-direction: column; gap: 0.2rem; }
+  .ins-author-name { font-family: var(--font-heading); font-size: 0.92rem; color: var(--ins-navy); font-weight: 500; }
+  .ins-author-date { font-size: 0.8rem; color: #999; }
+  .ins-read-arrow { font-family: var(--font-heading); font-size: 0.9rem; color: var(--ins-blue); transition: transform 0.2s; }
+  .ins-featured:hover .ins-read-arrow { transform: translateX(4px); }
+
+  /* ===== GRID ===== */
+  .ins-grid-section { padding: 3rem 2rem 5rem; background: #fff; }
+  .ins-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .ins-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(1,13,96,0.08); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; transition: all 0.25s; }
+  .ins-card:hover { border-color: var(--ins-blue); box-shadow: 0 14px 32px rgba(1,13,96,0.08); transform: translateY(-3px); }
+  .ins-card-img { aspect-ratio: 16/9; background-size: cover; background-position: center; position: relative; }
+  .ins-card-category { position: absolute; top: 1rem; left: 1rem; font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cat-color, var(--ins-blue)); background: rgba(255,255,255,0.95); padding: 0.3rem 0.65rem; border-radius: 4px; backdrop-filter: blur(8px); }
+  .ins-card-content { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+  .ins-card h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 500; color: var(--ins-navy); margin: 0 0 0.85rem; line-height: 1.3; }
+  .ins-card p { font-size: 0.95rem; color: #555; line-height: 1.65; margin: 0 0 1.5rem; flex-grow: 1; }
+  .ins-card-meta { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: #888; flex-wrap: wrap; }
+
+  /* ===== CTA ===== */
+  .ins-cta { background: linear-gradient(135deg, var(--ins-mid) 0%, var(--ins-blue) 100%); padding: 5rem 2rem; text-align: center; color: #fff; }
+  .ins-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: #fff; margin-bottom: 0.85rem; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .ins-cta p { color: rgba(255,255,255,0.85); font-size: 1.02rem; margin: 0 auto 2rem; max-width: 580px; line-height: 1.7; }
+  .btn-ins { background: #fff; color: var(--ins-navy); display: inline-block; padding: 0.85rem 2.25rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-ins:hover { background: var(--ins-accent); transform: translateY(-2px); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .ins-featured { grid-template-columns: 1fr; }
+    .ins-featured-img { min-height: 240px; }
+    .ins-featured-content { padding: 2rem; }
+    .ins-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .ins-hero { padding: 5rem 1.25rem 3rem; }
+    .ins-featured-section, .ins-grid-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .ins-featured-content { padding: 1.5rem; }
+    .ins-author-row { flex-direction: column; align-items: flex-start; gap: 0.85rem; }
+    .ins-cta { padding: 3rem 1.25rem; }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const els = document.querySelectorAll('.fade-up');
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('is-visible')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  })();
+</script>

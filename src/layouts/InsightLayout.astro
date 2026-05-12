@@ -1,0 +1,285 @@
+---
+// InsightLayout.astro — Reusable layout for /insights/[slug] articles
+// Wraps Layout + Header + Footer with article-specific hero, byline, body styling, and related-product CTA.
+
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { categories } from '../data/insights.js';
+
+interface Props {
+  slug: string;
+  titleSv: string;
+  titleEn: string;
+  excerptSv: string;
+  excerptEn: string;
+  coverImage: string;
+  author: string;
+  publishDateSv: string;
+  publishDateEn: string;
+  readingTime: number;
+  category: string;
+  relatedProduct: { href: string; labelSv: string; labelEn: string };
+  metaDescSv?: string;
+  metaDescEn?: string;
+}
+
+const {
+  slug,
+  titleSv,
+  titleEn,
+  excerptSv,
+  excerptEn,
+  coverImage,
+  author,
+  publishDateSv,
+  publishDateEn,
+  readingTime,
+  category,
+  relatedProduct,
+  metaDescSv,
+  metaDescEn,
+} = Astro.props;
+
+const canonical = `https://www.sigvardsson.org/insights/${slug}/`;
+const cat = categories[category];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": titleSv,
+  "image": `https://www.sigvardsson.org${coverImage}`,
+  "datePublished": Astro.props.publishDateSv,
+  "author": { "@type": "Person", "name": author },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sigvardsson Consulting Group",
+    "logo": { "@type": "ImageObject", "url": "https://www.sigvardsson.org/images/logos/S_blue.png" }
+  },
+  "url": canonical,
+  "description": metaDescSv || excerptSv,
+};
+---
+
+<Layout
+  titleSv={`${titleSv} | Insights — Sigvardsson Consulting Group`}
+  titleEn={`${titleEn} | Insights — Sigvardsson Consulting Group`}
+  descriptionSv={metaDescSv || excerptSv}
+  descriptionEn={metaDescEn || excerptEn}
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <Header slot="header" />
+
+  <!-- ===== ARTICLE HERO ===== -->
+  <article class="article-wrap">
+    <header class="article-hero">
+      <div class="container article-container">
+        <a href="/insights/" class="article-back">
+          <span class="sv-text">← Tillbaka till Insights</span>
+          <span class="en-text">← Back to Insights</span>
+        </a>
+
+        <div class="article-meta-top">
+          <span class="article-category" style={`--cat-color:${cat.color}`}>
+            <span class="sv-text">{cat.sv}</span>
+            <span class="en-text">{cat.en}</span>
+          </span>
+          <span class="article-dot">·</span>
+          <span class="article-read-time">
+            <span class="sv-text">{readingTime} min läsning</span>
+            <span class="en-text">{readingTime} min read</span>
+          </span>
+        </div>
+
+        <h1 class="article-title">
+          <span class="sv-text">{titleSv}</span>
+          <span class="en-text">{titleEn}</span>
+        </h1>
+
+        <p class="article-excerpt">
+          <span class="sv-text">{excerptSv}</span>
+          <span class="en-text">{excerptEn}</span>
+        </p>
+
+        <div class="article-byline">
+          <div class="article-author-pic">PS</div>
+          <div class="article-author-info">
+            <span class="article-author-name">{author}</span>
+            <span class="article-author-role sv-text">CEO & Grundare, Sigvardsson Consulting Group</span>
+            <span class="article-author-role en-text">CEO & Founder, Sigvardsson Consulting Group</span>
+          </div>
+          <div class="article-date">
+            <span class="sv-text">{publishDateSv}</span>
+            <span class="en-text">{publishDateEn}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== COVER IMAGE ===== -->
+    <div class="article-cover-wrap">
+      <div class="container article-container">
+        <img src={coverImage} alt="" class="article-cover" loading="eager" />
+      </div>
+    </div>
+
+    <!-- ===== ARTICLE BODY (slot) ===== -->
+    <div class="article-body-wrap">
+      <div class="container article-container">
+        <div class="article-body">
+          <slot />
+        </div>
+
+        <!-- ===== RELATED PRODUCT CTA ===== -->
+        <aside class="article-related-cta">
+          <div class="article-related-inner">
+            <div>
+              <span class="article-related-label sv-text">Vill du gå djupare?</span>
+              <span class="article-related-label en-text">Want to go deeper?</span>
+              <span class="article-related-text sv-text">{relatedProduct.labelSv}</span>
+              <span class="article-related-text en-text">{relatedProduct.labelEn}</span>
+            </div>
+            <a href={relatedProduct.href} class="article-related-btn">
+              <span class="sv-text">Läs mer →</span>
+              <span class="en-text">Read more →</span>
+            </a>
+          </div>
+        </aside>
+
+        <!-- ===== AUTHOR BOX ===== -->
+        <aside class="article-author-box">
+          <div class="article-author-pic-lg">PS</div>
+          <div>
+            <h3>{author}</h3>
+            <p class="sv-text">CEO och grundare av Sigvardsson Consulting Group, en nordisk konsultbyrå specialiserad på retail-optimering. Per har lett 100+ retailprojekt i Norden och är Link Retails officiella partner i Sverige.</p>
+            <p class="en-text">CEO and founder of Sigvardsson Consulting Group, a Nordic consultancy specialized in retail optimization. Per has led 100+ retail projects across the Nordics and is Link Retail's official partner in Sweden.</p>
+            <div class="article-author-links">
+              <a href="/our-people/" class="sv-text">Vårt team →</a>
+              <a href="/our-people/" class="en-text">Our team →</a>
+              <a href="/Contact/" class="sv-text">Kontakta oss</a>
+              <a href="/Contact/" class="en-text">Contact us</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ===== END CTA ===== -->
+    <section class="article-end-cta">
+      <div class="container">
+        <h2>
+          <span class="sv-text">Vill du diskutera detta i ert sammanhang?</span>
+          <span class="en-text">Want to discuss this in your context?</span>
+        </h2>
+        <p class="sv-text">Hör av dig om något av detta är relevant för er verksamhet — vi tar gärna ett första samtal.</p>
+        <p class="en-text">Get in touch if any of this is relevant to your business — we'd be glad to have a first conversation.</p>
+        <a href="/Contact/" class="btn-article-cta sv-text">Kontakta oss</a>
+        <a href="/Contact/" class="btn-article-cta en-text">Contact us</a>
+      </div>
+    </section>
+  </article>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style is:global>
+  :root {
+    --art-navy: #010D60;
+    --art-mid: #1A277A;
+    --art-blue: #2A4EA9;
+    --art-accent: #00C9B7;
+    --art-text: #2a2a2a;
+    --art-muted: #666;
+  }
+
+  .article-wrap { background: #fff; }
+  .article-container { max-width: 740px; }
+
+  /* ===== HERO ===== */
+  .article-hero { background: #fff; padding: 6rem 2rem 2.5rem; }
+  .article-back { display: inline-block; font-family: var(--font-heading); font-size: 0.82rem; color: var(--art-muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+  .article-back:hover { color: var(--art-blue); }
+  .article-meta-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.5rem; font-size: 0.82rem; }
+  .article-category { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cat-color, var(--art-blue)); padding: 0.3rem 0.7rem; background: color-mix(in srgb, var(--cat-color, var(--art-blue)) 8%, transparent); border-radius: 4px; }
+  .article-dot { color: #ccc; }
+  .article-read-time { color: var(--art-muted); }
+  .article-title { font-family: var(--font-heading); font-size: clamp(1.8rem, 4.2vw, 2.85rem); font-weight: 500; color: var(--art-navy); margin: 0 0 1.5rem; line-height: 1.18; letter-spacing: -0.01em; }
+  .article-excerpt { font-size: 1.2rem; color: #444; line-height: 1.65; margin: 0 0 2.5rem; font-weight: 300; }
+
+  /* ===== BYLINE ===== */
+  .article-byline { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid rgba(1,13,96,0.1); border-bottom: 1px solid rgba(1,13,96,0.1); }
+  .article-author-pic { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--art-navy) 0%, var(--art-blue) 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; flex-shrink: 0; }
+  .article-author-info { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; }
+  .article-author-name { font-family: var(--font-heading); font-size: 0.95rem; color: var(--art-navy); font-weight: 500; }
+  .article-author-role { font-size: 0.82rem; color: var(--art-muted); }
+  .article-date { font-size: 0.85rem; color: var(--art-muted); font-family: var(--font-heading); }
+
+  /* ===== COVER ===== */
+  .article-cover-wrap { padding: 0 2rem; }
+  .article-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 50px rgba(1,13,96,0.12); }
+
+  /* ===== BODY ===== */
+  .article-body-wrap { padding: 4rem 2rem 3rem; }
+  .article-body { font-size: 1.08rem; line-height: 1.8; color: var(--art-text); }
+  .article-body p { margin: 0 0 1.5rem; }
+  .article-body p:first-child { font-size: 1.18rem; color: #333; }
+  .article-body h2 { font-family: var(--font-heading); font-size: clamp(1.4rem, 2.6vw, 1.75rem); font-weight: 500; color: var(--art-navy); margin: 3rem 0 1.25rem; line-height: 1.3; letter-spacing: -0.005em; }
+  .article-body h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--art-navy); margin: 2rem 0 0.85rem; line-height: 1.35; }
+  .article-body strong { color: var(--art-navy); font-weight: 600; }
+  .article-body em { font-style: italic; }
+  .article-body ul, .article-body ol { margin: 0 0 1.5rem; padding-left: 1.5rem; }
+  .article-body li { margin: 0 0 0.6rem; }
+
+  .article-body blockquote, .article-body .pull-quote {
+    margin: 2.5rem -1rem; padding: 0 0 0 1.75rem;
+    border-left: 4px solid var(--art-accent);
+    font-family: var(--font-heading); font-size: 1.35rem; line-height: 1.45;
+    color: var(--art-navy); font-weight: 400; font-style: normal;
+  }
+
+  .article-body .stat-callout {
+    display: flex; gap: 1.5rem; align-items: baseline;
+    margin: 2.5rem 0; padding: 1.75rem;
+    background: linear-gradient(135deg, rgba(42,78,169,0.05) 0%, rgba(0,201,183,0.05) 100%);
+    border: 1px solid rgba(42,78,169,0.1); border-radius: 12px;
+  }
+  .article-body .stat-callout-num { font-family: var(--font-heading); font-size: 3rem; font-weight: 500; color: var(--art-blue); line-height: 1; letter-spacing: -0.02em; }
+  .article-body .stat-callout-text { flex: 1; font-size: 1rem; color: #444; line-height: 1.6; }
+
+  /* ===== RELATED PRODUCT ===== */
+  .article-related-cta { margin: 3rem 0 0; background: linear-gradient(135deg, var(--art-navy) 0%, var(--art-mid) 100%); border-radius: 16px; padding: 2.25rem 2.5rem; color: #fff; }
+  .article-related-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .article-related-label { display: block; font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--art-accent); margin-bottom: 0.4rem; }
+  .article-related-text { font-family: var(--font-heading); font-size: 1.15rem; color: #fff; font-weight: 500; }
+  .article-related-btn { background: #fff; color: var(--art-navy); padding: 0.75rem 1.5rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; text-decoration: none; flex-shrink: 0; transition: all 0.2s; }
+  .article-related-btn:hover { background: var(--art-accent); transform: translateY(-2px); }
+
+  /* ===== AUTHOR BOX ===== */
+  .article-author-box { margin: 2rem 0 0; padding: 2rem; background: #f7f8fb; border-radius: 12px; display: flex; gap: 1.5rem; align-items: flex-start; }
+  .article-author-pic-lg { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--art-navy) 0%, var(--art-blue) 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.15rem; font-weight: 500; letter-spacing: 0.04em; flex-shrink: 0; }
+  .article-author-box h3 { margin: 0 0 0.5rem; font-family: var(--font-heading); font-size: 1.1rem; color: var(--art-navy); font-weight: 500; }
+  .article-author-box p { font-size: 0.95rem; color: #555; line-height: 1.65; margin: 0 0 1rem; }
+  .article-author-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .article-author-links a { font-family: var(--font-heading); font-size: 0.85rem; color: var(--art-blue); text-decoration: none; }
+  .article-author-links a:hover { color: var(--art-navy); text-decoration: underline; }
+
+  /* ===== END CTA ===== */
+  .article-end-cta { background: linear-gradient(135deg, var(--art-mid) 0%, var(--art-blue) 100%); padding: 5rem 2rem; text-align: center; color: #fff; margin-top: 2rem; }
+  .article-end-cta h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.1rem); color: #fff; margin: 0 0 0.85rem; }
+  .article-end-cta p { color: rgba(255,255,255,0.85); font-size: 1rem; margin: 0 auto 2rem; max-width: 540px; line-height: 1.7; }
+  .btn-article-cta { background: #fff; color: var(--art-navy); display: inline-block; padding: 0.85rem 2.25rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-article-cta:hover { background: var(--art-accent); transform: translateY(-2px); }
+
+  @media (max-width: 700px) {
+    .article-hero { padding: 4rem 1.25rem 2rem; }
+    .article-cover-wrap, .article-body-wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .article-byline { flex-wrap: wrap; gap: 0.85rem; }
+    .article-date { width: 100%; padding-top: 0.5rem; border-top: 1px solid rgba(1,13,96,0.05); }
+    .article-related-inner { flex-direction: column; align-items: flex-start; }
+    .article-author-box { flex-direction: column; gap: 1rem; }
+    .article-end-cta { padding: 3rem 1.25rem; }
+    .article-body blockquote, .article-body .pull-quote { margin-left: 0; margin-right: 0; font-size: 1.15rem; }
+    .article-body .stat-callout { flex-direction: column; gap: 0.5rem; }
+  }
+</style>

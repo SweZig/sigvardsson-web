@@ -1,0 +1,189 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'hyllan-75-procent');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  author={article.author}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p>Det finns en siffra varje retailchef borde ha tatuerad på handleden: <strong>75 procent</strong>. Det är andelen av en typisk butiks omsättning som genereras från hyllorna. Inte från kampanjytor. Inte från gavlar. Inte från digitala skärmar. Från hyllorna.</p>
+
+    <p>Ändå är hyllan det sista vi rör vid i butiken. Vi diskuterar sortiment, vi diskuterar kampanjer, vi diskuterar inköp — men själva ytan där 75 procent av pengarna byter ägare lämnas ofta åt en planogramleverantörs tioåriga mall eller åt magkänsla.</p>
+
+    <p>Det är dyrt. Och i de flesta fall är det helt onödigt.</p>
+
+    <h2>Två frågor — inte hundra</h2>
+
+    <p>När vi på Sigvardsson Consulting Group, tillsammans med vår partner Link Retail, går in i ett hyllprojekt börjar vi inte med tjugo dimensioner. Vi börjar med två.</p>
+
+    <p><strong>Range.</strong> Vilket är det rätta antalet SKU i den här hyllan? Vår erfarenhet, byggd på 100+ genomförda projekt och 15 års hylloptimering, är att de allra flesta hyllor är överlastade. För många artiklar konkurrerar om för lite plats. Synligheten per produkt sjunker. Försäljningen per SKU sjunker. Det enda som ökar är komplexiteten för butikspersonalen.</p>
+
+    <p><strong>Merchandising.</strong> Hur exponeras produkterna? Det finns ett oändligt antal sätt att presentera samma sortiment. Vissa säljer. De flesta gör det inte.</p>
+
+    <p>Båda frågorna låter enkla. Båda är extremt svåra att svara på utan data.</p>
+
+    <h2>En sluten loop mellan kassa, hylla och beslut</h2>
+
+    <p>Tidigare gissade vi. Sedan började vi rapportera. Idag — och det är det verkligt nya — låter vi AI och systematisk A-B-testning ge svaren.</p>
+
+    <p>POS-systemet matar AI-motorn med varje transaktion i realtid. Bildigenkänning från butikens smartphones läser hyllans faktiska tillstånd — planogramefterlevnad, exponering, out-of-stock. Algoritmen jämför vad som säljs mot vad som syns och returnerar konkreta åtgärder per facing, per hylla, per butik.</p>
+
+    <blockquote>Beslutscykeln går från kvartalsrapport till arbetspass. Inte en panel av experter som bestämmer — butikens egen försäljning som avgör.</blockquote>
+
+    <h2>Tre sätt att börja — och inget kräver att allt redan är på plats</h2>
+
+    <p>Den invändning vi möter oftast handlar inte om värdet av hylloptimering. Den handlar om förutsättningarna.</p>
+
+    <p><em>"Vi har inte ett bra planogram."</em><br/><em>"Vi har inte tid för ett stort IT-projekt."</em><br/><em>"Vi vill se effekten innan vi investerar i datapipeline."</em></p>
+
+    <p>Det är rimliga invändningar. Och det är därför Perfekt hylla finns i tre nivåer:</p>
+
+    <p><strong>1. Endast POS-data.</strong> AI:n optimerar hyllan utifrån faktisk försäljning — inget planogram krävs. Snabbast att komma igång, lägst tröskel. Ni behöver i princip bara säljutfall från kassan.</p>
+
+    <p><strong>2. POS-data + befintligt planogram.</strong> Ni kopplar in ert befintliga planogram och AI:n optimerar det baserat på sell-out. Strukturen bevaras, men varje SKU mäts och rangordnas. Det här är vad de flesta etablerade kedjor börjar med.</p>
+
+    <p><strong>3. Fotoidentifiering bygger planogrammet.</strong> Saknar ni planogram, eller är det bara ofullständigt? Bildigenkänning scannar hyllan och genererar ett komplett digitalt planogram automatiskt. Sedan optimering och datadriven varupåfyllnad baserat på sell-out. Det här är den nivå som löser den verkliga blockeringen för flest kedjor.</p>
+
+    <p>Tre nivåer betyder att frågan inte längre är <em>om</em> ni kan börja optimera hyllan. Det är vilken nivå ni vill starta på.</p>
+
+    <h2>Tre mål — inte ett</h2>
+
+    <p>Den andra missuppfattningen är att hylloptimering handlar om "att sälja mer". Det stämmer ibland. Men inte alltid.</p>
+
+    <p>Varje hylla kan optimeras för tre olika mål — och de tre kan stå i konflikt med varandra:</p>
+
+    <ul>
+      <li><strong>Öka försäljningen.</strong> Bestsellers fram. Säkra att kunden hittar det hen letar efter. Typisk effekt: 4–15 procents försäljningsväxt.</li>
+      <li><strong>Öka bruttomarginalen.</strong> Premium- och högmarginalprodukter i bästa positionerna. Typisk effekt: 10–20 procents marginaltillväxt.</li>
+      <li><strong>Öka antal sålda enheter och dra trafik.</strong> Produkter som lockar in kunden i kategorin, även om marginalen är låg. Volymeffekt och korsförsäljning.</li>
+    </ul>
+
+    <p>Innan vi rör hyllan måste vi veta vad vi optimerar för. I dashboarden ser butikschefen färgkoden direkt i mobilen — och behöver inte vara dataanalytiker för att fatta rätt beslut.</p>
+
+    <h2>Garanti — och det är minimum</h2>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">+2 %</span>
+      <span class="stat-callout-text">Link Retail garanterar minst 2 procents försäljningsökning vid implementation. Det är <em>minimum</em>. I praktiken landar de flesta projekt på 4–15 procent på försäljning, och 10–20 procent på bruttomarginal.</span>
+    </div>
+
+    <p>Räkna på en livsmedelsbutik med 100 miljoner i omsättning. 2 procent är 2 miljoner. 10 procent är 10 miljoner. Det är skillnaden mellan ett godkänt år och ett rekordår — på en yta som redan finns i butiken.</p>
+
+    <h2>Du kan inte ta tillbaka förlorad försäljning</h2>
+
+    <p>Det är meningen från Link Retail som har fastnat hos mig. <em>You can never take back lost sales.</em></p>
+
+    <p>En vecka med en suboptimal hylla är inte något man kompenserar för i nästa kvartal. Försäljningen som inte hände, hände inte.</p>
+
+    <p>Det är därför realtidsövervakning är viktigare än kvartalsrapporten. När butikschefen ser på sin telefon att en hylla underpresterar idag, kan beslutet fattas idag — inte vid nästa månadsmöte.</p>
+
+    <h2>Var börjar man?</h2>
+
+    <p>Litet. Vi är övertygade om att rätt sätt att bygga upp den här typen av kompetens är att starta i mindre skala, lära, mäta, och sedan skala upp.</p>
+
+    <p>Sigvardsson Consulting Group är Link Retails partner i Sverige. Vi har implementerat Perfekt hylla på NorgesGruppens Kiwi, Meny och Coop i Norge — och tar nu med den nya AI-generationen av verktyget till den svenska marknaden.</p>
+
+    <p>Om hyllan står för 75 procent av din omsättning är frågan inte <em>om</em> du har råd att optimera den.</p>
+
+    <p><strong>Frågan är vilken nivå ni börjar på.</strong></p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p>There's a number every retail leader should have tattooed on their wrist: <strong>75 percent</strong>. That's the share of a typical store's revenue generated from the shelves. Not from promotional areas. Not from end-caps. Not from digital screens. From the shelves.</p>
+
+    <p>And yet shelves are the last thing we touch in store. We discuss assortment, we discuss campaigns, we discuss buying — but the surface where 75 percent of money changes hands is often left to a planogram vendor's ten-year template, or to gut feeling.</p>
+
+    <p>It's expensive. And in most cases entirely unnecessary.</p>
+
+    <h2>Two questions — not a hundred</h2>
+
+    <p>When we at Sigvardsson Consulting Group, together with our partner Link Retail, enter a shelf project, we don't start with twenty dimensions. We start with two.</p>
+
+    <p><strong>Range.</strong> What is the right number of SKUs in this shelf? Our experience, built on 100+ projects and 15 years of shelf optimization, is that most shelves are overloaded. Too many items compete for too little space. Per-product visibility drops. Per-SKU sales drop. The only thing that grows is the complexity for store staff.</p>
+
+    <p><strong>Merchandising.</strong> How are products displayed? There are infinite ways to present the same assortment. Some sell. Most don't.</p>
+
+    <p>Both questions sound simple. Both are extremely hard to answer without data.</p>
+
+    <h2>A closed loop between POS, shelf and decision</h2>
+
+    <p>Previously we guessed. Then we reported. Today — and this is what's genuinely new — we let AI and systematic A-B testing give the answers.</p>
+
+    <p>The POS system feeds the AI engine with every transaction in real time. Image recognition from store smartphones reads the shelf's actual state — planogram compliance, exposure, out-of-stock. The algorithm compares what's selling against what's visible and returns concrete actions per facing, per shelf, per store.</p>
+
+    <blockquote>The decision cycle shrinks from quarterly report to single workshift. Not a panel of experts deciding — the store's own sales decide.</blockquote>
+
+    <h2>Three ways to start — and none requires everything to already be in place</h2>
+
+    <p>The objection we meet most often isn't about the value of shelf optimization. It's about the prerequisites.</p>
+
+    <p><em>"We don't have a good planogram."</em><br/><em>"We don't have time for a big IT project."</em><br/><em>"We want to see the impact before investing in a data pipeline."</em></p>
+
+    <p>These are fair objections. Which is why Perfect Shelf works at three levels:</p>
+
+    <p><strong>1. POS data only.</strong> The AI optimizes the shelf based on actual sales — no planogram needed. Fastest to get started, lowest threshold. You essentially just need sales data from the till.</p>
+
+    <p><strong>2. POS data + existing planogram.</strong> You connect your existing planogram and the AI optimizes it based on sell-out. Structure is preserved, but every SKU is measured and ranked. This is where most established chains begin.</p>
+
+    <p><strong>3. Photo recognition builds the planogram.</strong> No planogram, or only partial? Image recognition scans the shelf and auto-generates a complete digital planogram. Then optimization and data-driven replenishment based on sell-out. This is the level that unblocks the most common blocker for most chains.</p>
+
+    <p>Three levels means the question is no longer <em>whether</em> you can start optimizing the shelf. It's which level you want to start at.</p>
+
+    <h2>Three goals — not one</h2>
+
+    <p>The second misconception is that shelf optimization is about "selling more". Sometimes that's true. Not always.</p>
+
+    <p>Every shelf can be optimized for three different goals — and they can conflict with each other:</p>
+
+    <ul>
+      <li><strong>Increase sales.</strong> Bestsellers forward. Make sure customers find what they're looking for. Typical impact: 4–15 percent sales growth.</li>
+      <li><strong>Increase gross margin.</strong> Premium and high-margin products in the best positions. Typical impact: 10–20 percent margin growth.</li>
+      <li><strong>Increase items sold and traffic.</strong> Products that pull customers into the category, even at lower margin. Volume impact and cross-sales.</li>
+    </ul>
+
+    <p>Before we touch the shelf, we have to know what we're optimizing for. The store manager sees the colour code directly in the mobile app — and doesn't need to be a data analyst to make the right call.</p>
+
+    <h2>A guarantee — and that's the minimum</h2>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">+2%</span>
+      <span class="stat-callout-text">Link Retail guarantees at least a 2 percent sales increase at implementation. That's the <em>minimum</em>. In practice most projects land at 4–15 percent on sales, and 10–20 percent on gross margin.</span>
+    </div>
+
+    <p>Take a grocery store with €10M in annual revenue. 2 percent is €200K. 10 percent is €1M. That's the difference between an acceptable year and a record year — on a surface area that already exists in the store.</p>
+
+    <h2>You can never take back lost sales</h2>
+
+    <p>That's the line from Link Retail that stuck with me. <em>You can never take back lost sales.</em></p>
+
+    <p>A week with a suboptimal shelf isn't something you compensate for next quarter. The sales that didn't happen, didn't happen.</p>
+
+    <p>That's why real-time monitoring beats the quarterly report. When the store manager sees on their phone that a shelf is underperforming today, the decision happens today — not at next month's meeting.</p>
+
+    <h2>Where do you start?</h2>
+
+    <p>Small. We're convinced the right way to build this kind of capability is to start at a small scale, learn, measure, and then scale up.</p>
+
+    <p>Sigvardsson Consulting Group is Link Retail's partner in Sweden. We've implemented Perfect Shelf at NorgesGruppen's Kiwi, Meny and Coop in Norway — and are now bringing the new AI generation of the tool to the Swedish market.</p>
+
+    <p>If the shelf accounts for 75 percent of your revenue, the question isn't <em>whether</em> you can afford to optimize it.</p>
+
+    <p><strong>The question is which level you'll start at.</strong></p>
+  </div>
+</InsightLayout>

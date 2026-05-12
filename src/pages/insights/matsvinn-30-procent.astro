@@ -1,0 +1,153 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'matsvinn-30-procent');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  author={article.author}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p>I de flesta livsmedelsbutiker har matsvinn länge behandlats som en miljöfråga. Det stämmer fortfarande — och det är fortfarande viktigt. Men 2026 är matsvinn också en konkret lönsamhetsfråga. Och en konkurrenskraftfråga gentemot den svenska konsumenten, som lägger sustainability bland sina tre viktigaste köpkriterier.</p>
+
+    <p>Det är när dessa tre saker — miljö, lönsamhet och varumärkesposition — börjar peka åt samma håll som något verkligt blir möjligt: <em>30 procents minskat svinn är inte längre hjältevärde. Det är ny baseline.</em></p>
+
+    <h2>Varför svinn behandlas som rapportering, inte drift</h2>
+
+    <p>Den klassiska modellen ser ut så här: butikspersonalen kasserar varor i kassan. Datan flyter in i ett rapporteringssystem. Categorychefen tittar på siffrorna en gång i kvartalet. Beslut fattas på huvudkontoret om sortiment och beställningsprinciper.</p>
+
+    <p>Modellen har två fundamentala problem.</p>
+
+    <p><strong>Problem 1: Latens.</strong> När datan når beslutsfattaren är veckan slut, månaden slut, kvartalet slut. Brödet är redan kasserat. Färska bären är redan i containern. Det går inte att fatta beslut som påverkar i morse — bara beslut som påverkar nästa kvartal.</p>
+
+    <p><strong>Problem 2: Aggregering.</strong> Rapporten visar svinn per kategori, per butik, per månad. Den visar inte vilka exakta artiklar, vilka exakta tidpunkter, vilka exakta orderpunkter som driver svinnet. Genomsnittet döljer det som faktiskt går att åtgärda.</p>
+
+    <p>Resultatet: en miljörapport, inte ett operationellt verktyg.</p>
+
+    <h2>Det som har förändrats</h2>
+
+    <p>Tre tekniska kapabiliteter har mognat under de senaste åren och är nu prismässigt tillgängliga även för medelstora kedjor:</p>
+
+    <p><strong>Realtidsprognostisering.</strong> Maskininlärningsmodeller som tränas på historisk efterfrågan kombinerat med väder, kampanjer, helger och lokal trafik. De prognostiserar inte bara "hur många bröd säljs idag" — de prognostiserar "hur många bröd säljs i den här butiken, för den här produkten, mellan 14 och 16, givet att det är torsdag och regnar".</p>
+
+    <p><strong>On-demand beställning och produktion.</strong> Istället för att beställa en fast veckokvantitet baserad på förra årets siffror, kan butikspersonalen — eller systemet automatiskt — justera beställningar dagligen baserat på realtidssignaler.</p>
+
+    <p><strong>Operationella verktyg i mobilen.</strong> Det här är den missade pusselbiten i många implementationer. Prognosen och beställningsförslaget är värdelöst om det inte når personen som faktiskt fyller på brödhyllan klockan 06:00. Verktyg som körs på smartphone-nivå löser detta.</p>
+
+    <blockquote>Bröd och frukt & grönt är de kategorier där tekniken redan ger 30 procents minskat svinn idag. Inte i en pilot — i regelbunden drift hos Kiwi, Meny och Coop.</blockquote>
+
+    <h2>Affärsfallet — bortom miljörapporten</h2>
+
+    <p>30 procent låter abstrakt tills man räknar.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">30 %</span>
+      <span class="stat-callout-text">är den genomsnittliga svinnreduktionen för bröd och frukt & grönt hos våra norska referenskunder. På en kedja med 200 butiker och 100 miljoner i årligt svinn betyder det 30 miljoner direkt till sista raden — varje år.</span>
+    </div>
+
+    <p>Och det är bara den direkta effekten. Den indirekta effekten är tre saker:</p>
+
+    <p><strong>Bättre tillgänglighet.</strong> När svinnet styrs av faktisk efterfrågan ökar också träffsäkerheten på vad som finns på hyllan vid rätt tid. Out-of-stock minskar parallellt med svinn. Det är samma optimeringsproblem från andra sidan.</p>
+
+    <p><strong>Märkbart för kunden.</strong> Den svenska konsumenten ser skillnad. Brödet är färskare. Bären ser fräschare ut. Det är inte stora skillnader per besök — men de är systematiska, och de bygger upp varumärkesvärde över tid.</p>
+
+    <p><strong>Compliance och rapportering.</strong> Krav på spårbarhet och redovisning av matsvinn ökar. Att ha datat redan operationellt — inte bara historiskt aggregerat — blir ett konkurrensförsteg när rapporteringskraven stramas åt.</p>
+
+    <h2>Varför vi inte gör det "lite mer"</h2>
+
+    <p>Den vanliga reaktionen efter en första demo är: <em>"Vi gör redan det här, fast manuellt."</em> Och det stämmer ofta. Erfarna avdelningschefer har goda magkänslor. De ser om brödet säljer dåligt en viss dag. De justerar.</p>
+
+    <p>Men det är inte samma sak.</p>
+
+    <p>Manuell justering fungerar för en chef i en butik på en kategori. Systematisk realtidsprognostisering fungerar för alla chefer, alla butiker, alla kategorier samtidigt — och utan att kompetensen försvinner när någon byter jobb. Det är skillnaden mellan god intuition och skalbar precision.</p>
+
+    <h2>Var börjar man?</h2>
+
+    <p>Med en kategori. Vår erfarenhet — och Link Retails erfarenhet från NorgesGruppen — är att man startar med antingen bröd eller färskvaror, mäter effekten på 90 dagar, och sedan utvidgar.</p>
+
+    <p>Är ROI:n positiv på dag 90 — och det är den i praktiskt taget alla projekt — kan modellen utvidgas till nästa kategori. Det blir ett systematiskt program istället för ett "miljöprojekt" som hänger på en eldsjäl.</p>
+
+    <p>Och i det momentet förändras hur organisationen tänker på svinn. Det blir inte längre en post i hållbarhetsrapporten. Det blir ett verktyg för att driva lönsamhet — varje dag, i varje butik.</p>
+
+    <p><strong>Det är där 30 procent blir baseline.</strong></p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p>In most grocery stores, food waste has long been treated as a sustainability issue. That's still true — and it still matters. But in 2026, food waste is also a hard profitability issue. And a competitive issue against the Swedish consumer, who places sustainability among their three most important purchase criteria.</p>
+
+    <p>It's when these three things — environment, profitability and brand position — start pointing the same way that something genuinely new becomes possible: <em>a 30 percent waste reduction isn't heroic anymore. It's the new baseline.</em></p>
+
+    <h2>Why waste is treated as reporting, not operations</h2>
+
+    <p>The classic model looks like this: store staff record waste at the register. Data flows into a reporting system. The category manager looks at the numbers once a quarter. Decisions about assortment and ordering rules are made at head office.</p>
+
+    <p>That model has two fundamental problems.</p>
+
+    <p><strong>Problem 1: Latency.</strong> By the time data reaches the decision-maker, the week is over, the month is over, the quarter is over. The bread is already in the bin. The fresh berries are already in the container. You can't make decisions that affect this morning — only decisions that affect next quarter.</p>
+
+    <p><strong>Problem 2: Aggregation.</strong> The report shows waste per category, per store, per month. It doesn't show which exact items, which exact time slots, which exact reorder points drive the waste. The average hides what's actually fixable.</p>
+
+    <p>The result: an environmental report, not an operational tool.</p>
+
+    <h2>What's changed</h2>
+
+    <p>Three technical capabilities have matured over the past few years and are now affordable for mid-sized chains:</p>
+
+    <p><strong>Real-time forecasting.</strong> Machine learning models trained on historical demand combined with weather, campaigns, holidays and local traffic. They don't just predict "how many loaves of bread will sell today" — they predict "how many of this product will sell in this store, between 2 and 4 PM, given that it's Thursday and raining".</p>
+
+    <p><strong>On-demand ordering and production.</strong> Instead of ordering a fixed weekly quantity based on last year's numbers, store staff — or the system automatically — can adjust orders daily based on real-time signals.</p>
+
+    <p><strong>Operational tools in the mobile.</strong> This is the missed puzzle piece in many implementations. The forecast and the order suggestion is worthless if it doesn't reach the person actually filling the bread shelf at 6 AM. Tools that run at smartphone level solve this.</p>
+
+    <blockquote>Bread and fresh produce are the categories where the technology already delivers 30 percent waste reduction today. Not in a pilot — in steady-state operations at Kiwi, Meny and Coop.</blockquote>
+
+    <h2>The business case — beyond the environmental report</h2>
+
+    <p>30 percent sounds abstract until you do the math.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">30%</span>
+      <span class="stat-callout-text">is the average waste reduction for bread and fresh produce at our Norwegian reference customers. On a chain with 200 stores and €10M in annual waste, that's €3M straight to the bottom line — every year.</span>
+    </div>
+
+    <p>And that's just the direct impact. The indirect impact is three things:</p>
+
+    <p><strong>Better availability.</strong> When waste is governed by actual demand, accuracy on what's on shelf at the right time also improves. Out-of-stock drops in parallel with waste. It's the same optimization problem from the other side.</p>
+
+    <p><strong>Noticeable to the customer.</strong> Swedish consumers can tell the difference. The bread is fresher. The berries look better. The differences aren't large per visit — but they're systematic, and they build brand equity over time.</p>
+
+    <p><strong>Compliance and reporting.</strong> Requirements for traceability and food waste reporting are tightening. Having the data already operational — not just historically aggregated — becomes a competitive advantage as reporting standards harden.</p>
+
+    <h2>Why we don't just "do it a bit more"</h2>
+
+    <p>The standard reaction after an initial demo is: <em>"We already do this, manually."</em> And that's often true. Experienced category managers have good instincts. They see when bread sells poorly on a particular day. They adjust.</p>
+
+    <p>But it's not the same thing.</p>
+
+    <p>Manual adjustment works for one manager in one store on one category. Systematic real-time forecasting works for all managers, all stores, all categories at once — and the knowledge doesn't disappear when someone changes jobs. It's the difference between good intuition and scalable precision.</p>
+
+    <h2>Where do you start?</h2>
+
+    <p>With one category. Our experience — and Link Retail's experience with NorgesGruppen — is that you start with either bread or fresh produce, measure the impact over 90 days, and then expand.</p>
+
+    <p>If the ROI is positive at day 90 — and it is in practically every project — the model can be expanded to the next category. It becomes a systematic program rather than an "environmental project" hinging on a single passionate person.</p>
+
+    <p>And in that moment, how the organization thinks about waste changes. It stops being a line in the sustainability report. It becomes a tool for driving profitability — every day, in every store.</p>
+
+    <p><strong>That's where 30 percent becomes baseline.</strong></p>
+  </div>
+</InsightLayout>
