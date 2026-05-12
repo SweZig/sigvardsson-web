@@ -7,6 +7,7 @@ interface Props {
   descriptionSv?: string;
   descriptionEn?: string;
   canonical?: string;
+  ogImage?: string;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   descriptionSv = 'Ledande konsultbyrå inom retail — vi hjälper detaljhandeln att öka lönsamhet och effektivitet.',
   descriptionEn = 'Leading retail consultancy — helping retailers increase profitability and efficiency.',
   canonical,
+  ogImage = 'https://www.sigvardsson.org/images/og-image.jpg',
 } = Astro.props;
 
 const canonicalURL = canonical || `https://www.sigvardsson.org${Astro.url.pathname}`;
@@ -99,7 +101,7 @@ const schemaOrg = {
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" id="og-title" content={titleSv} />
   <meta property="og:description" id="og-description" content={descriptionSv} />
-  <meta property="og:image" content="https://www.sigvardsson.org/images/og-image.jpg" />
+  <meta property="og:image" content={ogImage} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="sv_SE" />
@@ -110,7 +112,7 @@ const schemaOrg = {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" id="tw-title" content={titleSv} />
   <meta name="twitter:description" id="tw-description" content={descriptionSv} />
-  <meta name="twitter:image" content="https://www.sigvardsson.org/images/og-image.jpg" />
+  <meta name="twitter:image" content={ogImage} />
 
   <!-- Sitemap + Robots -->
   <link rel="sitemap" href="/sitemap.xml" />
@@ -320,6 +322,63 @@ const schemaOrg = {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JNPFEESDFN');
+  </script>
+
+  <!-- UTM persistence + CTA click tracking -->
+  <script is:inline>
+    (function(){
+      // 1. Capture UTM parameters on landing, store in sessionStorage
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+        var found = {};
+        utmKeys.forEach(function(k){ if (params.has(k)) found[k] = params.get(k); });
+        if (Object.keys(found).length > 0) {
+          sessionStorage.setItem('scg_utm', JSON.stringify(found));
+        }
+      } catch(e) {}
+
+      // 2. On click of any internal link, append stored UTM params (only if not already present)
+      document.addEventListener('click', function(e){
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        // Skip external links
+        try {
+          var url = new URL(href, window.location.origin);
+          if (url.host !== window.location.host) return;
+          // Read stored UTM
+          var stored = sessionStorage.getItem('scg_utm');
+          if (!stored) return;
+          var utm = JSON.parse(stored);
+          var modified = false;
+          Object.keys(utm).forEach(function(k){
+            if (!url.searchParams.has(k)) { url.searchParams.set(k, utm[k]); modified = true; }
+          });
+          if (modified) a.setAttribute('href', url.pathname + url.search + url.hash);
+        } catch(e) {}
+      }, true);
+
+      // 3. Fire GA4 event when any CTA (Boka demo / Kontakta oss / Book a demo / Contact us) is clicked
+      document.addEventListener('click', function(e){
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        // Detect demo/contact CTAs by destination
+        if (href.indexOf('/Contact') === -1 && href.indexOf('/contact') === -1) return;
+        var label = (a.textContent || '').trim().toLowerCase();
+        var cta = 'contact';
+        if (label.indexOf('demo') !== -1 || label.indexOf('boka') !== -1) cta = 'book_demo';
+        if (typeof gtag === 'function') {
+          gtag('event', 'cta_click', {
+            cta_label: label.slice(0, 60),
+            cta_type: cta,
+            page_path: window.location.pathname,
+          });
+        }
+      }, true);
+    })();
   </script>
 
 </head>
