@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { insights, categories, authors } from '../data/insights.js';
+
+// Latest 3 articles for the homepage teaser
+const latestInsights = [...insights]
+  .sort((a, b) => b.publishDate.localeCompare(a.publishDate))
+  .slice(0, 3);
 ---
 
 <Layout
@@ -393,64 +399,41 @@ import Footer from '../components/Footer.astro';
   <section class="insights-teaser">
     <div class="container">
       <div class="it-header fade-up">
-        <span class="section-label sv-text">Insikter</span>
+        <span class="section-label sv-text" data-no="Innsikt" data-da="Indsigter" data-fi="Näkemykset">Insikter</span>
         <span class="section-label en-text">Insights</span>
         <h2>
-          <span class="sv-text">Tankar från 100+ retailprojekt.</span>
-          <span class="en-text">Thinking from 100+ retail projects.</span>
+          <span class="sv-text">100+ års retailerfarenhet — delad fritt.</span>
+          <span class="en-text">100+ years of retail experience — shared freely.</span>
         </h2>
-        <p class="sv-text">Praktiska perspektiv på retail-optimering, AI i butik, hylloptimering, kundupplevelse och sustainability — skrivet för dig som leder retail, inte för dig som rapporterar om det.</p>
+        <p class="sv-text">Praktiska perspektiv på retail-optimering, AI i butik, hylloptimering, kundupplevelse och hållbarhet — skrivet för dig som leder retail, inte för dig som rapporterar om det.</p>
         <p class="en-text">Practical perspectives on retail optimization, AI in store, shelf optimization, customer experience and sustainability — written for people leading retail, not for people writing about it.</p>
       </div>
 
       <div class="it-grid">
-        <a href="/insights/hyllan-75-procent/" class="it-card fade-up">
-          <div class="it-card-img" style="background-image:url('/images/services/shelf-scanning.jpg')">
-            <span class="it-card-cat" style="--cat-color:#2A4EA9">Space Management</span>
-          </div>
-          <div class="it-card-content">
-            <h3 class="sv-text">Hyllan står för 75 % av din omsättning. När optimerade du den senast?</h3>
-            <h3 class="en-text">75 percent of your store revenue comes from one place. When did you last optimize it?</h3>
-            <p class="sv-text">Varför hylloptimering 2026 ser fundamentalt annorlunda ut än för fem år sedan — AI, A-B-testning och tre sätt att börja.</p>
-            <p class="en-text">Why shelf optimization in 2026 looks fundamentally different than five years ago — AI, A-B testing and three ways to start.</p>
-            <span class="it-card-meta">
-              <span class="sv-text">Per Sigvardsson · 5 min läsning</span>
-              <span class="en-text">Per Sigvardsson · 5 min read</span>
-            </span>
-          </div>
-        </a>
-
-        <a href="/insights/matsvinn-30-procent/" class="it-card fade-up" style="animation-delay:100ms">
-          <div class="it-card-img" style="background-image:url('/images/services/food-waste-bread.jpg')">
-            <span class="it-card-cat" style="--cat-color:#2d8a6b">Sustainability</span>
-          </div>
-          <div class="it-card-content">
-            <h3 class="sv-text">Matsvinn: 30 % minskning är inte längre hjältevärde — det är ny baseline.</h3>
-            <h3 class="en-text">Food waste: a 30% reduction isn't heroic anymore — it's the new baseline.</h3>
-            <p class="sv-text">Realtidsprognostisering förändrar matsvinn från en miljörapport till ett operationellt verktyg som driver lönsamhet varje dag.</p>
-            <p class="en-text">Real-time forecasting transforms food waste from an environmental report into an operational tool that drives profitability every day.</p>
-            <span class="it-card-meta">
-              <span class="sv-text">Per Sigvardsson · 4 min läsning</span>
-              <span class="en-text">Per Sigvardsson · 4 min read</span>
-            </span>
-          </div>
-        </a>
-
-        <a href="/insights/nps-arendesystem/" class="it-card fade-up" style="animation-delay:200ms">
-          <div class="it-card-img" style="background-image:url('/images/services/nps-feedback-app.jpg')">
-            <span class="it-card-cat" style="--cat-color:#c5530b">Customer Experience</span>
-          </div>
-          <div class="it-card-content">
-            <h3 class="sv-text">NPS är inte en siffra. NPS är ett ärendesystem.</h3>
-            <h3 class="en-text">NPS isn't a number. NPS is a workflow.</h3>
-            <p class="sv-text">8 av 10 retail-kedjor mäter NPS. 2 av 10 har en process för att agera. Värdet sitter i workflow:n från detractor till räddad kund.</p>
-            <p class="en-text">8 of 10 retail chains measure NPS. 2 of 10 have a process to act on it. The value lives in the workflow from detractor to recovered customer.</p>
-            <span class="it-card-meta">
-              <span class="sv-text">Per Sigvardsson · 5 min läsning</span>
-              <span class="en-text">Per Sigvardsson · 5 min read</span>
-            </span>
-          </div>
-        </a>
+        {latestInsights.map((article, i) => {
+          const cat = categories[article.category];
+          const auth = authors[article.authorId] || authors['per-sigvardsson'];
+          return (
+            <a href={`/insights/${article.slug}/`} class="it-card fade-up" style={`animation-delay:${i*100}ms`}>
+              <div class="it-card-img" style={`background-image:url('${article.coverImage}')`} data-cover-fit={article.coverFit || 'cover'}>
+                <span class="it-card-cat" style={`--cat-color:${cat.color}`}>
+                  <span class="sv-text">{cat.sv}</span>
+                  <span class="en-text">{cat.en}</span>
+                </span>
+              </div>
+              <div class="it-card-content">
+                <h3 class="sv-text">{article.titleSv}</h3>
+                <h3 class="en-text">{article.titleEn}</h3>
+                <p class="sv-text">{article.excerptSv}</p>
+                <p class="en-text">{article.excerptEn}</p>
+                <span class="it-card-meta">
+                  <span class="sv-text">{auth.name} · {article.readingTime} min läsning</span>
+                  <span class="en-text">{auth.name} · {article.readingTime} min read</span>
+                </span>
+              </div>
+            </a>
+          );
+        })}
       </div>
 
       <div class="it-cta-wrap fade-up">
@@ -1179,7 +1162,8 @@ import Footer from '../components/Footer.astro';
   .it-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; max-width: 1180px; margin: 0 auto 2.5rem; }
   .it-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(1,13,96,0.08); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; transition: all 0.25s; }
   .it-card:hover { border-color: #2A4EA9; box-shadow: 0 16px 36px rgba(1,13,96,0.1); transform: translateY(-3px); }
-  .it-card-img { aspect-ratio: 16/9; background-size: cover; background-position: center; position: relative; }
+  .it-card-img { aspect-ratio: 16/9; background-size: cover; background-position: center; background-color: #fff; background-repeat: no-repeat; position: relative; }
+  .it-card-img[data-cover-fit="contain"] { background-size: contain; }
   .it-card-cat { position: absolute; top: 1rem; left: 1rem; font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cat-color, #2A4EA9); background: rgba(255,255,255,0.95); padding: 0.3rem 0.65rem; border-radius: 4px; backdrop-filter: blur(8px); }
   .it-card-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
   .it-card h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 500; color: var(--color-navy); margin: 0 0 0.75rem; line-height: 1.3; }

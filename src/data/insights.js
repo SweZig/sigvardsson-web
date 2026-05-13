@@ -24,16 +24,16 @@ export const authors = {
     initials: 'LL',
     roleSv: 'Senior Partner, Sigvardsson Consulting Group',
     roleEn: 'Senior Partner, Sigvardsson Consulting Group',
-    bioSv: 'Senior partner på SCG med 25+ års erfarenhet av lagerhantering, inköpsstrategi och kapitaleffektivitet från ledande nordiska retailkedjor. Lars leder SCG:s arbete med Saldo4 och AI-baserade prognosmodeller.',
-    bioEn: 'Senior partner at SCG with 25+ years in inventory management, purchasing strategy and capital efficiency at leading Nordic retail chains. Lars leads SCG\'s work on Saldo4 and AI-based forecasting models.',
+    bioSv: 'Senior partner på SCG och vår operations-expert. Lars specialitet är retail-operations från golv till styrelse — processer, lager, kapitalbindning, schemaläggning och projektledning. Hela idén bakom Saldo4 kommer från Lars.',
+    bioEn: 'Senior partner at SCG and our operations expert. Lars\'s specialty is retail operations from shop floor to boardroom — processes, inventory, working capital, scheduling and project management. The entire Saldo4 concept originated with Lars.',
   },
   'peter-wilen': {
     name: 'Peter Wilén',
     initials: 'PW',
     roleSv: 'Senior Partner, Sigvardsson Consulting Group',
     roleEn: 'Senior Partner, Sigvardsson Consulting Group',
-    bioSv: 'Senior partner på SCG med bakgrund i livsmedelshandeln och 20+ års erfarenhet av matsvinn, färskvaror och hållbarhet. Peter har arbetat med flera av Nordens största dagligvarukedjor i frågor om svinn och prognostisering.',
-    bioEn: 'Senior partner at SCG with a grocery retail background and 20+ years of experience in food waste, fresh produce and sustainability. Peter has worked with several of the largest Nordic grocery chains on waste reduction and forecasting.',
+    bioSv: 'Senior partner på SCG med fokus på människan i förändring. Peter leder SCG:s arbete inom utbildning, utveckling och coaching, och äger affärsområdet hållbarhet och matsvinn internt — där han kombinerar SCG:s 100+ år av samlad butikserfarenhet med dagens AI-verktyg från Link Retail.',
+    bioEn: 'Senior partner at SCG focused on the human side of change. Peter leads SCG\'s work in training, development and coaching, and internally owns the sustainability and food waste business area — combining SCG\'s 100+ years of in-store experience with today\'s AI tools from Link Retail.',
   },
 };
 
