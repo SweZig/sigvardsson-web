@@ -22,6 +22,7 @@ interface Props {
   relatedProduct: { href: string; labelSv: string; labelEn: string };
   kickerSv?: string;
   kickerEn?: string;
+  coverFit?: string;
   metaDescSv?: string;
   metaDescEn?: string;
 }
@@ -41,6 +42,7 @@ const {
   relatedProduct,
   kickerSv,
   kickerEn,
+  coverFit,
   metaDescSv,
   metaDescEn,
 } = Astro.props;
@@ -66,7 +68,7 @@ const articleSchema = {
 ---
 
 <Layout
-  titleSv={`${titleSv} | Insights — Sigvardsson Consulting Group`}
+  titleSv={`${titleSv} | Insikter — Sigvardsson Consulting Group`}
   titleEn={`${titleEn} | Insights — Sigvardsson Consulting Group`}
   descriptionSv={metaDescSv || excerptSv}
   descriptionEn={metaDescEn || excerptEn}
@@ -80,7 +82,7 @@ const articleSchema = {
     <header class="article-hero">
       <div class="container article-container">
         <a href="/insights/" class="article-back">
-          <span class="sv-text">← Tillbaka till Insights</span>
+          <span class="sv-text">← Tillbaka till Insikter</span>
           <span class="en-text">← Back to Insights</span>
         </a>
 
@@ -131,7 +133,7 @@ const articleSchema = {
     <!-- ===== COVER IMAGE ===== -->
     <div class="article-cover-wrap">
       <div class="container article-container">
-        <img src={coverImage} alt="" class="article-cover" loading="eager" />
+        <img src={coverImage} alt="" class="article-cover" loading="eager" data-cover-fit={coverFit || 'cover'} />
       </div>
     </div>
 
@@ -199,16 +201,19 @@ const articleSchema = {
     --art-navy: #010D60;
     --art-mid: #1A277A;
     --art-blue: #2A4EA9;
-    --art-accent: #00C9B7;
+    --art-accent: #1A277A;
     --art-text: #2a2a2a;
     --art-muted: #666;
+    --art-paper: #f4f6fb;
   }
 
-  .article-wrap { background: #fff; }
+  /* FT-style: paper background everywhere on insight pages, monochrome blue accents */
+  body { background: var(--art-paper); }
+  .article-wrap { background: var(--art-paper); }
   .article-container { max-width: 740px; }
 
   /* ===== HERO ===== */
-  .article-hero { background: #fff; padding: 6rem 2rem 2.5rem; }
+  .article-hero { background: var(--art-paper); padding: 6rem 2rem 2.5rem; }
   .article-back { display: inline-block; font-family: var(--font-heading); font-size: 0.82rem; color: var(--art-muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
   .article-back:hover { color: var(--art-blue); }
 
@@ -242,7 +247,8 @@ const articleSchema = {
 
   /* ===== COVER ===== */
   .article-cover-wrap { padding: 0 2rem; }
-  .article-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 50px rgba(1,13,96,0.12); }
+  .article-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #fff; border-radius: 12px; box-shadow: 0 20px 50px rgba(1,13,96,0.12); filter: saturate(0.92); }
+  .article-cover[data-cover-fit="contain"] { object-fit: contain; padding: 1.5rem; }
 
   /* ===== BODY ===== */
   .article-body-wrap { padding: 4rem 2rem 3rem; }
@@ -266,8 +272,8 @@ const articleSchema = {
   .article-body .stat-callout {
     display: flex; gap: 1.5rem; align-items: baseline;
     margin: 2.5rem 0; padding: 1.75rem;
-    background: linear-gradient(135deg, rgba(42,78,169,0.05) 0%, rgba(0,201,183,0.05) 100%);
-    border: 1px solid rgba(42,78,169,0.1); border-radius: 12px;
+    background: linear-gradient(135deg, rgba(42,78,169,0.06) 0%, rgba(26,39,122,0.06) 100%);
+    border: 1px solid rgba(42,78,169,0.12); border-radius: 12px;
   }
   .article-body .stat-callout-num { font-family: var(--font-heading); font-size: 3rem; font-weight: 500; color: var(--art-blue); line-height: 1; letter-spacing: -0.02em; }
   .article-body .stat-callout-text { flex: 1; font-size: 1rem; color: #444; line-height: 1.6; }
