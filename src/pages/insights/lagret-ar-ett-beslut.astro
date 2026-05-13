@@ -1,0 +1,133 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'lagret-ar-ett-beslut');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  author={article.author}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p>För de flesta retailers är kapitalbindningen i lager inte ett strategiskt beslut. Det är något som <em>händer</em>. Inköp lägger order. Lagret växer. Realisationer löser symptomen. Räkenskapsåret slutar. Nästa börjar.</p>
+
+    <p>För ett ökande antal nordiska kedjor är kapitalbindningen istället just det — ett aktivt beslut, fattat per SKU, per butik, per vecka, med AI-stöd. Skillnaden mellan de två synsätten syns i balansräkningen.</p>
+
+    <h2>Problemet är skalan, inte ointresset</h2>
+
+    <p>En medelstor kedja hanterar 5 000–20 000 aktiva SKUs. Varje vecka behöver var och en av dem ett beställningsbeslut: hur mycket, när, till vilka butiker. Görs det manuellt — och det görs fortfarande manuellt på de flesta kedjor — så blir resultatet i bästa fall en kompromiss.</p>
+
+    <p>Inköparen jobbar med tumregler. Säkerhetslager sätts på ”tre veckors snitt plus 20 procent” oavsett produkt. Säsongsmönster fångas på årsbasis, inte på veckobasis. Vädret räknas inte in. Kampanjuppgångar gissas. Resultatet: överlager där det inte behövs, underlager där efterfrågan rör sig, och 8–12 procent av omsättningen som ligger som död vikt på balansräkningen.</p>
+
+    <h2>Vad modellen faktiskt gör</h2>
+
+    <p>En AI-baserad prognosmodell hanterar variablerna samtidigt. Den läser:</p>
+
+    <ul>
+      <li>Historisk försäljning per SKU och butik</li>
+      <li>Säsong, vecka för vecka — inte kvartal för kvartal</li>
+      <li>Veckodagsmönster och helgeffekter</li>
+      <li>Kampanjeffekter — både dina egna och konkurrenters</li>
+      <li>Väder, för väderkänsliga kategorier</li>
+      <li>Leverantörens leveranstid och tillförlitlighet</li>
+      <li>Lokala evenemang och helgkalender</li>
+    </ul>
+
+    <p>Och den gör det per SKU per butik per vecka. För 20 000 artiklar. Varje gång.</p>
+
+    <blockquote>Inköparen ersätts inte. Beslutskapaciteten fokuseras dit den faktiskt skapar värde.</blockquote>
+
+    <p>Det är inte att inköparen ersätts. Det är att inköparens beslutskapacitet plötsligt fokuseras där den verkligen skapar värde — på de 100–200 artiklar där omdöme betyder något (nya lanseringar, leverantörsbyten, oväntade störningar) — istället för på 19 800 där maskinen är bättre.</p>
+
+    <h2>Från dashboard till arbetslista</h2>
+
+    <p>SCG:s lagerplattform <strong>Saldo4</strong> bygger på den här logiken. Den läser data ur ditt POS-system och leverantörsdata, kör prognoserna i bakgrunden, och presenterar konkreta beställningsförslag som inköparen godkänner eller justerar.</p>
+
+    <p>Det är skillnaden mellan ett analysverktyg och ett <em>arbetsverktyg</em>. Inköpsavdelningen får varje morgon en lista med exakt de SKUs som behöver justeras, och varför. Inte en dashboard man måste tolka. En arbetslista man kan beta av.</p>
+
+    <h2>Effekten är trippelhanded</h2>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">10–20%</span>
+      <span class="stat-callout-text">Lägre kapitalbindning när modellerna är intränade. Plus ökad stockturn och friskare lager — färre artiklar som närmar sig bäst-före, mindre realisationsbehov.</span>
+    </div>
+
+    <p>Det är inte enbart en operativ besparing. Det är 10–20 procents kapital som plötsligt finns tillgängligt för det som faktiskt växer affären — nya butiker, nytt sortiment, eller helt enkelt utdelning till ägarna.</p>
+
+    <h2>Verktyget är halva resan</h2>
+
+    <p>Att gå från ”kapitalbindning som konsekvens” till ”kapitalbindning som beslut” kräver två saker: rätt verktyg, och en inköpsprocess som är ombyggd kring verktyget.</p>
+
+    <p>Det första är lösbart med Saldo4. Det andra är ett organisationsarbete — och det är ofta det som faktiskt avgör om effekten blir 5 procent eller 20. Tumregler som är inbyggda i en kultur i 15 år ändras inte för att en algoritm säger något annat. De ändras när inköparen ser med egna ögon att modellens förslag höll, vecka efter vecka, på deras egna SKUs.</p>
+
+    <p>Det är där resan går från IT-projekt till verksamhetsförändring. Och det är där vinsten ligger.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p>For most retailers, working capital tied up in inventory isn't a strategic decision. It's something that <em>happens</em>. Buying places orders. Stock grows. Clearance fixes the symptoms. The fiscal year ends. The next one begins.</p>
+
+    <p>For a growing number of Nordic chains, working capital is instead exactly that — an active decision, made per SKU, per store, per week, with AI support. The difference between the two mindsets shows up on the balance sheet.</p>
+
+    <h2>The problem is scale, not indifference</h2>
+
+    <p>A mid-sized chain manages 5,000–20,000 active SKUs. Every week each one needs an order decision: how much, when, to which stores. Done manually — and it's still done manually at most chains — the result is at best a compromise.</p>
+
+    <p>The buyer works from rules of thumb. Safety stock is set at “three-week average plus 20 percent” regardless of product. Seasonal patterns are captured yearly, not weekly. Weather isn't factored in. Campaign uplifts are guessed at. The result: over-stock where it isn't needed, under-stock where demand is moving, and 8–12 percent of revenue sitting as dead weight on the balance sheet.</p>
+
+    <h2>What the model actually does</h2>
+
+    <p>An AI-based forecasting model handles the variables simultaneously. It reads:</p>
+
+    <ul>
+      <li>Historical sales per SKU and store</li>
+      <li>Seasonality, week by week — not quarter by quarter</li>
+      <li>Day-of-week patterns and holiday effects</li>
+      <li>Campaign effects — both your own and competitors'</li>
+      <li>Weather, for weather-sensitive categories</li>
+      <li>Supplier lead times and reliability</li>
+      <li>Local events and the holiday calendar</li>
+    </ul>
+
+    <p>And it does this per SKU per store per week. For 20,000 items. Every time.</p>
+
+    <blockquote>The buyer isn't replaced. Decision capacity is focused where it actually creates value.</blockquote>
+
+    <p>The buyer isn't replaced. The buyer's decision capacity is suddenly focused where it really creates value — on the 100–200 items where judgment matters (new launches, supplier changes, unexpected disruptions) — instead of on the 19,800 the machine handles better.</p>
+
+    <h2>From dashboard to worklist</h2>
+
+    <p>SCG's inventory platform <strong>Saldo4</strong> is built on this logic. It reads data from your POS system and supplier data, runs the forecasts in the background, and presents concrete order proposals the buyer approves or adjusts.</p>
+
+    <p>That's the difference between an analytics tool and a <em>working tool</em>. The purchasing department gets a list every morning of exactly the SKUs that need adjustment, and why. Not a dashboard to interpret. A worklist to work through.</p>
+
+    <h2>The effect is three-handed</h2>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">10–20%</span>
+      <span class="stat-callout-text">Lower working capital once the models are trained. Plus higher stock turn and a healthier inventory — fewer items approaching best-before, less need for clearance.</span>
+    </div>
+
+    <p>This isn't only an operational saving. It's 10–20 percent of capital suddenly available for what actually grows the business — new stores, new assortment, or simply dividends to the owners.</p>
+
+    <h2>The tool is half the journey</h2>
+
+    <p>Moving from “working capital as a consequence” to “working capital as a decision” requires two things: the right tool, and a purchasing process rebuilt around the tool.</p>
+
+    <p>The first is solvable with Saldo4. The second is organizational work — and that's often what actually decides whether the impact is 5 percent or 20. Rules of thumb baked into a culture for 15 years don't change because an algorithm says otherwise. They change when the buyer sees, with their own eyes, that the model's suggestions held up, week after week, on their own SKUs.</p>
+
+    <p>That's where the journey shifts from IT project to operational transformation. And that's where the value lies.</p>
+  </div>
+</InsightLayout>

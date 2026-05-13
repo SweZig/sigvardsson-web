@@ -1,0 +1,291 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'ai-strategi-retail-2026');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  author={article.author}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p>För tio år sedan började kundresan på Google. Idag börjar den allt oftare i ett samtal med en agent.</p>
+
+    <p><em>”Visa mig den bästa nya espressomaskinen för en mellanmjölkare under 4 000 kronor.”</em> ChatGPT svarar. Perplexity citerar. Googles AI Overview sammanfattar. Kunden behöver inte längre öppna tio flikar och jämföra själv — agenten har redan gjort jobbet.</p>
+
+    <p>Det här är inte en futuristisk vision. Det är hur en stigande andel beslut redan fattas — i synnerhet i de high-consideration-segment där dina butiker konkurrerar. Och det förändrar mer än din SEO-strategi.</p>
+
+    <p>Synligheten i AI-svaren är bara ytan. Den verkligt strategiska frågan ligger tre steg djupare: AI förändrar samtidigt <strong>hur vi optimerar butiken</strong>, <strong>hur vi lyssnar på kunden</strong> och <strong>hur mycket kapital vi binder upp i lager</strong>.</p>
+
+    <p>Det är de tre områden där nordiska retailers under 2026 antingen hämtar hem 5–15 procents resultatväxt — eller halkar efter konkurrenter som gör det.</p>
+
+    <h2>1. Resultatet ligger på hyllan</h2>
+
+    <p>75 procent av en typisk butiks omsättning kommer från hyllorna. Inte från gavlarna, inte från kampanjytorna — från hyllorna.</p>
+
+    <p>Och hyllan är full av beslut som idag tas på magkänsla: hur många ansikten ska den här produkten ha? Vilka tio artiklar i kategorin är hyllvinnare och vilka tio är hyllförlorare? Var ska högmarginalsprodukten ligga för att fångas av flest blickar?</p>
+
+    <p>AI svarar på de frågorna — om den får rätt data. Genom att korsa POS-data med försäljningshastighet, marginal och hyllposition kan en modell idag rekommendera placeringar, ansikten och artikelmix per butik och vecka. Det är inte teori. På 100+ genomförda projekt i Norden ser vi 4–15 procents försäljningsväxt på hyllnivå, och 10–20 procents marginalväxt när varuplaceringen optimeras parallellt.</p>
+
+    <blockquote>Det är inte AI-verktyget som ger försprånget. Det är strategin som översätter verktyget till handlingar i butiken.</blockquote>
+
+    <p>Den första frågan styrelsen behöver ställa är därför inte <em>”vilka AI-verktyg ska vi köpa?”</em> — utan <em>”vilken andel av våra hyllbeslut tas på data, och vilken på vana?”</em></p>
+
+    <h2>2. Kunden vi inte hör</h2>
+
+    <p>De flesta retailers mäter NPS. Få omvandlar mätningen till åtgärder.</p>
+
+    <p>Skälet är inte ointresse. Skälet är skala. En medelstor kedja samlar in 5 000–15 000 svar i månaden. Varje öppen kommentar är ett fönster in i en kundupplevelse — men ingen läser igenom 15 000 kommentarer.</p>
+
+    <p>AI gör det.</p>
+
+    <p>Moderna språkmodeller kategoriserar och tema-grupperar öppna svar på sekunder. De hittar mönster du missar — att ”personalen var trevlig”-kommentarerna toppar en specifik veckodag i en specifik butik, att klagomålen om kö ökar exakt tre dagar efter en kampanjstart, att en återkommande produktbeskrivning väcker missförstånd som blir reklamationer två veckor senare.</p>
+
+    <p>Det är inte enbart en effektivisering av rapporteringen. Det är en helt ny detaljgrad i kundinsikten — den som tidigare krävde dyra fokusgrupper finns nu gratis i kommentarsfältet. Frågan är om någon i organisationen läser det.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">8 av 10</span>
+      <span class="stat-callout-text">retailers mäter NPS. 2 av 10 omvandlar det till handling. AI flyttar gränsen.</span>
+    </div>
+
+    <p>Den andra frågan styrelsen behöver ställa: <em>”Vad vet vi om våra kunder idag som vi inte gjorde för ett år sedan — och vad gör vi annorlunda på grund av det?”</em></p>
+
+    <h2>3. Pengarna i lagret</h2>
+
+    <p>Kapitalbindningen är retail-branschens tysta marginälätare. Den syns inte i månadsrapporten — men den tär på likviditet, marginal och flexibilitet.</p>
+
+    <p>Den tär också på beslutskapaciteten. En inköpare som manuellt sätter beställningsmängd för 3 000 SKUs gör nödvändigtvis kompromisser. Säkerhetsmarginalerna blir för stora där de behöver vara små. Lagret blir gammalt. Realisationen äter marginalen.</p>
+
+    <p>AI-baserade prognosmodeller hanterar säsong, kampanjeffekt, väder, vardag–helg-mönster och leveranstid samtidigt — för varje SKU, varje butik, varje vecka. Det är inte att inköparen ersätts. Det är att inköparen får tid att arbeta med de 100 artiklar där omdöme verkligen betyder något, istället för de 2 900 som maskinen hanterar bättre.</p>
+
+    <p>Effekten är lägre kapitalbindning, högre stockturn och friskare lager — och en organisation som plötsligt har likviditet att investera i det som faktiskt växer affären.</p>
+
+    <p>Den tredje frågan styrelsen behöver ställa: <em>”Hur mycket kapital binder vi upp i lager idag som vi inte hade behövt — och vad skulle vi göra med det om vi frigjorde 15 procent?”</em></p>
+
+    <h2>Det är inte verktyget. Det är strategin.</h2>
+
+    <p>De tre områdena ovan har en gemensam nämnare: i alla tre finns AI-verktygen redan. De är inte särskilt dyra. De är inte särskilt svåra att implementera.</p>
+
+    <p>Det som saknas — och det är därför så få retailers idag tar hem hela värdet — är <strong>strategin</strong> som väver ihop dem.</p>
+
+    <p>Vilka beslut ska maskinen ta? Vilka ska människan ta, men med maskinens underlag? Vilka data behöver vi prioritera att samla in nu för att kunna fatta de besluten om ett år? Hur tränar vi organisationen så att rekommendationerna omsätts i handlingar i butiken — och inte fastnar i en dashboard?</p>
+
+    <p>Det är de frågorna en retail-AI-strategi besvarar. Och det är just den typen av strategiarbete som skiljer de retailers som om 24 månader är 8 procent mer lönsamma än konkurrenterna från dem som dröjer.</p>
+
+    <!-- ===== Deep-dive cards ===== -->
+    <section class="deep-dive-section">
+      <h3 class="deep-dive-heading">Fördjupa dig vidare</h3>
+      <p class="deep-dive-intro">Tre artiklar som går på djupet i var och en av de tre pelarna ovan.</p>
+      <div class="deep-dive-grid">
+        <a href="/insights/hyllan-75-procent/" class="deep-dive-card" data-pillar="shelf" onclick="if(window.gtag)gtag('event','deep_dive_click',{pillar:'shelf',campaign:'ai-strategi-helglasning'});">
+          <span class="deep-dive-num">1</span>
+          <span class="deep-dive-pillar">Resultatet på hyllan</span>
+          <span class="deep-dive-title">Hyllan står för 75 procent av din omsättning</span>
+          <span class="deep-dive-arrow">Läs artikeln →</span>
+        </a>
+        <a href="/insights/nps-arendesystem/" class="deep-dive-card" data-pillar="customer" onclick="if(window.gtag)gtag('event','deep_dive_click',{pillar:'customer',campaign:'ai-strategi-helglasning'});">
+          <span class="deep-dive-num">2</span>
+          <span class="deep-dive-pillar">Kunden vi inte hör</span>
+          <span class="deep-dive-title">NPS är inte en siffra — det är ett ärendesystem</span>
+          <span class="deep-dive-arrow">Läs artikeln →</span>
+        </a>
+        <a href="/insights/lagret-ar-ett-beslut/" class="deep-dive-card" data-pillar="inventory" onclick="if(window.gtag)gtag('event','deep_dive_click',{pillar:'inventory',campaign:'ai-strategi-helglasning'});">
+          <span class="deep-dive-num">3</span>
+          <span class="deep-dive-pillar">Pengarna i lagret</span>
+          <span class="deep-dive-title">Lagret är ett beslut — inte en konsekvens</span>
+          <span class="deep-dive-arrow">Läs artikeln →</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p>Ten years ago, the customer journey started on Google. Today it increasingly starts in a conversation with an agent.</p>
+
+    <p><em>“Show me the best new espresso machine for a medium-milk drinker under €400.”</em> ChatGPT answers. Perplexity cites. Google's AI Overview summarizes. The customer no longer needs to open ten tabs and compare — the agent has already done the work.</p>
+
+    <p>This isn't a futuristic vision. It's how a rising share of decisions is already being made — especially in the high-consideration segments where your stores compete. And it changes more than your SEO strategy.</p>
+
+    <p>Visibility in AI answers is just the surface. The real strategic question sits three steps deeper: AI simultaneously changes <strong>how we optimize the store</strong>, <strong>how we listen to the customer</strong>, and <strong>how much capital we tie up in inventory</strong>.</p>
+
+    <p>These are the three areas where Nordic retailers in 2026 will either capture 5–15 percent earnings growth — or fall behind competitors who do.</p>
+
+    <h2>1. Results live on the shelf</h2>
+
+    <p>75 percent of a typical store's revenue comes from the shelves. Not from end-caps, not from campaign zones — from the shelves.</p>
+
+    <p>And the shelf is full of decisions still taken on gut feel: how many facings should this product have? Which ten items in the category are shelf winners and which ten are losers? Where should the high-margin product sit to catch the most eyes?</p>
+
+    <p>AI answers those questions — given the right data. By crossing POS data with sales velocity, margin and shelf position, a model can today recommend placements, facings and assortment mix per store per week. This isn't theory. Across 100+ completed Nordic projects we see 4–15 percent sales growth at the shelf level, and 10–20 percent margin growth when placement is optimized in parallel.</p>
+
+    <blockquote>It's not the AI tool that creates the advantage. It's the strategy that translates the tool into actions on the shelf.</blockquote>
+
+    <p>The first question the board needs to ask isn't <em>“which AI tools should we buy?”</em> — it's <em>“what share of our shelf decisions are made on data, and what share on habit?”</em></p>
+
+    <h2>2. The customer we don't hear</h2>
+
+    <p>Most retailers measure NPS. Few translate the measurement into action.</p>
+
+    <p>The reason isn't indifference. The reason is scale. A mid-sized chain collects 5,000–15,000 responses a month. Every open-text comment is a window into a customer experience — but no one reads through 15,000 comments.</p>
+
+    <p>AI does.</p>
+
+    <p>Modern language models categorize and theme-cluster open responses in seconds. They find patterns you'd miss — that “staff was friendly” comments peak on a specific weekday at a specific store, that complaints about queues rise exactly three days after a campaign launch, that a recurring product description creates misunderstanding that turns into returns two weeks later.</p>
+
+    <p>This isn't just reporting efficiency. It's a new level of detail in customer insight — the kind that used to require expensive focus groups is now free in the comment field. The question is whether anyone in the organization reads it.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">8 in 10</span>
+      <span class="stat-callout-text">retailers measure NPS. 2 in 10 turn it into action. AI moves the boundary.</span>
+    </div>
+
+    <p>The second question the board needs to ask: <em>“What do we know about our customers today that we didn't a year ago — and what are we doing differently because of it?”</em></p>
+
+    <h2>3. The money in the warehouse</h2>
+
+    <p>Working capital is retail's quiet margin-eater. It doesn't show up in the monthly report — but it erodes liquidity, margin and flexibility.</p>
+
+    <p>It also erodes decision capacity. A buyer who manually sets order quantities for 3,000 SKUs necessarily compromises. Safety margins become too large where they need to be small. Stock ages. Clearance eats the margin.</p>
+
+    <p>AI-based forecasting models handle seasonality, campaign effects, weather, weekday–weekend patterns and lead time simultaneously — for every SKU, every store, every week. The buyer isn't replaced. The buyer gets time to work on the 100 items where judgment really matters, instead of the 2,900 the machine handles better.</p>
+
+    <p>The effect is lower working capital, higher stock turn and a healthier inventory — and an organization that suddenly has the liquidity to invest in what actually grows the business.</p>
+
+    <p>The third question the board needs to ask: <em>“How much capital are we tying up in inventory today that we didn't need to — and what would we do with it if we freed up 15 percent?”</em></p>
+
+    <h2>It's not the tool. It's the strategy.</h2>
+
+    <p>The three areas above share one thing: in all three, the AI tools already exist. They aren't particularly expensive. They aren't particularly hard to implement.</p>
+
+    <p>What's missing — and this is why so few retailers today capture the full value — is the <strong>strategy</strong> that weaves them together.</p>
+
+    <p>Which decisions should the machine make? Which should the human make, but informed by the machine? Which data do we need to start collecting now to make those decisions in a year's time? How do we train the organization so the recommendations turn into action on the shelf — and don't get stuck in a dashboard?</p>
+
+    <p>Those are the questions a retail-AI strategy answers. And that kind of strategic work is what separates retailers who in 24 months are 8 percent more profitable than their peers from those who delay.</p>
+
+    <!-- ===== Deep-dive cards ===== -->
+    <section class="deep-dive-section">
+      <h3 class="deep-dive-heading">Go deeper on each pillar</h3>
+      <p class="deep-dive-intro">Three articles that dig into each of the three pillars above.</p>
+      <div class="deep-dive-grid">
+        <a href="/insights/hyllan-75-procent/" class="deep-dive-card" data-pillar="shelf" onclick="if(window.gtag)gtag('event','deep_dive_click',{pillar:'shelf',campaign:'ai-strategi-helglasning'});">
+          <span class="deep-dive-num">1</span>
+          <span class="deep-dive-pillar">Results on the shelf</span>
+          <span class="deep-dive-title">75% of your store revenue comes from one place</span>
+          <span class="deep-dive-arrow">Read article →</span>
+        </a>
+        <a href="/insights/nps-arendesystem/" class="deep-dive-card" data-pillar="customer" onclick="if(window.gtag)gtag('event','deep_dive_click',{pillar:'customer',campaign:'ai-strategi-helglasning'});">
+          <span class="deep-dive-num">2</span>
+          <span class="deep-dive-pillar">The customer we don't hear</span>
+          <span class="deep-dive-title">NPS isn't a number — it's a workflow</span>
+          <span class="deep-dive-arrow">Read article →</span>
+        </a>
+        <a href="/insights/lagret-ar-ett-beslut/" class="deep-dive-card" data-pillar="inventory" onclick="if(window.gtag)gtag('event','deep_dive_click',{pillar:'inventory',campaign:'ai-strategi-helglasning'});">
+          <span class="deep-dive-num">3</span>
+          <span class="deep-dive-pillar">The money in inventory</span>
+          <span class="deep-dive-title">Inventory is a decision — not a consequence</span>
+          <span class="deep-dive-arrow">Read article →</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .deep-dive-section {
+      margin: 4rem 0 1rem;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, rgba(1,13,96,0.03) 0%, rgba(42,78,169,0.05) 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(1,13,96,0.08);
+    }
+    .deep-dive-heading {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--art-navy);
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.005em;
+    }
+    .deep-dive-intro {
+      font-size: 0.98rem;
+      color: var(--art-muted);
+      margin: 0 0 1.75rem;
+      line-height: 1.55;
+    }
+    .deep-dive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .deep-dive-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1.5rem 1.25rem;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(1,13,96,0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .deep-dive-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(1,13,96,0.12);
+      border-color: var(--art-blue);
+    }
+    .deep-dive-num {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: var(--art-blue);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+    .deep-dive-pillar {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--art-muted);
+      font-weight: 500;
+    }
+    .deep-dive-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      line-height: 1.4;
+      color: var(--art-navy);
+      font-weight: 500;
+      flex: 1;
+    }
+    .deep-dive-arrow {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      color: var(--art-blue);
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 700px) {
+      .deep-dive-section { padding: 1.75rem 1.25rem; margin-left: -1rem; margin-right: -1rem; }
+      .deep-dive-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+      .deep-dive-num { font-size: 2rem; }
+    }
+  </style>
+</InsightLayout>
