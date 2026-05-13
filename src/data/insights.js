@@ -10,6 +10,33 @@ export const categories = {
   'operations': { sv: 'Operations', en: 'Operations', color: '#215168' },
 };
 
+export const authors = {
+  'per-sigvardsson': {
+    name: 'Per Sigvardsson',
+    initials: 'PS',
+    roleSv: 'CEO & Grundare, Sigvardsson Consulting Group',
+    roleEn: 'CEO & Founder, Sigvardsson Consulting Group',
+    bioSv: 'CEO och grundare av Sigvardsson Consulting Group. Per har lett 100+ retailprojekt i Norden och är Link Retails officiella partner i Sverige. Bakgrund som CEO på flera av Nordens största retailkedjor.',
+    bioEn: 'CEO and founder of Sigvardsson Consulting Group. Per has led 100+ retail projects across the Nordics and is Link Retail\'s official partner in Sweden. Former CEO at several of the largest Nordic retail chains.',
+  },
+  'lars-lundqvist': {
+    name: 'Lars Lundqvist',
+    initials: 'LL',
+    roleSv: 'Senior Partner, Sigvardsson Consulting Group',
+    roleEn: 'Senior Partner, Sigvardsson Consulting Group',
+    bioSv: 'Senior partner på SCG med 25+ års erfarenhet av lagerhantering, inköpsstrategi och kapitaleffektivitet från ledande nordiska retailkedjor. Lars leder SCG:s arbete med Saldo4 och AI-baserade prognosmodeller.',
+    bioEn: 'Senior partner at SCG with 25+ years in inventory management, purchasing strategy and capital efficiency at leading Nordic retail chains. Lars leads SCG\'s work on Saldo4 and AI-based forecasting models.',
+  },
+  'peter-wilen': {
+    name: 'Peter Wilén',
+    initials: 'PW',
+    roleSv: 'Senior Partner, Sigvardsson Consulting Group',
+    roleEn: 'Senior Partner, Sigvardsson Consulting Group',
+    bioSv: 'Senior partner på SCG med bakgrund i livsmedelshandeln och 20+ års erfarenhet av matsvinn, färskvaror och hållbarhet. Peter har arbetat med flera av Nordens största dagligvarukedjor i frågor om svinn och prognostisering.',
+    bioEn: 'Senior partner at SCG with a grocery retail background and 20+ years of experience in food waste, fresh produce and sustainability. Peter has worked with several of the largest Nordic grocery chains on waste reduction and forecasting.',
+  },
+};
+
 export const insights = [
   {
     slug: 'ai-strategi-retail-2026',
@@ -19,7 +46,7 @@ export const insights = [
     excerptSv: 'För tio år sedan började kundresan på Google. Idag börjar den allt oftare i ett samtal med en agent. Men synligheten i AI-svaren är bara ytan. Den verkligt strategiska frågan ligger tre steg djupare — och avgör om ni 2026 hämtar hem 5–15 procents resultatväxt eller halkar efter.',
     excerptEn: 'Ten years ago, the customer journey started on Google. Today it increasingly starts in a conversation with an agent. But visibility in AI answers is just the surface. The real strategic question sits three steps deeper — and decides whether you capture 5–15 percent earnings growth in 2026 or fall behind.',
     coverImage: '/images/services/inventory-chart.jpg',
-    author: 'Per Sigvardsson',
+    authorId: 'per-sigvardsson',
     publishDate: '2026-05-14',
     publishDateDisplay: { sv: '14 maj 2026', en: 'May 14, 2026' },
     readingTime: 6,
@@ -37,7 +64,7 @@ export const insights = [
     excerptSv: 'Det finns en siffra varje retailchef borde ha tatuerad på handleden: 75 procent. Det är andelen av en typisk butiks omsättning som genereras från hyllorna — och ändå behandlas hyllan ofta som inredning snarare än det dynamiska försäljningsverktyg den är.',
     excerptEn: 'There\'s a number every retail leader should have tattooed on their wrist: 75 percent. That\'s the share of a typical store\'s revenue generated from the shelves — yet shelves are often treated as furniture rather than the dynamic sales engine they are.',
     coverImage: '/images/services/shelf-scanning.jpg',
-    author: 'Per Sigvardsson',
+    authorId: 'per-sigvardsson',
     publishDate: '2026-05-13',
     publishDateDisplay: { sv: '13 maj 2026', en: 'May 13, 2026' },
     readingTime: 5,
@@ -53,7 +80,7 @@ export const insights = [
     excerptSv: 'För de flesta retailers är kapitalbindningen i lager inte ett strategiskt beslut. Det är något som händer. Inköp lägger order, lagret växer, realisationer löser symptomen. För ett ökande antal nordiska kedjor är det istället just det — ett aktivt beslut, fattat per SKU, per butik, per vecka, med AI-stöd.',
     excerptEn: 'For most retailers, working capital tied up in inventory isn\'t a strategic decision. It\'s something that happens. Buying places orders, stock grows, clearance fixes the symptoms. For a growing number of Nordic chains it\'s instead exactly that — an active decision, made per SKU, per store, per week, with AI support.',
     coverImage: '/images/services/inventory-saldo4.jpg',
-    author: 'Per Sigvardsson',
+    authorId: 'lars-lundqvist',
     publishDate: '2026-05-05',
     publishDateDisplay: { sv: '5 maj 2026', en: 'May 5, 2026' },
     readingTime: 4,
@@ -70,7 +97,7 @@ export const insights = [
     excerptEn: 'In most grocery stores, food waste has long been treated as a sustainability issue. That\'s still true. But in 2026 it\'s also a hard profitability issue — and a competitive issue against the Swedish consumer.',
     coverImage: '/images/services/food-waste-bread.jpg',
     coverFit: 'contain',
-    author: 'Per Sigvardsson',
+    authorId: 'peter-wilen',
     publishDate: '2026-05-06',
     publishDateDisplay: { sv: '6 maj 2026', en: 'May 6, 2026' },
     readingTime: 4,
@@ -87,7 +114,7 @@ export const insights = [
     excerptEn: 'Eight out of ten retail chains measure NPS. Two out of ten have a process for actually acting on individual responses. And in that gap — between measurement and action — sits the entire value of customer satisfaction work.',
     coverImage: '/images/services/nps-feedback-app.jpg',
     coverFit: 'contain',
-    author: 'Per Sigvardsson',
+    authorId: 'per-sigvardsson',
     publishDate: '2026-04-29',
     publishDateDisplay: { sv: '29 april 2026', en: 'April 29, 2026' },
     readingTime: 5,

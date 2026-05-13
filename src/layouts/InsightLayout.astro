@@ -1,11 +1,11 @@
 ---
 // InsightLayout.astro — Reusable layout for /insights/[slug] articles
-// Wraps Layout + Header + Footer with article-specific hero, byline, body styling, and related-product CTA.
+// FT-style editorial layout: serif body, drop cap, share buttons, multi-author support.
 
 import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { categories } from '../data/insights.js';
+import { categories, authors } from '../data/insights.js';
 
 interface Props {
   slug: string;
@@ -14,7 +14,7 @@ interface Props {
   excerptSv: string;
   excerptEn: string;
   coverImage: string;
-  author: string;
+  authorId: string;
   publishDateSv: string;
   publishDateEn: string;
   readingTime: number;
@@ -34,7 +34,7 @@ const {
   excerptSv,
   excerptEn,
   coverImage,
-  author,
+  authorId,
   publishDateSv,
   publishDateEn,
   readingTime,
@@ -49,6 +49,14 @@ const {
 
 const canonical = `https://www.sigvardsson.org/insights/${slug}/`;
 const cat = categories[category];
+const author = authors[authorId] || authors['per-sigvardsson'];
+
+// Pre-encoded share URLs (server-rendered for share buttons)
+const shareTitle = encodeURIComponent(titleSv);
+const shareUrl = encodeURIComponent(canonical);
+const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+const xUrl = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`;
+const emailUrl = `mailto:?subject=${shareTitle}&body=${shareUrl}`;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -56,7 +64,7 @@ const articleSchema = {
   "headline": titleSv,
   "image": `https://www.sigvardsson.org${coverImage}`,
   "datePublished": Astro.props.publishDateSv,
-  "author": { "@type": "Person", "name": author },
+  "author": { "@type": "Person", "name": author.name },
   "publisher": {
     "@type": "Organization",
     "name": "Sigvardsson Consulting Group",
@@ -116,11 +124,11 @@ const articleSchema = {
         </p>
 
         <div class="article-byline">
-          <div class="article-author-pic">PS</div>
+          <div class="article-author-pic">{author.initials}</div>
           <div class="article-author-info">
-            <span class="article-author-name">{author}</span>
-            <span class="article-author-role sv-text">CEO & Grundare, Sigvardsson Consulting Group</span>
-            <span class="article-author-role en-text">CEO & Founder, Sigvardsson Consulting Group</span>
+            <span class="article-author-name">{author.name}</span>
+            <span class="article-author-role sv-text">{author.roleSv}</span>
+            <span class="article-author-role en-text">{author.roleEn}</span>
           </div>
           <div class="article-date">
             <span class="sv-text">{publishDateSv}</span>
@@ -144,6 +152,36 @@ const articleSchema = {
           <slot />
         </div>
 
+        <!-- ===== SHARE BUTTONS ===== -->
+        <aside class="article-share">
+          <span class="article-share-label">
+            <span class="sv-text">Dela artikeln</span>
+            <span class="en-text">Share this article</span>
+          </span>
+          <div class="article-share-buttons">
+            <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" class="article-share-btn" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span class="article-share-btn-label">LinkedIn</span>
+            </a>
+            <a href={xUrl} target="_blank" rel="noopener noreferrer" class="article-share-btn" aria-label="X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span class="article-share-btn-label">X</span>
+            </a>
+            <a href={emailUrl} class="article-share-btn" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span class="article-share-btn-label sv-text">E-post</span>
+              <span class="article-share-btn-label en-text">Email</span>
+            </a>
+            <button type="button" class="article-share-btn article-share-copy" data-share-url={canonical} aria-label="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              <span class="article-share-btn-label article-share-copy-default sv-text">Kopiera länk</span>
+              <span class="article-share-btn-label article-share-copy-default en-text">Copy link</span>
+              <span class="article-share-btn-label article-share-copy-done sv-text">Kopierad ✓</span>
+              <span class="article-share-btn-label article-share-copy-done en-text">Copied ✓</span>
+            </button>
+          </div>
+        </aside>
+
         <!-- ===== RELATED PRODUCT CTA ===== -->
         <aside class="article-related-cta">
           <div class="article-related-inner">
@@ -162,11 +200,13 @@ const articleSchema = {
 
         <!-- ===== AUTHOR BOX ===== -->
         <aside class="article-author-box">
-          <div class="article-author-pic-lg">PS</div>
+          <div class="article-author-pic-lg">{author.initials}</div>
           <div>
-            <h3>{author}</h3>
-            <p class="sv-text">CEO och grundare av Sigvardsson Consulting Group, en nordisk konsultbyrå specialiserad på retail-optimering. Per har lett 100+ retailprojekt i Norden och är Link Retails officiella partner i Sverige.</p>
-            <p class="en-text">CEO and founder of Sigvardsson Consulting Group, a Nordic consultancy specialized in retail optimization. Per has led 100+ retail projects across the Nordics and is Link Retail's official partner in Sweden.</p>
+            <h3>{author.name}</h3>
+            <p class="article-author-role-line sv-text">{author.roleSv}</p>
+            <p class="article-author-role-line en-text">{author.roleEn}</p>
+            <p class="sv-text">{author.bioSv}</p>
+            <p class="en-text">{author.bioEn}</p>
             <div class="article-author-links">
               <a href="/our-people/" class="sv-text">Vårt team →</a>
               <a href="/our-people/" class="en-text">Our team →</a>
@@ -186,7 +226,7 @@ const articleSchema = {
           <span class="en-text">Want to discuss this in your context?</span>
         </h2>
         <p class="sv-text">Hör av dig om något av detta är relevant för er verksamhet — vi tar gärna ett första samtal.</p>
-        <p class="en-text">Get in touch if any of this is relevant to your business — we'd be glad to have a first conversation.</p>
+        <p class="en-text">Get in touch if any of this is relevant to your business — we\'d be glad to have a first conversation.</p>
         <a href="/Contact/" class="btn-article-cta sv-text">Kontakta oss</a>
         <a href="/Contact/" class="btn-article-cta en-text">Contact us</a>
       </div>
@@ -196,24 +236,54 @@ const articleSchema = {
   <Footer slot="footer" />
 </Layout>
 
+<script is:inline>
+  // Copy-link button feedback
+  document.querySelectorAll('[data-share-url]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var url = btn.getAttribute('data-share-url');
+      if (!navigator.clipboard) {
+        // Fallback for older browsers
+        var ta = document.createElement('textarea');
+        ta.value = url;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch(e) {}
+        document.body.removeChild(ta);
+      } else {
+        navigator.clipboard.writeText(url);
+      }
+      btn.classList.add('is-copied');
+      setTimeout(function() { btn.classList.remove('is-copied'); }, 2000);
+    });
+  });
+</script>
+
 <style is:global>
   :root {
     --art-navy: #010D60;
     --art-mid: #1A277A;
     --art-blue: #2A4EA9;
     --art-accent: #1A277A;
-    --art-text: #2a2a2a;
+    --art-text: #1f1f1f;
     --art-muted: #666;
     --art-paper: #f4f6fb;
+    --art-paper-edge: #e8ecf3;
+    --art-serif: 'Source Serif 4', 'Source Serif Pro', Charter, 'Bitstream Charter', Cambria, Georgia, serif;
   }
 
-  /* FT-style: paper background everywhere on insight pages, monochrome blue accents */
+  /* FT-style: paper background + serif body across all insight pages */
   body { background: var(--art-paper); }
   .article-wrap { background: var(--art-paper); }
-  .article-container { max-width: 740px; }
+
+  /* Active section indicator on header nav */
+  .nav-link[href="/insights/"] {
+    color: var(--art-navy) !important;
+    border-bottom: 2px solid var(--art-navy);
+    padding-bottom: 4px;
+  }
 
   /* ===== HERO ===== */
-  .article-hero { background: var(--art-paper); padding: 6rem 2rem 2.5rem; }
+  .article-hero { background: var(--art-paper); padding: 5.5rem 2rem 2.5rem; }
   .article-back { display: inline-block; font-family: var(--font-heading); font-size: 0.82rem; color: var(--art-muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
   .article-back:hover { color: var(--art-blue); }
 
@@ -230,15 +300,16 @@ const articleSchema = {
     margin-bottom: 1.25rem;
     font-weight: 500;
   }
+
   .article-meta-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.5rem; font-size: 0.82rem; }
-  .article-category { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cat-color, var(--art-blue)); padding: 0.3rem 0.7rem; background: color-mix(in srgb, var(--cat-color, var(--art-blue)) 8%, transparent); border-radius: 4px; }
+  .article-category { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cat-color, var(--art-blue)); padding: 0.3rem 0.7rem; background: color-mix(in srgb, var(--cat-color, var(--art-blue)) 10%, transparent); border-radius: 4px; }
   .article-dot { color: #ccc; }
   .article-read-time { color: var(--art-muted); }
-  .article-title { font-family: var(--font-heading); font-size: clamp(1.8rem, 4.2vw, 2.85rem); font-weight: 500; color: var(--art-navy); margin: 0 0 1.5rem; line-height: 1.18; letter-spacing: -0.01em; }
-  .article-excerpt { font-size: 1.2rem; color: #444; line-height: 1.65; margin: 0 0 2.5rem; font-weight: 300; }
+  .article-title { font-family: var(--font-heading); font-size: clamp(2rem, 4.8vw, 3.15rem); font-weight: 500; color: var(--art-navy); margin: 0 0 1.5rem; line-height: 1.15; letter-spacing: -0.015em; }
+  .article-excerpt { font-family: var(--art-serif); font-size: 1.32rem; color: #444; line-height: 1.55; margin: 0 0 2.5rem; font-weight: 400; font-style: italic; }
 
   /* ===== BYLINE ===== */
-  .article-byline { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid rgba(1,13,96,0.1); border-bottom: 1px solid rgba(1,13,96,0.1); }
+  .article-byline { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid rgba(1,13,96,0.12); border-bottom: 1px solid rgba(1,13,96,0.12); }
   .article-author-pic { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--art-navy) 0%, var(--art-blue) 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; flex-shrink: 0; }
   .article-author-info { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; }
   .article-author-name { font-family: var(--font-heading); font-size: 0.95rem; color: var(--art-navy); font-weight: 500; }
@@ -247,60 +318,124 @@ const articleSchema = {
 
   /* ===== COVER ===== */
   .article-cover-wrap { padding: 0 2rem; }
-  .article-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #fff; border-radius: 12px; box-shadow: 0 20px 50px rgba(1,13,96,0.12); filter: saturate(0.92); }
+  .article-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #fff; border-radius: 4px; box-shadow: 0 20px 50px rgba(1,13,96,0.12); filter: saturate(0.92); }
   .article-cover[data-cover-fit="contain"] { object-fit: contain; padding: 1.5rem; }
 
-  /* ===== BODY ===== */
-  .article-body-wrap { padding: 4rem 2rem 3rem; }
-  .article-body { font-size: 1.08rem; line-height: 1.8; color: var(--art-text); }
-  .article-body p { margin: 0 0 1.5rem; }
-  .article-body p:first-child { font-size: 1.18rem; color: #333; }
-  .article-body h2 { font-family: var(--font-heading); font-size: clamp(1.4rem, 2.6vw, 1.75rem); font-weight: 500; color: var(--art-navy); margin: 3rem 0 1.25rem; line-height: 1.3; letter-spacing: -0.005em; }
-  .article-body h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--art-navy); margin: 2rem 0 0.85rem; line-height: 1.35; }
+  /* ===== BODY — serif, larger, narrower for long-form reading ===== */
+  .article-body-wrap { padding: 4rem 2rem 2rem; }
+  .article-container { max-width: 720px; }
+  .article-body { font-family: var(--art-serif); font-size: 1.18rem; line-height: 1.75; color: var(--art-text); }
+  .article-body p { margin: 0 0 1.4rem; }
+
+  /* Drop cap on first letter of first paragraph */
+  .article-body > div > p:first-child::first-letter,
+  .article-body p.has-dropcap::first-letter {
+    font-family: var(--art-serif);
+    font-weight: 600;
+    color: var(--art-navy);
+    font-size: 4.5rem;
+    line-height: 0.92;
+    float: left;
+    padding: 0.45rem 0.7rem 0 0;
+    margin-top: 0.1rem;
+  }
+
+  .article-body > div > p:first-child {
+    font-size: 1.22rem;
+    color: #2a2a2a;
+  }
+
+  .article-body h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 2.8vw, 1.85rem); font-weight: 500; color: var(--art-navy); margin: 3.25rem 0 1.25rem; line-height: 1.28; letter-spacing: -0.005em; }
+  .article-body h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 500; color: var(--art-navy); margin: 2.25rem 0 0.85rem; line-height: 1.35; }
   .article-body strong { color: var(--art-navy); font-weight: 600; }
   .article-body em { font-style: italic; }
-  .article-body ul, .article-body ol { margin: 0 0 1.5rem; padding-left: 1.5rem; }
+  .article-body ul, .article-body ol { margin: 0 0 1.4rem; padding-left: 1.4rem; }
   .article-body li { margin: 0 0 0.6rem; }
 
   .article-body blockquote, .article-body .pull-quote {
-    margin: 2.5rem -1rem; padding: 0 0 0 1.75rem;
-    border-left: 4px solid var(--art-accent);
-    font-family: var(--font-heading); font-size: 1.35rem; line-height: 1.45;
+    margin: 2.75rem -0.5rem;
+    padding: 0.25rem 0 0.25rem 1.75rem;
+    border-left: 3px solid var(--art-navy);
+    font-family: var(--font-heading); font-size: 1.45rem; line-height: 1.4;
     color: var(--art-navy); font-weight: 400; font-style: normal;
   }
 
   .article-body .stat-callout {
     display: flex; gap: 1.5rem; align-items: baseline;
-    margin: 2.5rem 0; padding: 1.75rem;
+    margin: 2.75rem 0; padding: 1.75rem;
     background: linear-gradient(135deg, rgba(42,78,169,0.06) 0%, rgba(26,39,122,0.06) 100%);
-    border: 1px solid rgba(42,78,169,0.12); border-radius: 12px;
+    border: 1px solid rgba(42,78,169,0.12); border-radius: 4px;
   }
   .article-body .stat-callout-num { font-family: var(--font-heading); font-size: 3rem; font-weight: 500; color: var(--art-blue); line-height: 1; letter-spacing: -0.02em; }
-  .article-body .stat-callout-text { flex: 1; font-size: 1rem; color: #444; line-height: 1.6; }
+  .article-body .stat-callout-text { flex: 1; font-family: var(--art-serif); font-size: 1.05rem; color: #444; line-height: 1.6; }
+
+  /* ===== SHARE BUTTONS ===== */
+  .article-share {
+    margin: 3.5rem 0 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(1,13,96,0.12);
+    border-bottom: 1px solid rgba(1,13,96,0.12);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .article-share-label {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--art-muted);
+  }
+  .article-share-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .article-share-btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.55rem 0.95rem;
+    background: #fff;
+    border: 1px solid rgba(1,13,96,0.15);
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    color: var(--art-navy);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .article-share-btn:hover {
+    background: var(--art-navy);
+    color: #fff;
+    border-color: var(--art-navy);
+    transform: translateY(-1px);
+  }
+  .article-share-btn svg { display: block; }
+  .article-share-btn-label { line-height: 1; }
+  .article-share-copy-done { display: none; }
+  .article-share-copy.is-copied .article-share-copy-default { display: none; }
+  .article-share-copy.is-copied .article-share-copy-done { display: inline; }
+  .article-share-copy.is-copied { background: #1A277A; color: #fff; border-color: #1A277A; }
 
   /* ===== RELATED PRODUCT ===== */
-  .article-related-cta { margin: 3rem 0 0; background: linear-gradient(135deg, var(--art-navy) 0%, var(--art-mid) 100%); border-radius: 16px; padding: 2.25rem 2.5rem; color: #fff; }
+  .article-related-cta { margin: 2.5rem 0 0; background: linear-gradient(135deg, var(--art-navy) 0%, var(--art-mid) 100%); border-radius: 4px; padding: 2.25rem 2.5rem; color: #fff; }
   .article-related-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-  .article-related-label { display: block; font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--art-accent); margin-bottom: 0.4rem; }
+  .article-related-label { display: block; font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #90A2CF; margin-bottom: 0.4rem; }
   .article-related-text { font-family: var(--font-heading); font-size: 1.15rem; color: #fff; font-weight: 500; }
-  .article-related-btn { background: #fff; color: var(--art-navy); padding: 0.75rem 1.5rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; text-decoration: none; flex-shrink: 0; transition: all 0.2s; }
-  .article-related-btn:hover { background: var(--art-accent); transform: translateY(-2px); }
+  .article-related-btn { background: #fff; color: var(--art-navy); padding: 0.75rem 1.5rem; border-radius: 4px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; text-decoration: none; flex-shrink: 0; transition: all 0.2s; }
+  .article-related-btn:hover { background: var(--art-blue); color: #fff; transform: translateY(-2px); }
 
   /* ===== AUTHOR BOX ===== */
-  .article-author-box { margin: 2rem 0 0; padding: 2rem; background: #f7f8fb; border-radius: 12px; display: flex; gap: 1.5rem; align-items: flex-start; }
+  .article-author-box { margin: 2rem 0 0; padding: 2rem; background: #fff; border: 1px solid rgba(1,13,96,0.08); border-radius: 4px; display: flex; gap: 1.5rem; align-items: flex-start; }
   .article-author-pic-lg { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--art-navy) 0%, var(--art-blue) 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.15rem; font-weight: 500; letter-spacing: 0.04em; flex-shrink: 0; }
-  .article-author-box h3 { margin: 0 0 0.5rem; font-family: var(--font-heading); font-size: 1.1rem; color: var(--art-navy); font-weight: 500; }
-  .article-author-box p { font-size: 0.95rem; color: #555; line-height: 1.65; margin: 0 0 1rem; }
+  .article-author-box h3 { margin: 0 0 0.25rem; font-family: var(--font-heading); font-size: 1.1rem; color: var(--art-navy); font-weight: 500; }
+  .article-author-role-line { font-family: var(--font-heading); font-size: 0.82rem; color: var(--art-muted); margin: 0 0 0.85rem !important; letter-spacing: 0.02em; }
+  .article-author-box p { font-family: var(--art-serif); font-size: 1rem; color: #444; line-height: 1.65; margin: 0 0 1rem; }
   .article-author-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
   .article-author-links a { font-family: var(--font-heading); font-size: 0.85rem; color: var(--art-blue); text-decoration: none; }
   .article-author-links a:hover { color: var(--art-navy); text-decoration: underline; }
 
   /* ===== END CTA ===== */
-  .article-end-cta { background: linear-gradient(135deg, var(--art-mid) 0%, var(--art-blue) 100%); padding: 5rem 2rem; text-align: center; color: #fff; margin-top: 2rem; }
+  .article-end-cta { background: linear-gradient(135deg, var(--art-mid) 0%, var(--art-blue) 100%); padding: 5rem 2rem; text-align: center; color: #fff; margin-top: 3rem; }
   .article-end-cta h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.1rem); color: #fff; margin: 0 0 0.85rem; }
   .article-end-cta p { color: rgba(255,255,255,0.85); font-size: 1rem; margin: 0 auto 2rem; max-width: 540px; line-height: 1.7; }
-  .btn-article-cta { background: #fff; color: var(--art-navy); display: inline-block; padding: 0.85rem 2.25rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
-  .btn-article-cta:hover { background: var(--art-accent); transform: translateY(-2px); }
+  .btn-article-cta { background: #fff; color: var(--art-navy); display: inline-block; padding: 0.85rem 2.25rem; border-radius: 4px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
+  .btn-article-cta:hover { background: var(--art-blue); color: #fff; transform: translateY(-2px); }
 
   @media (max-width: 700px) {
     .article-hero { padding: 4rem 1.25rem 2rem; }
@@ -310,7 +445,11 @@ const articleSchema = {
     .article-related-inner { flex-direction: column; align-items: flex-start; }
     .article-author-box { flex-direction: column; gap: 1rem; }
     .article-end-cta { padding: 3rem 1.25rem; }
-    .article-body blockquote, .article-body .pull-quote { margin-left: 0; margin-right: 0; font-size: 1.15rem; }
-    .article-body .stat-callout { flex-direction: column; gap: 0.5rem; }
+    .article-body { font-size: 1.1rem; }
+    .article-body > div > p:first-child::first-letter,
+    .article-body p.has-dropcap::first-letter { font-size: 3.5rem; }
+    .article-body blockquote, .article-body .pull-quote { margin-left: 0; margin-right: 0; font-size: 1.2rem; }
+    .article-body .stat-callout { flex-direction: column; gap: 0.5rem; padding: 1.25rem; }
+    .article-share { flex-direction: column; align-items: flex-start; gap: 0.85rem; }
   }
 </style>
