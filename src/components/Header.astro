@@ -26,9 +26,13 @@ import Icon from './Icon.astro';
 
     <!-- Desktop Navigation -->
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="/" class="nav-link">
-        <span class="sv-text" data-no="Hjem" data-da="Hjem" data-fi="Etusivu">Hem</span>
-        <span class="en-text">Home</span>
+      <a href="/services/" class="nav-link">
+        <span class="sv-text" data-no="Våre tjenester" data-da="Vores ydelser" data-fi="Palvelumme">Våra tjänster</span>
+        <span class="en-text">Our Services</span>
+      </a>
+      <a href="/our-process/" class="nav-link">
+        <span class="sv-text" data-no="Vår tilnærming" data-da="Vores tilgang" data-fi="Lähestymistapamme">Vår approach</span>
+        <span class="en-text">Our Approach</span>
       </a>
       <div class="nav-dropdown">
         <button class="nav-link nav-dropdown-btn" aria-expanded="false">
@@ -73,14 +77,6 @@ import Icon from './Icon.astro';
           </a>
         </div>
       </div>
-      <a href="/services/" class="nav-link">
-        <span class="sv-text" data-no="Våre tjenester" data-da="Vores ydelser" data-fi="Palvelumme">Våra tjänster</span>
-        <span class="en-text">Our Services</span>
-      </a>
-      <a href="/our-process/" class="nav-link">
-        <span class="sv-text" data-no="Vår tilnærming" data-da="Vores tilgang" data-fi="Lähestymistapamme">Vår approach</span>
-        <span class="en-text">Our Approach</span>
-      </a>
       <a href="/our-people/" class="nav-link">
         <span class="sv-text" data-no="Vårt team" data-da="Vores team" data-fi="Tiimimme">Vårt team</span>
         <span class="en-text">Our Team</span>
@@ -130,20 +126,11 @@ import Icon from './Icon.astro';
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mobile-nav">
-      <a href="/" class="mobile-nav-link">
-        <span class="sv-text" data-no="Hjem" data-da="Hjem" data-fi="Etusivu">Hem</span><span class="en-text">Home</span>
-      </a>
       <a href="/services/" class="mobile-nav-link">
         <span class="sv-text" data-no="Våre tjenester" data-da="Vores ydelser" data-fi="Palvelumme">Våra tjänster</span><span class="en-text">Our Services</span>
       </a>
       <a href="/our-process/" class="mobile-nav-link">
         <span class="sv-text" data-no="Vår tilnærming" data-da="Vores tilgang" data-fi="Lähestymistapamme">Vår approach</span><span class="en-text">Our Approach</span>
-      </a>
-      <a href="/our-people/" class="mobile-nav-link">
-        <span class="sv-text" data-no="Vårt team" data-da="Vores team" data-fi="Tiimimme">Vårt team</span><span class="en-text">Our Team</span>
-      </a>
-      <a href="/insights/" class="mobile-nav-link">
-        <span class="sv-text" data-no="Innsikt" data-da="Indsigter" data-fi="Näkemykset">Insikter</span><span class="en-text">Insights</span>
       </a>
       <div class="mobile-nav-section">
         <span class="mobile-nav-section-label sv-text">Våra produkter</span>
@@ -153,6 +140,12 @@ import Icon from './Icon.astro';
       <a href="/products/feedback-app/" class="mobile-nav-link mobile-nav-link--child">Feedback App</a>
       <a href="/products/saldo4/" class="mobile-nav-link mobile-nav-link--child">Saldo4</a>
       <a href="/products/perfekt-hylla/" class="mobile-nav-link mobile-nav-link--child">Perfekt hylla</a>
+      <a href="/our-people/" class="mobile-nav-link">
+        <span class="sv-text" data-no="Vårt team" data-da="Vores team" data-fi="Tiimimme">Vårt team</span><span class="en-text">Our Team</span>
+      </a>
+      <a href="/insights/" class="mobile-nav-link">
+        <span class="sv-text" data-no="Innsikt" data-da="Indsigter" data-fi="Näkemykset">Insikter</span><span class="en-text">Insights</span>
+      </a>
       <a href="/Contact/" class="mobile-nav-link mobile-nav-cta">
         <span class="sv-text" data-no="Kontakt" data-da="Kontakt" data-fi="Yhteystiedot">Kontakt</span><span class="en-text">Contact</span>
       </a>
