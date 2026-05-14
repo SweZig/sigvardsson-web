@@ -5,7 +5,7 @@
 import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { categories, authors } from '../data/insights.js';
+import { categories, authors, insights } from '../data/insights.js';
 
 interface Props {
   slug: string;
@@ -51,6 +51,14 @@ const canonical = `https://www.sigvardsson.org/insights/${slug}/`;
 const cat = categories[category];
 const author = authors[authorId] || authors['per-sigvardsson'];
 
+// Look up the article in insights.js for ISO date and keywords
+const articleData = insights.find(a => a.slug === slug);
+const publishDateISO = articleData?.publishDate || '';
+const keywordsSv = articleData?.tagsSv || [];
+const keywordsEn = articleData?.tagsEn || [];
+// Combined, deduped keyword list (helps both SV and EN AI agents)
+const keywords = Array.from(new Set([...keywordsSv, ...keywordsEn])).join(', ');
+
 // Pre-encoded share URLs (server-rendered for share buttons)
 const shareTitle = encodeURIComponent(titleSv);
 const shareUrl = encodeURIComponent(canonical);
@@ -58,20 +66,40 @@ const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${share
 const xUrl = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`;
 const emailUrl = `mailto:?subject=${shareTitle}&body=${shareUrl}`;
 
+// Rich Article schema for both Google rich results and AI agents.
+// Uses @graph so author Person has stable @id (linkable to Organization).
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": titleSv,
-  "image": `https://www.sigvardsson.org${coverImage}`,
-  "datePublished": Astro.props.publishDateSv,
-  "author": { "@type": "Person", "name": author.name },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sigvardsson Consulting Group",
-    "logo": { "@type": "ImageObject", "url": "https://www.sigvardsson.org/images/logos/S_blue.png" }
-  },
-  "url": canonical,
-  "description": metaDescSv || excerptSv,
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonical}#article`,
+      "headline": titleSv,
+      "alternativeHeadline": titleEn,
+      "image": [`https://www.sigvardsson.org${coverImage}`],
+      "datePublished": publishDateISO,
+      "dateModified": publishDateISO,
+      "author": { "@id": `https://www.sigvardsson.org/our-people/#${authorId}` },
+      "publisher": { "@id": "https://www.sigvardsson.org/#organization" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
+      "url": canonical,
+      "description": metaDescSv || excerptSv,
+      "articleSection": cat?.sv || category,
+      "keywords": keywords,
+      "inLanguage": ["sv", "en"],
+      "isPartOf": { "@id": "https://www.sigvardsson.org/insights/" },
+      "wordCount": readingTime * 220
+    },
+    {
+      "@type": "Person",
+      "@id": `https://www.sigvardsson.org/our-people/#${authorId}`,
+      "name": author.name,
+      "jobTitle": author.roleEn,
+      "description": author.bioEn,
+      "worksFor": { "@id": "https://www.sigvardsson.org/#organization" },
+      "url": "https://www.sigvardsson.org/our-people/"
+    }
+  ]
 };
 ---
 

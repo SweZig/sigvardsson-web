@@ -1,4 +1,77 @@
+# robots.txt — Sigvardsson Consulting Group
+# https://www.sigvardsson.org
+
+# ============================================================
+# Default: allow all search engine crawlers
+# ============================================================
 User-agent: *
 Allow: /
 
+# ============================================================
+# AI agents & LLM crawlers — explicitly allowed
+# Our public marketing content is intended to be discoverable
+# in AI-driven search and assistant answers (ChatGPT, Claude,
+# Perplexity, Google AI Overviews, Microsoft Copilot, etc.).
+# ============================================================
+
+# OpenAI — ChatGPT browsing & search index
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google — separate token for AI training/grounding (independent of Googlebot)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft — Bing & Copilot
+User-agent: Bingbot
+Allow: /
+
+# Apple — Apple Intelligence / Siri grounding
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Common Crawl — feeds many open-source LLMs
+User-agent: CCBot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# ============================================================
+# Sitemaps
+# ============================================================
 Sitemap: https://www.sigvardsson.org/sitemap.xml

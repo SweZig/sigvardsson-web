@@ -54,7 +54,56 @@ const schemaOrg = {
       },
       "sameAs": [
         "https://www.linkedin.com/company/sigvardsson-consulting-group"
-      ]
+      ],
+      "award": [
+        "Global 100 Winner 2024",
+        "Global 100 Winner 2025",
+        "Global 100 Winner 2026"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.sigvardsson.org/our-people/#per-sigvardsson",
+        "name": "Per Sigvardsson",
+        "jobTitle": "CEO & Founder",
+        "worksFor": { "@id": "https://www.sigvardsson.org/#organization" },
+        "email": "per@sigvardsson.org",
+        "sameAs": ["https://www.linkedin.com/in/persigvardsson/"]
+      },
+      "employee": [
+        {
+          "@type": "Person",
+          "@id": "https://www.sigvardsson.org/our-people/#lars-lundqvist",
+          "name": "Lars Lundqvist",
+          "jobTitle": "Senior Partner",
+          "worksFor": { "@id": "https://www.sigvardsson.org/#organization" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.sigvardsson.org/our-people/#peter-wilen",
+          "name": "Peter Wilén",
+          "jobTitle": "Senior Partner",
+          "worksFor": { "@id": "https://www.sigvardsson.org/#organization" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.sigvardsson.org/our-people/#sebastian-faune",
+          "name": "Sebastian Fauné",
+          "worksFor": { "@id": "https://www.sigvardsson.org/#organization" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.sigvardsson.org/our-people/#emil-sigvardsson",
+          "name": "Emil Sigvardsson",
+          "worksFor": { "@id": "https://www.sigvardsson.org/#organization" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.sigvardsson.org/our-people/#felix-johansson",
+          "name": "Felix Johansson",
+          "worksFor": { "@id": "https://www.sigvardsson.org/#organization" }
+        }
+      ],
+      "slogan": "Konkret arbete, inte rapporter."
     },
     {
       "@type": "WebSite",
@@ -133,7 +182,7 @@ const schemaOrg = {
   <!-- Language init — runs before render to avoid flash.
        First visit: detect from browser language preference (sv → sv, else en).
        Subsequent visits & manual toggle: localStorage takes precedence. -->
-  <script is:inline>
+  <script is:inline define:vars={{ titleSv, titleEn, descriptionSv, descriptionEn }}>
     (function() {
       var valid = ['sv','en','no','da','fi'];
       var saved = null;
@@ -156,6 +205,25 @@ const schemaOrg = {
       }
       document.documentElement.setAttribute('data-lang', lang);
       document.documentElement.setAttribute('lang', lang);
+
+      // Sync title/description/OG/Twitter with selected language.
+      // Server renders Swedish defaults; we swap to English on the client when needed.
+      // (Google crawls server-rendered SV; English visitors and AI agents see localized meta.)
+      try {
+        var locales = { sv: 'sv_SE', en: 'en_GB', no: 'nb_NO', da: 'da_DK', fi: 'fi_FI' };
+        var t = (lang === 'sv') ? titleSv : titleEn;
+        var d = (lang === 'sv') ? descriptionSv : descriptionEn;
+        var el;
+        if ((el = document.getElementById('page-title'))) el.textContent = t;
+        if ((el = document.getElementById('page-description'))) el.setAttribute('content', d);
+        if ((el = document.getElementById('og-title'))) el.setAttribute('content', t);
+        if ((el = document.getElementById('og-description'))) el.setAttribute('content', d);
+        if ((el = document.getElementById('tw-title'))) el.setAttribute('content', t);
+        if ((el = document.getElementById('tw-description'))) el.setAttribute('content', d);
+        if ((el = document.querySelector('meta[property="og:locale"]'))) {
+          el.setAttribute('content', locales[lang] || 'sv_SE');
+        }
+      } catch(e) {}
     })();
   </script>
 

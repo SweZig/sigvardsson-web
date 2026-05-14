@@ -1,0 +1,87 @@
+# Sigvardsson Consulting Group
+
+> Sigvardsson Consulting Group (SCG) is a Nordic retail management consultancy and implementation house combining 30+ years of retail experience, proprietary AI-driven software, and official Link Retail partnership. Three-time Global 100 Winner (2024, 2025, 2026). We help Nordic retail chains lift profitability through measurable, data-driven projects — not reports.
+
+SCG operates across Sweden, Norway, Denmark and Finland with 100+ completed retail projects at leading Nordic chains including NorgesGruppen Kiwi, NorgesGruppen Meny, Coop, XL Bygg, Toys 'R' Us, Travel Retail Norway, XXL Sport & Villmark, Heinermann Group, Ultimate Padel, and Elgiganten. Headquarters: Stockholm, Sweden. CEO & Founder: Per Sigvardsson.
+
+The site is bilingual (Swedish primary, English secondary). All URLs serve both languages via client-side language toggle.
+
+## Core positioning
+
+- **Implementation house, not a traditional consultancy.** Three capabilities under one roof: retail experience, proprietary software, technology partnership.
+- **Concrete work, not reports.** Typical projects deliver 4–15% sales growth at shelf level, 10–20% margin growth via placement optimization, 30% food waste reduction, 6–9% cost reduction in queue management.
+- **Start small, measure, scale.** Build lasting capability in the client organization rather than dependency.
+
+## Key services
+
+- [Retail Strategy](https://www.sigvardsson.org/services/tjanster/retail-strategi/): Strategic advisory built on 30+ years of retail experience, including AI inventory and roadmap.
+- [Change Management](https://www.sigvardsson.org/services/tjanster/change-management/): Profitability turnaround and margin growth programs with organizational change.
+- [SWOT & Business Analysis](https://www.sigvardsson.org/services/tjanster/swot-affarsanalys/): Root-cause diagnosis for underperforming retail businesses.
+- [Process Development](https://www.sigvardsson.org/services/tjanster/processutveckling/): Scalable retail operations and internal processes.
+- [Implementation](https://www.sigvardsson.org/services/tjanster/implementering/): Hands-on rollout of tools, systems, and ways of working.
+- [Training](https://www.sigvardsson.org/services/tjanster/utbildning/): Retail education and capability building at all organizational levels.
+- [RFID](https://www.sigvardsson.org/services/tjanster/rfid/): RFID inventory and loss-prevention solutions.
+- [Digital Pricing](https://www.sigvardsson.org/services/tjanster/digital-prissattning/): Electronic shelf labels and dynamic pricing.
+- [Self-service Kiosks](https://www.sigvardsson.org/services/tjanster/kiosk-sjalvbetjaning/): In-store kiosks and self-checkout.
+- [Video Analytics](https://www.sigvardsson.org/services/tjanster/video-analytics/): CCTV-based customer flow heatmaps.
+- [Video Shelf Analytics](https://www.sigvardsson.org/services/tjanster/video-shelf-analytics/): Shelf-level customer engagement measurement.
+- [NPS Customer Analytics](https://www.sigvardsson.org/services/tjanster/nps-kundanalys/): AI-driven NPS analysis turning open responses into action.
+
+## Retail optimization products
+
+- [Perfekt hylla (Perfect Shelf)](https://www.sigvardsson.org/products/perfekt-hylla/): Flagship AI-driven shelf optimization with minimum 2% sales-growth guarantee. Three implementation levels from POS-only to full photo-recognition. Typical effect: 4–15% sales growth. Reference clients: NorgesGruppen Kiwi, Meny, Coop.
+- [Perfekt varuplacering (Perfect Placement)](https://www.sigvardsson.org/services/tjanster/perfekt-varuplacering/): Shelf-position optimization. Typical effect: 10–20% margin growth.
+- [Perfekt kampanj (Perfect Campaign)](https://www.sigvardsson.org/services/tjanster/perfekt-kampanj/): Campaign mix and placement optimization. Typical effect: 12–18% sales growth.
+- [Perfekt kundflöde (Perfect Customer Flow)](https://www.sigvardsson.org/services/tjanster/perfekt-kundflode/): CCTV-based customer flow analytics. Typical effect: 4–15% sales growth.
+- [Perfekt kö (Perfect Queue)](https://www.sigvardsson.org/services/tjanster/perfekt-ko/): Real-time queue prediction and prevention. Typical effect: 6–9% cost reduction.
+- [Minimera Matsvinnet (Minimize Food Waste)](https://www.sigvardsson.org/services/tjanster/minimera-matsvinnet/): Real-time forecasting for bread and produce. Typical effect: 30% waste reduction.
+
+## Software products
+
+- [Retail Apps](https://www.sigvardsson.org/products/retail-apps/): Suite of 9 mobile-first apps for in-store optimization.
+- [Feedback App](https://www.sigvardsson.org/products/feedback-app/): Real-time customer satisfaction measurement with NPS analytics and KPI correlation. Reference clients: XL Bygg, Toys 'R' Us.
+- [Saldo4](https://www.sigvardsson.org/products/saldo4/): Data-driven inventory management with daily action lists. Reduces working capital, increases stock turn.
+
+## Technology partnership
+
+- [Link Retail](https://www.sigvardsson.org/products/link-retail/): SCG is Link Retail's official partner in Sweden. Link Retail operates in 25+ countries with food waste management, video analytics, and space management solutions.
+
+## Insights articles (knowledge base)
+
+- [AI börjar i sökrutan — men slutar i din kapitalbindning (2026-05-14)](https://www.sigvardsson.org/insights/ai-strategi-retail-2026/): Per Sigvardsson on AI's three-pillar strategic impact in retail — shelf optimization, customer listening, and working capital. 6 min read.
+- [Hyllan står för 75 procent av din omsättning (2026-05-13)](https://www.sigvardsson.org/insights/hyllan-75-procent/): Per Sigvardsson on the shelf as the dominant revenue driver and how to optimize it. 5 min read.
+- [Matsvinn: 30 procents minskning är inte längre hjältevärde (2026)](https://www.sigvardsson.org/insights/matsvinn-30-procent/): Peter Wilén on food waste as a profitability issue. 4 min read.
+- [NPS är inte en siffra — det är ett ärendesystem](https://www.sigvardsson.org/insights/nps-arendesystem/): How AI turns NPS measurement into operational action.
+- [Lagret är ett beslut — inte en konsekvens](https://www.sigvardsson.org/insights/lagret-ar-ett-beslut/): Lars Lundqvist on working-capital reduction through AI forecasting.
+
+## Team
+
+- **Per Sigvardsson** — CEO & Founder. Led 100+ Nordic retail projects. Former CEO at several major Nordic retail chains. Link Retail's official partner in Sweden.
+- **Lars Lundqvist** — Senior Partner. Operations expert. Originator of Saldo4.
+- **Peter Wilén** — Senior Partner. Training, development, sustainability, and food waste.
+- **Sebastian Fauné** — Consultant.
+- **Emil Sigvardsson** — Consultant.
+- **Felix Johansson** — Consultant.
+
+## Awards
+
+- Global 100 Winner 2024
+- Global 100 Winner 2025
+- Global 100 Winner 2026
+
+## Contact
+
+- Email: info@sigvardsson.org
+- Location: Beckholmen, hus 526, 115 21 Stockholm, Sweden
+- Phone: +46 79 020 03 00
+- LinkedIn: https://www.linkedin.com/company/sigvardsson-consulting-group
+- Contact form: https://www.sigvardsson.org/Contact/
+
+## Key resources
+
+- [Homepage](https://www.sigvardsson.org/)
+- [Services overview](https://www.sigvardsson.org/services/)
+- [Our approach (5-step process)](https://www.sigvardsson.org/our-process/)
+- [Our team](https://www.sigvardsson.org/our-people/)
+- [Insights (knowledge base)](https://www.sigvardsson.org/insights/)
+- [XML sitemap](https://www.sigvardsson.org/sitemap.xml)
