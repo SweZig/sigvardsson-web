@@ -2,13 +2,14 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
 
 const canonical = 'https://www.sigvardsson.org/products/perfekt-hylla/';
 
 const objectives = [
   {
     color: 'green',
-    icon: '📈',
+    iconName: 'trending-up',
     titleSv: 'Öka försäljningen',
     titleEn: 'Increase sales',
     descSv: 'Bestsellers fram i ögonhöjd. Säkra att kunden hittar det hen söker — snabbt.',
@@ -19,7 +20,7 @@ const objectives = [
   },
   {
     color: 'blue',
-    icon: '💎',
+    iconName: 'gem',
     titleSv: 'Öka bruttomarginalen',
     titleEn: 'Increase gross margin',
     descSv: 'Premium- och högmarginal-produkter i bästa positionerna. Öka marginalen utan att tappa volym.',
@@ -30,7 +31,7 @@ const objectives = [
   },
   {
     color: 'yellow',
-    icon: '🛒',
+    iconName: 'cart',
     titleSv: 'Öka antal sålda & trafik',
     titleEn: 'Increase items sold & traffic',
     descSv: 'Produkter som drar kunden in i kategorin. Bygg volym och korsförsäljning där det räknas.',
@@ -50,7 +51,7 @@ const modes = [
     descEn: 'AI analyzes real-time POS data and optimizes the shelf without requiring a planogram. Fastest to get started, lowest threshold.',
     bestForSv: 'Butiker som vill ha snabbt startsteg eller saknar planogram',
     bestForEn: 'Stores that want a fast start or have no planogram',
-    icon: '📊',
+    iconName: 'chart',
   },
   {
     num: '02',
@@ -60,7 +61,7 @@ const modes = [
     descEn: 'You connect your existing planogram and the AI optimizes it based on actual sales performance. Structure is preserved, but every SKU is measured and rated.',
     bestForSv: 'Kedjor som redan arbetar planogramatiskt och vill lyfta effekten',
     bestForEn: 'Chains already working with planograms who want to lift performance',
-    icon: '📐',
+    iconName: 'ruler',
   },
   {
     num: '03',
@@ -70,48 +71,48 @@ const modes = [
     descEn: 'No planogram, or only partial coverage? Photo recognition scans the shelf and auto-generates a complete digital planogram — which then drives optimization and replenishment based on sell-out.',
     bestForSv: 'Kedjor med ofullständigt eller manuellt underhållet planogram',
     bestForEn: 'Chains with incomplete or manually maintained planograms',
-    icon: '📸',
+    iconName: 'camera',
   },
 ];
 
 const techFeatures = [
   {
-    icon: '🤖',
+    iconName: 'cpu',
     titleSv: 'AI-driven analys',
     titleEn: 'AI-driven analysis',
     descSv: 'Avancerade algoritmer kombinerar realtid POS-data med in-store scanning. Mönster som ingen människa hinner se.',
     descEn: 'Advanced algorithms combine real-time POS data with in-store scanning. Patterns no human could spot in time.',
   },
   {
-    icon: '🧪',
+    iconName: 'flask',
     titleSv: 'Systematisk A-B-testning',
     titleEn: 'Systematic A-B testing',
     descSv: 'Vi gissar inte — vi mäter. Varje konfiguration testas mot ett alternativ tills försäljningen avgör vinnaren.',
     descEn: 'We don\'t guess — we measure. Every configuration is tested against an alternative until sales decide the winner.',
   },
   {
-    icon: '⏱',
+    iconName: 'timer',
     titleSv: 'Realtidsövervakning',
     titleEn: 'Real-time monitoring',
     descSv: 'Varje hylla mäts kontinuerligt direkt i mobilen. Förlorad försäljning idag går inte att ta tillbaka imorgon.',
     descEn: 'Every shelf is measured continuously, directly in the mobile app. Lost sales today can\'t be recovered tomorrow.',
   },
   {
-    icon: '🎨',
+    iconName: 'palette',
     titleSv: 'Visuella färgkoder',
     titleEn: 'Visual colour codes',
     descSv: 'Vem som helst i butiken kan agera. Grönt, blått eller gult — beslutet syns direkt utan att tolka rådata.',
     descEn: 'Anyone in the store can act. Green, blue or yellow — the decision is visible without parsing raw data.',
   },
   {
-    icon: '📱',
+    iconName: 'smartphone',
     titleSv: 'Installeras på en smartphone',
     titleEn: 'Installs on any smartphone',
     descSv: 'Ingen specialhårdvara, inget IT-projekt. Krypterad data, säker installation, fungerar på vilken enhet som helst.',
     descEn: 'No special hardware, no IT project. Encrypted data, secure installation, runs on any device.',
   },
   {
-    icon: '📊',
+    iconName: 'chart',
     titleSv: 'Mäts på tre KPI:er',
     titleEn: 'Measured on three KPIs',
     descSv: 'Försäljning, kvantitet och bruttomarginal — per hylla, per kategori, per butik. Inga undanflykter.',
@@ -270,7 +271,7 @@ const schemaProduct = {
       <div class="ph-objectives">
         {objectives.map((o, i) => (
           <div class={`ph-obj ph-obj-${o.color} fade-up`} style={`animation-delay:${i*100}ms`}>
-            <div class="ph-obj-icon">{o.icon}</div>
+            <div class="ph-obj-icon"><Icon name={o.iconName} size={32} /></div>
             <h3>
               <span class="sv-text">{o.titleSv}</span>
               <span class="en-text">{o.titleEn}</span>
@@ -309,7 +310,7 @@ const schemaProduct = {
           <div class="ph-mode fade-up" style={`animation-delay:${i*120}ms`}>
             <div class="ph-mode-head">
               <span class="ph-mode-num">{m.num}</span>
-              <span class="ph-mode-icon">{m.icon}</span>
+              <span class="ph-mode-icon"><Icon name={m.iconName} size={24} /></span>
             </div>
             <h3>
               <span class="sv-text">{m.titleSv}</span>
@@ -348,7 +349,7 @@ const schemaProduct = {
       <div class="ph-tech-grid">
         {techFeatures.map((f, i) => (
           <div class="ph-tech-card fade-up" style={`animation-delay:${i*60}ms`}>
-            <div class="ph-tech-icon">{f.icon}</div>
+            <div class="ph-tech-icon"><Icon name={f.iconName} size={30} /></div>
             <h3>
               <span class="sv-text">{f.titleSv}</span>
               <span class="en-text">{f.titleEn}</span>
@@ -540,7 +541,7 @@ const schemaProduct = {
   .ph-obj-blue { --obj-color: var(--ph-accent); }
   .ph-obj-yellow { --obj-color: var(--ph-yellow); }
   .ph-obj:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
-  .ph-obj-icon { font-size: 2rem; margin-bottom: 0.85rem; }
+  .ph-obj-icon { display: inline-flex; align-items: center; color: var(--obj-color); margin-bottom: 0.85rem; }
   .ph-obj h3 { font-size: 1.2rem; color: #fff; margin: 0 0 0.85rem; }
   .ph-obj p { font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.65; margin: 0 0 1.5rem; min-height: 60px; }
   .ph-obj-effect { display: flex; align-items: baseline; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -555,7 +556,7 @@ const schemaProduct = {
   .ph-mode:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(1,13,96,0.1); border-color: var(--ph-blue); }
   .ph-mode-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; }
   .ph-mode-num { font-family: var(--font-heading); font-size: 1.85rem; font-weight: 500; color: var(--ph-navy); line-height: 1; letter-spacing: -0.01em; }
-  .ph-mode-icon { font-size: 1.5rem; opacity: 0.7; }
+  .ph-mode-icon { display: inline-flex; align-items: center; color: var(--ph-navy); opacity: 0.7; }
   .ph-mode h3 { font-size: 1.1rem; color: var(--ph-navy); margin: 0 0 0.85rem; line-height: 1.3; min-height: 2.6em; }
   .ph-mode > p { font-size: 0.92rem; color: #555; line-height: 1.7; margin: 0 0 1.5rem; flex-grow: 1; }
   .ph-mode-best { padding-top: 1rem; border-top: 1px dashed rgba(1,13,96,0.15); display: flex; flex-direction: column; gap: 0.2rem; }
@@ -566,7 +567,7 @@ const schemaProduct = {
   .ph-tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1100px; margin: 0 auto; }
   .ph-tech-card { background: #fff; border: 1px solid rgba(1,13,96,0.08); border-radius: 12px; padding: 1.75rem; transition: all 0.25s; }
   .ph-tech-card:hover { border-color: var(--ph-blue); box-shadow: 0 12px 32px rgba(1,13,96,0.08); transform: translateY(-3px); }
-  .ph-tech-icon { font-size: 1.85rem; margin-bottom: 0.85rem; }
+  .ph-tech-icon { display: inline-flex; align-items: center; color: var(--ph-navy); margin-bottom: 0.85rem; }
   .ph-tech-card h3 { font-size: 1.05rem; color: var(--ph-navy); margin: 0 0 0.6rem; }
   .ph-tech-card p { font-size: 0.9rem; color: #555; line-height: 1.65; margin: 0; }
 

@@ -1,5 +1,6 @@
 ---
 // Header.astro - Sticky header with language toggle and Global 100 awards
+import Icon from './Icon.astro';
 ---
 
 <header class="site-header" id="site-header">
@@ -62,7 +63,7 @@
           </a>
           <a href="/products/perfekt-hylla/" class="dropdown-item dropdown-item--child">
             <span class="di-logo di-logo-ph">
-              <span class="ph-nav-badge">🛒</span>
+              <span class="ph-nav-badge"><Icon name="cart" size={14} /></span>
             </span>
             <span class="di-text">
               <strong>Perfekt hylla</strong>
@@ -544,7 +545,7 @@
   .di-logo-dark { background: #193d50; }
   .di-logo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; }
   .di-logo-ph { background: linear-gradient(135deg, var(--color-navy, #010D60) 0%, #2A4EA9 100%); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-  .ph-nav-badge { font-size: 1.05rem; }
+  .ph-nav-badge { display: inline-flex; align-items: center; color: #fff; }
   .di-text { display: flex; flex-direction: column; gap: 0.1rem; }
   .di-text strong { font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; color: var(--color-navy); font-weight: 500; }
   .di-text em { font-style: normal; font-size: 0.72rem; color: #888; }

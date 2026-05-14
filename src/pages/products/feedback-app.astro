@@ -2,16 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
 
 const canonical = 'https://www.sigvardsson.org/products/feedback-app/';
 
 const features = [
-  { icon: '📲', titleSv: 'Analoga & digitala knappar', titleEn: 'Analog & digital buttons', descSv: 'Enkla feedbacklösningar — från fysiska knappar till QR-koder och digitala terminaler.', descEn: 'Simple feedback solutions — from physical buttons to QR codes and digital terminals.' },
-  { icon: '📊', titleSv: 'Realtids-dashboard', titleEn: 'Real-time dashboard', descSv: 'Hela organisationen ser kundnöjdheten live — från butiksgolvet till ledningsgruppen.', descEn: 'The entire organization sees customer satisfaction live — from the shop floor to management.' },
-  { icon: '🔗', titleSv: 'Korrelationsanalys', titleEn: 'Correlation analysis', descSv: 'Kopplar kundfeedback direkt till KPI:er och affärsprestanda.', descEn: 'Links customer feedback directly to KPIs and business performance.' },
-  { icon: '🔔', titleSv: 'Automatiska alerts', titleEn: 'Automatic alerts', descSv: 'Omedelbar varning vid kritisk feedback — agera innan det eskalerar.', descEn: 'Immediate alert on critical feedback — act before it escalates.' },
-  { icon: '🎯', titleSv: 'CSI-temperaturindikator', titleEn: 'CSI temperature indicator', descSv: 'Enkel visualisering som hela organisationen förstår direkt.', descEn: 'Simple visualization that the entire organization understands immediately.' },
-  { icon: '📈', titleSv: 'Benchmarking', titleEn: 'Benchmarking', descSv: 'Jämför mot branschstandard och dina egna historiska värden.', descEn: 'Compare against industry standard and your own historical values.' },
+  { iconName: 'tablet', titleSv: 'Analoga & digitala knappar', titleEn: 'Analog & digital buttons', descSv: 'Enkla feedbacklösningar — från fysiska knappar till QR-koder och digitala terminaler.', descEn: 'Simple feedback solutions — from physical buttons to QR codes and digital terminals.' },
+  { iconName: 'chart', titleSv: 'Realtids-dashboard', titleEn: 'Real-time dashboard', descSv: 'Hela organisationen ser kundnöjdheten live — från butiksgolvet till ledningsgruppen.', descEn: 'The entire organization sees customer satisfaction live — from the shop floor to management.' },
+  { iconName: 'link', titleSv: 'Korrelationsanalys', titleEn: 'Correlation analysis', descSv: 'Kopplar kundfeedback direkt till KPI:er och affärsprestanda.', descEn: 'Links customer feedback directly to KPIs and business performance.' },
+  { iconName: 'bell', titleSv: 'Automatiska alerts', titleEn: 'Automatic alerts', descSv: 'Omedelbar varning vid kritisk feedback — agera innan det eskalerar.', descEn: 'Immediate alert on critical feedback — act before it escalates.' },
+  { iconName: 'target', titleSv: 'CSI-temperaturindikator', titleEn: 'CSI temperature indicator', descSv: 'Enkel visualisering som hela organisationen förstår direkt.', descEn: 'Simple visualization that the entire organization understands immediately.' },
+  { iconName: 'trending-up', titleSv: 'Benchmarking', titleEn: 'Benchmarking', descSv: 'Jämför mot branschstandard och dina egna historiska värden.', descEn: 'Compare against industry standard and your own historical values.' },
 ];
 
 const schemaProduct = {
@@ -252,7 +253,7 @@ const schemaProduct = {
       <!-- Follow-up callout -->
       <div class="nps-followup fade-up">
         <div class="followup-inner">
-          <div class="followup-icon">💬</div>
+          <div class="followup-icon"><Icon name="message-circle" size={36} /></div>
           <div class="followup-text">
             <h3 class="sv-text">Fråga inte om du inte tänker följa upp</h3>
             <h3 class="en-text">Don't ask if you're not going to follow up</h3>
@@ -303,7 +304,7 @@ const schemaProduct = {
           <div class="tp-card-inner">
             <div class="tp-text">
               <div class="tp-num">01</div>
-              <div class="tp-icon">🖥️</div>
+              <div class="tp-icon"><Icon name="monitor" size={28} /></div>
               <h3 class="sv-text">Kiosk</h3>
               <h3 class="en-text">Kiosk</h3>
               <p class="tp-tag sv-text">Fysiskt ställ · Exit poll</p>
@@ -329,7 +330,7 @@ const schemaProduct = {
         <div class="tp-three">
           <div class="tp-card tp-small">
             <div class="tp-num">02</div>
-            <div class="tp-icon">📄</div>
+            <div class="tp-icon"><Icon name="file-text" size={28} /></div>
             <h3 class="sv-text">QR-kod</h3>
             <h3 class="en-text">QR code</h3>
             <p class="tp-tag sv-text">Kvitto · Leveranssedel · Förpackning</p>
@@ -340,7 +341,7 @@ const schemaProduct = {
 
           <div class="tp-card tp-small">
             <div class="tp-num">03</div>
-            <div class="tp-icon">🔗</div>
+            <div class="tp-icon"><Icon name="link" size={28} /></div>
             <h3 class="sv-text">Länk</h3>
             <h3 class="en-text">Link</h3>
             <p class="tp-tag sv-text">Nyhetsbrev · E-post · SMS · Webbsida</p>
@@ -351,7 +352,7 @@ const schemaProduct = {
 
           <div class="tp-card tp-small">
             <div class="tp-num">04</div>
-            <div class="tp-icon">💻</div>
+            <div class="tp-icon"><Icon name="laptop" size={28} /></div>
             <h3 class="sv-text">Inbäddad kod</h3>
             <h3 class="en-text">Embedded code</h3>
             <p class="tp-tag sv-text">Webbsida · Kundportal · App</p>
@@ -365,7 +366,7 @@ const schemaProduct = {
 
       <!-- Bottom note -->
       <div class="tp-note fade-up">
-        <span class="tp-note-icon">📊</span>
+        <span class="tp-note-icon"><Icon name="chart" size={22} /></span>
         <p class="sv-text">Alla kanaler matas in i samma realtids-dashboard. Segmentera per kanal, butik eller tidsperiod — och se helheten på ett ställe.</p>
         <p class="en-text">All channels feed into the same real-time dashboard. Segment by channel, store or time period — and see the full picture in one place.</p>
       </div>
@@ -436,7 +437,7 @@ const schemaProduct = {
                 </div>
               </div>
               <div class="screen-alert">
-                <span>🔔</span>
+                <span class="screen-alert-icon"><Icon name="bell" size={12} /></span>
                 <span class="sv-text">2 kritiska svar — agera nu</span>
                 <span class="en-text">2 critical responses — act now</span>
               </div>
@@ -460,22 +461,22 @@ const schemaProduct = {
       </div>
       <div class="features-grid features-grid-4 fade-up">
         <div class="feature-card">
-          <div class="feature-icon">🔗</div>
+          <div class="feature-icon"><Icon name="link" size={30} /></div>
           <h3><span class="sv-text">Korrelationsanalys</span><span class="en-text">Correlation analysis</span></h3>
           <p><span class="sv-text">Kopplar kundfeedback direkt till KPI:er och affärsprestanda — se vad som faktiskt driver NPS-poängen.</span><span class="en-text">Links customer feedback directly to KPIs and business performance — see what actually drives the NPS score.</span></p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔔</div>
+          <div class="feature-icon"><Icon name="bell" size={30} /></div>
           <h3><span class="sv-text">Automatiska alerts</span><span class="en-text">Automatic alerts</span></h3>
           <p><span class="sv-text">Omedelbar varning till rätt person vid kritisk feedback — agera innan missnöjet eskalerar eller sprider sig.</span><span class="en-text">Immediate alert to the right person on critical feedback — act before dissatisfaction escalates or spreads.</span></p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🎯</div>
+          <div class="feature-icon"><Icon name="target" size={30} /></div>
           <h3><span class="sv-text">CSI-temperaturindikator</span><span class="en-text">CSI temperature indicator</span></h3>
           <p><span class="sv-text">Enkel visualisering som hela organisationen förstår direkt — ingen behöver tolka siffror för att förstå läget.</span><span class="en-text">Simple visualization the entire organization understands immediately — no one needs to interpret numbers to grasp the situation.</span></p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📈</div>
+          <div class="feature-icon"><Icon name="trending-up" size={30} /></div>
           <h3><span class="sv-text">Benchmarking</span><span class="en-text">Benchmarking</span></h3>
           <p><span class="sv-text">Jämför mot branschstandard och era egna historiska värden — förstå om ni förbättras och hur ni står er mot marknaden.</span><span class="en-text">Compare against industry standards and your own historical values — understand if you are improving and how you stand in the market.</span></p>
         </div>
@@ -675,7 +676,7 @@ const schemaProduct = {
   .why-card p { font-size: 0.85rem; color: #666; line-height: 1.7; margin: 0; }
   .nps-followup { max-width: 760px; margin: 0 auto; }
   .followup-inner { display: flex; gap: 1.5rem; align-items: flex-start; background: #fff; border: 1.5px solid var(--fa-color); border-radius: 14px; padding: 2rem; }
-  .followup-icon { font-size: 2.2rem; flex-shrink: 0; margin-top: 2px; }
+  .followup-icon { display: inline-flex; align-items: center; color: var(--fa-color); flex-shrink: 0; margin-top: 2px; }
   .followup-text h3 { font-size: 1.05rem; color: var(--fa-color); margin-bottom: 0.6rem; }
   .followup-text p { font-size: 0.9rem; color: #555; line-height: 1.75; margin: 0; }
 
@@ -723,7 +724,7 @@ const schemaProduct = {
   .tp-small { background: #fff; border: 1px solid rgba(33,81,104,0.12); border-radius: 14px; padding: 1.75rem 1.5rem; transition: box-shadow 0.2s, transform 0.2s; }
   .tp-small:hover { box-shadow: 0 8px 24px rgba(33,81,104,0.1); transform: translateY(-2px); }
   .tp-num { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.12em; color: var(--fa-color); opacity: 0.4; margin-bottom: 0.5rem; }
-  .tp-icon { font-size: 1.8rem; margin-bottom: 0.75rem; font-family: var(--font-heading); color: var(--fa-color); letter-spacing: -0.05em; }
+  .tp-icon { display: inline-flex; align-items: center; margin-bottom: 0.75rem; color: var(--fa-color); }
   .tp-card h3 { font-size: 1.1rem; color: var(--fa-color); margin-bottom: 0.2rem; }
   .tp-tag { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(33,81,104,0.45); margin-bottom: 0.85rem; display: block; }
   .tp-card p:not(.tp-tag) { font-size: 0.88rem; color: #666; line-height: 1.7; margin-bottom: 0.75rem; }
@@ -731,7 +732,7 @@ const schemaProduct = {
   .tp-bullets li { font-size: 0.83rem; color: #555; padding-left: 1rem; position: relative; }
   .tp-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--fa-color); font-family: var(--font-heading); font-size: 0.75rem; }
   .tp-note { display: flex; align-items: center; gap: 1rem; background: var(--fa-color); color: #fff; border-radius: 12px; padding: 1.25rem 1.75rem; margin-top: 0.5rem; }
-  .tp-note-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .tp-note-icon { display: inline-flex; align-items: center; color: var(--fa-color); flex-shrink: 0; }
   .tp-note p { font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0; }
 
   /* ===== HOW + SMART (merged) ===== */
@@ -770,7 +771,7 @@ const schemaProduct = {
   .features-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
   .feature-card { background: var(--color-off-white); border: 1px solid rgba(33,81,104,0.08); border-radius: 12px; padding: 1.5rem; transition: all 0.2s; }
   .feature-card:hover { border-color: var(--fa-color); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(33,81,104,0.1); }
-  .feature-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .feature-icon { display: inline-flex; align-items: center; color: var(--fa-color); margin-bottom: 0.75rem; }
   .feature-card h3 { font-size: 0.95rem; color: var(--fa-color); margin-bottom: 0.5rem; }
   .feature-card p { font-size: 0.84rem; color: #666; line-height: 1.65; margin: 0; }
 

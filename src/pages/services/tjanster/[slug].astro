@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
+import Icon from '../../../components/Icon.astro';
 import { services, categories } from '../../../data/services.js';
 
 export async function getStaticPaths() {
@@ -195,7 +196,7 @@ const serviceSchema = {
 
         <div class="aside-card aside-card-stats">
           <div class="stat-row">
-            <span class="stat-icon">📈</span>
+            <span class="stat-icon"><Icon name="trending-up" size={18} /></span>
             <div>
               <strong>{svc.effectSv}</strong>
               <span class="sv-text">Normal effekt</span>
@@ -211,7 +212,7 @@ const serviceSchema = {
             </div>
           </div>
           <div class="stat-row">
-            <span class="stat-icon">⭐</span>
+            <span class="stat-icon"><Icon name="star" size={18} /></span>
             <div>
               <strong class="sv-text">{svc.clientsSv}</strong>
               <strong class="en-text">{svc.clientsEn}</strong>
@@ -582,7 +583,9 @@ const serviceSchema = {
   }
   .stat-row:last-child { border-bottom: none; }
   .stat-icon {
-    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-white);
     flex-shrink: 0;
     margin-top: 0.1em;
   }

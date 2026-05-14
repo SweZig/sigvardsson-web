@@ -2,12 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
 
 const canonical = 'https://www.sigvardsson.org/products/link-retail/';
 
 const linkedServices = [
   {
-    icon: '🛒',
+    iconName: 'cart',
     titleSv: 'Perfekt hylla',
     titleEn: 'Perfect Shelf',
     descSv: 'AI-driven hylloptimering med systematisk A-B-testning. Realtid POS-data och scanning för rätt range och merchandising.',
@@ -19,7 +20,7 @@ const linkedServices = [
     href: '/products/perfekt-hylla/',
   },
   {
-    icon: '📍',
+    iconName: 'pin',
     titleSv: 'Perfekt varuplacering',
     titleEn: 'Perfect Placement',
     descSv: 'Optimera hyllvinnare och varma/kalla zoner med värmekartor och POS-analys.',
@@ -31,7 +32,7 @@ const linkedServices = [
     href: '#services',
   },
   {
-    icon: '📣',
+    iconName: 'megaphone',
     titleSv: 'Perfekt kampanj',
     titleEn: 'Perfect Campaign',
     descSv: 'Kampanjoptimering med rätt produkt på rätt plats — mixa kampanj och marginal.',
@@ -43,7 +44,7 @@ const linkedServices = [
     href: '#services',
   },
   {
-    icon: '🚶',
+    iconName: 'footprints',
     titleSv: 'Perfekt kundflöde',
     titleEn: 'Perfect Customer Flow',
     descSv: 'Värmekartebaserad analys av flöden, zoner och genvägar — kompatibel med befintliga CCTV-system.',
@@ -55,7 +56,7 @@ const linkedServices = [
     href: '#services',
   },
   {
-    icon: '⏱',
+    iconName: 'timer',
     titleSv: 'Perfekt kö',
     titleEn: 'Perfect Queue',
     descSv: 'Prediktiv köhantering i realtid som varslar innan kön uppstår. Minskar personalkostnader.',
@@ -67,7 +68,7 @@ const linkedServices = [
     href: '#services',
   },
   {
-    icon: '🌿',
+    iconName: 'leaf',
     titleSv: 'Minimera Matsvinnet',
     titleEn: 'Minimize Food Waste',
     descSv: 'AI-driven realtidsprognostisering och on-demand beställning för bröd och frukt & grönt.',
@@ -82,7 +83,7 @@ const linkedServices = [
 
 const lrCategories = [
   {
-    icon: '🌿',
+    iconName: 'leaf',
     nameSv: 'Food Waste Management',
     nameEn: 'Food Waste Management',
     descSv: 'AI-mjukvara som optimerar beställningsrutiner och reducerar matsvinn med minst 30% i livsmedelsbutiker.',
@@ -90,7 +91,7 @@ const lrCategories = [
     url: 'https://linkretail.com/retail-waste-management/',
   },
   {
-    icon: '📹',
+    iconName: 'video',
     nameSv: 'Video Analytics',
     nameEn: 'Video Analytics',
     descSv: 'People counting, shopper flow och köhantering med hög precision och AI-funktioner som personalexkludering.',
@@ -98,7 +99,7 @@ const lrCategories = [
     url: 'https://linkretail.com/people-counting-retail/',
   },
   {
-    icon: '📊',
+    iconName: 'chart',
     nameSv: 'Space Management',
     nameEn: 'Space Management',
     descSv: 'POS-datadriven analys för optimering av golv, hylla och försäljningsaktiviteter med bevisad omsättningstillväxt.',
@@ -106,7 +107,7 @@ const lrCategories = [
     url: 'https://linkretail.com/link-sales/',
   },
   {
-    icon: '🤝',
+    iconName: 'handshake',
     nameSv: 'Retail Solutions',
     nameEn: 'Retail Solutions',
     descSv: 'Konsulting, butiksoperationer, Retail LAB och teamutveckling för att maximera ROI på implementerade lösningar.',
@@ -221,7 +222,7 @@ const schemaProduct = {
       <div class="about-categories">
         {lrCategories.map(cat => (
           <a href={cat.url} target="_blank" rel="noopener" class="cat-card">
-            <span class="cat-icon">{cat.icon}</span>
+            <span class="cat-icon"><Icon name={cat.iconName} size={24} /></span>
             <div class="cat-body">
               <strong>{cat.nameSv}</strong>
               <p>
@@ -254,7 +255,7 @@ const schemaProduct = {
         {linkedServices.map((svc, i) => (
           <div class="svc-card fade-up" style={`animation-delay:${i*60}ms`}>
             <div class="svc-top">
-              <span class="svc-icon">{svc.icon}</span>
+              <span class="svc-icon"><Icon name={svc.iconName} size={28} /></span>
               <span class="lr-badge">{svc.lrModule}</span>
             </div>
             <h3>
@@ -457,7 +458,7 @@ const schemaProduct = {
     transition: all 0.2s;
   }
   .cat-card:hover { border-color: var(--lr-color); transform: translateX(4px); }
-  .cat-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+  .cat-icon { display: inline-flex; align-items: center; color: var(--lr-accent, var(--color-navy)); flex-shrink: 0; margin-top: 2px; }
   .cat-body { flex: 1; }
   .cat-body strong { font-family: var(--font-heading); font-size: 0.9rem; color: var(--lr-color); display: block; margin-bottom: 0.25rem; }
   .cat-body p { font-size: 0.82rem; color: #666; line-height: 1.5; margin: 0; }
@@ -484,7 +485,7 @@ const schemaProduct = {
   }
   .svc-card:hover { border-color: var(--lr-color); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(14,92,64,0.1); }
   .svc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
-  .svc-icon { font-size: 1.6rem; }
+  .svc-icon { display: inline-flex; align-items: center; color: var(--lr-accent, var(--color-navy)); }
   .lr-badge {
     font-family: var(--font-heading);
     font-size: 0.65rem;

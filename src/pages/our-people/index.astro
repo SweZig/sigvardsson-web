@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
 
 const team = [
   {
@@ -300,15 +301,15 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
                   <span class="sv-text" data-no="Nordens ledende CE-kjede · 4 land · ~9 år" data-da="Nordens ledende CE-kæde · 4 lande · ~9 år" data-fi="Pohjoismaiden johtava CE-ketju · 4 maata · ~9 vuotta">Nordens ledande CE-kedja · 4 länder · ~9 år</span>
                   <span class="en-text">The Nordic region's leading CE chain · 4 countries · ~9 years</span>
                   <div class="career-awards">
-                    <span class="ca-item">🏆 Best internet site Norway (2006) — Bring Awards</span>
-                    <span class="ca-item">🏆 Best Contact Centre Norway (2010, 2011, 2012) — Daymaker & Confex CC</span>
-                    <span class="ca-item">🏆 Best internet site Norway (2011) — Computer World</span>
-                    <span class="ca-item">🏆 Best internet site Sweden (2011, 2012, 2013) — Pricerunner</span>
-                    <span class="ca-item">🏆 Best internet site Denmark (2013, 2014, 2015) — Pricerunner</span>
-                    <span class="ca-item">🏆 Webshop of the Year Sweden (2014, 2015) — Prisjakt</span>
-                    <span class="ca-item">🏆 Best Customer Service Organisation Finland (2014)</span>
-                    <span class="ca-item">🏆 Best CC Innovation of the Year (2014) — KANA Awards</span>
-                    <span class="ca-item">🏆 Best Omnichannel Solution (2015/16) — RETA Europe</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best internet site Norway (2006) — Bring Awards</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best Contact Centre Norway (2010, 2011, 2012) — Daymaker & Confex CC</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best internet site Norway (2011) — Computer World</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best internet site Sweden (2011, 2012, 2013) — Pricerunner</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best internet site Denmark (2013, 2014, 2015) — Pricerunner</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Webshop of the Year Sweden (2014, 2015) — Prisjakt</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best Customer Service Organisation Finland (2014)</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best CC Innovation of the Year (2014) — KANA Awards</span>
+                    <span class="ca-item"><Icon name="trophy" size={12} /> Best Omnichannel Solution (2015/16) — RETA Europe</span>
                   </div>
                 </div>
               </div>
@@ -748,7 +749,11 @@ const accents = ['#010D60','#1A277A','#2A4EA9','#3D4893','#4867B6','#010D60'];
     font-size: 0.75rem !important;
     color: rgba(1,13,96,0.6) !important;
     line-height: 1.4;
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
   }
+  .ca-item .scg-icon { flex-shrink: 0; align-self: center; }
 
   @media (max-width: 900px) {
     .founder-inner {
