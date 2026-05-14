@@ -669,8 +669,9 @@ const latestInsights = [...insights]
 
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 220px));
+    justify-content: center;
+    gap: 3rem;
     text-align: center;
   }
 
@@ -1021,7 +1022,7 @@ const latestInsights = [...insights]
     .hero-logo { width: 100px; height: 100px; }
     .service-pillars { grid-template-columns: 1fr; }
     .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
   }
 
   @media (max-width: 560px) {
@@ -1039,7 +1040,7 @@ const latestInsights = [...insights]
     .hero-desc { font-size: 0.95rem; }
     .hero-actions { flex-direction: column; gap: 0.75rem; }
     .hero-actions .btn { display: block; text-align: center; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .stats-grid { grid-template-columns: 1fr; gap: 1.25rem; max-width: 280px; margin: 0 auto; }
     .stat-num { font-size: 2rem; }
     .section-label { font-size: 0.68rem; }
     .clients-grid { gap: 0.4rem; }
