@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
 import { insights, categories, authors } from '../data/insights.js';
 
 // Latest 3 articles for the homepage teaser
@@ -171,7 +172,7 @@ const latestInsights = [...insights]
 
       <div class="service-pillars">
         <a href="/services/#advisory" class="pillar pillar-advisory fade-up">
-          <div class="pillar-icon">💡</div>
+          <div class="pillar-icon"><Icon name="lightbulb" size={36} /></div>
           <h3 class="sv-text" data-no="Rådgivning & Strategi" data-da="Rådgivning & Strategi" data-fi="Neuvonta & Strategia">Rådgivning & Strategi</h3>
           <h3 class="en-text">Advisory & Strategy</h3>
           <p class="sv-text" data-no="Strategisk rådgivning, prosessutvikling, implementering og opplæring bygget på 30+ år med retail-erfaring." data-da="Strategisk rådgivning, procesudvikling, implementering og uddannelse bygget på 30+ år med retail-erfaring." data-fi="Strateginen neuvonta, prosessikehitys, käyttöönotto ja koulutus 30+ vuoden kauppakokemuksella.">Strategisk rådgivning, processutveckling, implementering och utbildning byggd på 30+ år av retailerfarenhet.</p>
@@ -181,7 +182,7 @@ const latestInsights = [...insights]
         </a>
 
         <a href="/services/#technology" class="pillar pillar-tech fade-up" style="animation-delay:120ms">
-          <div class="pillar-icon">⚙️</div>
+          <div class="pillar-icon"><Icon name="gear" size={36} /></div>
           <h3 class="sv-text" data-no="Teknologi & Systemer" data-da="Teknologi & Systemer" data-fi="Teknologia & Järjestelmät">Teknologi & System</h3>
           <h3 class="en-text">Technology & Systems</h3>
           <p class="sv-text" data-no="RFID, digital prissetting, selvbetjeningskiosker og NPS-analyse — teknologi som moderniserer butikken din." data-da="RFID, digital prissætning, selvbetjeningskiosker og NPS-analyse — teknologi der moderniserer din butik." data-fi="RFID, digitaalinen hinnoittelu, itsepalvelukioskit ja NPS-analyysi — teknologia, joka modernisoi kauppasi.">RFID, digital prissättning, självbetjäningskiosker och NPS-analys — teknologi som moderniserar din butik.</p>
@@ -191,7 +192,7 @@ const latestInsights = [...insights]
         </a>
 
         <a href="/services/#retail-optimization" class="pillar pillar-retail fade-up" style="animation-delay:240ms">
-          <div class="pillar-icon">🛒</div>
+          <div class="pillar-icon"><Icon name="cart" size={36} /></div>
           <h3 class="sv-text" data-no="Retail Optimering" data-da="Retail Optimering" data-fi="Kaupan Optimointi">Retail Optimering</h3>
           <h3 class="en-text">Retail Optimization</h3>
           <p class="sv-text" data-no="8 datadrevne verktøy for hylle, kampanje, kundeflyt, kø, svinn og lager — med direkte målbar ROI." data-da="8 datadrevne værktøjer til hylde, kampagne, kunderflow, kø, svind og lager — med direkte målbar ROI." data-fi="8 dataohjattua työkalua hyllylle, kampanjoille, asiakasvirralle, jonoille, hävikille ja varastolle — suoraan mitattava ROI.">8 datadrivna verktyg för hylla, kampanj, kundflöde, kö, svinn och lager — med direkt mätbar ROI.</p>
@@ -865,10 +866,11 @@ const latestInsights = [...insights]
   .pillar:hover .pillar-icon { transform: scale(1.15); }
 
   .pillar-icon {
-    font-size: 2.25rem;
+    color: var(--color-navy);
     margin-bottom: 1.1rem;
     line-height: 1;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     transition: transform 0.28s ease;
   }
 

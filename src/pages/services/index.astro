@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ServiceModals from '../../components/ServiceModals.astro';
+import Icon from '../../components/Icon.astro';
 
 // Slug lookup: service card id → landing page slug
 const slugMap = {
@@ -34,7 +35,7 @@ const categories = [
   {
     id: 'advisory',
     bgImage: '/images/retail/staff-tablet-shelf.jpg',
-    iconSv: '💡',
+    iconName: 'lightbulb',
     labelSv: 'Rådgivning & Strategi',
     labelEn: 'Advisory & Strategy',
     descSv: 'Strategisk rådgivning och processutveckling byggd på 30+ år av retail-erfarenhet och hundratals genomförda projekt hos ledande nordiska kedjor.',
@@ -124,7 +125,7 @@ const categories = [
   {
     id: 'technology',
     bgImage: '/images/retail/self-checkout-ica.jpg',
-    iconSv: '⚙️',
+    iconName: 'gear',
     labelSv: 'Teknologi & System',
     labelEn: 'Technology & Systems',
     descSv: 'Digitala teknologier som moderniserar butiken — från automatiserade prissystem och RFID-scanning till självbetjäningskiosker och NPS-plattformar.',
@@ -220,7 +221,7 @@ const categories = [
   {
     id: 'retail-optimization',
     bgImage: '/images/retail/dry-goods-aisle.jpg',
-    iconSv: '🛒',
+    iconName: 'cart',
     labelSv: 'Retail Optimering',
     labelEn: 'Retail Optimization',
     descSv: 'Datadrivna verktyg som omvandlar butikens hyllor, kampanjer och flöden till mätbar lönsamhet — med direkt ROI i samtliga genomförda projekt.',
@@ -378,7 +379,7 @@ const categories = [
       <div class="category-nav">
         {categories.map(cat => (
           <a href={`#${cat.id}`} class="cat-pill">
-            <span class="cat-icon">{cat.iconSv}</span>
+            <span class="cat-icon"><Icon name={cat.iconName} size={16} /></span>
             <span class="sv-text">{cat.labelSv}</span>
             <span class="en-text">{cat.labelEn}</span>
           </a>
@@ -440,7 +441,7 @@ const categories = [
       <div class="cat-photo-band" style={`background-image: url('${cat.bgImage}')`}>
         <div class="cat-photo-overlay"></div>
         <div class="container cat-photo-inner">
-          <span class="cat-photo-icon">{cat.iconSv}</span>
+          <span class="cat-photo-icon"><Icon name={cat.iconName} size={44} /></span>
           <div>
             <h2 class="cat-photo-title">
               <span class="sv-text">{cat.labelSv}</span>
@@ -693,7 +694,11 @@ const categories = [
     transform: translateY(-2px);
   }
 
-  .cat-icon { font-size: 1rem; }
+  .cat-icon {
+    display: inline-flex;
+    align-items: center;
+    color: currentColor;
+  }
 
   /* ===== STATS BAR ===== */
   .stats-bar {
@@ -749,10 +754,12 @@ const categories = [
   }
 
   .cat-photo-icon {
-    font-size: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
     line-height: 1;
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
   }
 
   .cat-photo-title {
