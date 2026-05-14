@@ -290,14 +290,89 @@ const schemaOrg = {
       box-shadow: 0 8px 24px rgba(1,13,96,0.25);
     }
 
-    .btn-outline {
-      background: transparent;
+    /* ===== HERO BASE (shared across page-hero / services-hero / contact-hero) ===== */
+    .page-hero,
+    .services-hero,
+    .contact-hero {
+      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
       color: var(--color-white);
-      border: 2px solid rgba(255,255,255,0.6);
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
     }
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--color-white);
+    @media (max-width: 768px) {
+      .page-hero,
+      .services-hero,
+      .contact-hero {
+        padding: 5rem 1.25rem 3rem;
+      }
+    }
+
+    /* Hero photo background — shared shape, page-specific photo URL via scoped CSS */
+    .hero-photo-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.11;
+      mix-blend-mode: luminosity;
+    }
+
+    /* ===== HERO BUTTONS (used on dark hero backgrounds) ===== */
+    .btn-light,
+    .btn-white {
+      display: inline-block;
+      background: var(--color-white);
+      color: var(--color-navy);
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-light:hover,
+    .btn-white:hover {
+      background: var(--color-off-white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .btn-outline,
+    .btn-outline-white {
+      display: inline-block;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 2px solid rgba(255,255,255,0.35);
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 0.73rem 2rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-outline:hover,
+    .btn-outline-white:hover {
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.08);
+      color: var(--color-white);
+    }
+
+    /* Mobile: stack hero action buttons */
+    @media (max-width: 600px) {
+      .hero-actions .btn-light,
+      .hero-actions .btn-white,
+      .hero-actions .btn-outline,
+      .hero-actions .btn-outline-white {
+        display: block;
+        text-align: center;
+      }
     }
 
     /* ===== SECTION LABELS ===== */

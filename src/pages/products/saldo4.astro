@@ -197,10 +197,8 @@ const schemaProduct = {
   .s4-service-link { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); font-family: var(--font-heading); font-size: 0.8rem; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; letter-spacing: 0.04em; }
   .s4-service-link-href { color: #4ecfa0; text-decoration: none; transition: color 0.2s; }
   .s4-service-link-href:hover { color: #fff; text-decoration: underline; }
-  .btn-white { background: #fff; color: var(--s4-dark); display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
-  .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
-  .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); display: inline-block; padding: 0.73rem 2rem; border-radius: 8px; font-family: var(--font-heading); font-size: 0.9rem; letter-spacing: 0.04em; transition: all 0.2s; text-decoration: none; }
-  .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+  /* Page-accent text color override (base button rules in Layout.astro) */
+  .btn-white { color: var(--s4-dark); }
 
   .features-section { padding: var(--section-pad); background: #fff; }
   .section-intro { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
@@ -239,7 +237,6 @@ const schemaProduct = {
     .product-hero { padding: 5rem 1.25rem 3rem; }
     .hero-results { gap: 0.5rem; }
     .hero-actions { flex-direction: column; gap: 0.6rem; }
-    .hero-actions .btn-white, .hero-actions .btn-outline-white { display: block; text-align: center; }
     .features-grid { grid-template-columns: 1fr; }
     .product-cta { padding: 3rem 1.25rem; }
   }

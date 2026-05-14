@@ -231,22 +231,11 @@ const servicesEn = [
 <style>
   .hidden { display: none; }
 
-  .contact-hero {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
-    color: var(--color-white);
-    padding: 5rem 2rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
+  /* Hero base + .hero-photo-bg layout are in Layout.astro; this page provides photo path + page-specific extras */
   .hero-photo-bg {
-    position: absolute;
-    inset: 0;
     background-image: url('/images/retail/self-checkout-ica.jpg');
-    background-size: cover;
     background-position: center 30%;
     opacity: 0.10;
-    mix-blend-mode: luminosity;
   }
 
   .contact-hero .section-label { color: var(--color-blue-lite); }
@@ -474,7 +463,6 @@ const servicesEn = [
   }
 
   @media (max-width: 480px) {
-    .contact-hero { padding: 5rem 1.25rem 3rem; }
     .contact-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
     .contact-form { padding: 1.5rem 1.25rem; }
     .form-group input,
