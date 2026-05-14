@@ -296,7 +296,7 @@ const schemaOrg = {
     .contact-hero {
       background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
       color: var(--color-white);
-      padding: 5rem 2rem 4rem;
+      padding: 7rem 2rem 5rem;
       position: relative;
       overflow: hidden;
     }
@@ -304,7 +304,27 @@ const schemaOrg = {
       .page-hero,
       .services-hero,
       .contact-hero {
-        padding: 5rem 1.25rem 3rem;
+        padding: 6rem 1.25rem 3rem;
+      }
+    }
+
+    /* Standardized hero h1 — matches .svc-hero h1 best-practice size */
+    .page-hero h1,
+    .services-hero h1,
+    .contact-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 500;
+      color: var(--color-white);
+      line-height: 1.05;
+      margin: 0.5rem 0 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    @media (max-width: 768px) {
+      .page-hero h1,
+      .services-hero h1,
+      .contact-hero h1 {
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
       }
     }
 
@@ -316,6 +336,44 @@ const schemaOrg = {
       background-position: center;
       opacity: 0.11;
       mix-blend-mode: luminosity;
+    }
+
+    /* ===== HERO STAT PILLS (used in any hero that has stats to surface) ===== */
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.25rem;
+    }
+    .hero-pill {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.85rem 1.25rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      min-width: 130px;
+    }
+    .hero-pill strong {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .hero-pill span {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.3;
+    }
+    @media (max-width: 600px) {
+      .hero-pills { gap: 0.5rem; }
+      .hero-pill {
+        padding: 0.7rem 1rem;
+        min-width: 0;
+        flex: 1 1 calc(50% - 0.5rem);
+      }
     }
 
     /* ===== HERO BUTTONS (used on dark hero backgrounds) ===== */

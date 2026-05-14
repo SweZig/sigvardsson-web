@@ -25,6 +25,25 @@ import Icon from '../../components/Icon.astro';
       </h1>
       <p class="hero-sub sv-text" data-no="Vår leveransemodell bygger på tre grunnpilarer og en beprøvd 5-trinns prosess — bygget på 30+ år med retail-erfaring og 250+ gjennomførte prosjekter." data-da="Vores leveringsmodel bygger på tre grundsøjler og en gennemprøvet 5-trins proces — bygget på 30+ år med retail-erfaring og 250+ gennemførte projekter." data-fi="Toimitusmalliimme perustuu kolmeen peruspilaariin ja todistetusti toimivaan 5-vaiheiseen prosessiin — 30+ vuoden kauppakokemukseen ja 250+ toteutettuun projektiin.">Vår leveransmodell bygger på tre grundpelare och en beprövad 5-stegsprocess — byggd på 30+ år av retailerfarenhet och 100+ genomförda projekt.</p>
       <p class="hero-sub en-text">Our delivery model is built on three core pillars and a proven 5-step process — built on 30+ years of retail experience and 100+ completed projects.</p>
+
+      <!-- Stats pills -->
+      <div class="hero-pills">
+        <div class="hero-pill">
+          <strong>3</strong>
+          <span class="sv-text" data-no="grunnpilarer" data-da="grundsøjler" data-fi="peruspilaria">grundpelare</span>
+          <span class="en-text">core pillars</span>
+        </div>
+        <div class="hero-pill">
+          <strong>5</strong>
+          <span class="sv-text" data-no="trinns prosess" data-da="trins proces" data-fi="vaiheen prosessi">stegs process</span>
+          <span class="en-text">step process</span>
+        </div>
+        <div class="hero-pill">
+          <strong>100+</strong>
+          <span class="sv-text" data-no="gjennomførte prosjekter" data-da="gennemførte projekter" data-fi="toteutettua projektia">genomförda projekt</span>
+          <span class="en-text">completed projects</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -533,7 +552,6 @@ import Icon from '../../components/Icon.astro';
 /* ===== HERO (base styles in Layout.astro; page-specific extras below) ===== */
 .hero-photo-bg { background-image:url('/images/retail/dry-goods-aisle.jpg'); opacity:0.10; }
 .page-hero .section-label { color:var(--color-blue-lite); }
-.page-hero h1 { font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;margin:.75rem 0 1.25rem; }
 .hero-sub { font-size:1.05rem;color:rgba(255,255,255,.75);max-width:640px;line-height:1.7; }
 
 /* ===== SECTION INTRO ===== */
@@ -950,7 +968,6 @@ import Icon from '../../components/Icon.astro';
   .principles-grid { grid-template-columns:1fr; }
 }
 @media(max-width:480px) {
-  .page-hero h1 { font-size:clamp(1.8rem,7vw,2.4rem); }
   .hero-sub { font-size:0.9rem; }
   .stepper-wrap { border-radius:8px; }
   .stepper-content { padding:1.25rem 1rem 0.75rem; }

@@ -375,6 +375,26 @@ const categories = [
       <p class="hero-sub sv-text" data-no="Fra datadrevne hylleverktøy til strategisk rådgivning — et sammenhengende tilbud for hele din retailvirksomhet." data-da="Fra datadrevne hyldeværktøjer til strategisk rådgivning — et sammenhængende tilbud for hele din detailvirksomhed." data-fi="Dataohjattuista hyllytyökaluista strategiseen neuvontaan — yhtenäinen tarjonta koko vähittäiskauppatoiminnallesi.">Från datadrivna hyllverktyg till strategisk rådgivning — ett sammanhållet erbjudande för hela din retailverksamhet.</p>
       <p class="hero-sub en-text">From data-driven shelf tools to strategic advisory — a coherent offer for your entire retail operation.</p>
 
+      <!-- Stats pills -->
+      <div class="hero-pills">
+        <div class="hero-pill">
+          <strong>30+</strong>
+          <span class="sv-text" data-no="års retail-erfaring" data-da="års retail-erfaring" data-fi="vuoden vähittäiskauppakokemus">års retail-erfarenhet</span>
+          <span class="en-text">years of retail experience</span>
+        </div>
+        <div class="hero-pill">
+          <strong>100+</strong>
+          <span class="sv-text" data-no="gjennomførte prosjekter" data-da="gennemførte projekter" data-fi="toteutettua projektia">genomförda projekt</span>
+          <span class="en-text">completed projects</span>
+        </div>
+        <div class="hero-pill">
+          <strong class="sv-text" data-no="Norden" data-da="Norden" data-fi="Pohjola">Norden</strong>
+          <strong class="en-text">Nordic</strong>
+          <span class="sv-text" data-no="6 land · ledende kjeder" data-da="6 lande · førende kæder" data-fi="6 maata · johtavat ketjut">6 länder · ledande kedjor</span>
+          <span class="en-text">6 countries · leading chains</span>
+        </div>
+      </div>
+
       <!-- Category quick-nav -->
       <div class="category-nav">
         {categories.map(cat => (
@@ -632,13 +652,6 @@ const categories = [
   .services-hero .section-label {
     color: var(--color-blue-lite);
     margin-bottom: 1rem;
-  }
-
-  .services-hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    line-height: 1.1;
-    margin-bottom: 1.25rem;
-    color: var(--color-white);
   }
 
   .hero-sub {
@@ -953,7 +966,6 @@ const categories = [
   }
 
   @media (max-width: 480px) {
-    .services-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
     .cat-photo-band { height: 90px; }
     .cat-band-title { font-size: 1.1rem; }
     .services-cta { padding: 3rem 1.25rem; }
