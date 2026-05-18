@@ -39,6 +39,22 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'den-dyra-kvadratmetern',
+    category: 'strategy',
+    titleSv: 'Den dyra kvadratmetern.',
+    titleEn: 'The expensive square metre.',
+    excerptSv: 'Hyresavin för 2026 är inte en överraskning. Den är en bekräftelse på något svensk detaljhandel har vetat i tre år men inte velat formulera: marknaden för fysisk butik har förändrats permanent, och varje kvadratmeter måste numera bevisa att den förtjänar sin plats.',
+    excerptEn: 'The 2026 rent invoice isn\'t a surprise. It\'s a confirmation of something Swedish retail has known for three years but hasn\'t been willing to articulate: the market for physical retail has changed permanently, and every square metre must now prove it earns its place.',
+    coverImage: '/images/retail/retail-overview-birds-eye.jpg',
+    authorId: 'per-sigvardsson',
+    publishDate: '2026-05-19T09:00:00+02:00',
+    publishDateDisplay: { sv: '19 maj 2026', en: 'May 19, 2026' },
+    readingTime: 6,
+    tagsSv: ['Strategi', 'Retail Strategi', 'Lokalkostnader', 'Norden'],
+    tagsEn: ['Strategy', 'Retail Strategy', 'Rent', 'Nordic'],
+    relatedProduct: { href: '/services/tjanster/retail-strategi/', labelSv: 'Läs mer om Retail Strategi', labelEn: 'Read more about Retail Strategy' },
+  },
+  {
     slug: 'ai-strategi-retail-2026',
     category: 'strategy',
     titleSv: 'AI börjar i sökrutan — men slutar i din kapitalbindning.',

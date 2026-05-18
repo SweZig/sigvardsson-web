@@ -1,0 +1,194 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'den-dyra-kvadratmetern');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p>När hyresavin för det första kvartalet 2026 landar i december är beloppet inte längre någon nyhet. Det är det fjärde året i rad som lokalhyran för svensk handel skjuter över sin egen historiska normaltakt — en KPI-driven uppräkning som mellan 2022 och 2026 har lyft den indexerade årshyran med ungefär 24 procent. För en typisk medelstor butik på 500 kvadratmeter motsvarar det runt 180 000 kronor mer i fast hyra varje år, för all framtid. Det är inte en konjunktur. Det är en kalibrering.</p>
+
+    <p>Som om detta inte vore nog har två andra chocker landat på samma kvadratmeter under samma period. Och tillsammans har de förändrat villkoren för fysisk handel mer än många kedjor ännu vågat formulera.</p>
+
+    <h2>Tre chocker på samma kvadratmeter</h2>
+
+    <p>Den första är hyran själv. Standardklausulen i de flesta svenska kommersiella lokalavtal — Fastighetsägarnas 6E och 6F — innebär att hyran följer konsumentprisindex med full uppräkning varje januari. När KPI-talet för oktober landade på 10,9 procent inför 2023, 6,5 procent inför 2024 och 3,8 procent inför 2025, var det inte en förhandling. Det var en formel. Svensk Handel har räknat ut att handlarnas hyror sammantaget ökat med över 20 procent sedan 2022, och konstaterar att omkring 3 200 butiker bara inom sko- och modesegmentet befinner sig i ett spann där risken för rekonstruktion eller konkurs är överhängande.</p>
+
+    <p>Den andra chocken är energin. Den var värst 2022 och 2023, men har inte återgått till de nivåer som rådde innan. Vintertid har spotpriserna i södra Sveriges elområden — SE3 och SE4, där huvuddelen av detaljhandelsytan ligger — periodvis legat fyra till fem gånger högre än normalåret 2020. För en butik på 500 kvadratmeter med kyla, belysning och uppvärmning blir det en betydande kostnadsökning, och den slår särskilt hårt mot dagligvaruhandel och varuhuskoncept där elen är en kärndriftskostnad snarare än en bakgrundspost.</p>
+
+    <p>Den tredje är logistiken — och den är värre än vad de flesta kedjor uppskattar. Sveriges Åkeriföretag varnade redan vid årsskiftet 2022 för en <em>historisk</em> uppräkning av transportavtalen: 10 till 15 procents fraktkostnadsökning, driven av ett dieselpris som ökat med 40 procent på ett enda år. SCB:s producentprisindex för vägtransport av gods lade på ytterligare 5,2 procent mellan 2022 och 2023. Den internationella containerfrakten från Asien till Sverige har normaliserats från sina absurda toppnivåer under pandemin men ligger fortfarande väsentligt högre än 2019. För kedjor med inrikes distribution från egna centrallager till butiksled landar det som en högre kostnad per levererad kartong, och därmed en lägre marginal per såld vara.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/den-dyra-kvadratmetern-graf.svg" alt="Linjediagram som visar att kommersiella hyror för svensk retail ökat 24,5 procent mellan 2022 och 2026, medan detaljhandelns nominella omsättning bara ökat 12 procent." loading="lazy" />
+      <figcaption>
+        Figur 1. Index 100 = 2022. Hyresindex baseras på Fastighetsägarnas KPI-klausul (kumulativ uppräkning 10,9 + 6,5 + 3,8 + 1,57 %). Omsättningsdata: Svensk Handel och SCB, nominella siffror. Volymtillväxten i detaljhandeln har under perioden varit nära noll.
+      </figcaption>
+    </figure>
+
+    <h2>Sverige sticker ut</h2>
+
+    <p>Det här är inte en chock som drabbar svensk handel ensamt. Norge, Danmark och Finland har också KPI-indexerade lokalkontrakt som norm. Men kontraktskulturen skiljer sig, och det skiljer mer än vad de flesta tror.</p>
+
+    <p>I Danmark är det "helt sædvanligt" — som de juridiska handböckerna formulerar det — att kommersiella hyresavtal innehåller både ett minimum- och ett maximumtak. Typiskt en garanterad uppräkning på minst två till tre procent, men aldrig mer än fyra till fem. När den danska nettoprisindex steg med tio procent 2022 grep dessutom Folketinget in med ett tillfälligt huslejeloft på fyra procent för bostäder — en signal som påverkade förväntningarna även på det kommersiella benet. I Norge är det allt vanligare att leietagaren förhandlar in en partiell indexering — kanske 75 procent av KPI — eller väljer KPI-JAE, det vill säga konsumentprisindex justerat för avgifter och energi, just för att undvika att en elchock dubbelräknas mot hyran.</p>
+
+    <p>I Sverige finns ingen sådan praxis. Standardklausulen är 100 procent. Inget tak, ingen golv-och-tak-kompromiss, ingen alternativ index. Och inflationen som matades in i den formeln var den högsta i Norden — runt 18 procent kumulativt 2022 och 2023, jämfört med Norges 12.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">3×</span>
+      <span class="stat-callout-text">Triple whammy: högre inflation, full indexering, inget skydd. Svensk retail har drabbats unikt jämfört med grannarna.</span>
+    </div>
+
+    <h2>E-handelns andra halva</h2>
+
+    <p>Samtidigt har den digitala konkurrenten inte stått still. Svensk Handel mäter att e-handeln vuxit med 76 procent under perioden 2018–2024, medan fysisk butikshandel vuxit 20 procent. E-handelns andel av total detaljhandel ligger nu på 14–15 procent, och prognoserna pekar mot 24–29 procent år 2035. Antalet fysiska butiker i Sverige har under samma period minskat — i småstäder med hela 29 procent.</p>
+
+    <p>Den läsare som vill tolka detta som ett bevis på fysiska butikers nära förestående död missar poängen. Fysisk handel är fortfarande dominerande och kommer att förbli det under överskådlig framtid. Men kostnadsstrukturen för fysisk butik har förändrats snabbare än för dess digitala konkurrent. Det är inte en marknadsandelsfråga längre — det är en <em>lönsamhet-per-kvadratmeter</em>-fråga.</p>
+
+    <h2>Den negativa spiralen — och varför "spara" inte är svaret</h2>
+
+    <p>Den intuitiva reaktionen när marginalen pressas är att skära kostnader. Mindre personal i butik, kortare öppettider, smalare sortiment, färre kampanjer. På kort sikt fungerar det aritmetiskt. På längre sikt accelererar det själva problemet det skulle lösa. När servicenivån sjunker, vänder kunden sig oftare till e-handel. När e-handelsandelen växer, faller butiksomsättningen ytterligare. När butiksomsättningen faller, behöver kostnaderna skäras mer. Spiralen är inte hypotetisk — den är dokumenterad i de småstadsbutiksminskningarna ovan.</p>
+
+    <p>Och det finns en till brist i sparlogiken: den fasta hyran sänks inte av att personalstyrkan minskar. Den dyra kvadratmetern fortsätter att kosta lika mycket oavsett om man bemannar den eller inte. Att skära personal löser ett rörligt kostnadsproblem, men det är inte där chocken kommer från. Chocken är fast.</p>
+
+    <h2>Den enda hållbara vägen är att höja produktiviteten per kvadratmeter</h2>
+
+    <p>När hyran inte går att förhandla bort, energin inte går att önska bort och logistiken inte går att skära bort, finns bara en strategisk öppning kvar: göra varje kvadratmeter mer produktiv. Mer försäljning per kvm. Mer marginal per såld vara. Mer kundlojalitet per besökare. Det är inte ett verktygsval — det är ett strategiskifte.</p>
+
+    <blockquote>Verktyg är konsekvenser av strategi. Inte tvärtom.</blockquote>
+
+    <p>Och det är där svensk handel hamnat på fel fot. För många kedjor har de senaste tre åren prioriterat snabba operativa åtgärder — bemanningssänkningar, kampanjjusteringar, leverantörsförhandlingar — utan att först ha gjort den strategiska reset:en som den nya kostnadsverkligheten kräver.</p>
+
+    <h2>Vad det innebär att börja från strategin</h2>
+
+    <p>I de kedjor som vi arbetar med på SCG börjar arbetet alltid med samma övning: en SWOT-analys av kedjans aktuella position i den nya kostnadsverkligheten. Inte SWOT som ett akademiskt papper, utan som ett konkret instrument: vilka av era butikslägen kommer fortsätta vara lönsamma vid en hyresnivå som är 25 procent högre än 2022? Vilka av era sortimentsgrupper bär kvadratmeterkostnaden idag — och vilka subventioneras tyst av de andra? Vilka kundsegment har ni en strukturell fördel mot e-handeln med, och vilka har ni redan tappat?</p>
+
+    <p>Den första frågan att besvara konkret är ofta också den enklaste att underskatta: <em>vilka kvadratmeter används överhuvudtaget?</em> Med <strong>Perfekt kundflöde</strong> kartlägger vi värmekartor och rörelsemönster i butiken — kompatibelt med befintliga CCTV-system — och får svart på vitt vilka zoner som är heta, vilka som är kalla och vilka som besökare passerar genom utan att stanna. Det öppnar två strategiska vägar som svensk handel sällan tar konsekvent: antingen <em>omdisponera</em> layouten så att de kalla zonerna börjar arbeta, eller <em>minska</em> den totala butiksytan i kommande omförhandling och flytta omsättningen till färre, men effektivare kvadratmeter. Båda vägar höjer omsättningen per kvm. Den andra vägen — att aktivt välja en mindre butik — är fortfarande tabu i många kedjor, men i den nya kostnadsverkligheten är den ofta det skarpaste strategiska greppet.</p>
+
+    <p>Först därefter förfinar vi strategin, och först därefter pekar vi mot rätt operativa verktyg. <strong>Perfekt hylla</strong> för att lyfta omsättningen i de hyllmeter som inte presterar idag. <strong>Perfekt varuplacering</strong> för att flytta era marginalstarkaste produkter till de varma zoner som Perfekt kundflöde just har identifierat. <strong>Saldo4</strong> för att frigöra kapital som ligger låst i fel lager och därmed dämpa räntekänsligheten. <strong>Feedback App</strong> för att mäta den kundupplevelse som är hela motiveringen till att kunden ska välja er fysiska butik framför ett mobilflöde. Verktygen levererar — men det är strategin som bestämmer vilket verktyg, var och i vilken ordning.</p>
+
+    <h2>Inte dödsdömd. Men inte heller orörd.</h2>
+
+    <p>Den fysiska butiken kommer att finnas kvar. Den kommer att finnas kvar för att 86 procent av all detaljhandelsförsäljning fortfarande sker fysiskt, för att kunder fortsätter värdesätta att se, känna och rådgöra, och för att stadsmiljö och köpcentrum är levande organismer som har egen attraktionskraft. Men den fysiska butik som finns kvar 2030 kommer inte att vara den som finns idag. Den kommer att vara mer produktiv per kvadratmeter, mer datadriven i sina beslut, snävare i sortiment men skarpare i upplevelse — och framför allt: medvetet konfigurerad för en kostnadsbild som inte kommer att gå tillbaka till 2019 års nivåer.</p>
+
+    <p>Den dyra kvadratmetern är inte ett hot. Den är en disciplin. Och de kedjor som accepterar disciplinen tidigt kommer att stå starkare 2030 än de som spenderar de närmaste åren på att förhandla med en formel.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p>When the rent invoice for the first quarter of 2026 lands in December, the amount is no longer news. It's the fourth year in a row that commercial rents for Swedish retail have shot past their historical normal pace — a CPI-driven adjustment that, between 2022 and 2026, has lifted indexed annual rents by roughly 24 percent. For a typical mid-sized 500-square-metre store, that translates to around SEK 180,000 more in fixed rent every year, in perpetuity. It isn't a cycle. It's a recalibration.</p>
+
+    <p>As if that weren't enough, two other shocks have landed on the same square metre during the same period. And together, they have changed the conditions for physical retail more than many chains have yet dared to articulate.</p>
+
+    <h2>Three shocks on the same square metre</h2>
+
+    <p>The first is rent itself. The standard clause in most Swedish commercial leases — Fastighetsägarna's 6E and 6F — means rent follows the consumer price index with full adjustment every January. When the October CPI figures came in at 10.9 percent ahead of 2023, 6.5 percent ahead of 2024 and 3.8 percent ahead of 2025, there was no negotiation. There was a formula. Swedish Trade (Svensk Handel) has calculated that retailers' rents have collectively risen over 20 percent since 2022, and notes that around 3,200 stores in the footwear and fashion segment alone sit in the zone where the risk of restructuring or bankruptcy is imminent.</p>
+
+    <p>The second shock is energy. It was worst in 2022 and 2023, but has not returned to the levels that prevailed before. In winter, spot prices in southern Sweden's electricity zones — SE3 and SE4, where the bulk of retail floor space sits — have periodically been four to five times higher than the 2020 baseline. For a 500-square-metre store with refrigeration, lighting and heating, that is a significant cost increase, and it lands especially hard on grocery and big-box concepts where electricity is a core operating cost rather than a background expense.</p>
+
+    <p>The third is logistics — and it's worse than most chains assume. The Swedish Hauliers Association (Sveriges Åkeriföretag) warned as early as the start of 2022 about a <em>historic</em> adjustment to transport contracts: a 10 to 15 percent freight cost increase, driven by a diesel price that had risen 40 percent in a single year. Statistics Sweden's producer price index for road freight added another 5.2 percent between 2022 and 2023. International container freight from Asia to Sweden has normalised from its absurd pandemic peaks but still sits significantly above 2019. For chains running their own distribution from central warehouses to stores, this lands as a higher cost per delivered carton, and therefore a lower margin per sold unit.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/den-dyra-kvadratmetern-graf.svg" alt="Line chart showing commercial rents for Swedish retail have risen 24.5 percent between 2022 and 2026, while nominal retail revenue has risen only 12 percent." loading="lazy" />
+      <figcaption>
+        Figure 1. Index 100 = 2022. Rent index based on Fastighetsägarna's CPI clause (cumulative adjustment 10.9 + 6.5 + 3.8 + 1.57 %). Revenue data: Swedish Trade and Statistics Sweden, nominal figures. Real volume growth in retail has been close to zero during the period.
+      </figcaption>
+    </figure>
+
+    <h2>Sweden stands out</h2>
+
+    <p>This is not a shock that hits Swedish retail alone. Norway, Denmark and Finland all use CPI-indexed commercial leases as their norm. But contract culture differs — more than most people realise.</p>
+
+    <p>In Denmark, it is "helt sædvanligt" — entirely customary, as the legal handbooks put it — for commercial lease agreements to include both a minimum and a maximum cap. Typically a guaranteed increase of at least two to three percent, but never more than four to five. When the Danish net price index rose 10 percent in 2022, the Danish parliament also intervened with a temporary rent cap of 4 percent for residential leases — a signal that affected expectations in the commercial market too. In Norway, it is increasingly common for the lessee to negotiate partial indexation — perhaps 75 percent of CPI — or to choose KPI-JAE, that is, CPI adjusted for taxes and energy, specifically to avoid an energy shock being double-counted into rent.</p>
+
+    <p>In Sweden, no such practice exists. The standard clause is 100 percent. No cap, no floor-and-ceiling compromise, no alternative index. And the inflation rate fed into that formula was the highest in the Nordics — around 18 percent cumulatively across 2022 and 2023, compared to Norway's 12.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">3×</span>
+      <span class="stat-callout-text">Triple whammy: higher inflation, full indexation, no protection. Swedish retail has been hit uniquely compared to its neighbours.</span>
+    </div>
+
+    <h2>E-commerce's other half</h2>
+
+    <p>Meanwhile, the digital competitor has not stood still. Swedish Trade measures that e-commerce grew 76 percent across 2018–2024, while physical retail grew 20 percent. E-commerce's share of total retail now sits at 14–15 percent, and forecasts point toward 24–29 percent by 2035. The number of physical stores in Sweden has fallen during the same period — by a full 29 percent in small towns.</p>
+
+    <p>The reader who wants to interpret this as proof of physical retail's imminent death misses the point. Physical retail still dominates and will continue to do so for the foreseeable future. But the cost structure of physical retail has changed faster than that of its digital competitor. It's no longer a market-share question — it's a <em>profitability-per-square-metre</em> question.</p>
+
+    <h2>The negative spiral — and why "saving" isn't the answer</h2>
+
+    <p>The intuitive reaction when margin gets squeezed is to cut costs. Less staff on the floor, shorter hours, narrower assortment, fewer campaigns. In the short term, the arithmetic works. In the longer term, it accelerates the very problem it was meant to solve. When service levels drop, the customer turns more often to e-commerce. When the e-commerce share grows, store sales fall further. When store sales fall, costs need to be cut further. The spiral isn't hypothetical — it's documented in the small-town store losses cited above.</p>
+
+    <p>And there's a further flaw in the savings logic: fixed rent doesn't shrink when staff numbers do. The expensive square metre keeps costing the same whether it's staffed or not. Cutting personnel solves a variable cost problem, but that isn't where the shock is coming from. The shock is fixed.</p>
+
+    <h2>The only sustainable path is to raise productivity per square metre</h2>
+
+    <p>When rent can't be negotiated away, energy can't be wished away and logistics can't be cut away, only one strategic opening remains: make every square metre more productive. More sales per sqm. More margin per sold item. More customer loyalty per visitor. This is not a tool choice — it's a strategic shift.</p>
+
+    <blockquote>Tools are consequences of strategy. Not the other way around.</blockquote>
+
+    <p>And this is where Swedish retail has landed on the wrong foot. For too many chains, the past three years have been spent prioritising fast operational fixes — staffing cuts, campaign adjustments, supplier renegotiations — without first doing the strategic reset the new cost reality demands.</p>
+
+    <h2>What it means to start from strategy</h2>
+
+    <p>In the chains we work with at SCG, the work always begins with the same exercise: a SWOT analysis of the chain's current position in the new cost reality. Not SWOT as an academic paper, but as a concrete instrument: which of your store locations will remain profitable at rent levels 25 percent higher than 2022? Which of your assortment groups carry the square-metre cost today — and which are quietly subsidised by the others? Which customer segments do you have a structural advantage against e-commerce with, and which have you already lost?</p>
+
+    <p>The first question to answer concretely is often also the easiest to underestimate: <em>which square metres are even being used?</em> With <strong>Perfect Customer Flow</strong> we map heat patterns and movement flows in the store — compatible with existing CCTV systems — and get black-and-white evidence of which zones are hot, which are cold, and which visitors pass through without stopping. This opens two strategic paths that Swedish retail rarely takes consistently: either <em>redistribute</em> the layout so cold zones start to work, or <em>shrink</em> the total floor area at the next lease negotiation and shift turnover to fewer but more effective square metres. Both paths raise sales per sqm. The second path — actively choosing a smaller store — is still taboo in many chains, but in the new cost reality it is often the sharpest strategic move.</p>
+
+    <p>Only then do we refine the strategy, and only then do we point to the right operational tools. <strong>Perfect Shelf</strong> to lift sales in the shelf metres that aren't performing today. <strong>Perfect Product Placement</strong> to move your highest-margin products into the hot zones that Perfect Customer Flow has just identified. <strong>Saldo4</strong> to free up capital locked into the wrong inventory and dampen interest-rate sensitivity. <strong>Feedback App</strong> to measure the customer experience that is the entire justification for the customer choosing your physical store over a mobile feed. The tools deliver — but it's strategy that decides which tool, where, and in what order.</p>
+
+    <h2>Not doomed. But not unchanged either.</h2>
+
+    <p>The physical store will remain. It will remain because 86 percent of all retail sales still happen physically, because customers continue to value seeing, touching and consulting, and because city centres and shopping centres are living organisms with their own pull. But the physical store that exists in 2030 won't be the one that exists today. It will be more productive per square metre, more data-driven in its decisions, narrower in assortment but sharper in experience — and above all: deliberately configured for a cost reality that won't be returning to 2019 levels.</p>
+
+    <p>The expensive square metre isn't a threat. It's a discipline. And the chains that accept the discipline early will stand stronger in 2030 than those who spend the coming years negotiating with a formula.</p>
+  </div>
+
+  <style>
+    .article-figure {
+      margin: 2.75rem 0;
+    }
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .article-figure figcaption {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-muted);
+      padding: 0.85rem 0 0;
+      line-height: 1.55;
+      letter-spacing: 0.005em;
+    }
+    @media (max-width: 700px) {
+      .article-figure {
+        margin: 1.75rem -1rem;
+      }
+      .article-figure img {
+        border-radius: 0;
+      }
+      .article-figure figcaption {
+        padding: 0.75rem 1rem 0;
+      }
+    }
+  </style>
+</InsightLayout>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">Kommersiella hyror har skenat ifrån detaljhandelns omsättning 2022–2026</title>
+  <desc id="chart-desc">Linjediagram som visar att kommersiella hyror för svensk retail ökat 24,5 procent mellan 2022 och 2026, medan detaljhandelns nominella omsättning bara ökat 12 procent. Hyresindex 100, 110,9, 118,1, 122,6 och 124,5. Omsättningsindex 100, 102, 105, 109 och 112.</desc>
+
+  <defs>
+    <linearGradient id="gapFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A32D2D" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#A32D2D" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Plot area background -->
+  <rect x="0" y="0" width="900" height="480" fill="#ffffff"/>
+
+  <!-- Y-axis gridlines -->
+  <g stroke="#eef0f4" stroke-width="1">
+    <line x1="90" y1="80"  x2="850" y2="80"/>
+    <line x1="90" y1="150" x2="850" y2="150"/>
+    <line x1="90" y1="220" x2="850" y2="220"/>
+    <line x1="90" y1="290" x2="850" y2="290"/>
+    <line x1="90" y1="360" x2="850" y2="360"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <g font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#7a8093" text-anchor="end">
+    <text x="80" y="84">130</text>
+    <text x="80" y="154">120</text>
+    <text x="80" y="224">110</text>
+    <text x="80" y="294">100</text>
+    <text x="80" y="364">90</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#1a1a1a" text-anchor="middle">
+    <text x="170" y="395">2022</text>
+    <text x="320" y="395">2023</text>
+    <text x="470" y="395">2024</text>
+    <text x="620" y="395">2025</text>
+    <text x="770" y="395">2026</text>
+  </g>
+
+  <!-- Bottom rule -->
+  <line x1="90" y1="375" x2="850" y2="375" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Gap fill between rent (red) and revenue (blue) -->
+  <!-- Y-coord conversion: value 90 = y 360, value 130 = y 80 → step of 7 per index unit -->
+  <!-- 100→290, 110.9→213.7, 118.1→163.3, 122.6→131.8, 124.5→118.5 -->
+  <!-- 100→290, 102→276,    105→255,    109→227,    112→206 -->
+  <path d="M 170,290 L 320,213.7 L 470,163.3 L 620,131.8 L 770,118.5
+           L 770,206 L 620,227 L 470,255 L 320,276 L 170,290 Z"
+        fill="url(#gapFill)" stroke="none"/>
+
+  <!-- Revenue (blue, dashed) -->
+  <polyline points="170,290 320,276 470,255 620,227 770,206"
+            fill="none" stroke="#185FA5" stroke-width="3" stroke-dasharray="8,5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#185FA5">
+    <circle cx="170" cy="290" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="320" cy="276" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="470" cy="255" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="620" cy="227" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="770" cy="206" r="6" stroke="#fff" stroke-width="2"/>
+  </g>
+
+  <!-- Rent (red, solid) -->
+  <polyline points="170,290 320,213.7 470,163.3 620,131.8 770,118.5"
+            fill="none" stroke="#A32D2D" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#A32D2D">
+    <circle cx="170" cy="290" r="6.5" stroke="#fff" stroke-width="2"/>
+    <circle cx="320" cy="213.7" r="6.5" stroke="#fff" stroke-width="2"/>
+    <circle cx="470" cy="163.3" r="6.5" stroke="#fff" stroke-width="2"/>
+    <circle cx="620" cy="131.8" r="6.5" stroke="#fff" stroke-width="2"/>
+    <circle cx="770" cy="118.5" r="6.5" stroke="#fff" stroke-width="2"/>
+  </g>
+
+  <!-- End-point labels -->
+  <g font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="16">
+    <text x="785" y="115" fill="#A32D2D">+24,5 %</text>
+    <text x="785" y="210" fill="#185FA5">+12 %</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a1a1a">
+    <g transform="translate(110, 40)">
+      <line x1="0" y1="6" x2="22" y2="6" stroke="#A32D2D" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="11" cy="6" r="4.5" fill="#A32D2D" stroke="#fff" stroke-width="1.5"/>
+      <text x="32" y="10">Kommersiell hyra (kumulativ KPI-indexering)</text>
+    </g>
+    <g transform="translate(450, 40)">
+      <line x1="0" y1="6" x2="22" y2="6" stroke="#185FA5" stroke-width="3" stroke-dasharray="6,4" stroke-linecap="round"/>
+      <circle cx="11" cy="6" r="4.5" fill="#185FA5" stroke="#fff" stroke-width="1.5"/>
+      <text x="32" y="10">Detaljhandelns omsättning (nominell)</text>
+    </g>
+  </g>
+
+  <!-- Y-axis title (rotated) -->
+  <text x="-225" y="22" transform="rotate(-90)"
+        font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+        font-size="12" fill="#7a8093" text-anchor="middle">Index (2022 = 100)</text>
+</svg>
