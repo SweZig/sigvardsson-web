@@ -1,0 +1,182 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'rantechocken');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p>När CFO:n i en svensk retail-kedja öppnade Q1-rapporten 2026 var det inte resultatraden som överraskade henne — det var räntenettot. På ett år hade det vuxit med fem miljoner kronor och nu ätit nästan fyra procent av rörelseresultatet. Inget enskilt beslut hade orsakat det. Inget enskilt projekt kunde rulla tillbaka det. Det hade bara hänt — som något slags väder över balansräkningen.</p>
+
+    <p>Det är räntechockens karaktär. Den smyger in via tre kanaler samtidigt, är kumulativ till sin natur, och syns inte på en enskild rad i resultaträkningen. Och till skillnad från hyran — som har en formel och därför går att räkna på — sprider sig räntan ojämnt över kedjor, segment och balansräkningar.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/rantechocken-graf.svg" alt="Linjediagram över Riksbankens styrränta 2020-2026. Räntan låg på 0 procent 2020 och 2021, steg till 2,50 procent i slutet av 2022, nådde toppen 4,00 procent i september 2023, sjönk gradvis under 2024 och stabiliserades på 1,75 procent från september 2025." loading="lazy" />
+      <figcaption>
+        Figur 1. Riksbankens styrränta 2020–2026. Den 2-procentiga höjning från nollränte-eran landade på 1,75 procent som ny baseline i september 2025 — och prognosmakarnas konsensus är att den ligger där hela 2026. Källa: Riksbanken, Ekonomifakta.
+      </figcaption>
+    </figure>
+
+    <h2>De tre kanalerna räntan kommer in genom</h2>
+
+    <p>Den första är <strong>direkta lånekostnader</strong>. För kedjor med checkkrediter, företagslån eller fastighetslån på egenägda butiker är det den synliga delen — den som dyker upp på räntenettoraden. Den är jobbig men förståelig. Den näst största posten kommer från <strong>kapitalbindningens opportunity cost</strong>. Varje krona låst i lager kostar nu 4–6 procent per år i utebliven avkastning, jämfört med ungefär 0,5 procent som var verkligheten 2020. För en kedja med 200 miljoner kronor bundet i lager motsvarar det 8–12 miljoner kronor om året beroende på verksamhet — pengar som inte fanns på pappret förut. Det är en alternativkostnad som inte redovisas men som ändå konsumerar finansiellt utrymme.</p>
+
+    <p>Den tredje kanalen är den mest dolda: <strong>leverantörsbetalningsvillkoren</strong>. När leverantörerna själva får dyrare finansiering pressar de tillbaka 60-dagarsbetalningar till 30, och 30 till 14. Det flyttar arbetskapitalbehovet nedströms — från leverantörens balansräkning till handlarens. Och eftersom det sker gradvis, i samtal mellan inköp och leverantör, hamnar det aldrig på CFO:ns bord som ett strategiskt beslut. Det bara <em>händer</em>.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">8–12 MKR</span>
+      <span class="stat-callout-text">Opportunity cost för 200 mkr i lager vid 4–6 % ränta. Det är pengar som inte syns men som konsumerar finansiellt utrymme — varje år.</span>
+    </div>
+
+    <h2>Multiplikatoreffekten</h2>
+
+    <p>Var och en av de tre kanalerna är hanterbar i isolering. Det är när de ackumuleras som de blir farliga. En kedja med stor kapitalbindning, lånefinansierad expansion och leverantörsberoende får alla tre kanalerna samtidigt — och får dessutom dem ovanpå hyreschocken och energikostnaderna.</p>
+
+    <p>Det är detta som gör att två kedjor med samma omsättning och samma bruttomarginal kan ha helt olika finansiell motståndskraft 2026. Den ena har hanterat kapitalbindning, betalningsvillkor och bankfacilitet strategiskt under 2023–2025. Den andra har låtit det glida. På balansräkningen ser de likadana ut. På räntenettot skiljer det 4 procent av rörelseresultatet.</p>
+
+    <blockquote>Räntan är inte CFO:ns problem. Den är hela bolagets problem — som råkar synas på CFO:ns rad.</blockquote>
+
+    <p>Det är ingen akademisk distinktion. Den syns konkret i hur kedjorna styrs: organisationen — försäljning, inköp, butiksdrift — mäts och bonusbedöms på EBIT och EBITDA. Det är tal som ligger <em>ovanför</em> räntan i resultaträkningen. CFO:n läser samtidigt kassaflödet, där räntan, kapitalbindningen och betalningsvillkoren slår direkt. Två funktioner i samma bolag som tittar på samma rapport — och ser olika verkligheter. Och därför ofta fattar olika beslut.</p>
+
+    <h2>Varför olika segment drabbas olika hårt</h2>
+
+    <p>Dagligvaruhandeln har korta lager och snabb stockturn — räntechocken slår mindre där. <strong>Sällanköp</strong> med säsongssortiment och längre liggtider får hela kraften: ett kläderlager som ligger 6 månader vid 4–6 procent ränta är en helt annan kostnadsbild än samma lager vid 0,5 procent. Och <strong>mode</strong> med kollektioner som binder upp kapital från beställning till realisation 9–12 månader senare är det segment som genomgår den hårdaste finansiella stresstest:en just nu.</p>
+
+    <p>Skillnaden mellan vinnarna och förlorarna inom segmenten är inte storlek. Den är hur strategiskt CFO och inköp samordnat sortiments-, lager- och betalningsbeslut.</p>
+
+    <h2>Den klassiska missen</h2>
+
+    <p>I de flesta kedjor hanteras räntan som en finansavdelningsfråga — något CFO och treasury sköter, ofta i tysthet. Det är fel placering. <strong>Räntechocken är en operativ fråga som råkar registreras finansiellt.</strong> Den verkliga hävstången sitter i inköpsavtal, i sortimentsplaneringen, i lagerstrukturen, i butiks-cash-cycle:n. Det är platser där CFO:n sällan har naturligt mandat — men där kostnaden uppstår.</p>
+
+    <p>De kedjor som hanterar räntechocken bäst har lyft frågan ur finansavdelningen och in i ledningsgruppen. De har gjort kapitalbindning till en kvartalsvis KPI som diskuteras med samma allvar som omsättning eller marginal. Och de har gett inköp och butiksdrift både datan och mandatet att agera på den.</p>
+
+    <h2>Vad de bästa kedjorna gör annorlunda</h2>
+
+    <p>Tre konkreta grepp återkommer hos de nordiska kedjor som vänt utvecklingen sedan 2023. <strong>Det första är att strukturera kapitalbindningen per SKU och per säsong.</strong> Inte som en månadsrapport till finansavdelningen, utan som ett operativt verktyg i inköpsbesluten. Det vi sett i projekt med <strong>Saldo4</strong> är reduktion av kapitalbindning med 15–25 procent på 18 månader — vilket vid dagens räntenivå inte längre är en operativ förbättring, det är en finansiell.</p>
+
+    <p><strong>Det andra är att aktivt förvalta betalningsvillkoren</strong> — inte som en inköpsförhandling utan som en strategisk relation. När leverantören vet att de hanteras professionellt accepterar de oftare 45- eller 60-dagars villkor. När de upplever ad hoc-tryck rycker de tillbaka. Det här är ett operativt val, inte ett finansiellt.</p>
+
+    <p><strong>Det tredje är att medvetet kalibrera sortimentsbredd mot omsättningshastighet.</strong> En extra produkt i sortimentet är inte gratis — den binder kapital. Vid 0,5 procent ränta var det en marginalfråga. Vid 4–6 procent är det en strukturell fråga.</p>
+
+    <h2>Inte tillbaka till noll</h2>
+
+    <p>Riksbanken har stabiliserat styrräntan på 1,75 procent och prognosmakarnas konsensus är att den ligger där hela 2026. Det är en avgörande insikt: vi går inte tillbaka till nollränte-eran. <strong>Den nya normalen ligger där den ligger — och hela retail-branschen behöver kalibrera om sina balansräkningar och sina operativa beslut till den verkligheten.</strong></p>
+
+    <p>De kedjor som accepterar det tidigt och bygger om kapitalbindning, betalningsvillkor och sortimentslogik utifrån 1,75-procentsräntan kommer att ha 5–8 procents bättre räntenetto än de som väntar på att räntan ska gå tillbaka till noll. Och eftersom det inte kommer hända, kommer det skapa permanenta avstånd mellan vinnare och förlorare.</p>
+
+    <p>Räntan är inte en konjunktur. Den är, precis som hyran, en kalibrering.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p>When the CFO of a Swedish retail chain opened her Q1 2026 report, it wasn't the bottom line that surprised her — it was net interest expense. In a single year it had grown by SEK 5 million and now consumed nearly four percent of operating profit. No single decision had caused it. No single project could roll it back. It had simply happened — like some kind of weather over the balance sheet.</p>
+
+    <p>That is the character of the interest rate shock. It enters through three channels simultaneously, is cumulative by nature, and doesn't show up on a single line of the income statement. And unlike rent — which follows a formula and can therefore be calculated — interest spreads unevenly across chains, segments and balance sheets.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/rantechocken-graf.svg" alt="Line chart showing the Swedish central bank's policy rate from 2020 to 2026. The rate sat at 0 percent in 2020 and 2021, rose to 2.50 percent at the end of 2022, peaked at 4.00 percent in September 2023, declined gradually through 2024, and stabilised at 1.75 percent from September 2025." loading="lazy" />
+      <figcaption>
+        Figure 1. The Swedish central bank's policy rate 2020–2026. The 2-point rise from the zero-rate era settled at 1.75 percent as the new baseline in September 2025 — and forecaster consensus is that it stays there throughout 2026. Source: Riksbanken, Ekonomifakta.
+      </figcaption>
+    </figure>
+
+    <h2>The three channels interest enters through</h2>
+
+    <p>The first is <strong>direct borrowing costs</strong>. For chains with overdraft facilities, corporate loans or property loans on owned stores, this is the visible part — the one that lands on the net interest line. It's painful but comprehensible. The next-largest item comes from the <strong>opportunity cost of working capital</strong>. Every krona locked into inventory now costs 4–6 percent per year in lost return, compared with around 0.5 percent in 2020. For a chain with SEK 200 million in inventory, that translates to SEK 8–12 million per year depending on the business — money that wasn't on the page before. It's an alternative cost that isn't reported but that consumes financial capacity nonetheless.</p>
+
+    <p>The third channel is the most hidden: <strong>supplier payment terms</strong>. When suppliers themselves face costlier financing, they push 60-day payment terms back to 30, and 30 back to 14. This shifts the working capital requirement downstream — from the supplier's balance sheet to the retailer's. And because it happens gradually, in conversations between buying and supplier, it never lands on the CFO's desk as a strategic decision. It simply <em>happens</em>.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">SEK 8–12M</span>
+      <span class="stat-callout-text">Opportunity cost on SEK 200 million in inventory at 4–6 percent interest. Money that doesn't show but that consumes financial capacity — every year.</span>
+    </div>
+
+    <h2>The multiplier effect</h2>
+
+    <p>Each of the three channels is manageable in isolation. It's when they accumulate that they become dangerous. A chain with significant working capital, debt-financed expansion and supplier dependence gets all three channels at once — on top of the rent shock and the energy costs.</p>
+
+    <p>This is what makes two chains with the same revenue and the same gross margin have completely different financial resilience in 2026. One has managed working capital, payment terms and banking facilities strategically through 2023–2025. The other has let it drift. On the balance sheet they look the same. On net interest there's a 4-percent-of-operating-profit gap.</p>
+
+    <blockquote>Interest isn't the CFO's problem. It's the whole company's problem — that happens to show up on the CFO's line.</blockquote>
+
+    <p>It's not an academic distinction. It shows up concretely in how chains are run: the organisation — sales, buying, store operations — is measured and bonused on EBIT and EBITDA. Those are numbers that sit <em>above</em> interest on the income statement. The CFO reads cash flow at the same time, where interest, working capital and payment terms hit directly. Two functions in the same company looking at the same report — and seeing different realities. And therefore often making different decisions.</p>
+
+    <h2>Why segments are hit differently</h2>
+
+    <p>Grocery has short inventory cycles and fast stock turn — the interest shock hits less hard there. <strong>Non-food</strong> with seasonal assortment and longer dwell times takes the full force: a clothing inventory sitting for 6 months at 4–6 percent interest is a completely different cost picture than the same inventory at 0.5 percent. And <strong>fashion</strong>, with collections that tie up capital from order to clearance 9–12 months later, is the segment going through the hardest financial stress test right now.</p>
+
+    <p>The difference between winners and losers within segments isn't size. It's how strategically the CFO and buying have coordinated assortment, inventory and payment decisions.</p>
+
+    <h2>The classic miss</h2>
+
+    <p>In most chains, interest is treated as a finance department issue — something the CFO and treasury handle, often quietly. That's the wrong placement. <strong>The interest shock is an operational issue that simply gets recorded financially.</strong> The real leverage sits in purchasing agreements, in assortment planning, in inventory structure, in store cash cycle. These are places where the CFO rarely has natural mandate — but where the cost arises.</p>
+
+    <p>The chains that handle the interest shock best have lifted the question out of the finance department and into the management group. They've made working capital a quarterly KPI discussed with the same gravity as revenue or margin. And they've given buying and store operations both the data and the mandate to act on it.</p>
+
+    <h2>What the best chains do differently</h2>
+
+    <p>Three concrete approaches recur in the Nordic chains that have turned the tide since 2023. <strong>The first is to structure working capital by SKU and by season.</strong> Not as a monthly report to finance, but as an operational tool in purchasing decisions. What we've seen in projects with <strong>Saldo4</strong> is a 15–25 percent reduction in working capital over 18 months — which at today's interest level is no longer just an operational improvement, it's a financial one.</p>
+
+    <p><strong>The second is to actively manage payment terms</strong> — not as a purchasing negotiation but as a strategic relationship. When the supplier knows they're being handled professionally, they more often accept 45- or 60-day terms. When they experience ad hoc pressure, they pull back. This is an operational choice, not a financial one.</p>
+
+    <p><strong>The third is to deliberately calibrate assortment breadth against turnover speed.</strong> An extra product in the assortment isn't free — it binds capital. At 0.5 percent interest, that was a marginal question. At 4–6 percent, it's a structural one.</p>
+
+    <h2>Not back to zero</h2>
+
+    <p>The Swedish central bank has stabilised the policy rate at 1.75 percent and forecaster consensus is that it stays there throughout 2026. That's a decisive insight: we're not going back to the zero-rate era. <strong>The new normal is where it is — and the entire retail industry needs to recalibrate its balance sheets and its operational decisions to that reality.</strong></p>
+
+    <p>The chains that accept this early and rebuild working capital, payment terms and assortment logic around the 1.75 percent rate will have 5–8 percent better net interest than those waiting for rates to return to zero. And since that won't happen, this will create permanent distance between winners and losers.</p>
+
+    <p>Interest isn't a business cycle. It is, like rent, a recalibration.</p>
+  </div>
+
+  <style>
+    .article-figure {
+      margin: 2.75rem 0;
+    }
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .article-figure figcaption {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-muted);
+      padding: 0.85rem 0 0;
+      line-height: 1.55;
+      letter-spacing: 0.005em;
+    }
+    @media (max-width: 700px) {
+      .article-figure {
+        margin: 1.75rem -1rem;
+      }
+      .article-figure img {
+        border-radius: 0;
+      }
+      .article-figure figcaption {
+        padding: 0.75rem 1rem 0;
+      }
+    }
+  </style>
+</InsightLayout>

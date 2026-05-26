@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">Riksbankens styrränta 2020–2026 — vägen tillbaka går inte till noll</title>
+  <desc id="chart-desc">Linjediagram som visar Sveriges styrränta från 2020 till 2026. Räntan låg på 0 procent 2020 och 2021, steg till 2,50 procent i slutet av 2022, nådde toppen 4,00 procent i september 2023, sjönk gradvis under 2024, och stabiliserades på 1,75 procent från september 2025 — vilket är den nya normalnivån.</desc>
+
+  <defs>
+    <linearGradient id="rateFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#010D60" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#010D60" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="480" fill="#ffffff"/>
+
+  <!-- Zero-rate era shading -->
+  <rect x="90" y="345" width="170" height="30" fill="#90A2CF" fill-opacity="0.18"/>
+  <text x="115" y="338" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-style="italic" fill="#5a6280">Nollränte-era</text>
+
+  <!-- Y-axis gridlines -->
+  <g stroke="#eef0f4" stroke-width="1">
+    <line x1="90" y1="80"  x2="850" y2="80"/>
+    <line x1="90" y1="148" x2="850" y2="148"/>
+    <line x1="90" y1="215" x2="850" y2="215"/>
+    <line x1="90" y1="283" x2="850" y2="283"/>
+    <line x1="90" y1="350" x2="850" y2="350"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <g font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#7a8093" text-anchor="end">
+    <text x="80" y="84">5,0 %</text>
+    <text x="80" y="152">4,0 %</text>
+    <text x="80" y="219">3,0 %</text>
+    <text x="80" y="287">2,0 %</text>
+    <text x="80" y="354">1,0 %</text>
+    <text x="80" y="380">0,0 %</text>
+  </g>
+
+  <!-- X-axis labels (years) -->
+  <g font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#1a1a1a" text-anchor="middle">
+    <text x="150" y="395">2020</text>
+    <text x="240" y="395">2021</text>
+    <text x="370" y="395">2022</text>
+    <text x="500" y="395">2023</text>
+    <text x="620" y="395">2024</text>
+    <text x="730" y="395">2025</text>
+    <text x="820" y="395">2026</text>
+  </g>
+
+  <!-- Bottom rule (zero baseline) -->
+  <line x1="90" y1="375" x2="850" y2="375" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- New normal reference line (1.75%) - aligned with curve endpoint -->
+  <line x1="90" y1="272" x2="850" y2="272" stroke="#A32D2D" stroke-width="1.4"
+        stroke-dasharray="4,4" opacity="0.7"/>
+  <text x="845" y="264" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+        font-size="14" font-weight="700" fill="#A32D2D" text-anchor="end">Ny normal: 1,75 %</text>
+
+  <!-- Rate curve -->
+  <!-- Conversion: value 0 = y 375; value 5 = y 80; scale = 59 per pp -->
+  <!-- 0.00 → 375, 2.50 → 227.5, 4.00 → 139, 3.00 → 198, 1.75 → 271.75, 1.75 → 271.75 -->
+  <path d="M 150,375 L 240,375 L 370,227.5 L 500,139 L 620,198 L 730,271.75 L 820,271.75"
+        fill="url(#rateFill)" stroke="none" opacity="0.9"
+        d-data="below the curve to baseline"/>
+
+  <!-- Fill from curve down to baseline -->
+  <path d="M 150,375 L 240,375 L 370,227.5 L 500,139 L 620,198 L 730,271.75 L 820,271.75 L 820,375 L 150,375 Z"
+        fill="url(#rateFill)" stroke="none"/>
+
+  <!-- Main rate line -->
+  <polyline points="150,375 240,375 370,227.5 500,139 620,198 730,271.75 820,271.75"
+            fill="none" stroke="#010D60" stroke-width="3.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#010D60">
+    <circle cx="150" cy="375" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="240" cy="375" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="370" cy="227.5" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="500" cy="139" r="6.5" stroke="#fff" stroke-width="2"/>
+    <circle cx="620" cy="198" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="730" cy="271.75" r="6" stroke="#fff" stroke-width="2"/>
+    <circle cx="820" cy="271.75" r="6.5" stroke="#fff" stroke-width="2"/>
+  </g>
+
+  <!-- Peak annotation -->
+  <g>
+    <line x1="500" y1="135" x2="500" y2="115" stroke="#010D60" stroke-width="1" opacity="0.5"/>
+    <text x="500" y="108" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+          font-size="14" font-weight="700" fill="#010D60" text-anchor="middle">Topp: 4,0 %</text>
+    <text x="500" y="60" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+          font-size="12" fill="#666" text-anchor="middle">sep 2023</text>
+  </g>
+
+  <!-- Y-axis title (rotated) -->
+  <text x="-225" y="22" transform="rotate(-90)"
+        font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+        font-size="12" fill="#7a8093" text-anchor="middle">Styrränta</text>
+</svg>

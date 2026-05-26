@@ -39,6 +39,22 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'rantechocken',
+    category: 'strategy',
+    titleSv: 'Räntechocken — kostnaden ingen pratar om.',
+    titleEn: 'The interest rate shock — the cost no one is talking about.',
+    excerptSv: 'Hyran är retail-branschens favoritsamtal — alla pratar om den, alla räknar på den. Räntan är dess tysta motsvarighet: en kostnadschock som verkar i bakgrunden, drabbar olika delar av handeln helt olika, och som ännu hanteras reaktivt snarare än strategiskt av de flesta CFO:er.',
+    excerptEn: 'Rent is the retail industry\'s favourite conversation — everyone talks about it, everyone calculates it. Interest is its silent counterpart: a cost shock that operates in the background, hits different parts of the industry differently, and is still handled reactively rather than strategically by most CFOs.',
+    coverImage: '/images/services/inventory-chart.jpg',
+    authorId: 'lars-lundqvist',
+    publishDate: '2026-05-26T09:00:00+02:00',
+    publishDateDisplay: { sv: '26 maj 2026', en: 'May 26, 2026' },
+    readingTime: 6,
+    tagsSv: ['Strategi', 'Finans', 'Kapitalbindning', 'CFO'],
+    tagsEn: ['Strategy', 'Finance', 'Working Capital', 'CFO'],
+    relatedProduct: { href: '/products/saldo4/', labelSv: 'Läs mer om Saldo4', labelEn: 'Read more about Saldo4' },
+  },
+  {
     slug: 'den-dyra-kvadratmetern',
     category: 'strategy',
     titleSv: 'Den dyra kvadratmetern.',
