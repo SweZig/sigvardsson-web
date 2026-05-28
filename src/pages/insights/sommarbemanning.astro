@@ -1,0 +1,140 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'sommarbemanning');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p>Räkna kort med mig. En medelstor svensk butikskedja har ungefär 30 procent av sin årsomsättning under juni–augusti. Under samma period är upp till 40 procent av den erfarna säljpersonalen på semester. Vikariekvoten i butik ligger ofta över 50 procent. Och just under dessa månader fattas det fler kundbeslut — om jul, om hemresor, om sommarsortimentet — än under något annat kvartal.</p>
+
+    <p>Lägg ihop det: <strong>maximal försäljningsmöjlighet, minimal kompetensbas, högsta beslutsdensiteten i kundleden.</strong> Och i 90 procent av landets kedjor planeras detta som ett bemanningspussel snarare än som en strategisk fråga. Det är där pengarna försvinner.</p>
+
+    <h2>Tre observationer från golvet</h2>
+
+    <p>När vi följer butiker under sommaren ser vi tre mönster återkomma. <strong>Det första är att timmarna inte ligger där kunderna är.</strong> Sommarschemat byggs nästan alltid utifrån semestervakanser — vem som <em>kan</em> jobba, snarare än när butiken <em>behöver</em> dem. Resultatet: tisdagar och onsdagar är ofta överbemannade i förmiddagslunken, medan torsdagskvällarna och lördagseftermiddagarna är underbemannade just när köptrycket är som högst.</p>
+
+    <p><strong>Det andra är att kompetensen koncentreras till fel tidpunkter.</strong> De erfarna säljarna som är kvar tenderar att schemaläggas under butikens lugnaste timmar — för det är när de "behövs minst". Men det är inte under lugna timmar produktiviteten avgörs. Den avgörs när 40 personer står i kö och en kund behöver hjälp att välja mellan två produkter. Då är det inte vikariens första vecka som ska stå mellan kunden och beslutet.</p>
+
+    <p><strong>Det tredje är att vikarierna sällan får verkligt onboarding-stöd.</strong> En typisk sommarvikarie får en eftermiddags introduktion, en namnskylt och förväntningen att lära sig resten i flykten. Den första veckan är genomgående en kostnad — låg produktivitet, frågor till kollegor, små eller stora missar i kassan eller på golvet. Vecka två är vikarien i bästa fall break-even. Och just som hen börjar bli riktigt bra, slutar augusti och säsongsanställningen rullar ut.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">1,5–3 %</span>
+      <span class="stat-callout-text">enheters reduktion av personalkostnad i procent av försäljning — det är vad datadriven bemanning ger i mätbart resultat. Och kundnöjdheten stiger samtidigt, inte sjunker.</span>
+    </div>
+
+    <blockquote>Sommaren är inte en HR-utmaning. Den är retailerns viktigaste kvartalsverksamhet — som händer med kedjans minst förberedda personal.</blockquote>
+
+    <h2>Vad de bästa kedjorna gör annorlunda</h2>
+
+    <p>De kedjor som hanterar sommaren bäst har två gemensamma egenskaper, och båda går utöver schemaläggning.</p>
+
+    <p><strong>Den första: de behandlar sommarvikariens första två veckor som en investering, inte en kostnad.</strong> Det betyder strukturerad onboarding, parad mentorskap med en erfaren säljare, daglig 15-minuters check-in under första veckan, och tydliga case-baserade övningar — inte bara produktdurkar. Initialt ser det ut som mer kostnad. Sett över hela säsongen ger det 30–40 procents högre produktivitet per timme.</p>
+
+    <p><strong>Den andra: de planerar bemanningen utifrån kundtryck, inte utifrån semesterpussel.</strong> Det låter självklart men det är fortfarande sällsynt i praktiken. När en kedja vänder logiken — först kartlägga timmar då kunder faktiskt är i butik, sedan fördela semestrar runt det — kan personalkostnaden i procent av försäljning sjunka med 1,5 till 3 procentenheter på säsongen. Samtidigt som kundnöjdheten stiger. Det här är inte en hypotes — det är dokumenterat i flera nordiska kedjor.</p>
+
+    <h2>Kunden vet inte vad hen tappar</h2>
+
+    <p>Den mest underskattade kostnaden av sommarbemanning är osynlig: det är försäljningen som <em>inte</em> sker. Kunden som inte fick rätt hjälp och därför inte gjorde merköpet. Kunden som mötte kö och valde bort den fysiska butiken nästa gång. Kunden som upplevde att service och kompetens var lägre — och inte kom tillbaka under hösten heller.</p>
+
+    <p>Den här kostnaden syns inte i kassaapparaten. Den syns i NPS-mätningar 60 dagar senare. Den syns i kundretentionsmätningar 6 månader senare. Och eftersom den inte registreras direkt på sommarens P&L, behandlas den sällan som ett konkret resultat av sommarbemanningsbeslutet — fastän det är just därifrån den kommer.</p>
+
+    <h2>AI och bemanningsschema — när det fungerar</h2>
+
+    <p>AI-baserade schemaläggningsverktyg är på frammarsch och kan absolut producera bättre scheman än manuell planering. Men de gör inte jobbet ensamma. Verktyget skapar förslag — människan måste fortfarande fatta beslutet. Och beslutet kräver tre saker som AI:n inte kan ge: <strong>kontexten kring varje medarbetares utvecklingsfas, känsligheten för det sociala teamet, och förmågan att läsa när en regel ska brytas.</strong> Det är där butikschefens omdöme måste in.</p>
+
+    <p>De kedjor jag arbetar med använder AI som det bästa underlaget för ett mänskligt beslut — inte som beslutet i sig. Den distinktionen är inte semantisk. Den avgör om verktyget faktiskt levererar.</p>
+
+    <h2>Vad det innebär att göra om sommaren</h2>
+
+    <p>Att vända sommarbemanningen från reaktiv HR-fråga till strategisk drift kräver tre saker som de flesta kedjor <em>kan</em> göra men sällan <em>gör</em>:</p>
+
+    <p><strong>1. Mät kundtrycket per timme</strong>, inte per dag eller per vecka. Det räcker med 30 dagars data per butik för att se var kunderna faktiskt är. De flesta kedjor har den datan redan — i kassan, i Wi-Fi-räknare, i <strong>Perfekt kundflöde</strong> — men de använder den inte för bemanningsbeslut.</p>
+
+    <p><strong>2. Bygg in strukturerad onboarding</strong> för säsongspersonal. Två veckor med tydlig progression slår två månader utan struktur. Det här är inte HR — det är ledarskap i butik.</p>
+
+    <p><strong>3. Lägg semestrarna sist, inte först.</strong> När semesterperioderna är konsekvensen av kundbehovet snarare än utgångspunkten för det, vänds hela logiken. Det kräver att man pratar med personalen tidigare på året — men det är inte raketteknik.</p>
+
+    <h2>Sommaren bygger eller bryter året</h2>
+
+    <p>För många nordiska kedjor är juni, juli och augusti tre av de fyra viktigaste månaderna på året. Det betyder att den period då vi är minst förberedda är samtidigt den period då besluten har störst hävstång på årsresultatet.</p>
+
+    <p>Det är därför sommarbemanning inte är en HR-fråga. Det är en strategifråga — som råkar lösas av människor. Och de retailers som börjar behandla den så har redan tagit ett strukturellt försprång gentemot de som fortfarande sitter med personalavdelningens schemaläggningsmall i juni.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p>Quick math with me. A mid-sized Swedish retail chain has around 30 percent of its annual revenue during June–August. During the same period, up to 40 percent of experienced sales staff are on vacation. The temp-staff ratio in stores is often above 50 percent. And it's precisely during these months that more customer decisions are made — about Christmas, about holidays, about summer assortment — than during any other quarter.</p>
+
+    <p>Add it up: <strong>maximum sales opportunity, minimum competence base, highest decision density in the customer journey.</strong> And in 90 percent of chains this is planned as a staffing puzzle rather than as a strategic question. That's where the money disappears.</p>
+
+    <h2>Three observations from the floor</h2>
+
+    <p>When we follow stores during the summer we see three patterns recur. <strong>The first is that the hours don't sit where the customers are.</strong> The summer schedule is almost always built from vacation gaps — who <em>can</em> work, rather than when the store <em>needs</em> them. The result: Tuesdays and Wednesdays are often overstaffed in the morning lull, while Thursday evenings and Saturday afternoons are understaffed precisely when buying pressure is at its highest.</p>
+
+    <p><strong>The second is that competence is concentrated at the wrong times.</strong> The experienced sales staff who remain tend to be scheduled during the store's calmest hours — because that's when they "are needed least". But productivity isn't decided during calm hours. It's decided when 40 people are standing in line and a customer needs help choosing between two products. That's not the moment for a temp's first week to stand between the customer and the decision.</p>
+
+    <p><strong>The third is that temp staff rarely get genuine onboarding support.</strong> A typical summer temp gets an afternoon's introduction, a name tag and the expectation to learn the rest on the fly. The first week is uniformly a cost — low productivity, questions to colleagues, small or large mistakes at the register or on the floor. By week two, the temp is at best break-even. And just as they're starting to get really good, August ends and the seasonal contract runs out.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">1.5–3 pp</span>
+      <span class="stat-callout-text">reduction in personnel cost as percent of revenue — that's what data-driven staffing delivers in measurable results. And customer satisfaction rises at the same time, not falls.</span>
+    </div>
+
+    <blockquote>Summer isn't an HR challenge. It's the retailer's most important quarter of business — happening with the chain's least prepared personnel.</blockquote>
+
+    <h2>What the best chains do differently</h2>
+
+    <p>The chains that handle summer best have two common traits, and both go beyond scheduling.</p>
+
+    <p><strong>The first: they treat the summer temp's first two weeks as an investment, not a cost.</strong> That means structured onboarding, paired mentorship with an experienced colleague, a daily 15-minute check-in during the first week, and clear case-based exercises — not just product drills. Initially it looks like more cost. Across the whole season it delivers 30–40 percent higher productivity per hour.</p>
+
+    <p><strong>The second: they plan staffing from customer pressure, not from the vacation puzzle.</strong> It sounds obvious but it's still rare in practice. When a chain inverts the logic — first map the hours when customers actually are in the store, then distribute vacations around that — personnel cost as percent of revenue can drop by 1.5 to 3 percentage points across the season. While customer satisfaction rises. This isn't a hypothesis — it's documented across several Nordic chains.</p>
+
+    <h2>The customer doesn't know what they're losing</h2>
+
+    <p>The most underestimated cost of summer staffing is invisible: it's the sales that <em>don't</em> happen. The customer who didn't get the right help and therefore didn't make the upsell. The customer who met a queue and skipped the physical store next time. The customer who experienced that service and competence were lower — and didn't come back during the autumn either.</p>
+
+    <p>This cost doesn't show up in the till. It shows up in NPS measurements 60 days later. It shows up in customer retention measurements 6 months later. And because it isn't registered directly against summer's P&L, it's rarely treated as a concrete result of the summer staffing decision — even though that's precisely where it comes from.</p>
+
+    <h2>AI and staffing schedules — when it works</h2>
+
+    <p>AI-based scheduling tools are on the rise and can absolutely produce better schedules than manual planning. But they don't do the job alone. The tool generates suggestions — the human still has to make the decision. And the decision requires three things AI can't give: <strong>the context around each employee's development stage, the sensitivity to the social team, and the ability to read when a rule should be broken.</strong> That's where the store manager's judgement has to come in.</p>
+
+    <p>The chains I work with use AI as the best foundation for a human decision — not as the decision itself. That distinction isn't semantic. It decides whether the tool actually delivers.</p>
+
+    <h2>What it means to redesign summer</h2>
+
+    <p>Turning summer staffing from a reactive HR question into strategic operations requires three things most chains <em>can</em> do but rarely <em>do</em>:</p>
+
+    <p><strong>1. Measure customer pressure per hour</strong>, not per day or per week. Thirty days of data per store is enough to see where customers actually are. Most chains have this data already — in the till, in Wi-Fi counters, in <strong>Perfect Customer Flow</strong> — but they don't use it for staffing decisions.</p>
+
+    <p><strong>2. Build in structured onboarding</strong> for seasonal staff. Two weeks with clear progression beats two months without structure. This isn't HR — it's in-store leadership.</p>
+
+    <p><strong>3. Put vacations last, not first.</strong> When vacation periods are the consequence of customer need rather than the starting point for it, the entire logic flips. It requires talking with staff earlier in the year — but that isn't rocket science.</p>
+
+    <h2>Summer makes or breaks the year</h2>
+
+    <p>For many Nordic chains, June, July and August are three of the four most important months of the year. Which means that the period we are least prepared for is at the same time the period when decisions have the greatest leverage on the annual result.</p>
+
+    <p>That's why summer staffing isn't an HR question. It's a strategy question — that happens to be solved by people. And the retailers who start treating it that way have already taken a structural lead over those still sitting with the HR department's scheduling template in June.</p>
+  </div>
+</InsightLayout>

@@ -39,6 +39,22 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'sommarbemanning',
+    category: 'operations',
+    titleSv: 'Sommarbemanning är ett strategiskt val.',
+    titleEn: 'Summer staffing is a strategic choice.',
+    excerptSv: 'I de flesta retail-kedjor hanteras sommarbemanningen som en HR-fråga. Att det samtidigt är kedjans största produktivitets- och kundupplevelseförändring under året behandlas som något oundvikligt — som vädret. Det är där den största operativa missen i svensk handel uppstår just nu.',
+    excerptEn: 'In most retail chains, summer staffing is handled as an HR question. The fact that this is simultaneously the chain\'s biggest productivity and customer experience shift of the year is treated as something inevitable — like the weather. That is where Swedish retail\'s biggest operational miss happens right now.',
+    coverImage: '/images/retail/staff-tablet-shelf.jpg',
+    authorId: 'peter-wilen',
+    publishDate: '2026-05-28T09:00:00+02:00',
+    publishDateDisplay: { sv: '28 maj 2026', en: 'May 28, 2026' },
+    readingTime: 5,
+    tagsSv: ['Operations', 'Bemanning', 'Ledarskap', 'Kundupplevelse'],
+    tagsEn: ['Operations', 'Staffing', 'Leadership', 'Customer Experience'],
+    relatedProduct: { href: '/services/tjanster/perfekt-kundflode/', labelSv: 'Läs mer om Perfekt kundflöde', labelEn: 'Read more about Perfect Customer Flow' },
+  },
+  {
     slug: 'rantechocken',
     category: 'strategy',
     titleSv: 'Räntechocken — kostnaden ingen pratar om.',
