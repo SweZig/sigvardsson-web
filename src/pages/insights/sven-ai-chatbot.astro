@@ -1,0 +1,213 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'sven-ai-chatbot');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p class="series-tag">Del 1 av 3 — Den första i en serie om AI i retail. Nästa del: tisdag.</p>
+
+    <p>Det finns en mycket bred konsensus i affärsmedia just nu om att AI håller på att förändra retail. Det skrivs slides. Det publiceras rapporter. McKinsey, BCG och Bain har alla under det senaste kvartalet släppt djupgående analyser av generativ AI:s genomslag i branschen. Och det stämmer — på något plan. Men det finns en distinktion som nästan alltid saknas i diskussionen, och det är där hela poängen ligger: skillnaden mellan AI som <em>teknik</em> och AI som <em>produkt</em>.</p>
+
+    <p>Tekniken är en modell — en LLM från OpenAI, Anthropic, Google eller någon annan. Produkten är vad du <em>gör</em> med den. Skillnaden mellan en chatbot som löser 80–90 procent av kundfrågorna och en som retar bort kunden vid första kontakten ligger nästan aldrig i tekniken. Den ligger i produktarbetet kring den.</p>
+
+    <p>Det här är inte en abstrakt poäng. Vi har just driftsatt en chatbot hos vårt systerbolag <strong>Scenkonsult</strong> — en av Sveriges äldsta uthyrningsfirmor för scen, ljud, ljus och bild, grundad 1986 och baserad i Stockholm. Chatboten heter Sven, och efter de första 60 dagarna i drift löser han 80–90 procent av kundfrågorna utan att en människa behöver kopplas in. Det är inte ett pilotprojekt på papper. Det är produktion. Det är mätt — i Scenkonsults egen admin-vy där varje konversation läses, granskas och blir input till nästa generation av Sven.</p>
+
+    <p>Och det är inte AI:n som gör det. Det är hur den är byggd.</p>
+
+    <h2>Vem är Sven?</h2>
+
+    <p>Innan vi kommer till byggnationen är det värt att förstå <em>vem Sven är</em>, eftersom det är där hela skillnaden börjar. Sven heter Sven. Han är intendent på Scenkonsult. Han har 30 år i scenproduktionsbranschen. Han har en egen videoserie, "Svens Kunskapsskola", där han förklarar PA-system, ljuskontakter, LED-teknik och hur man väljer scenstorlek till olika event. Han har en röst, en personlighet och ett perspektiv.</p>
+
+    <p>Det Sven <em>inte</em> är: en generisk AI-assistent. Inget meddelande börjar med "Hej! Jag är en AI-chatbot, hur kan jag hjälpa dig idag?" Sven svarar som Sven — med 30 års erfarenhet, en uppfattning om vad som funkar och vad som inte gör det, och en tydlig avgränsning för vad han kan rådge om.</p>
+
+    <p>Detta låter som ett kosmetiskt val. Det är det inte. Att Sven har en <em>karaktär</em> gör tre saker samtidigt: det sätter rätt förväntningar hos kunden (jag pratar med någon som kan scen och ljud, inte med någon som kan allt), det ger SCG-teamet en konkret mall att skriva mot (vad skulle Sven säga? snarare än vad skulle AI:n säga?), och det gör att kunden förlåter de fall där Sven <em>inte</em> vet — på samma sätt som man förlåter en mänsklig expert som säger "det vet jag faktiskt inte, men jag kollar."</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">80–90 %</span>
+      <span class="stat-callout-text">av kundfrågorna hos Scenkonsult löses av Sven direkt, mätt under de första 60 dagarna i produktion. Resterande lämnas medvetet till en människa.</span>
+    </div>
+
+    <h2>Sex byggstenar</h2>
+
+    <p>När vi byggde Sven gjorde vi sex distinkta val. Det är dem vi tror är överförbara — inte specifikt till uthyrning av scen och ljud, utan till nästan vilken chatbot som helst som ska faktiskt leverera värde.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/sven-byggstenar.svg" alt="De sex byggstenarna bakom Sven, visualiserade i ett 2x3-rutnät: persona, scope, knowledge base, teknikval, fallback och admin-loop. Admin-loop är markerad som det som de flesta missar." loading="lazy" />
+      <figcaption>
+        Figur 1. Sex designval som tillsammans gör skillnaden mellan en chatbot som funkar och en som tystnar efter sex månader. Modellen — Claude från Anthropic — är ett av dem, men inte det viktigaste.
+      </figcaption>
+    </figure>
+
+    <h2>Det som ofta missas: admin-loopen</h2>
+
+    <p>Av de sex byggstenarna är det den sista som är mest underskattad. De flesta som bygger en chatbot släpper loss den och låter den leva sitt eget liv. Det är där förfallet börjar.</p>
+
+    <p>I Scenkonsults fall finns en admin-vy där varje konversation läses. Inte stickprov — <em>varje</em>. Varje vecka går teamet igenom samtalen, hittar fall där Sven svarat fel eller otydligt, och justerar prompten eller knowledge-basen. Detta är inte en lyx — det är vad som gör skillnaden mellan en chatbot som degraderar (för att kunderna ställer frågor du inte tänkte på) och en som <em>förbättras</em> (för att du faktiskt lär dig vad de undrar).</p>
+
+    <blockquote>Att Sven funkar handlar mindre om Anthropics modell än om att någon läser hans konversationer varje vecka och justerar.</blockquote>
+
+    <p>Modellen är konstant. Tekniken förändras inte från måndag till tisdag. Det som förändras är prompten, knowledge-basen och fallbackgränserna. Det är där produktarbetet ligger. Och det är därför så många chatbots som lanseras med stor entusiasm under år ett tystnar under år två — ingen lyssnar på dem.</p>
+
+    <h2>Hur 80–90 procent ser ut i praktiken</h2>
+
+    <p>Konkret: en kund som vill ha PA-ljud till en utomhusfest för 80 personer kan fråga Sven om det. Sven svarar — baserat på Scenkonsults faktiska sortiment, gällande priser och 30 års erfarenhet av just den frågan — vilket paket som passar. Han säger något i stil med: "För 80 personer utomhus rekommenderar jag en Alto TS-uppställning. Den ger dig tillräckligt med ljud utan att överdimensionera. Priset ligger runt X kronor per dygn, beroende på leveransavstånd. Vill du ha en konkret offert?" Och så vidare.</p>
+
+    <p>Det är inte chitchat. Det är inte underhållning. Det är expertrådgivning vid den punkt där kunden behöver den — och innan kunden hunnit släppa frågan och gå vidare till en konkurrent. En kund som ställer den frågan klockan 22:00 en torsdag får ett kvalificerat svar på två sekunder. Den punkten i kundresan är där affären antingen vinns eller tappas.</p>
+
+    <h2>Och de 10–20 procenten?</h2>
+
+    <p>Här är det viktigt att vara konkret om gränsen, eftersom det är <em>gränsen</em> som gör de övriga 80–90 procenten trovärdiga. De fall där Sven lämnar över till en människa är genomgående mer komplicerade lösningar — fullskaliga eventprojekt, skräddarsydda offerter där flera tjänster ska kombineras, tekniska konfigurationer som kräver platsbesök eller särskild expertis. Det är fall där den rätta åtgärden inte är ett chatbot-svar utan en offertansvarig som ringer upp och förstår sammanhanget.</p>
+
+    <p>Sven <em>kan</em> inte alla dessa. Och det är hela poängen. En chatbot som försöker svara på allt blir bara medioker på allt. En chatbot som är skarp inom sin domän och hederlig om sin gräns blir en faktisk tillgång.</p>
+
+    <h2>Vad det innebär för retail i stort</h2>
+
+    <p>Sven är ett systerbolag i scenuthyrning, inte en retail-kedja. Men principerna är direkt överförbara. En klädkedja som vill bygga en AI-assistent har samma val att göra: vilken persona, vilket scope, vilken knowledge-bas, vilket fallback. En byggvarukedja likaså. En dagligvarukedja likaså. Tekniken är gemensam. Produktarbetet är där värdet skapas.</p>
+
+    <p>Det är därför jag tror att retail-branschens <em>största</em> AI-miss 2026 inte handlar om vilken modell ni väljer eller vilken leverantör ni går med. Det handlar om att ni redan har börjat innan ni bestämt vem chatboten är, vad den ska kunna, var dess gräns går, och vem som ska läsa dess konversationer varje vecka. Det är där 90 procent av alla AI-projekt i branschen kommer fastna under det kommande året.</p>
+
+    <h2>Det här är del 1 av 3</h2>
+
+    <p>Men Sven är undantaget. För varje chatbot som lyckas finns det tio som lägger ner. Och chatbot är dessutom bara <em>ett</em> av de AI-användningsfall som retail-branschen experimenterar med just nu — det är prognoser, hyll-foto-analys, schemaläggning, autonom checkout och generativ kampanj-content också, för att nämna några. Av dessa: vilka funkar 2026? Vilka är fortfarande slideware?</p>
+
+    <p>Det är frågorna jag tar i <strong>nästa tisdag</strong>. Tredje delen, som publiceras torsdag samma vecka, handlar om något annat: vilka beslut AI <em>aldrig</em> borde få fatta, oavsett om den tekniskt klarar dem.</p>
+
+    <p>Tre artiklar. Tre teser. Ett sammanhang.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p class="series-tag">Part 1 of 3 — The first in a series on AI in retail. Next part: Tuesday.</p>
+
+    <p>There is broad consensus in business media right now that AI is transforming retail. Slides are being made. Reports are being published. McKinsey, BCG and Bain have all released deep analyses of generative AI's impact on the industry in the past quarter. And that's true — on some level. But there is a distinction that is almost always missing from the discussion, and that's where the whole point lies: the difference between AI as <em>technology</em> and AI as <em>product</em>.</p>
+
+    <p>The technology is a model — an LLM from OpenAI, Anthropic, Google or someone else. The product is what you <em>do</em> with it. The difference between a chatbot that resolves 80–90 percent of customer questions and one that alienates the customer at first contact almost never lies in the technology. It lies in the product work around it.</p>
+
+    <p>This isn't an abstract point. We've just deployed a chatbot at our sister company <strong>Scenkonsult</strong> — one of Sweden's oldest rental firms for stage, sound, lighting and visual production, founded in 1986 and based in Stockholm. The chatbot is named Sven, and after the first 60 days in production he resolves 80–90 percent of customer questions without a human needing to step in. It's not a pilot project on paper. It's production. It's measured — in Scenkonsult's own admin view where every conversation is read, reviewed and becomes input for the next generation of Sven.</p>
+
+    <p>And it's not the AI that does it. It's how it's built.</p>
+
+    <h2>Who is Sven?</h2>
+
+    <p>Before we get to the construction, it's worth understanding <em>who Sven is</em>, because that's where the whole difference starts. Sven's name is Sven. He's an intendent at Scenkonsult. He has 30 years in the stage production industry. He has his own video series, "Svens Kunskapsskola" (Sven's Knowledge School), where he explains PA systems, lighting connectors, LED technology and how to choose stage size for different events. He has a voice, a personality and a perspective.</p>
+
+    <p>What Sven <em>isn't</em>: a generic AI assistant. No message starts with "Hi! I'm an AI chatbot, how can I help you today?" Sven answers as Sven — with 30 years of experience, an opinion on what works and what doesn't, and a clear limit on what he can advise about.</p>
+
+    <p>This sounds like a cosmetic choice. It isn't. That Sven has a <em>character</em> does three things at once: it sets the right expectations with the customer (I'm talking to someone who knows stage and sound, not to someone who knows everything), it gives the SCG team a concrete template to write toward (what would Sven say? rather than what would the AI say?), and it makes the customer forgive the cases where Sven <em>doesn't</em> know — the same way you forgive a human expert who says "I actually don't know, but I'll check."</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">80–90 %</span>
+      <span class="stat-callout-text">of customer questions at Scenkonsult are resolved by Sven directly, measured over the first 60 days in production. The remainder is deliberately left to a human.</span>
+    </div>
+
+    <h2>Six building blocks</h2>
+
+    <p>When we built Sven we made six distinct choices. Those are the ones we believe are transferable — not specifically to stage and sound rental, but to almost any chatbot meant to actually deliver value.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/sven-byggstenar.svg" alt="The six building blocks behind Sven, visualised in a 2x3 grid: persona, scope, knowledge base, technology choice, fallback and admin loop. Admin loop is marked as what most people miss." loading="lazy" />
+      <figcaption>
+        Figure 1. Six design choices that together make the difference between a chatbot that works and one that goes quiet after six months. The model — Claude from Anthropic — is one of them, but not the most important.
+      </figcaption>
+    </figure>
+
+    <h2>What's often missed: the admin loop</h2>
+
+    <p>Of the six building blocks, it's the last one that's most underestimated. Most people who build a chatbot let it loose and leave it to live its own life. That's where decay begins.</p>
+
+    <p>In Scenkonsult's case, there is an admin view where every conversation is read. Not samples — <em>every</em> one. Every week, the team goes through the conversations, finds cases where Sven answered wrong or unclearly, and adjusts the prompt or the knowledge base. This isn't a luxury — it's what makes the difference between a chatbot that degrades (because customers ask questions you didn't anticipate) and one that <em>improves</em> (because you actually learn what they wonder about).</p>
+
+    <blockquote>That Sven works has less to do with Anthropic's model than with the fact that someone reads his conversations every week and adjusts.</blockquote>
+
+    <p>The model is constant. The technology doesn't change from Monday to Tuesday. What changes is the prompt, the knowledge base and the fallback boundaries. That's where the product work sits. And that's why so many chatbots that launch with great enthusiasm during year one go quiet during year two — no one is listening to them.</p>
+
+    <h2>What 80–90 percent looks like in practice</h2>
+
+    <p>Concretely: a customer who wants PA sound for an outdoor party of 80 people can ask Sven about it. Sven answers — based on Scenkonsult's actual inventory, current prices, and 30 years of experience with that exact question — which package fits. He says something like: "For 80 people outdoors I recommend an Alto TS setup. It gives you enough sound without overdimensioning. The price is around X kronor per day, depending on delivery distance. Would you like a concrete quote?" And so on.</p>
+
+    <p>It's not chitchat. It's not entertainment. It's expert advice at the point where the customer needs it — and before the customer has had time to drop the question and move on to a competitor. A customer who asks that question at 10 pm on a Thursday gets a qualified answer in two seconds. That point in the customer journey is where the deal is either won or lost.</p>
+
+    <h2>And the 10–20 percent?</h2>
+
+    <p>Here it's important to be concrete about the limit, because it's the <em>limit</em> that makes the remaining 80–90 percent credible. The cases where Sven hands off to a human are consistently more complex solutions — full-scale event projects, custom quotes that combine multiple services, technical configurations that require an on-site visit or special expertise. These are cases where the right action isn't a chatbot answer but a quote manager who calls and understands the context.</p>
+
+    <p>Sven <em>cannot</em> handle all of these. And that's the whole point. A chatbot that tries to answer everything becomes mediocre at everything. A chatbot that's sharp within its domain and honest about its limits becomes an actual asset.</p>
+
+    <h2>What this means for retail at large</h2>
+
+    <p>Sven is a sister company in stage rental, not a retail chain. But the principles are directly transferable. A clothing chain that wants to build an AI assistant has the same choices to make: which persona, which scope, which knowledge base, which fallback. A building supplies chain the same. A grocery chain the same. The technology is common. The product work is where value is created.</p>
+
+    <p>That's why I believe the retail industry's <em>biggest</em> AI miss in 2026 isn't about which model you choose or which vendor you go with. It's that you've already started before deciding who the chatbot is, what it should know, where its boundary lies, and who should read its conversations every week. That's where 90 percent of all AI projects in the industry will get stuck during the coming year.</p>
+
+    <h2>This is part 1 of 3</h2>
+
+    <p>But Sven is the exception. For every chatbot that succeeds, there are ten that shut down. And chatbots are just <em>one</em> of the AI use cases retail is currently experimenting with — there's also forecasting, shelf-photo analysis, scheduling, autonomous checkout and generative campaign content, to name a few. Of these: which ones work in 2026? Which are still slideware?</p>
+
+    <p>Those are the questions I take up <strong>next Tuesday</strong>. The third part, published Thursday the same week, is about something else: which decisions AI <em>should never</em> make, regardless of whether it technically can.</p>
+
+    <p>Three articles. Three theses. One context.</p>
+  </div>
+
+  <style>
+    .series-tag {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-blue, #2A4EA9);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .article-figure {
+      margin: 2.75rem 0;
+    }
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .article-figure figcaption {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-muted, #6E7280);
+      padding: 0.85rem 0 0;
+      line-height: 1.55;
+      letter-spacing: 0.005em;
+    }
+    @media (max-width: 700px) {
+      .article-figure {
+        margin: 1.75rem -1rem;
+      }
+      .article-figure img {
+        border-radius: 0;
+      }
+      .article-figure figcaption {
+        padding: 0.75rem 1rem 0;
+      }
+    }
+  </style>
+</InsightLayout>

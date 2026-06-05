@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">De sex byggstenarna bakom Sven — chatbot som funkar</title>
+  <desc id="chart-desc">Visuell sammanfattning av de sex designval som gör att Svens chatbot löser 80 till 90 procent av kundfrågorna: persona, scope, knowledge base, teknikval, fallback och admin-loop.</desc>
+
+  <defs>
+    <linearGradient id="cellBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7F8FB"/>
+      <stop offset="100%" stop-color="#EEF1F8"/>
+    </linearGradient>
+    <linearGradient id="numBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#010D60"/>
+      <stop offset="100%" stop-color="#1A277A"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="40" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+        font-size="20" font-weight="700" fill="#010D60" text-anchor="middle">De sex byggstenarna bakom Sven</text>
+  <text x="450" y="62" font-family="'Source Serif 4', Georgia, serif"
+        font-size="13" font-style="italic" fill="#6E7280" text-anchor="middle">Det som gör att chatboten löser 80–90 % av kundfrågorna är inte AI-modellen — det är produktarbetet.</text>
+
+  <!-- Grid: 3 columns × 2 rows -->
+  <!-- Cell dimensions: width 270, height 180, gap 15, start_x 22.5, start_y 90 -->
+
+  <!-- Row 1 -->
+  <!-- Cell 1: Persona -->
+  <g transform="translate(22.5, 90)">
+    <rect x="0" y="0" width="270" height="180" rx="8" fill="url(#cellBg)" stroke="#D6D9E0" stroke-width="1"/>
+    <circle cx="32" cy="32" r="20" fill="url(#numBg)"/>
+    <text x="32" y="39" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+    <text x="65" y="38" font-family="'Chakra Petch', sans-serif" font-size="18" font-weight="700" fill="#010D60">Persona</text>
+    <text x="20" y="80" font-family="'Source Serif 4', Georgia, serif" font-size="12" fill="#1A1A1A">
+      <tspan x="20" dy="0">Sven, intendent med 30 år i</tspan>
+      <tspan x="20" dy="16">branschen — inte "AI-assistent".</tspan>
+      <tspan x="20" dy="28" font-style="italic" fill="#6E7280">Kunden vet vem de pratar med</tspan>
+      <tspan x="20" dy="16" font-style="italic" fill="#6E7280">— och vad de inte ska fråga om.</tspan>
+    </text>
+  </g>
+
+  <!-- Cell 2: Scope -->
+  <g transform="translate(315, 90)">
+    <rect x="0" y="0" width="270" height="180" rx="8" fill="url(#cellBg)" stroke="#D6D9E0" stroke-width="1"/>
+    <circle cx="32" cy="32" r="20" fill="url(#numBg)"/>
+    <text x="32" y="39" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+    <text x="65" y="38" font-family="'Chakra Petch', sans-serif" font-size="18" font-weight="700" fill="#010D60">Scope</text>
+    <text x="20" y="80" font-family="'Source Serif 4', Georgia, serif" font-size="12" fill="#1A1A1A">
+      <tspan x="20" dy="0">"Utrustning, priser &amp; bokning"</tspan>
+      <tspan x="20" dy="16">— inte allt i världen.</tspan>
+      <tspan x="20" dy="28" font-style="italic" fill="#6E7280">~90 % av kundfrågorna ligger</tspan>
+      <tspan x="20" dy="16" font-style="italic" fill="#6E7280">naturligt inom domänen.</tspan>
+    </text>
+  </g>
+
+  <!-- Cell 3: Knowledge base -->
+  <g transform="translate(607.5, 90)">
+    <rect x="0" y="0" width="270" height="180" rx="8" fill="url(#cellBg)" stroke="#D6D9E0" stroke-width="1"/>
+    <circle cx="32" cy="32" r="20" fill="url(#numBg)"/>
+    <text x="32" y="39" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+    <text x="65" y="38" font-family="'Chakra Petch', sans-serif" font-size="18" font-weight="700" fill="#010D60">Knowledge base</text>
+    <text x="20" y="80" font-family="'Source Serif 4', Georgia, serif" font-size="12" fill="#1A1A1A">
+      <tspan x="20" dy="0">30 års branschkunskap + Svens</tspan>
+      <tspan x="20" dy="16">Kunskapsskola + prislista.</tspan>
+      <tspan x="20" dy="28" font-style="italic" fill="#6E7280">Svaren är Scenkonsults svar —</tspan>
+      <tspan x="20" dy="16" font-style="italic" fill="#6E7280">inte en LLM:s gissning.</tspan>
+    </text>
+  </g>
+
+  <!-- Row 2 -->
+  <!-- Cell 4: Teknikval -->
+  <g transform="translate(22.5, 295)">
+    <rect x="0" y="0" width="270" height="180" rx="8" fill="url(#cellBg)" stroke="#D6D9E0" stroke-width="1"/>
+    <circle cx="32" cy="32" r="20" fill="url(#numBg)"/>
+    <text x="32" y="39" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+    <text x="65" y="38" font-family="'Chakra Petch', sans-serif" font-size="18" font-weight="700" fill="#010D60">Teknikval</text>
+    <text x="20" y="80" font-family="'Source Serif 4', Georgia, serif" font-size="12" fill="#1A1A1A">
+      <tspan x="20" dy="0">Byggd på Claude från Anthropic.</tspan>
+      <tspan x="20" dy="28" font-style="italic" fill="#6E7280">Modell som följer instruktioner</tspan>
+      <tspan x="20" dy="16" font-style="italic" fill="#6E7280">och är ärlig med vad den inte vet.</tspan>
+    </text>
+  </g>
+
+  <!-- Cell 5: Fallback -->
+  <g transform="translate(315, 295)">
+    <rect x="0" y="0" width="270" height="180" rx="8" fill="url(#cellBg)" stroke="#D6D9E0" stroke-width="1"/>
+    <circle cx="32" cy="32" r="20" fill="url(#numBg)"/>
+    <text x="32" y="39" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+    <text x="65" y="38" font-family="'Chakra Petch', sans-serif" font-size="18" font-weight="700" fill="#010D60">Fallback</text>
+    <text x="20" y="80" font-family="'Source Serif 4', Georgia, serif" font-size="12" fill="#1A1A1A">
+      <tspan x="20" dy="0">Sven lämnar över till människa</tspan>
+      <tspan x="20" dy="16">vid komplicerade lösningar.</tspan>
+      <tspan x="20" dy="28" font-style="italic" fill="#6E7280">Gränsen är vad som gör resten</tspan>
+      <tspan x="20" dy="16" font-style="italic" fill="#6E7280">möjligt att lita på.</tspan>
+    </text>
+  </g>
+
+  <!-- Cell 6: Admin-loop -->
+  <g transform="translate(607.5, 295)">
+    <rect x="0" y="0" width="270" height="180" rx="8" fill="#010D60" stroke="#010D60" stroke-width="1"/>
+    <circle cx="32" cy="32" r="20" fill="#ffffff"/>
+    <text x="32" y="39" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700" fill="#010D60" text-anchor="middle">6</text>
+    <text x="65" y="38" font-family="'Chakra Petch', sans-serif" font-size="18" font-weight="700" fill="#ffffff">Admin-loop</text>
+    <text x="20" y="80" font-family="'Source Serif 4', Georgia, serif" font-size="12" fill="#ffffff">
+      <tspan x="20" dy="0">Varje konversation läses.</tspan>
+      <tspan x="20" dy="16">Prompten justeras varje vecka.</tspan>
+      <tspan x="20" dy="28" font-style="italic" fill="#90A2CF">Sven blir bättre över tid.</tspan>
+      <tspan x="20" dy="16" font-style="italic" fill="#90A2CF">Han stagnerar inte.</tspan>
+    </text>
+  </g>
+
+  <!-- Caption arrow pointing to admin-loop -->
+  <g opacity="0.85">
+    <text x="640" y="500" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#A32D2D" text-anchor="middle">↑ Det som de flesta missar</text>
+  </g>
+</svg>
