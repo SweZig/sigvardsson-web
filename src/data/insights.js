@@ -45,7 +45,7 @@ export const insights = [
     titleEn: 'Sven — anatomy of an AI chatbot that actually works.',
     excerptSv: 'Konsulthusen släpper retail-AI-rapporter på löpande band. Men i den faktiska butiken har inget av detta ännu landat. Det här är berättelsen om en chatbot som faktiskt löser 80–90 procent av kundfrågorna — och om vad som skiljer den från de hundra som inte gör det.',
     excerptEn: 'The consulting houses release retail-AI reports on a conveyor belt. But in the actual store, none of this has yet landed. This is the story of a chatbot that actually resolves 80–90 percent of customer questions — and what separates it from the hundred that don\'t.',
-    coverImage: '/images/services/feedback-dashboard.jpg',
+    coverImage: '/images/insights/sven-portrait.jpg',
     authorId: 'per-sigvardsson',
     publishDate: '2026-06-05T09:00:00+02:00',
     publishDateDisplay: { sv: '5 juni 2026', en: 'June 5, 2026' },
