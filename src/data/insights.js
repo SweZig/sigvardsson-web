@@ -39,6 +39,22 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'ai-funkar-eller-slideware',
+    category: 'technology',
+    titleSv: 'AI i butiken — tre fall som funkar, tre som inte gör det.',
+    titleEn: 'AI in retail — three cases that work, three that don\'t.',
+    excerptSv: 'Sven är en chatbot som funkar. Men chatbot är bara ett av en handfull AI-användningsfall i retail just nu. Av sex vanliga: tre levererar konkret affärsvärde idag. Tre är fortfarande slideware. Skillnaden är inte teknisk — den är strukturell.',
+    excerptEn: 'Sven is a chatbot that works. But chatbot is just one of a handful of AI use cases in retail right now. Of six common ones: three deliver concrete business value today. Three are still slideware. The difference isn\'t technical — it\'s structural.',
+    coverImage: '/images/services/feedback-dashboard.jpg',
+    authorId: 'per-sigvardsson',
+    publishDate: '2026-06-09T09:00:00+02:00',
+    publishDateDisplay: { sv: '9 juni 2026', en: 'June 9, 2026' },
+    readingTime: 7,
+    tagsSv: ['AI', 'Teknologi', 'Retail', 'Prognos', 'Chatbot'],
+    tagsEn: ['AI', 'Technology', 'Retail', 'Forecasting', 'Chatbot'],
+    relatedProduct: { href: '/Contact/', labelSv: 'Diskutera AI-implementering med oss', labelEn: 'Discuss AI implementation with us' },
+  },
+  {
     slug: 'sven-ai-chatbot',
     category: 'technology',
     titleSv: 'Sven — anatomi av en AI-chatbot som funkar.',

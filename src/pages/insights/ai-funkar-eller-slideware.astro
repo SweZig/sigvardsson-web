@@ -1,0 +1,247 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'ai-funkar-eller-slideware');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p class="series-tag">Del 2 av 3 — Den andra i en serie om AI i retail. Förra delen: <a href="/insights/sven-ai-chatbot/">Sven — anatomi av en chatbot som funkar</a>. Nästa: torsdag.</p>
+
+    <p>I förra veckans artikel etablerade jag att Sven-chatboten löser 80–90 procent av kundfrågorna hos vårt systerbolag Scenkonsult, inte tack vare AI-modellen utan tack vare det produktarbete som omger den. Det är en viktig poäng. Men den lämnar en obesvarad fråga: vilka andra AI-användningsfall i retail har samma potential? Och vilka är de där tekniken — eller produktarbetet — ännu inte räcker?</p>
+
+    <p>Vi har följt nio AI-pilotprojekt i nordisk retail under perioden 2024 till 2026. Tre har gått i produktion och levererar nu mätbara resultat. Fyra är pausade. Två är nedlagda. Det är inte ett slumpmässigt utfall — det följer ett mönster så tydligt att det är värt att namnge.</p>
+
+    <h2>Det strukturella mönstret</h2>
+
+    <p>De tre fallen som funkar har alla tre saker gemensamt:</p>
+
+    <p><strong>Avgränsad input och output.</strong> Uppgiften är konkret definierad — vilken data går in, vilken slags beslut eller artefakt kommer ut. Inte "förstå kunden", utan "förutsäg efterfrågan per SKU per butik per vecka."</p>
+
+    <p><strong>Mätbar baseline.</strong> Det finns ett tidigare tillstånd att jämföra med. En manuell prognos. En genomsnittlig handpåläggning. En tidsåtgång. Utan baseline finns det ingen ROI-historia att berätta.</p>
+
+    <p><strong>Plats för en människa i loopen.</strong> AI:n föreslår. Människan beslutar — eller åtminstone granskar. Det är inte en svaghet utan en styrka. Det är vad som gör att verktyget kan användas i en verklig verksamhet utan att kräva 100 procents träffsäkerhet.</p>
+
+    <p>De tre fallen som inte funkar saknar minst en av dessa egenskaper. Oftast två. Mönstret är så konsekvent att det går att ställa upp som en scorecard.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/ai-scorecard.svg" alt="Scorecard som visar sex AI-användningsfall i retail mot tre strukturella egenskaper. Tre fall - prognos och inköp, hyll-foto-analys, schemaläggning - uppfyller alla tre egenskaper och fungerar. Tre fall - generativ kundtjänst-chatbot utan disciplin, autonom checkout-skanning, generativ kampanj-content - saknar minst ett av kriterierna och är fortfarande slideware." loading="lazy" />
+      <figcaption>
+        Figur 1. Sex AI-användningsfall i retail mot tre strukturella egenskaper. De tre som funkar uppfyller alla tre kriterier. De tre som inte gör det saknar minst ett — vanligtvis flera.
+      </figcaption>
+    </figure>
+
+    <h2>Tre som funkar</h2>
+
+    <h3>1. Prognos &amp; automatiserat inköp</h3>
+    <p>Det här är den mest mogna kategorin i nordisk retail just nu. Modellen får en avgränsad uppgift — förutsäg efterfrågan per SKU per butik per vecka — och tränas på historisk försäljningsdata, kampanjkalender och säsongsmönster. Output är ett beställningsförslag som inköparen kan acceptera, justera eller avvisa.</p>
+    <p>Det fungerar för att alla tre kriterier är uppfyllda: input/output är glasklara, baseline (manuell prognos eller säsongsmedelvärde) är välkänd, och inköparen är kvar i loopen som beslutsfattare. Hos våra dagligvaruklienter ligger mätbara resultat på <strong>5–15 procents lägre svinn och 2–4 procentenheters bättre tillgänglighet</strong> på hyllan. Det är inte spekulativa siffror — det är dokumenterade förbättringar mot kontrollbutiker.</p>
+
+    <h3>2. Hyll-foto-analys</h3>
+    <p>Butiksmedarbetaren tar en bild av hyllan med mobilen. AI:n analyserar bilden och flaggar avvikelser: out-of-stock, fel produkt på fel plats, fel pris jämfört med kampanj, planogramsavvikelser. Output är en lista över åtgärder.</p>
+    <p>Det fungerar för att pattern recognition är just det AI är bäst på. Output är konkret (en lista), baseline är välkänd (tiden det tar att gå igenom hyllan manuellt), och människan tar beslutet om åtgärd. Tidsbesparing ligger typiskt på <strong>15–30 minuter per butik per dag</strong> — vilket över en kedja med 100 butiker blir 250–500 arbetstimmar i veckan som flyttar från manuell genomgång till faktisk åtgärd.</p>
+
+    <h3>3. Schemaläggning</h3>
+    <p>Här binder vi tillbaka mot <a href="/insights/sommarbemanning/">Peter Wiléns artikel om sommarbemanning</a> för två veckor sedan. AI:n får tre datapunkter — kundtryck per timme, personalens tillgänglighet och kompetensprofiler, och en uppsättning regler — och producerar ett schemaförslag. Butikschefen granskar och justerar.</p>
+    <p>Det fungerar för att optimeringsproblemet är välbeskrivet, constraints är tydliga, och beslutet stannar hos butikschefen. <strong>Personalkostnaden i procent av försäljning kan sjunka med 1,5 till 3 procentenheter</strong> över en säsong. Samtidigt som kundnöjdheten stiger — inte sjunker.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">3 av 6</span>
+      <span class="stat-callout-text">av de vanligaste AI-användningsfallen i retail har gått i produktion. Tre är fortfarande slideware. Det är inte tekniken som skiljer dem åt — det är användningsfallets egenskaper.</span>
+    </div>
+
+    <blockquote>Skillnaden mellan AI som levererar och AI som fastnar är inte teknisk. Den är strukturell — om uppgiften har avgränsad input, mätbar baseline och plats för en människa, levererar den. Annars inte.</blockquote>
+
+    <h2>Tre som inte funkar</h2>
+
+    <h3>1. Generativ kundtjänst-chatbot (utan disciplin)</h3>
+    <p>Här blir det intressant — för det är just området där Sven framgångsrikt opererar. Och här syns hela poängen. Sven funkar inte för att han är en "generativ chatbot". Han funkar för att han har avgränsat scope (utrustning, priser, bokning), tydlig persona, knowledge base, och fallback till människa vid komplicerade lösningar. Han är en strukturerad rådgivare som råkar använda en LLM.</p>
+    <p>De flesta "generativa kundtjänst-chatbots" som retail-kedjor implementerat de senaste två åren har inte den disciplinen. De släpps loss att svara på "vad som helst", och deras input är osäkrad (kundens fråga, som kan handla om vad som helst), deras baseline är otydlig (vad jämför vi mot — den mänskliga supportagenten? FAQ-sidan?), och fallback-arkitekturen är ofta dålig. Resultatet: 60 procent av frågorna besvaras, men de 40 procent som inte gör det är just de där kunden faktiskt behöver hjälp. Nettoeffekten på NPS blir ofta negativ.</p>
+
+    <h3>2. Autonom checkout-skanning</h3>
+    <p>Konceptet: kameror i butikstaket detekterar vad kunden plockar och lägger på kortet automatiskt — ingen kassa, ingen scanner. Amazon Go-modellen.</p>
+    <p>Det fungerar inte i nordisk retail 2026, åtminstone inte i fullskala. Felmarginalen på detektering är fortfarande för hög för att utesluta svinn (eller felaktiga debiteringar, beroende på vem som har bevisbördan). Integrationskostnaden är skyhög. Och — kritiskt — human-in-the-loop är konceptuellt utesluten: hela poängen med systemet är att människan är borta. Det betyder att när systemet gör fel finns det ingen mjuk landning.</p>
+    <p>De stora pilotprojekten i Norden 2024–2025 har antingen pausats eller skalats ner till "smart checkout" där en kamera assisterar en kassör snarare än ersätter henne. Det är inte autonom checkout. Det är assisterad checkout. Och det är ett helt annat användningsfall — som faktiskt fungerar, eftersom det har human-in-the-loop.</p>
+
+    <h3>3. Generativ kampanj-content</h3>
+    <p>Konceptet: AI genererar bilder och text för marknadsföring — sociala medier-poster, kampanjbanners, e-handelstexter, butikskommunikation.</p>
+    <p>Det fungerar partiellt — för låg-stakes-content (sociala medier-poster utan affärspåverkan) är det användbart. Det fungerar inte för det som driver omsättning: kampanjer i butik, weekly ads, e-handelns kategorisidor. Anledningen är subtil men viktig: AI-genererat content saknar säljkraft.</p>
+    <p>Tekniskt är bilderna OK. Texterna är grammatiskt korrekta. Men de saknar de mikrobeslut en mänsklig copywriter eller designer gör — beslut baserade på kunskap om kunden, om varumärket, om vad som faktiskt får människor att klicka eller gå in i butiken. När A/B-tester genomförts i nordiska kedjor 2025 har AI-genererat content konsekvent underpresterat mänskligt content på konvertering. Med 10–25 procent.</p>
+
+    <h2>"Men Sven då?"</h2>
+
+    <p>Här uppstår en naturlig invändning. Om generativa kundtjänst-chatbots är på "funkar inte"-listan, hur kan Sven funka? Svaret är just det jag skissade i förra artikeln: <strong>Sven är inte en generativ chatbot. Han är en strukturerad rådgivare som råkar använda en LLM som underliggande motor.</strong></p>
+
+    <p>Skillnaden är produktdesignen runt modellen, inte modellen själv. Och det är därför artikeln om Sven är en byggblock-artikel för retail-branschen, inte en chatbot-artikel. Samma disciplin som gör Sven funktionell — avgränsat scope, tydlig persona, knowledge base, fallback, admin-loop — är vad som skulle behöva appliceras på varje annan generativ AI-implementation. När det görs, flyttar vissa fall över från "funkar inte" till "funkar".</p>
+
+    <p>Det är därför 6/6-listan inte är statisk. Den kommer ändras under det kommande året. Inte för att tekniken förändras dramatiskt, utan för att fler bolag lär sig produktarbetet.</p>
+
+    <h2>Den dolda variabeln — organisation över teknik</h2>
+
+    <p>Det finns en sista observation värd att göra. Även inom de tre "funkar"-fallen är det inte alla bolag som får ut värdet. Vi har sett kedjor som implementerat prognos-AI utan att inköparna faktiskt använder rekommendationerna. Vi har sett hyll-foto-analys där åtgärdslistan aldrig läses. Vi har sett schemaläggnings-AI där butikschefen kör sin egen mall ovanpå.</p>
+
+    <p>Tekniken funkar. Men om organisationen inte är förberedd att använda outputen, levererar tekniken ändå inte. Det är inte AI-frågan, det är förändringsledning. Och det är ofta där de största värdeskillnaderna mellan retail-kedjor uppstår 2026.</p>
+
+    <h2>Det här är del 2 av 3</h2>
+
+    <p>Hittills har vi pratat om vad AI tekniskt <em>kan</em> göra och vad den ännu inte kan. Det är en pragmatisk fråga. Men det finns en separat fråga som är minst lika viktig: <strong>vad AI tekniskt <em>kan</em> göra men <em>inte borde</em> göra.</strong> Vilka beslut hör hemma hos människor, även när maskinen klarar dem?</p>
+
+    <p>Det är vad <strong>torsdagens artikel</strong> handlar om. Det är trilogins skarpaste position — och den jag tror kommer reta upp mest folk.</p>
+
+    <p>Tre artiklar. Tre teser. Ett sammanhang.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p class="series-tag">Part 2 of 3 — The second in a series on AI in retail. Previous: <a href="/insights/sven-ai-chatbot/">Sven — anatomy of a chatbot that works</a>. Next: Thursday.</p>
+
+    <p>In last week's article I established that the Sven chatbot resolves 80–90 percent of customer questions at our sister company Scenkonsult, not thanks to the AI model but thanks to the product work surrounding it. That's an important point. But it leaves an open question: which other AI use cases in retail have the same potential? And which ones are still ones where the technology — or the product work — doesn't yet measure up?</p>
+
+    <p>We have followed nine AI pilot projects in Nordic retail between 2024 and 2026. Three have gone into production and are now delivering measurable results. Four are paused. Two have been shut down. This isn't a random outcome — it follows a pattern so clear it's worth naming.</p>
+
+    <h2>The structural pattern</h2>
+
+    <p>The three cases that work have three things in common:</p>
+
+    <p><strong>Bounded input and output.</strong> The task is concretely defined — what data goes in, what kind of decision or artefact comes out. Not "understand the customer", but "forecast demand per SKU per store per week."</p>
+
+    <p><strong>Measurable baseline.</strong> There's a prior state to compare against. A manual forecast. An average handling time. A time spent. Without a baseline, there's no ROI story to tell.</p>
+
+    <p><strong>Room for a human in the loop.</strong> The AI suggests. The human decides — or at least reviews. This isn't a weakness but a strength. It's what makes the tool usable in an actual business without requiring 100 percent accuracy.</p>
+
+    <p>The three cases that don't work lack at least one of these properties. Usually two. The pattern is so consistent it can be laid out as a scorecard.</p>
+
+    <figure class="article-figure">
+      <img src="/images/insights/ai-scorecard.svg" alt="Scorecard showing six AI use cases in retail against three structural properties. Three cases - forecasting and purchasing, shelf-photo analysis, scheduling - meet all three properties and work. Three cases - generative customer-service chatbot without discipline, autonomous checkout scanning, generative campaign content - lack at least one criterion and remain slideware." loading="lazy" />
+      <figcaption>
+        Figure 1. Six AI use cases in retail against three structural properties. The three that work meet all three criteria. The three that don't lack at least one — usually several.
+      </figcaption>
+    </figure>
+
+    <h2>Three that work</h2>
+
+    <h3>1. Forecasting &amp; automated purchasing</h3>
+    <p>This is the most mature category in Nordic retail right now. The model gets a bounded task — forecast demand per SKU per store per week — and trains on historical sales data, campaign calendar, and seasonal patterns. The output is an order suggestion the buyer can accept, adjust or reject.</p>
+    <p>It works because all three criteria are met: input/output is crystal clear, the baseline (manual forecast or seasonal average) is well-known, and the buyer remains in the loop as decision-maker. With our grocery clients, measurable results land at <strong>5–15 percent lower shrinkage and 2–4 percentage points better shelf availability</strong>. These aren't speculative numbers — they're documented improvements against control stores.</p>
+
+    <h3>2. Shelf-photo analysis</h3>
+    <p>A store associate takes a photo of the shelf with a mobile phone. The AI analyses the image and flags deviations: out-of-stock, wrong product in wrong place, wrong price compared to campaign, planogram deviations. The output is an action list.</p>
+    <p>It works because pattern recognition is exactly what AI is best at. Output is concrete (a list), baseline is well-known (the time it takes to walk the shelf manually), and the human takes the action decision. Time savings typically land at <strong>15–30 minutes per store per day</strong> — which across a 100-store chain becomes 250–500 work hours per week shifting from manual review to actual action.</p>
+
+    <h3>3. Scheduling</h3>
+    <p>Here we tie back to <a href="/insights/sommarbemanning/">Peter Wilén's article on summer staffing</a> two weeks ago. The AI receives three data points — customer pressure per hour, staff availability and competency profiles, and a set of rules — and produces a schedule proposal. The store manager reviews and adjusts.</p>
+    <p>It works because the optimisation problem is well-described, constraints are clear, and the decision stays with the store manager. <strong>Personnel cost as percent of revenue can drop by 1.5 to 3 percentage points</strong> across a season. While customer satisfaction rises — not falls.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">3 of 6</span>
+      <span class="stat-callout-text">of the most common AI use cases in retail have made it to production. Three are still slideware. It's not the technology that separates them — it's the properties of the use case.</span>
+    </div>
+
+    <blockquote>The difference between AI that delivers and AI that gets stuck isn't technical. It's structural — if the task has bounded input, measurable baseline and room for a human, it delivers. Otherwise, it doesn't.</blockquote>
+
+    <h2>Three that don't work</h2>
+
+    <h3>1. Generative customer-service chatbot (without discipline)</h3>
+    <p>Here it gets interesting — because this is precisely the area where Sven operates successfully. And here the whole point shows. Sven doesn't work because he's a "generative chatbot". He works because he has a bounded scope (equipment, prices, bookings), a clear persona, knowledge base, and fallback to a human for complex cases. He's a structured advisor who happens to use an LLM.</p>
+    <p>Most "generative customer-service chatbots" that retail chains have implemented in the past two years don't have that discipline. They're released to answer "anything", and their input is unbounded (the customer's question, which can be about anything), their baseline is unclear (what do we compare to — the human support agent? the FAQ page?), and the fallback architecture is often poor. The result: 60 percent of questions are answered, but the 40 percent that aren't are exactly the ones where the customer actually needs help. Net effect on NPS is often negative.</p>
+
+    <h3>2. Autonomous checkout scanning</h3>
+    <p>The concept: cameras in the store ceiling detect what the customer picks up and charges the card automatically — no register, no scanner. The Amazon Go model.</p>
+    <p>It doesn't work in Nordic retail in 2026, at least not at full scale. Detection error rate is still too high to rule out shrinkage (or wrongful charges, depending on who carries the burden of proof). Integration cost is sky-high. And — critically — human-in-the-loop is conceptually excluded: the whole point of the system is that the human is gone. That means when the system errs, there's no soft landing.</p>
+    <p>The large pilot projects in the Nordics 2024–2025 have either been paused or scaled down to "smart checkout" where a camera assists a cashier rather than replacing her. That isn't autonomous checkout. It's assisted checkout. And it's a completely different use case — which does work, because it has human-in-the-loop.</p>
+
+    <h3>3. Generative campaign content</h3>
+    <p>The concept: AI generates images and text for marketing — social media posts, campaign banners, e-commerce copy, in-store communication.</p>
+    <p>It works partially — for low-stakes content (social media posts without business impact) it's useful. It doesn't work for what drives revenue: in-store campaigns, weekly ads, e-commerce category pages. The reason is subtle but important: AI-generated content lacks sales pull.</p>
+    <p>Technically the images are OK. The texts are grammatically correct. But they lack the micro-decisions a human copywriter or designer makes — decisions based on knowledge of the customer, the brand, what actually gets people to click or walk into a store. When A/B tests were run in Nordic chains in 2025, AI-generated content consistently underperformed human content on conversion. By 10–25 percent.</p>
+
+    <h2>"But what about Sven?"</h2>
+
+    <p>Here a natural objection arises. If generative customer-service chatbots are on the "doesn't work" list, how can Sven work? The answer is precisely what I sketched in the previous article: <strong>Sven isn't a generative chatbot. He's a structured advisor who happens to use an LLM as the underlying engine.</strong></p>
+
+    <p>The difference is the product design around the model, not the model itself. And that's why the article about Sven is a building-block article for the retail industry, not a chatbot article. The same discipline that makes Sven functional — bounded scope, clear persona, knowledge base, fallback, admin loop — is what would need to be applied to every other generative AI implementation. When it is, certain cases move from "doesn't work" to "works".</p>
+
+    <p>That's why the 6/6 list isn't static. It will shift over the coming year. Not because the technology changes dramatically, but because more companies learn the product work.</p>
+
+    <h2>The hidden variable — organisation over technology</h2>
+
+    <p>One last observation worth making. Even within the three "works" cases, it's not all companies that extract the value. We've seen chains that implemented forecasting AI without buyers actually using the recommendations. We've seen shelf-photo analysis where the action list is never read. We've seen scheduling AI where the store manager runs their own template on top of it.</p>
+
+    <p>The technology works. But if the organisation isn't prepared to use the output, the technology doesn't deliver either. That's not an AI question, it's change management. And it's often where the biggest value differences between retail chains arise in 2026.</p>
+
+    <h2>This is part 2 of 3</h2>
+
+    <p>So far we've talked about what AI technically <em>can</em> do and what it can't yet. That's a pragmatic question. But there's a separate question that's at least as important: <strong>what AI technically <em>can</em> do but <em>shouldn't</em> do.</strong> Which decisions belong with humans, even when the machine can handle them?</p>
+
+    <p>That's what <strong>Thursday's article</strong> is about. It's the trilogy's sharpest position — and the one I think will rile up the most people.</p>
+
+    <p>Three articles. Three theses. One context.</p>
+  </div>
+
+  <style>
+    .series-tag {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-blue, #2A4EA9);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .series-tag a {
+      color: var(--art-navy, #010D60);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .article-figure {
+      margin: 2.75rem 0;
+    }
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .article-figure figcaption {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-muted, #6E7280);
+      padding: 0.85rem 0 0;
+      line-height: 1.55;
+      letter-spacing: 0.005em;
+    }
+    @media (max-width: 700px) {
+      .article-figure {
+        margin: 1.75rem -1rem;
+      }
+      .article-figure img {
+        border-radius: 0;
+      }
+      .article-figure figcaption {
+        padding: 0.75rem 1rem 0;
+      }
+    }
+  </style>
+</InsightLayout>

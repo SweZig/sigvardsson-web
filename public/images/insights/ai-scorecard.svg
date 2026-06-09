@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">Sex AI-användningsfall mot tre strukturella egenskaper</title>
+  <desc id="chart-desc">Scorecard som visar hur de sex vanligaste AI-användningsfallen i retail uppfyller eller saknar tre strukturella egenskaper: avgränsad input och output, mätbar baseline, och plats för en människa i loopen. De tre fall som funkar uppfyller alla tre kriterier. De tre som inte gör det saknar minst en, oftast två.</desc>
+
+  <defs>
+    <linearGradient id="rowEven" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7F8FB"/>
+      <stop offset="100%" stop-color="#EEF1F8"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="32" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+        font-size="18" font-weight="700" fill="#010D60" text-anchor="middle">Sex AI-användningsfall i retail mot tre strukturella egenskaper</text>
+  <text x="450" y="52" font-family="'Source Serif 4', Georgia, serif"
+        font-size="12" font-style="italic" fill="#6E7280" text-anchor="middle">Mönstret är inte tekniskt — det är strukturellt.</text>
+
+  <!-- Header row -->
+  <g>
+    <rect x="20" y="78" width="860" height="42" fill="#010D60" rx="4"/>
+    <text x="220" y="105" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">ANVÄNDNINGSFALL</text>
+    <text x="475" y="100" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">AVGRÄNSAD</text>
+    <text x="475" y="114" font-family="'Chakra Petch', sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">INPUT/OUTPUT</text>
+    <text x="585" y="100" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">MÄTBAR</text>
+    <text x="585" y="114" font-family="'Chakra Petch', sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">BASELINE</text>
+    <text x="695" y="100" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">HUMAN-IN-</text>
+    <text x="695" y="114" font-family="'Chakra Petch', sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">THE-LOOP</text>
+    <text x="815" y="105" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">STATUS</text>
+  </g>
+
+  <!-- Data rows -->
+  <!-- Row layout: y starts at 130, row height 52, gap 4 -->
+  <!-- Cases: 6 rows -->
+
+  <!-- Row 1: Prognos & inköp - FUNKAR -->
+  <g>
+    <rect x="20" y="130" width="860" height="52" fill="url(#rowEven)" stroke="#D6D9E0" stroke-width="0.5"/>
+    <text x="35" y="155" font-family="'Source Serif 4', Georgia, serif" font-size="14" font-weight="600" fill="#1A1A1A">Prognos &amp; automatiserat inköp</text>
+    <text x="35" y="172" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">5–15 % lägre svinn · 2–4 pp bättre tillgänglighet</text>
+    <text x="475" y="165" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="585" y="165" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="695" y="165" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <rect x="750" y="142" width="130" height="28" rx="3" fill="#E8F4EE" stroke="#2D8A6B" stroke-width="1"/>
+    <text x="815" y="161" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#2D8A6B" text-anchor="middle">FUNKAR</text>
+  </g>
+
+  <!-- Row 2: Hyll-foto-analys - FUNKAR -->
+  <g>
+    <rect x="20" y="186" width="860" height="52" fill="#ffffff" stroke="#D6D9E0" stroke-width="0.5"/>
+    <text x="35" y="211" font-family="'Source Serif 4', Georgia, serif" font-size="14" font-weight="600" fill="#1A1A1A">Hyll-foto-analys</text>
+    <text x="35" y="228" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">15–30 min/butik/dag i tidsbesparing</text>
+    <text x="475" y="221" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="585" y="221" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="695" y="221" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <rect x="750" y="198" width="130" height="28" rx="3" fill="#E8F4EE" stroke="#2D8A6B" stroke-width="1"/>
+    <text x="815" y="217" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#2D8A6B" text-anchor="middle">FUNKAR</text>
+  </g>
+
+  <!-- Row 3: Schemalaggning - FUNKAR -->
+  <g>
+    <rect x="20" y="242" width="860" height="52" fill="url(#rowEven)" stroke="#D6D9E0" stroke-width="0.5"/>
+    <text x="35" y="267" font-family="'Source Serif 4', Georgia, serif" font-size="14" font-weight="600" fill="#1A1A1A">Schemaläggning</text>
+    <text x="35" y="284" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">1,5–3 pp lägre personalkostnad per säsong</text>
+    <text x="475" y="277" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="585" y="277" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="695" y="277" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <rect x="750" y="254" width="130" height="28" rx="3" fill="#E8F4EE" stroke="#2D8A6B" stroke-width="1"/>
+    <text x="815" y="273" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#2D8A6B" text-anchor="middle">FUNKAR</text>
+  </g>
+
+  <!-- Divider gap -->
+  <line x1="20" y1="305" x2="880" y2="305" stroke="#A32D2D" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+
+  <!-- Row 4: Generativ kundtjänst - SLIDEWARE -->
+  <g>
+    <rect x="20" y="312" width="860" height="52" fill="#ffffff" stroke="#D6D9E0" stroke-width="0.5"/>
+    <text x="35" y="337" font-family="'Source Serif 4', Georgia, serif" font-size="14" font-weight="600" fill="#1A1A1A">Generativ kundtjänst-chatbot</text>
+    <text x="35" y="354" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">utan Sven-disciplinen — 40 % av frågorna missas</text>
+    <text x="475" y="347" font-size="26" font-weight="700" fill="#A32D2D" text-anchor="middle">✗</text>
+    <text x="585" y="347" font-size="26" font-weight="700" fill="#A32D2D" text-anchor="middle">✗</text>
+    <text x="695" y="347" font-size="24" font-weight="700" fill="#6E7280" text-anchor="middle">~</text>
+    <rect x="750" y="324" width="130" height="28" rx="3" fill="#F9E8E8" stroke="#A32D2D" stroke-width="1"/>
+    <text x="815" y="343" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#A32D2D" text-anchor="middle">SLIDEWARE</text>
+  </g>
+
+  <!-- Row 5: Autonom checkout - SLIDEWARE -->
+  <g>
+    <rect x="20" y="368" width="860" height="52" fill="url(#rowEven)" stroke="#D6D9E0" stroke-width="0.5"/>
+    <text x="35" y="393" font-family="'Source Serif 4', Georgia, serif" font-size="14" font-weight="600" fill="#1A1A1A">Autonom checkout-skanning</text>
+    <text x="35" y="410" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">noll i fullskaleproduktion i Norden 2026</text>
+    <text x="475" y="403" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="585" y="403" font-size="26" font-weight="700" fill="#2D8A6B" text-anchor="middle">✓</text>
+    <text x="695" y="403" font-size="26" font-weight="700" fill="#A32D2D" text-anchor="middle">✗</text>
+    <rect x="750" y="380" width="130" height="28" rx="3" fill="#F9E8E8" stroke="#A32D2D" stroke-width="1"/>
+    <text x="815" y="399" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#A32D2D" text-anchor="middle">SLIDEWARE</text>
+  </g>
+
+  <!-- Row 6: Generativ content - SLIDEWARE -->
+  <g>
+    <rect x="20" y="424" width="860" height="52" fill="#ffffff" stroke="#D6D9E0" stroke-width="0.5"/>
+    <text x="35" y="449" font-family="'Source Serif 4', Georgia, serif" font-size="14" font-weight="600" fill="#1A1A1A">Generativ kampanj-content</text>
+    <text x="35" y="466" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">10–25 % sämre konvertering än mänskligt content</text>
+    <text x="475" y="459" font-size="26" font-weight="700" fill="#A32D2D" text-anchor="middle">✗</text>
+    <text x="585" y="459" font-size="24" font-weight="700" fill="#6E7280" text-anchor="middle">~</text>
+    <text x="695" y="459" font-size="26" font-weight="700" fill="#A32D2D" text-anchor="middle">✗</text>
+    <rect x="750" y="436" width="130" height="28" rx="3" fill="#F9E8E8" stroke="#A32D2D" stroke-width="1"/>
+    <text x="815" y="455" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#A32D2D" text-anchor="middle">SLIDEWARE</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(20, 495)">
+    <text x="0" y="0" font-family="'Source Serif 4', Georgia, serif" font-size="10" font-style="italic" fill="#6E7280">
+      <tspan font-weight="700" fill="#2D8A6B">✓</tspan> uppfylld  ·  <tspan font-weight="700" fill="#A32D2D">✗</tspan> ej uppfylld  ·  <tspan font-weight="700" fill="#6E7280">~</tspan> delvis
+    </text>
+  </g>
+</svg>
