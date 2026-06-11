@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">Själv-test: vilken AI-nivå hör beslutet hemma på?</title>
+  <desc id="chart-desc">Beslutsträd med tre frågor som guidar ett retail-beslut till en av tre AI-nivåer.</desc>
+
+  <defs>
+    <linearGradient id="startNode" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A277A"/>
+      <stop offset="100%" stop-color="#010D60"/>
+    </linearGradient>
+    <linearGradient id="questionGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F4F6FB"/>
+    </linearGradient>
+    <linearGradient id="level1Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8F4EE"/>
+      <stop offset="100%" stop-color="#D5EBDE"/>
+    </linearGradient>
+    <linearGradient id="level2Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E5EBF5"/>
+      <stop offset="100%" stop-color="#CFD8EA"/>
+    </linearGradient>
+    <linearGradient id="level3Grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9E8E8"/>
+      <stop offset="100%" stop-color="#F0D4D4"/>
+    </linearGradient>
+    <marker id="arrowNavy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#010D60"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="680" fill="#ffffff"/>
+
+  <text x="480" y="50" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+        font-size="20" font-weight="700" fill="#010D60" text-anchor="middle">Själv-test: vilken AI-nivå hör beslutet hemma på?</text>
+  <text x="480" y="78" font-family="'Source Serif 4', Georgia, serif"
+        font-size="13" font-style="italic" fill="#6E7280" text-anchor="middle">Tre frågor. Tre svar. Rätt placering.</text>
+
+  <g>
+    <rect x="380" y="115" width="200" height="48" rx="24" fill="url(#startNode)"/>
+    <text x="480" y="145" font-family="'Chakra Petch', sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">RETAIL-BESLUT</text>
+  </g>
+
+  <line x1="480" y1="163" x2="480" y2="193" stroke="#010D60" stroke-width="2" marker-end="url(#arrowNavy)"/>
+
+  <g>
+    <rect x="240" y="196" width="480" height="58" rx="6" fill="url(#questionGrad)" stroke="#010D60" stroke-width="1.5"/>
+    <text x="480" y="219" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#010D60" text-anchor="middle">FRÅGA 1 — FELKOSTNAD</text>
+    <text x="480" y="240" font-family="'Source Serif 4', Georgia, serif" font-size="14" fill="#1A1A1A" text-anchor="middle">Märks fel inom dagar och kan rättas utan bestående skada?</text>
+  </g>
+
+  <line x1="480" y1="254" x2="480" y2="288" stroke="#010D60" stroke-width="2" marker-end="url(#arrowNavy)"/>
+  <text x="492" y="273" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#2D8A6B">JA</text>
+
+  <path d="M 720 225 L 770 225" stroke="#A32D2D" stroke-width="2" fill="none" marker-end="url(#arrowNavy)"/>
+  <text x="731" y="218" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#A32D2D">NEJ</text>
+
+  <g>
+    <rect x="770" y="196" width="160" height="58" rx="6" fill="url(#level3Grad)" stroke="#A32D2D" stroke-width="1.5"/>
+    <text x="850" y="219" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#A32D2D" text-anchor="middle">NIVÅ 3</text>
+    <text x="850" y="240" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#1A1A1A" text-anchor="middle">Konsultation</text>
+  </g>
+
+  <g>
+    <rect x="240" y="291" width="480" height="58" rx="6" fill="url(#questionGrad)" stroke="#010D60" stroke-width="1.5"/>
+    <text x="480" y="314" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#010D60" text-anchor="middle">FRÅGA 2 — MÄTBARHET</text>
+    <text x="480" y="335" font-family="'Source Serif 4', Georgia, serif" font-size="14" fill="#1A1A1A" text-anchor="middle">Finns det ett tydligt mätvärde att optimera mot?</text>
+  </g>
+
+  <line x1="480" y1="349" x2="480" y2="383" stroke="#010D60" stroke-width="2" marker-end="url(#arrowNavy)"/>
+  <text x="492" y="368" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#2D8A6B">JA</text>
+
+  <path d="M 720 320 L 770 320" stroke="#2A4EA9" stroke-width="2" fill="none" marker-end="url(#arrowNavy)"/>
+  <text x="731" y="313" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#2A4EA9">NEJ</text>
+
+  <g>
+    <rect x="770" y="291" width="160" height="58" rx="6" fill="url(#level2Grad)" stroke="#2A4EA9" stroke-width="1.5"/>
+    <text x="850" y="314" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#2A4EA9" text-anchor="middle">NIVÅ 2</text>
+    <text x="850" y="335" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#1A1A1A" text-anchor="middle">Augmentation</text>
+  </g>
+
+  <g>
+    <rect x="240" y="386" width="480" height="58" rx="6" fill="url(#questionGrad)" stroke="#010D60" stroke-width="1.5"/>
+    <text x="480" y="409" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#010D60" text-anchor="middle">FRÅGA 3 — PÅVERKAN</text>
+    <text x="480" y="430" font-family="'Source Serif 4', Georgia, serif" font-size="14" fill="#1A1A1A" text-anchor="middle">Påverkar beslutet en specifik person eller varumärkets själ?</text>
+  </g>
+
+  <line x1="480" y1="444" x2="480" y2="480" stroke="#010D60" stroke-width="2" marker-end="url(#arrowNavy)"/>
+  <text x="492" y="465" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#2D8A6B">NEJ</text>
+
+  <path d="M 720 415 L 770 415" stroke="#A32D2D" stroke-width="2" fill="none" marker-end="url(#arrowNavy)"/>
+  <text x="731" y="408" font-family="'Chakra Petch', sans-serif" font-size="12" font-weight="700" fill="#A32D2D">JA</text>
+
+  <g>
+    <rect x="770" y="386" width="160" height="58" rx="6" fill="url(#level3Grad)" stroke="#A32D2D" stroke-width="1.5"/>
+    <text x="850" y="409" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#A32D2D" text-anchor="middle">NIVÅ 3</text>
+    <text x="850" y="430" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#1A1A1A" text-anchor="middle">Konsultation</text>
+  </g>
+
+  <g>
+    <rect x="240" y="482" width="480" height="58" rx="6" fill="url(#level1Grad)" stroke="#2D8A6B" stroke-width="1.5"/>
+    <text x="480" y="505" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#2D8A6B" text-anchor="middle">NIVÅ 1 — AUTOMATION</text>
+    <text x="480" y="526" font-family="'Source Serif 4', Georgia, serif" font-size="13" font-style="italic" fill="#1A1A1A" text-anchor="middle">AI fattar beslutet inom en regelbok. Människan granskar i efterhand.</text>
+  </g>
+
+  <g transform="translate(60, 590)">
+    <line x1="0" y1="0" x2="840" y2="0" stroke="#D6D9E0" stroke-width="1"/>
+    <rect x="0" y="18" width="16" height="16" rx="3" fill="url(#level1Grad)" stroke="#2D8A6B" stroke-width="1"/>
+    <text x="22" y="31" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#2D8A6B">NIVÅ 1</text>
+    <text x="22" y="50" font-family="'Source Serif 4', Georgia, serif" font-size="11" fill="#1A1A1A">ESL-priser · Replenishment · OOS-alerter</text>
+    <text x="22" y="66" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">3 × Ja på frågorna</text>
+
+    <rect x="290" y="18" width="16" height="16" rx="3" fill="url(#level2Grad)" stroke="#2A4EA9" stroke-width="1"/>
+    <text x="312" y="31" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#2A4EA9">NIVÅ 2</text>
+    <text x="312" y="50" font-family="'Source Serif 4', Georgia, serif" font-size="11" fill="#1A1A1A">Prognoser · Scheman · Foto-analys</text>
+    <text x="312" y="66" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">2 × Ja på frågorna</text>
+
+    <rect x="580" y="18" width="16" height="16" rx="3" fill="url(#level3Grad)" stroke="#A32D2D" stroke-width="1"/>
+    <text x="602" y="31" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="700" fill="#A32D2D">NIVÅ 3</text>
+    <text x="602" y="50" font-family="'Source Serif 4', Georgia, serif" font-size="11" fill="#1A1A1A">Strategi · Personal · Varumärke</text>
+    <text x="602" y="66" font-family="'Source Serif 4', Georgia, serif" font-size="11" font-style="italic" fill="#6E7280">1 × Ja eller mindre</text>
+  </g>
+</svg>

@@ -39,6 +39,22 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'ai-tre-nivaer',
+    category: 'technology',
+    titleSv: 'AI i tre nivåer — och hur ni vet vad som hör hemma var.',
+    titleEn: 'AI in three levels — and how you know what belongs where.',
+    excerptSv: 'Vi har pratat om var AI funkar och var den inte gör det. Men hur mycket beslutsmandat ska AI få i varje fall? Här är en modell i tre nivåer, ett själv-test som placerar varje retail-beslut där det hör hemma — och en arbetsmetod hämtad från Jan Stenbeck för hur man bygger AI-portfölj i praktiken.',
+    excerptEn: 'We\'ve talked about where AI works and where it doesn\'t. But how much decision mandate should AI have in each case? Here is a model in three levels, a self-test that places every retail decision where it belongs — and a working method borrowed from Jan Stenbeck for how to build an AI portfolio in practice.',
+    coverImage: '/images/insights/ai-tre-nivaer-cover.svg',
+    authorId: 'per-sigvardsson',
+    publishDate: '2026-06-11T09:00:00+02:00',
+    publishDateDisplay: { sv: '11 juni 2026', en: 'June 11, 2026' },
+    readingTime: 8,
+    tagsSv: ['AI', 'Strategi', 'Retail', 'Beslutsmodell', 'Stenbeck'],
+    tagsEn: ['AI', 'Strategy', 'Retail', 'Decision Model', 'Stenbeck'],
+    relatedProduct: { href: '/Contact/', labelSv: 'Diskutera AI-portföljen med oss', labelEn: 'Discuss the AI portfolio with us' },
+  },
+  {
     slug: 'ai-funkar-eller-slideware',
     category: 'technology',
     titleSv: 'AI i butiken — tre fall som funkar, tre som inte gör det.',

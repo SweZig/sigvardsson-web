@@ -1,0 +1,465 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'ai-tre-nivaer');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <p class="series-tag">Del 3 av 3 — Trilogins avslutning. Tidigare delar: <a href="/insights/sven-ai-chatbot/">Sven — anatomi av en chatbot som funkar</a> · <a href="/insights/ai-funkar-eller-slideware/">Tre fall som funkar, tre som inte</a>.</p>
+
+    <p>I de två första artiklarna har vi pratat om <em>var</em> och <em>varför</em> AI fungerar i retail. Sven-chatboten löser 80–90 procent av kundfrågorna hos vårt systerbolag. Hyll-foto-analys, prognoser och schemaläggning levererar mätbara resultat. Generativ kundtjänst utan disciplin, autonom checkout och generativ kampanj-content gör det inte.</p>
+
+    <p>Det är två fall av samma fråga: <em>vad kan AI tekniskt göra idag?</em></p>
+
+    <p>Men det finns en helt separat fråga som vi sällan ställer explicit, och som ingen retail-chef egentligen vill ta i: <strong>hur mycket beslutsmandat ska AI få i varje fall?</strong> Var ska den fatta beslutet själv, var ska den föreslå men människan beslutar, och var ska den bara konsulteras?</p>
+
+    <p>Vi har sett kedjor som flyttar fel beslut till AI:n — och kedjor som inte vågar flytta beslut som faktiskt borde automatiseras. Båda förlorar pengar på det. Den första genom kundirritation och varumärkesskada. Den andra genom missad operativ effektivitet.</p>
+
+    <p>Här är en modell i tre nivåer för att placera varje retail-beslut där det hör hemma.</p>
+
+    <h2>De tre nivåerna</h2>
+
+    <div class="levels-grid">
+      <div class="level-card level-1">
+        <div class="level-badge">NIVÅ 1</div>
+        <h3>Automation</h3>
+        <p class="level-what">AI fattar beslutet inom en regelbok. Agerar utan att fråga.</p>
+        <p class="level-who">Människan sätter regelboken. Granskar i efterhand. Justerar ramarna.</p>
+      </div>
+      <div class="level-card level-2">
+        <div class="level-badge">NIVÅ 2</div>
+        <h3>Augmentation</h3>
+        <p class="level-what">AI förbereder beslutet. Producerar förslag, analys, lista.</p>
+        <p class="level-who">Människan granskar, godkänner, justerar eller avvisar. Beslutar.</p>
+      </div>
+      <div class="level-card level-3">
+        <div class="level-badge">NIVÅ 3</div>
+        <h3>Konsultation</h3>
+        <p class="level-what">AI rådfrågas. Levererar data, scenarier, riskanalyser.</p>
+        <p class="level-who">Människan beslutar med fullt ansvar. AI:s output är input, inte beslut.</p>
+      </div>
+    </div>
+
+    <h3>Nivå 1 — Automation</h3>
+    <p>På den här nivån <strong>fattar AI beslutet</strong> inom en regelbok som människan har skrivit. AI:n agerar. Människan granskar i efterhand och justerar reglerna om något inte stämmer.</p>
+    <p>Exempel ur nordisk retail-praktik:</p>
+    <ul class="example-list">
+      <li><strong>ESL-prisuppdateringar</strong> inom konkurrentparitet</li>
+      <li><strong>Replenishment-beställningar</strong> under tröskelvärden</li>
+      <li><strong>Out-of-stock-alerter</strong> till lagerpersonal</li>
+      <li><strong>Anomalidetektion i POS-data</strong> — automatisk flaggning av svinn-mönster och avvikande transaktioner</li>
+      <li><strong>Automatisk hyll-rekonciliering</strong> vid leverans — mottagningskontroll mot inköpsorder</li>
+      <li><strong>Standard-FAQ-svar</strong> i kundtjänst, inom Sven-disciplinen vi diskuterade i del 1</li>
+    </ul>
+    <p>Det här är beslut där felkostnaden är låg, korrigerbarheten är hög, och optimeringsmålet är ett enda tydligt tal. Det är där AI tekniskt funkar bäst — och där manuella moment är pengar slängda i sjön.</p>
+
+    <h3>Nivå 2 — Augmentation</h3>
+    <p>På den här nivån <strong>förbereder AI beslutet, människan beslutar.</strong> AI:n producerar ett förslag, en analys eller en lista. En människa granskar, godkänner, justerar eller avvisar.</p>
+    <p>Exempel:</p>
+    <ul class="example-list">
+      <li><strong>Säsongsprognoser</strong> för inköpsmöten</li>
+      <li><strong>Schemaförslag</strong> — Peter Wiléns territorium från <a href="/insights/sommarbemanning/">artikeln om sommarbemanning</a></li>
+      <li><strong>Hyll-foto-analys till åtgärdslista</strong> — butikspersonal beslutar prioritet</li>
+      <li><strong>Kampanj-mix-optimering</strong> för marknadsavdelningen</li>
+      <li><strong>Kundsegmentering</strong> för riktade erbjudanden</li>
+      <li><strong>Recensionsöversikter</strong> för produktchefen — sammanfattningar av kundfeedback per SKU</li>
+      <li><strong>Kampanj-A/B-uppföljning</strong> med statistisk signifikans, redo att läsas av marknadschefen</li>
+    </ul>
+    <p>Det här är beslut där AI höjer kvaliteten markant — men där flera mål konkurrerar (svinn vs tillgänglighet, kundupplevelse vs personalkostnad), och där en mänsklig bedömning krävs för att avväga dem.</p>
+
+    <h3>Nivå 3 — Konsultation</h3>
+    <p>På den här nivån <strong>rådfrågas AI, människan beslutar med fullt ansvar.</strong> AI:n levererar underlag — data, scenarier, riskanalyser — men beslutet ägs av en namngiven människa.</p>
+    <p>Exempel:</p>
+    <ul class="example-list">
+      <li><strong>Strategisk riktning</strong> — vilka kategorier kedjan satsar på nästa år</li>
+      <li><strong>Butiksöppningar och stängningar</strong> — etableringsbeslut</li>
+      <li><strong>Personalbeslut</strong> — anställning, befordran, uppsägning</li>
+      <li><strong>Strategiska prisförändringar</strong> — inte daglig pristrim, utan när vi medvetet byter prisposition gentemot konkurrenter</li>
+      <li><strong>Hantering av kundklagomål med varumärkesrisk</strong> — där svaret påverkar hur företaget uppfattas</li>
+      <li><strong>Leverantörsförhandlingar som är affärskritiska</strong> — där relation och ramvillkor sätts</li>
+    </ul>
+    <p>Det här är beslut där felkostnaden är hög och svår att rätta, där mätbarheten är låg eller flerdimensionell, och där värdighet eller varumärke står på spel. AI är en bra rådgivare — men hör inte hemma som beslutsfattare.</p>
+
+    <h2>Så avgör ni var ett nytt beslut hör hemma</h2>
+
+    <p>Det här är där modellen blir användbar — inte bara intressant. Tre frågor avgör nivån:</p>
+
+    <p><strong>Fråga 1 — Felkostnad:</strong> Märks det inom dagar om AI har fel, och kan det rättas utan bestående skada?</p>
+    <p><strong>Fråga 2 — Mätbarhet:</strong> Finns det ett tydligt mätvärde att optimera mot, eller flera som konkurrerar och kräver kvalitativ avvägning?</p>
+    <p><strong>Fråga 3 — Påverkan:</strong> Påverkar beslutet en specifik person personligen, eller varumärkets själ?</p>
+
+    <p>Logiken:</p>
+    <ul class="logic-list">
+      <li><strong>3 × Ja</strong> (snabbt korrigerbart, ett mätvärde, ingen personpåverkan) → <strong>Nivå 1 Automation</strong></li>
+      <li><strong>2 × Ja</strong> (något kompromissar) → <strong>Nivå 2 Augmentation</strong></li>
+      <li><strong>1 × Ja eller mindre</strong> (kostsam felmarginal, kvalitativ bedömning, eller direkt personpåverkan) → <strong>Nivå 3 Konsultation</strong></li>
+    </ul>
+
+    <figure class="article-figure">
+      <img src="/images/insights/ai-niva-test.svg" alt="Beslutsträd med tre frågor som guidar ett retail-beslut till en av tre AI-nivåer. Fråga 1 om felkostnad, Fråga 2 om mätbarhet, Fråga 3 om påverkan. Tre Ja leder till Nivå 1 Automation. Två Ja leder till Nivå 2 Augmentation. Ett Ja eller mindre leder till Nivå 3 Konsultation." loading="lazy" />
+      <figcaption>
+        Figur 1. Själv-test som beslutsträd. Tre frågor avgör vilken AI-nivå beslutet hör hemma på. Modellen är designad för att placera nya användningsfall systematiskt — inte intuitivt.
+      </figcaption>
+    </figure>
+
+    <h2>Modellen tillämpad på fyra fall</h2>
+
+    <p>Det här är var modellen visar sin styrka — eller faller.</p>
+
+    <h3>ESL-prisuppdatering inom konkurrentparitet</h3>
+    <p>Fel märks via POS inom timmar. Ett tydligt mätvärde (marginal vs konkurrent). Påverkar ingen specifik person eller varumärkets själ. <strong>Tre Ja → Nivå 1.</strong> AI sätter priserna automatiskt inom regelboken.</p>
+
+    <h3>Säsongsprognos för en produktkategori</h3>
+    <p>Fel märks inom 2–4 veckor och kan justeras. Men flera mål konkurrerar — svinn, tillgänglighet, kassaflöde. Påverkar inte varumärket märkbart. <strong>Två Ja → Nivå 2.</strong> AI producerar förslag, inköparen beslutar.</p>
+
+    <h3>Beslut om att stänga en butik</h3>
+    <p>Fel märks inom månader till år och är inte korrigerbart. Inget enda mätvärde — det är lönsamhet <em>och</em> personal <em>och</em> lokalsamhälle <em>och</em> varumärke. Påverkar direkt anställdas liv. <strong>Noll Ja → Nivå 3.</strong> AI kan ge bra underlag, men ledningen äger beslutet.</p>
+
+    <h3>Befordran av en butikschef</h3>
+    <p>Fel kan inte rättas — relationer går sönder. Mätbarheten är låg (vad är "bäst kandidat"?). Påverkar en specifik person på det mest personliga sätt som finns. <strong>Noll Ja → Nivå 3.</strong> AI kan analysera prestation, men beslutet hör hemma hos en människa som tar ansvar.</p>
+
+    <p>Mönstret är konsekvent: ju längre upp i besluts-pyramiden, desto fler frågor får ett Nej, desto högre upp i nivåerna hamnar beslutet.</p>
+
+    <h2>Var står branschen idag?</h2>
+
+    <p>De flesta av de retail-kedjor vi följt har ingen <em>formell</em> process för att avgöra vilken nivå nya AI-användningsfall hör hemma på. Vissa kedjor har kommit förvånansvärt långt operativt — ofta bakom kulisserna — men strukturen sitter i regel i huvudet på enskilda nyckelpersoner, inte i ett beslutsramverk som överlever att de byter jobb.</p>
+
+    <p>Det är inte i sig ett problem — så länge de nyckelpersonerna är kvar. Men det skalar inte. Och tiden då man kunde luta sig på enskilda eldsjälar är på väg att ta slut.</p>
+
+    <h2>Retail-kartan ritas om — och fönstret är 3–5 år</h2>
+
+    <p>Det här är inte en spekulation. Det är vad som faktiskt händer just nu. AI flyttar inte bara på effektivitetsmarginalen — den omfördelar makt i värdekedjan. Kedjor som bygger rätt operativ AI-grund 2026–2028 kommer kunna agera snabbare än sina konkurrenter under resten av decenniet. Kedjor som inte gör det halkar efter med en hastighet som inte fångas in på två kvartal.</p>
+
+    <p>Det är där modellens tre nivåer blir taktiska, inte filosofiska. <strong>Nivå 1</strong> är där effektivitetsvinsterna ligger. <strong>Nivå 2</strong> är där kvalitetshöjningarna sitter. <strong>Nivå 3</strong> är där strategiska felsteg undviks. Alla tre måste hanteras — och alla tre måste hanteras <em>nu</em>.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">3–5 år</span>
+      <span class="stat-callout-text">är fönstret. Den retail-kedja som inte börjar testa nu halkar efter med en hastighet som inte fångas in på två kvartal. AI omfördelar makt i värdekedjan, inte bara effektivitetsmarginaler.</span>
+    </div>
+
+    <h2>Stenbeck-modellen, applicerad på AI</h2>
+
+    <p>Jan Stenbeck hade en arbetsmetod som passar AI 2026 bättre än något ramverk jag sett i konsulthusrapporterna: starta många projekt, lär snabbt, lägg ned det som inte fungerar, dubbla upp det som gör det. <strong>Först kvantitet, sedan kvalitet.</strong></p>
+
+    <p>Det är motsatsen till hur de flesta retail-kedjor angriper AI idag. Det vanligaste mönstret: ett stort strategiskt AI-program, en RFP, ett 18-månaders pilotprojekt, och ett resultat som är förlegat innan det landar. Det är en metod byggd för en värld där tekniken förändras långsamt. Den världen finns inte längre.</p>
+
+    <p>Den vinnande retail-kedjan 2026 kör 8–10 AI-experiment parallellt över alla tre nivåerna. Vissa misslyckas snabbt och avslutas inom kvartalet. Andra visar tidiga signaler och får mer resurser. Efter 18 månader har kedjan inte ett perfekt AI-program — den har en <em>portfölj</em> av fungerande verktyg och en organisation som har lärt sig att lära.</p>
+
+    <p>Det här är inte i strid med modellens tre nivåer. Det är hur man <em>praktiskt</em> arbetar inom modellen. Testa många Nivå 1-fall där felkostnaden är låg — där tål portföljen flera misslyckanden. Bygg ut Nivå 2-experimenten där den första testen visar signaler. Använd Nivå 3-disciplinen för att hålla strategiska felsteg borta från portföljen helt och hållet.</p>
+
+    <p>Stenbeck visste något: en organisation som testar tio saker och lyckas med tre, vinner över en organisation som testar en sak och försöker göra den perfekt. Det är ännu mer sant 2026 än det var 1995.</p>
+
+    <blockquote>Frågan är inte om er kedja ska använda AI. Den är vilket beslutsmandat ni vill ge den — och hur många experiment ni vågar köra parallellt för att hitta var det funkar.</blockquote>
+
+    <h2>Trilogins avslutning</h2>
+
+    <p>Tre artiklar. Tre teser. Ett sammanhang.</p>
+
+    <p>I <strong><a href="/insights/sven-ai-chatbot/">del 1</a></strong> etablerade vi att AI funkar när produktarbetet är rätt — Sven är inte intelligent, Sven är <em>välbyggd</em>. Och välbyggt är vad som vinner det kommande decenniet.</p>
+
+    <p>I <strong><a href="/insights/ai-funkar-eller-slideware/">del 2</a></strong> visade vi att produktarbetet räcker inte överallt — strukturen i användningsfallet avgör. Tre fall i retail funkar 2026. Tre gör det inte. Skillnaden är inte teknisk, den är strukturell.</p>
+
+    <p>I <strong>del 3</strong> har vi lagt till den sista dimensionen — beslutsmandatet. Tre nivåer av AI-involvering. Tre frågor som avgör vilken nivå. Och en arbetsmetod från Stenbeck för hur man bygger upp portföljen i praktiken.</p>
+
+    <p>Den retail-chef som vinner det kommande decenniet är den som hanterar alla tre dimensionerna samtidigt: bygger produktarbetet rätt, väljer rätt användningsfall, och delegerar besluten till rätt nivå — samtidigt som hen kör många små experiment parallellt och lär sig snabbare än konkurrenterna.</p>
+
+    <p>Det är inte mycket att be om. Men det är en helt annan disciplin än "vi implementerar AI". Det är att <strong>lära sig snabbare än konkurrenterna</strong>. Och de kommande 3–5 åren är när det avgörs.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <p class="series-tag">Part 3 of 3 — The trilogy's conclusion. Previous: <a href="/insights/sven-ai-chatbot/">Sven — anatomy of a chatbot that works</a> · <a href="/insights/ai-funkar-eller-slideware/">Three cases that work, three that don't</a>.</p>
+
+    <p>In the first two articles we've talked about <em>where</em> and <em>why</em> AI works in retail. The Sven chatbot resolves 80–90 percent of customer questions at our sister company. Shelf-photo analysis, forecasting and scheduling deliver measurable results. Generative customer service without discipline, autonomous checkout and generative campaign content do not.</p>
+
+    <p>Those are two instances of the same question: <em>what can AI technically do today?</em></p>
+
+    <p>But there's a completely separate question we rarely ask explicitly, and which no retail executive really wants to take on: <strong>how much decision mandate should AI have in each case?</strong> Where should it decide on its own, where should it propose while the human decides, and where should it merely be consulted?</p>
+
+    <p>We've seen chains move the wrong decisions to AI — and chains that don't dare move decisions that should actually be automated. Both lose money on it. The first through customer frustration and brand damage. The second through missed operational efficiency.</p>
+
+    <p>Here is a model in three levels to place every retail decision where it belongs.</p>
+
+    <h2>The three levels</h2>
+
+    <div class="levels-grid">
+      <div class="level-card level-1">
+        <div class="level-badge">LEVEL 1</div>
+        <h3>Automation</h3>
+        <p class="level-what">AI makes the decision within a rulebook. Acts without asking.</p>
+        <p class="level-who">Human sets the rulebook. Reviews afterwards. Adjusts the boundaries.</p>
+      </div>
+      <div class="level-card level-2">
+        <div class="level-badge">LEVEL 2</div>
+        <h3>Augmentation</h3>
+        <p class="level-what">AI prepares the decision. Produces proposal, analysis, list.</p>
+        <p class="level-who">Human reviews, approves, adjusts or rejects. Decides.</p>
+      </div>
+      <div class="level-card level-3">
+        <div class="level-badge">LEVEL 3</div>
+        <h3>Consultation</h3>
+        <p class="level-what">AI is consulted. Delivers data, scenarios, risk analyses.</p>
+        <p class="level-who">Human decides with full responsibility. AI's output is input, not decision.</p>
+      </div>
+    </div>
+
+    <h3>Level 1 — Automation</h3>
+    <p>At this level, <strong>AI makes the decision</strong> within a rulebook the human has written. The AI acts. The human reviews afterwards and adjusts the rules if something doesn't fit.</p>
+    <p>Examples from Nordic retail practice:</p>
+    <ul class="example-list">
+      <li><strong>ESL price updates</strong> within competitor parity</li>
+      <li><strong>Replenishment orders</strong> below threshold values</li>
+      <li><strong>Out-of-stock alerts</strong> to warehouse staff</li>
+      <li><strong>Anomaly detection in POS data</strong> — automatic flagging of shrinkage patterns and outlier transactions</li>
+      <li><strong>Automatic shelf reconciliation</strong> on delivery — receiving control against purchase orders</li>
+      <li><strong>Standard FAQ responses</strong> in customer service, within the Sven discipline we discussed in part 1</li>
+    </ul>
+    <p>These are decisions where the cost of error is low, correctability is high, and the optimisation goal is a single clear number. This is where AI works best technically — and where manual effort is money thrown in the sea.</p>
+
+    <h3>Level 2 — Augmentation</h3>
+    <p>At this level, <strong>AI prepares the decision, the human decides.</strong> The AI produces a proposal, an analysis or a list. A human reviews, approves, adjusts or rejects.</p>
+    <p>Examples:</p>
+    <ul class="example-list">
+      <li><strong>Seasonal forecasts</strong> for purchasing meetings</li>
+      <li><strong>Schedule proposals</strong> — Peter Wilén's territory from the <a href="/insights/sommarbemanning/">summer staffing article</a></li>
+      <li><strong>Shelf-photo analysis to action list</strong> — store staff decides priority</li>
+      <li><strong>Campaign mix optimisation</strong> for the marketing department</li>
+      <li><strong>Customer segmentation</strong> for targeted offers</li>
+      <li><strong>Review summaries</strong> for the product manager — customer feedback aggregations per SKU</li>
+      <li><strong>Campaign A/B follow-ups</strong> with statistical significance, ready to be read by the marketing manager</li>
+    </ul>
+    <p>These are decisions where AI raises quality significantly — but where several goals compete (shrinkage vs availability, customer experience vs personnel cost), and where human judgment is required to weigh them.</p>
+
+    <h3>Level 3 — Consultation</h3>
+    <p>At this level, <strong>AI is consulted, the human decides with full responsibility.</strong> The AI delivers material — data, scenarios, risk analyses — but the decision is owned by a named human.</p>
+    <p>Examples:</p>
+    <ul class="example-list">
+      <li><strong>Strategic direction</strong> — which categories the chain bets on next year</li>
+      <li><strong>Store openings and closures</strong> — establishment decisions</li>
+      <li><strong>Personnel decisions</strong> — hiring, promotion, termination</li>
+      <li><strong>Strategic price changes</strong> — not daily price trim, but when we deliberately shift price position against competitors</li>
+      <li><strong>Customer complaints with brand risk</strong> — where the answer affects how the company is perceived</li>
+      <li><strong>Business-critical supplier negotiations</strong> — where relationship and framework terms are set</li>
+    </ul>
+    <p>These are decisions where the cost of error is high and hard to fix, where measurability is low or multidimensional, and where dignity or brand is at stake. AI is a good advisor — but does not belong as decision-maker.</p>
+
+    <h2>How to determine where a new decision belongs</h2>
+
+    <p>This is where the model becomes useful — not just interesting. Three questions determine the level:</p>
+
+    <p><strong>Question 1 — Cost of error:</strong> Is it noticed within days if AI gets it wrong, and can it be corrected without lasting damage?</p>
+    <p><strong>Question 2 — Measurability:</strong> Is there a single clear metric to optimise against, or several that compete and require qualitative weighing?</p>
+    <p><strong>Question 3 — Impact:</strong> Does the decision affect a specific person personally, or the brand's soul?</p>
+
+    <p>The logic:</p>
+    <ul class="logic-list">
+      <li><strong>3 × Yes</strong> (quickly correctable, single metric, no personal impact) → <strong>Level 1 Automation</strong></li>
+      <li><strong>2 × Yes</strong> (something compromises) → <strong>Level 2 Augmentation</strong></li>
+      <li><strong>1 × Yes or fewer</strong> (costly error margin, qualitative judgment, or direct personal impact) → <strong>Level 3 Consultation</strong></li>
+    </ul>
+
+    <figure class="article-figure">
+      <img src="/images/insights/ai-niva-test.svg" alt="Decision tree with three questions guiding a retail decision to one of three AI levels. Question 1 on cost of error, Question 2 on measurability, Question 3 on impact. Three Yes leads to Level 1 Automation. Two Yes leads to Level 2 Augmentation. One Yes or fewer leads to Level 3 Consultation." loading="lazy" />
+      <figcaption>
+        Figure 1. Self-test as decision tree. Three questions determine which AI level the decision belongs to. The model is designed to place new use cases systematically — not intuitively. (Diagram labels in Swedish: Felkostnad = Cost of error, Mätbarhet = Measurability, Påverkan = Impact, Konsultation = Consultation.)
+      </figcaption>
+    </figure>
+
+    <h2>The model applied to four cases</h2>
+
+    <p>This is where the model shows its strength — or fails.</p>
+
+    <h3>ESL price update within competitor parity</h3>
+    <p>Errors noticed via POS within hours. A clear metric (margin vs competitor). Affects no specific person or the brand's soul. <strong>Three Yes → Level 1.</strong> AI sets prices automatically within the rulebook.</p>
+
+    <h3>Seasonal forecast for a product category</h3>
+    <p>Errors noticed within 2–4 weeks and can be adjusted. But several goals compete — shrinkage, availability, cash flow. Doesn't affect the brand noticeably. <strong>Two Yes → Level 2.</strong> AI produces proposal, buyer decides.</p>
+
+    <h3>Decision to close a store</h3>
+    <p>Errors noticed within months to years and not correctable. No single metric — it's profitability <em>and</em> personnel <em>and</em> local community <em>and</em> brand. Directly affects employees' lives. <strong>Zero Yes → Level 3.</strong> AI can provide good material, but management owns the decision.</p>
+
+    <h3>Promotion of a store manager</h3>
+    <p>Errors cannot be corrected — relationships break. Measurability is low (what is "best candidate"?). Affects a specific person in the most personal way there is. <strong>Zero Yes → Level 3.</strong> AI can analyse performance, but the decision belongs with a human who takes responsibility.</p>
+
+    <p>The pattern is consistent: the higher up the decision pyramid, the more questions get a No, the higher up the levels the decision belongs.</p>
+
+    <h2>Where does the industry stand today?</h2>
+
+    <p>Most of the retail chains we've followed have no <em>formal</em> process for determining which level new AI use cases belong to. Some chains have come surprisingly far operationally — often behind the scenes — but the structure typically sits in the heads of individual key persons, not in a decision framework that survives them changing jobs.</p>
+
+    <p>This isn't a problem in itself — as long as those key persons remain. But it doesn't scale. And the time when one could lean on individual champions is running out.</p>
+
+    <h2>The retail map is being redrawn — and the window is 3–5 years</h2>
+
+    <p>This isn't speculation. It's what is actually happening right now. AI doesn't just move the efficiency margin — it redistributes power in the value chain. Chains that build the right operational AI foundation in 2026–2028 will be able to move faster than their competitors for the rest of the decade. Chains that don't fall behind at a speed that won't show up in two quarters.</p>
+
+    <p>This is where the model's three levels become tactical, not philosophical. <strong>Level 1</strong> is where efficiency gains sit. <strong>Level 2</strong> is where quality improvements sit. <strong>Level 3</strong> is where strategic missteps are avoided. All three must be handled — and all three must be handled <em>now</em>.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">3–5 years</span>
+      <span class="stat-callout-text">is the window. The retail chain that doesn't start testing now falls behind at a speed that won't show up in two quarters. AI redistributes power in the value chain, not just efficiency margins.</span>
+    </div>
+
+    <h2>The Stenbeck method, applied to AI</h2>
+
+    <p>Jan Stenbeck — the legendary Swedish media entrepreneur — had a working method that suits AI in 2026 better than any framework I've seen in the consultancy reports: start many projects, learn quickly, shut down what doesn't work, double down on what does. <strong>Quantity first, quality second.</strong></p>
+
+    <p>It's the opposite of how most retail chains attack AI today. The common pattern: a big strategic AI programme, an RFP, an 18-month pilot project, and a result that's obsolete before it lands. It's a method built for a world where technology changes slowly. That world no longer exists.</p>
+
+    <p>The winning retail chain in 2026 runs 8–10 AI experiments in parallel across all three levels. Some fail quickly and are shut down within the quarter. Others show early signals and get more resources. After 18 months, the chain doesn't have a perfect AI programme — it has a <em>portfolio</em> of working tools and an organisation that has learned to learn.</p>
+
+    <p>This isn't in conflict with the model's three levels. It's how one <em>practically</em> works within the model. Test many Level 1 cases where the cost of error is low — there the portfolio tolerates several failures. Build out Level 2 experiments where the first test shows signals. Use Level 3 discipline to keep strategic missteps out of the portfolio entirely.</p>
+
+    <p>Stenbeck knew something: an organisation that tests ten things and succeeds with three beats an organisation that tests one thing and tries to make it perfect. That's even more true in 2026 than it was in 1995.</p>
+
+    <blockquote>The question isn't whether your chain should use AI. It's what decision mandate you want to give it — and how many experiments you dare run in parallel to find where it works.</blockquote>
+
+    <h2>The trilogy's conclusion</h2>
+
+    <p>Three articles. Three theses. One context.</p>
+
+    <p>In <strong><a href="/insights/sven-ai-chatbot/">part 1</a></strong> we established that AI works when the product work is right — Sven isn't intelligent, Sven is <em>well-built</em>. And well-built is what wins the coming decade.</p>
+
+    <p>In <strong><a href="/insights/ai-funkar-eller-slideware/">part 2</a></strong> we showed that product work isn't enough everywhere — the structure of the use case decides. Three cases in retail work in 2026. Three don't. The difference isn't technical, it's structural.</p>
+
+    <p>In <strong>part 3</strong> we've added the final dimension — the decision mandate. Three levels of AI involvement. Three questions that determine which level. And a working method from Stenbeck for how to build up the portfolio in practice.</p>
+
+    <p>The retail executive who wins the coming decade is the one who handles all three dimensions simultaneously: builds the product work right, picks the right use cases, and delegates decisions to the right level — while running many small experiments in parallel and learning faster than competitors.</p>
+
+    <p>It's not much to ask. But it's a completely different discipline than "we implement AI." It's <strong>learning faster than the competition</strong>. And the coming 3–5 years are when that gets decided.</p>
+  </div>
+
+  <style>
+    .series-tag {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-blue, #2A4EA9);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .series-tag a {
+      color: var(--art-navy, #010D60);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .article-figure { margin: 2.75rem 0; }
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .article-figure figcaption {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-muted, #6E7280);
+      padding: 0.85rem 0 0;
+      line-height: 1.55;
+    }
+
+    /* Three levels grid */
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0 2.5rem;
+    }
+    .level-card {
+      padding: 1.5rem 1.25rem;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #fff, #f7f8fb);
+      border: 1px solid #d6d9e0;
+      border-top: 3px solid;
+    }
+    .level-card.level-1 { border-top-color: #2D8A6B; }
+    .level-card.level-2 { border-top-color: #2A4EA9; }
+    .level-card.level-3 { border-top-color: #A32D2D; }
+    .level-badge {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .level-1 .level-badge { color: #2D8A6B; }
+    .level-2 .level-badge { color: #2A4EA9; }
+    .level-3 .level-badge { color: #A32D2D; }
+    .level-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem !important;
+      margin: 0 0 0.85rem !important;
+      padding: 0 !important;
+      border: none !important;
+      color: var(--art-navy, #010D60) !important;
+    }
+    .level-card .level-what {
+      font-size: 0.95rem;
+      color: #1A1A1A;
+      margin-bottom: 0.6rem;
+      line-height: 1.45;
+    }
+    .level-card .level-who {
+      font-size: 0.9rem;
+      color: var(--art-muted, #6E7280);
+      font-style: italic;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* Example lists with custom bullet styling */
+    .example-list, .logic-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 1rem 0 1.5rem;
+    }
+    .example-list li, .logic-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.65rem;
+      line-height: 1.6;
+    }
+    .example-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--art-navy, #010D60);
+      font-weight: bold;
+    }
+    .logic-list li {
+      padding-left: 0;
+    }
+    .logic-list li::before { content: none; }
+
+    @media (max-width: 700px) {
+      .article-figure { margin: 1.75rem -1rem; }
+      .article-figure img { border-radius: 0; }
+      .article-figure figcaption { padding: 0.75rem 1rem 0; }
+      .levels-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+    }
+  </style>
+</InsightLayout>
