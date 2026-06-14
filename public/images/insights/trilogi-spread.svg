@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="spread-title spread-desc">
+  <title id="spread-title">AI-trilogin: tre artiklar i Insikter Vol. 1</title>
+  <desc id="spread-desc">Trilogi-spread som visar de tre artiklarna i AI-serien: Sven, Tre fall som funkar, och Tre nivåer av AI-mandat.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F7F8FB"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="620" fill="url(#bg)"/>
+
+  <!-- Top header -->
+  <text x="60" y="55" font-family="'Chakra Petch', 'Helvetica Neue', Arial, sans-serif"
+        font-size="14" font-weight="700" fill="#2A4EA9" letter-spacing="0.28em">SERIEN · AI BORTOM HYPEN</text>
+  <text x="60" y="100" font-family="'Chakra Petch', sans-serif"
+        font-size="32" font-weight="700" fill="#010D60">AI-trilogin: tre artiklar, tre teser, ett sammanhang.</text>
+
+  <line x1="60" y1="135" x2="1140" y2="135" stroke="#D6D9E0" stroke-width="1"/>
+
+  <!-- ─── Row 1 — Sven (GREEN) ─────────────────────── -->
+  <g transform="translate(60, 160)">
+    <!-- Coloured marker stripe -->
+    <rect x="0" y="0" width="8" height="130" rx="2" fill="#2D8A6B"/>
+
+    <!-- Eyebrow -->
+    <text x="32" y="22" font-family="'Chakra Petch', sans-serif"
+          font-size="13" font-weight="700" fill="#2D8A6B" letter-spacing="0.18em">DEL 1 · 5 JUNI 2026</text>
+
+    <!-- Title -->
+    <text x="32" y="55" font-family="'Chakra Petch', sans-serif"
+          font-size="24" font-weight="700" fill="#010D60">Sven — anatomi av en AI-chatbot som funkar</text>
+
+    <!-- Subtitle / thesis -->
+    <text x="32" y="86" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">Sex byggstenar bakom en chatbot som löser 80–90 % av kundfrågorna — och</text>
+    <text x="32" y="108" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">varför produktarbetet, inte AI-modellen, är det som gör skillnaden.</text>
+
+    <!-- Read arrow -->
+    <circle cx="1040" cy="65" r="22" fill="#2D8A6B" fill-opacity="0.12" stroke="#2D8A6B" stroke-width="1.5"/>
+    <text x="1040" y="73" font-family="'Chakra Petch', sans-serif"
+          font-size="22" font-weight="700" fill="#2D8A6B" text-anchor="middle">→</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="60" y1="295" x2="1140" y2="295" stroke="#D6D9E0" stroke-width="1" stroke-dasharray="2,4"/>
+
+  <!-- ─── Row 2 — Tre fall (BLUE) ─────────────────────── -->
+  <g transform="translate(60, 305)">
+    <rect x="0" y="0" width="8" height="130" rx="2" fill="#2A4EA9"/>
+
+    <text x="32" y="22" font-family="'Chakra Petch', sans-serif"
+          font-size="13" font-weight="700" fill="#2A4EA9" letter-spacing="0.18em">DEL 2 · 9 JUNI 2026</text>
+
+    <text x="32" y="55" font-family="'Chakra Petch', sans-serif"
+          font-size="24" font-weight="700" fill="#010D60">AI i butiken — tre fall som funkar, tre som inte gör det</text>
+
+    <text x="32" y="86" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">Scorecard från 9 pilotprojekt över tre strukturella egenskaper. Mönstret är</text>
+    <text x="32" y="108" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">inte tekniskt — det är strukturellt. Och konsekvent.</text>
+
+    <circle cx="1040" cy="65" r="22" fill="#2A4EA9" fill-opacity="0.12" stroke="#2A4EA9" stroke-width="1.5"/>
+    <text x="1040" y="73" font-family="'Chakra Petch', sans-serif"
+          font-size="22" font-weight="700" fill="#2A4EA9" text-anchor="middle">→</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="60" y1="440" x2="1140" y2="440" stroke="#D6D9E0" stroke-width="1" stroke-dasharray="2,4"/>
+
+  <!-- ─── Row 3 — Tre nivåer (RED) ─────────────────────── -->
+  <g transform="translate(60, 450)">
+    <rect x="0" y="0" width="8" height="130" rx="2" fill="#A32D2D"/>
+
+    <text x="32" y="22" font-family="'Chakra Petch', sans-serif"
+          font-size="13" font-weight="700" fill="#A32D2D" letter-spacing="0.18em">DEL 3 · 11 JUNI 2026</text>
+
+    <text x="32" y="55" font-family="'Chakra Petch', sans-serif"
+          font-size="24" font-weight="700" fill="#010D60">AI i tre nivåer — och hur ni vet vad som hör hemma var</text>
+
+    <text x="32" y="86" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">Modell + själv-test + Stenbeck-metoden för portföljen. Hur mycket beslutsmandat</text>
+    <text x="32" y="108" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">ska AI få? Och hur vet ni det?</text>
+
+    <circle cx="1040" cy="65" r="22" fill="#A32D2D" fill-opacity="0.12" stroke="#A32D2D" stroke-width="1.5"/>
+    <text x="1040" y="73" font-family="'Chakra Petch', sans-serif"
+          font-size="22" font-weight="700" fill="#A32D2D" text-anchor="middle">→</text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <line x1="60" y1="585" x2="1140" y2="585" stroke="#D6D9E0" stroke-width="1"/>
+  <text x="600" y="608" font-family="'Source Serif 4', Georgia, serif"
+        font-size="14" font-style="italic" fill="#6E7280" text-anchor="middle">Tre artiklar. Tre teser. Ett sammanhang.</text>
+</svg>

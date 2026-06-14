@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="spread-title-en spread-desc-en">
+  <title id="spread-title-en">The AI trilogy: three articles in Insights Vol. 1</title>
+  <desc id="spread-desc-en">Trilogy spread showing the three articles in the AI series.</desc>
+
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F7F8FB"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="620" fill="url(#bg2)"/>
+
+  <text x="60" y="55" font-family="'Chakra Petch', sans-serif"
+        font-size="14" font-weight="700" fill="#2A4EA9" letter-spacing="0.28em">THE SERIES · AI BEYOND THE HYPE</text>
+  <text x="60" y="100" font-family="'Chakra Petch', sans-serif"
+        font-size="32" font-weight="700" fill="#010D60">The AI trilogy: three articles, three theses, one context.</text>
+
+  <line x1="60" y1="135" x2="1140" y2="135" stroke="#D6D9E0" stroke-width="1"/>
+
+  <g transform="translate(60, 160)">
+    <rect x="0" y="0" width="8" height="130" rx="2" fill="#2D8A6B"/>
+    <text x="32" y="22" font-family="'Chakra Petch', sans-serif"
+          font-size="13" font-weight="700" fill="#2D8A6B" letter-spacing="0.18em">PART 1 · JUNE 5, 2026</text>
+    <text x="32" y="55" font-family="'Chakra Petch', sans-serif"
+          font-size="24" font-weight="700" fill="#010D60">Sven — anatomy of an AI chatbot that works</text>
+    <text x="32" y="86" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">Six building blocks behind a chatbot that resolves 80–90 % of customer</text>
+    <text x="32" y="108" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">questions — and why the product work, not the AI model, makes the difference.</text>
+    <circle cx="1040" cy="65" r="22" fill="#2D8A6B" fill-opacity="0.12" stroke="#2D8A6B" stroke-width="1.5"/>
+    <text x="1040" y="73" font-family="'Chakra Petch', sans-serif"
+          font-size="22" font-weight="700" fill="#2D8A6B" text-anchor="middle">→</text>
+  </g>
+
+  <line x1="60" y1="295" x2="1140" y2="295" stroke="#D6D9E0" stroke-width="1" stroke-dasharray="2,4"/>
+
+  <g transform="translate(60, 305)">
+    <rect x="0" y="0" width="8" height="130" rx="2" fill="#2A4EA9"/>
+    <text x="32" y="22" font-family="'Chakra Petch', sans-serif"
+          font-size="13" font-weight="700" fill="#2A4EA9" letter-spacing="0.18em">PART 2 · JUNE 9, 2026</text>
+    <text x="32" y="55" font-family="'Chakra Petch', sans-serif"
+          font-size="24" font-weight="700" fill="#010D60">AI in retail — three cases that work, three that don't</text>
+    <text x="32" y="86" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">Scorecard from 9 pilot projects across three structural properties. The pattern</text>
+    <text x="32" y="108" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">isn't technical — it's structural. And consistent.</text>
+    <circle cx="1040" cy="65" r="22" fill="#2A4EA9" fill-opacity="0.12" stroke="#2A4EA9" stroke-width="1.5"/>
+    <text x="1040" y="73" font-family="'Chakra Petch', sans-serif"
+          font-size="22" font-weight="700" fill="#2A4EA9" text-anchor="middle">→</text>
+  </g>
+
+  <line x1="60" y1="440" x2="1140" y2="440" stroke="#D6D9E0" stroke-width="1" stroke-dasharray="2,4"/>
+
+  <g transform="translate(60, 450)">
+    <rect x="0" y="0" width="8" height="130" rx="2" fill="#A32D2D"/>
+    <text x="32" y="22" font-family="'Chakra Petch', sans-serif"
+          font-size="13" font-weight="700" fill="#A32D2D" letter-spacing="0.18em">PART 3 · JUNE 11, 2026</text>
+    <text x="32" y="55" font-family="'Chakra Petch', sans-serif"
+          font-size="24" font-weight="700" fill="#010D60">AI in three levels — and how you know what belongs where</text>
+    <text x="32" y="86" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">Model + self-test + Stenbeck method for the portfolio. How much decision</text>
+    <text x="32" y="108" font-family="'Source Serif 4', Georgia, serif"
+          font-size="16" font-style="italic" fill="#1A1A1A">mandate should AI have? And how do you know?</text>
+    <circle cx="1040" cy="65" r="22" fill="#A32D2D" fill-opacity="0.12" stroke="#A32D2D" stroke-width="1.5"/>
+    <text x="1040" y="73" font-family="'Chakra Petch', sans-serif"
+          font-size="22" font-weight="700" fill="#A32D2D" text-anchor="middle">→</text>
+  </g>
+
+  <line x1="60" y1="585" x2="1140" y2="585" stroke="#D6D9E0" stroke-width="1"/>
+  <text x="600" y="608" font-family="'Source Serif 4', Georgia, serif"
+        font-size="14" font-style="italic" fill="#6E7280" text-anchor="middle">Three articles. Three theses. One context.</text>
+</svg>

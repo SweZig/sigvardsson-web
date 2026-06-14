@@ -1,0 +1,446 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { insights } from '../../data/insights.js';
+
+const canonical = 'https://www.sigvardsson.org/insights/vol-1-ai-i-retail/';
+
+// Find the three trilogy articles
+const part1 = insights.find(a => a.slug === 'sven-ai-chatbot');
+const part2 = insights.find(a => a.slug === 'ai-funkar-eller-slideware');
+const part3 = insights.find(a => a.slug === 'ai-tre-nivaer');
+---
+
+<Layout
+  titleSv="Insikter Vol. 1 — AI-trilogin i nordisk retail | Sigvardsson Consulting Group"
+  titleEn="Insights Vol. 1 — The AI trilogy in Nordic retail | Sigvardsson Consulting Group"
+  descriptionSv="Insikter är vår löpande analys av nordisk retail från en praktikers perspektiv. Vol. 1 består av en trilogi om AI i nordisk retail — tre artiklar, tre teser, ett sammanhang."
+  descriptionEn="Insights is our running analysis of Nordic retail from a practitioner's perspective. Vol. 1 consists of a trilogy on AI in Nordic retail — three articles, three theses, one context."
+  canonical={canonical}
+>
+  <Header slot="header" />
+
+  <!-- ===== HERO ===== -->
+  <section class="vol-hero">
+    <div class="container">
+      <picture>
+        <source srcset="/images/insights/insights-vol1-hero.svg" media="(prefers-color-scheme: dark)" class="en-hero-mobile" />
+        <img class="vol-hero-img sv-hero" src="/images/insights/insikter-vol1-hero.svg" alt="Insikter Vol. 1, Maj 2026 — en publikation från Sigvardsson Consulting Group. Nordisk retail-analys ur en praktikers perspektiv." />
+        <img class="vol-hero-img en-hero" src="/images/insights/insights-vol1-hero.svg" alt="Insights Vol. 1, May 2026 — a publication by Sigvardsson Consulting Group. Nordic retail analysis from a practitioner's perspective." />
+      </picture>
+    </div>
+  </section>
+
+  <!-- ===== SWEDISH CONTENT ===== -->
+  <section class="vol-content sv-text">
+    <div class="container">
+
+      <!-- Insikter som koncept -->
+      <article class="vol-section">
+        <h2>Insikter som koncept</h2>
+        <p>Det finns gott om analys om nordisk retail just nu. Mycket av den är skriven av konsulthus som vill sälja transformations-program. Mycket av den är skriven av tankesmedjor som tänker tre år framåt utan att veta hur en kategoricentralisering faktiskt fungerar i veckan. <strong>Den här ligger emellan.</strong></p>
+
+        <p>Insikter är vår löpande analys av nordisk retail från en praktikers perspektiv. Vi skriver om det vi gör — i butiker, lager, ledningsgrupper, AI-implementeringar, inköpsmöten — och försöker dela det som faktiskt visar sig fungera. Eller inte.</p>
+
+        <p>Vi har tre principer:</p>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-label">KÄLLKRITISK</div>
+            <p>Vi citerar inte branschrapporter utan att läsa dem. Vi rapporterar mätbara resultat när vi har dem, och säger när vi inte har dem.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-label">KONKRET</div>
+            <p>Inga abstrakta principer utan exempel. Inga exempel utan siffror där siffror finns. Inga case-studier utan möjligheten att verifiera.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-label">NORDISK</div>
+            <p>Vi skriver för en kontext där löner är höga, säsongsvariationer är stora, och där förtroende mellan butik och kund inte kan köpas tillbaka när det är förlorat.</p>
+          </div>
+        </div>
+
+        <p>Insikter skrivs av ett team som under flera decennier har arbetat med svensk, nordisk och internationell retail — från dagligvaror och fackhandel till e-handel och travel retail. Vi vill dela med oss av det vi lärt oss till människor som faktiskt fattar beslut om hur retail ska se ut de kommande åren. Det är huvudsyftet med Insikter.</p>
+      </article>
+
+      <!-- Vol. 1 — Trilogin -->
+      <article class="vol-section">
+        <h2>Vol. 1 — AI-trilogin</h2>
+        <p>Vol. 1 består av tre artiklar publicerade mellan 5 och 11 juni 2026. De handlar om AI i nordisk retail — vad som tekniskt fungerar idag, vad som inte gör det, och hur mycket beslutsmandat AI faktiskt bör få.</p>
+
+        <figure class="trilogy-figure">
+          <img src="/images/insights/trilogi-spread.svg" alt="AI-trilogin — tre artiklar staplade vertikalt. Del 1: Sven, en chatbot som funkar. Del 2: Tre fall som funkar, tre som inte. Del 3: AI i tre nivåer." loading="lazy" />
+        </figure>
+
+        <!-- Three article cards -->
+        <div class="trilogy-cards">
+          <a href="/insights/sven-ai-chatbot/" class="trilogy-card card-1">
+            <div class="card-eyebrow">DEL 1 · 5 JUNI 2026</div>
+            <h3>Sven — anatomi av en AI-chatbot som funkar</h3>
+            <p>Hos vårt systerbolag löser AI-chatboten Sven 80–90 procent av kundfrågorna. Vi bryter ner de sex byggstenar som ligger bakom — och visar varför produktarbetet, inte AI-modellen, är det som gör skillnaden.</p>
+            <span class="card-cta">Läs hela artikeln →</span>
+          </a>
+
+          <a href="/insights/ai-funkar-eller-slideware/" class="trilogy-card card-2">
+            <div class="card-eyebrow">DEL 2 · 9 JUNI 2026</div>
+            <h3>AI i butiken — tre fall som funkar, tre som inte gör det</h3>
+            <p>Scorecard från 9 nordiska AI-pilotprojekt 2024–2026. Tre fall har gått i produktion. Tre är fortfarande slideware. Skillnaden är inte teknisk — den är strukturell. Och konsekvent.</p>
+            <span class="card-cta">Läs hela artikeln →</span>
+          </a>
+
+          <a href="/insights/ai-tre-nivaer/" class="trilogy-card card-3">
+            <div class="card-eyebrow">DEL 3 · 11 JUNI 2026</div>
+            <h3>AI i tre nivåer — och hur ni vet vad som hör hemma var</h3>
+            <p>Modell i tre nivåer för att placera varje AI-beslut där det hör hemma. Plus ett själv-test med tre frågor — och Jan Stenbecks arbetsmetod applicerad på AI-portföljen.</p>
+            <span class="card-cta">Läs hela artikeln →</span>
+          </a>
+        </div>
+
+        <h3 class="meta-heading">Vad de tre delarna säger tillsammans</h3>
+
+        <p>Tre artiklar. Tre teser. Ett sammanhang.</p>
+
+        <p>I <strong>del 1</strong> etablerade vi att AI funkar när produktarbetet är rätt. Det är <em>välbyggd</em>, inte intelligent, som vinner. I <strong>del 2</strong> visade vi att produktarbetet inte räcker överallt — strukturen i användningsfallet avgör. Tre fall i retail funkar 2026. Tre gör det inte. I <strong>del 3</strong> lade vi till den sista dimensionen: beslutsmandatet. Tre nivåer av AI-involvering. Tre frågor som avgör vilken nivå. Och en arbetsmetod från Stenbeck för hur man bygger upp portföljen.</p>
+
+        <p>Hela serien går att läsa på en eftermiddag. Den är skriven för retail-chefer som ska fatta AI-beslut det kommande året — och vill ha en mental modell att hänga upp dem på.</p>
+      </article>
+
+      <!-- Vad som händer härnäst -->
+      <article class="vol-section">
+        <h2>Vad som händer härnäst</h2>
+
+        <p>Insikter fortsätter genom 2026 med löpande analys ur samma perspektiv. Nästa pelarområden vi tänker ta upp:</p>
+
+        <ul class="upcoming-list">
+          <li><strong>Inköpsdisciplin under pris- och valutavolatilitet</strong> — vad har vi lärt oss av 2022–2025 som tål att skalas?</li>
+          <li><strong>Personalfrågan bortom semester</strong> — generationsskifte i butikspersonal, ny ledarskapsfostran för 2030-talet.</li>
+          <li><strong>Sustainability-rapportering som faktiskt påverkar inköpsbeslut</strong> — bortom kraven, in i operativ verklighet.</li>
+        </ul>
+
+        <p>Och förmodligen några ämnen vi inte väntar oss men som visar sig viktiga.</p>
+
+        <p>Har ni en vinkel ni tycker borde belysas, eller en fråga ni vill att vi tar oss an? <a href="/Contact/">Hör av er</a>. Vi läser allt.</p>
+
+        <p class="signoff">— Per Sigvardsson, Lars Lundqvist, Peter Wilén, Sebastian Fauné<br />
+        <span class="signoff-org">Sigvardsson Consulting Group</span></p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== ENGLISH CONTENT ===== -->
+  <section class="vol-content en-text">
+    <div class="container">
+
+      <article class="vol-section">
+        <h2>Insights as a concept</h2>
+        <p>There's plenty of analysis on Nordic retail right now. Much of it is written by consultancy houses trying to sell transformation programmes. Much of it is written by think tanks thinking three years ahead without knowing how a category centralisation actually plays out week to week. <strong>This sits in between.</strong></p>
+
+        <p>Insights is our running analysis of Nordic retail from a practitioner's perspective. We write about what we do — in stores, warehouses, management groups, AI implementations, purchasing meetings — and try to share what actually turns out to work. Or doesn't.</p>
+
+        <p>We have three principles:</p>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-label">SOURCE-CRITICAL</div>
+            <p>We don't quote industry reports without reading them. We report measurable results when we have them, and say when we don't.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-label">CONCRETE</div>
+            <p>No abstract principles without examples. No examples without numbers where numbers exist. No case studies without the possibility of verification.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-label">NORDIC</div>
+            <p>We write for a context where wages are high, seasonal variations are large, and where trust between store and customer can't be bought back once it's lost.</p>
+          </div>
+        </div>
+
+        <p>Insights is written by a team that for several decades has worked with Swedish, Nordic and international retail — from grocery and specialty trade to e-commerce and travel retail. We want to share what we've learned with people who actually make decisions about how retail will look the coming years. That's the main purpose of Insights.</p>
+      </article>
+
+      <article class="vol-section">
+        <h2>Vol. 1 — The AI trilogy</h2>
+        <p>Vol. 1 consists of three articles published between June 5 and June 11, 2026. They are about AI in Nordic retail — what works technically today, what doesn't, and how much decision mandate AI should actually have.</p>
+
+        <figure class="trilogy-figure">
+          <img src="/images/insights/trilogy-spread.svg" alt="The AI trilogy — three articles stacked vertically. Part 1: Sven, a chatbot that works. Part 2: Three cases that work, three that don't. Part 3: AI in three levels." loading="lazy" />
+        </figure>
+
+        <div class="trilogy-cards">
+          <a href="/insights/sven-ai-chatbot/" class="trilogy-card card-1">
+            <div class="card-eyebrow">PART 1 · JUNE 5, 2026</div>
+            <h3>Sven — anatomy of an AI chatbot that works</h3>
+            <p>At our sister company, the AI chatbot Sven resolves 80–90 percent of customer questions. We break down the six building blocks behind it — and show why the product work, not the AI model, makes the difference.</p>
+            <span class="card-cta">Read the full article →</span>
+          </a>
+
+          <a href="/insights/ai-funkar-eller-slideware/" class="trilogy-card card-2">
+            <div class="card-eyebrow">PART 2 · JUNE 9, 2026</div>
+            <h3>AI in retail — three cases that work, three that don't</h3>
+            <p>Scorecard from 9 Nordic AI pilot projects 2024–2026. Three cases have gone into production. Three are still slideware. The difference isn't technical — it's structural. And consistent.</p>
+            <span class="card-cta">Read the full article →</span>
+          </a>
+
+          <a href="/insights/ai-tre-nivaer/" class="trilogy-card card-3">
+            <div class="card-eyebrow">PART 3 · JUNE 11, 2026</div>
+            <h3>AI in three levels — and how you know what belongs where</h3>
+            <p>A three-level model for placing every AI decision where it belongs. Plus a self-test with three questions — and Jan Stenbeck's working method applied to the AI portfolio.</p>
+            <span class="card-cta">Read the full article →</span>
+          </a>
+        </div>
+
+        <h3 class="meta-heading">What the three parts say together</h3>
+
+        <p>Three articles. Three theses. One context.</p>
+
+        <p>In <strong>part 1</strong> we established that AI works when the product work is right. It's <em>well-built</em>, not intelligent, that wins. In <strong>part 2</strong> we showed that product work isn't enough everywhere — the structure of the use case decides. Three cases in retail work in 2026. Three don't. In <strong>part 3</strong> we added the final dimension: the decision mandate. Three levels of AI involvement. Three questions that determine which level. And a working method from Stenbeck for how to build up the portfolio.</p>
+
+        <p>The full series can be read in an afternoon. It's written for retail executives who will make AI decisions in the coming year — and want a mental model to hang them on.</p>
+      </article>
+
+      <article class="vol-section">
+        <h2>What happens next</h2>
+
+        <p>Insights continues through 2026 with running analysis from the same perspective. The next pillar topics we plan to take on:</p>
+
+        <ul class="upcoming-list">
+          <li><strong>Purchasing discipline under price and currency volatility</strong> — what have we learned from 2022–2025 that can be scaled?</li>
+          <li><strong>The personnel question beyond holidays</strong> — generational change in store staff, new leadership formation for the 2030s.</li>
+          <li><strong>Sustainability reporting that actually affects purchasing decisions</strong> — beyond the requirements, into operational reality.</li>
+        </ul>
+
+        <p>And probably a few topics we don't expect but which turn out to be important.</p>
+
+        <p>Got a perspective you think should be addressed, or a question you'd like us to take on? <a href="/Contact/">Get in touch</a>. We read everything.</p>
+
+        <p class="signoff">— Per Sigvardsson, Lars Lundqvist, Peter Wilén, Sebastian Fauné<br />
+        <span class="signoff-org">Sigvardsson Consulting Group</span></p>
+      </article>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+
+  <style>
+    /* Hero */
+    .vol-hero {
+      background: #010D60;
+      padding: 1.5rem 0 2rem;
+    }
+    .vol-hero .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .vol-hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+    }
+    .en-hero { display: none; }
+    body.en .sv-hero { display: none; }
+    body.en .en-hero { display: block; }
+
+    /* Content */
+    .vol-content {
+      padding: 3.5rem 0 4rem;
+    }
+    .vol-content .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .vol-section {
+      margin-bottom: 3.5rem;
+    }
+    .vol-section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--art-navy, #010D60);
+      margin: 0 0 1.25rem;
+      letter-spacing: -0.005em;
+    }
+    .vol-section h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--art-navy, #010D60);
+      margin: 1.5rem 0 0.85rem;
+    }
+    .vol-section h3.meta-heading {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #E5E7EB;
+    }
+    .vol-section p {
+      font-family: var(--font-body, 'Nunito', sans-serif);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1A1A1A;
+      margin-bottom: 1.25rem;
+    }
+    .vol-section a {
+      color: var(--art-blue, #2A4EA9);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    /* Three principles */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.75rem 0 2rem;
+    }
+    .principle {
+      padding: 1.35rem 1.15rem;
+      background: linear-gradient(180deg, #fff, #f7f8fb);
+      border-left: 3px solid var(--art-navy, #010D60);
+      border-radius: 0 6px 6px 0;
+    }
+    .principle-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--art-navy, #010D60);
+      margin-bottom: 0.65rem;
+    }
+    .principle p {
+      font-size: 0.93rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Trilogy visual */
+    .trilogy-figure {
+      margin: 2rem -1rem;
+    }
+    .trilogy-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      border: 1px solid #E5E7EB;
+    }
+
+    /* Trilogy cards */
+    .trilogy-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+    }
+    .trilogy-card {
+      display: block;
+      padding: 1.5rem 1.5rem 1.35rem;
+      background: linear-gradient(180deg, #fff, #f7f8fb);
+      border: 1px solid #D6D9E0;
+      border-left: 4px solid;
+      border-radius: 6px;
+      text-decoration: none !important;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .trilogy-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(1,13,96,0.08);
+    }
+    .trilogy-card.card-1 { border-left-color: #2D8A6B; }
+    .trilogy-card.card-2 { border-left-color: #2A4EA9; }
+    .trilogy-card.card-3 { border-left-color: #A32D2D; }
+
+    .card-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.6rem;
+    }
+    .card-1 .card-eyebrow { color: #2D8A6B; }
+    .card-2 .card-eyebrow { color: #2A4EA9; }
+    .card-3 .card-eyebrow { color: #A32D2D; }
+
+    .trilogy-card h3 {
+      font-family: var(--font-heading) !important;
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      color: var(--art-navy, #010D60) !important;
+      margin: 0 0 0.65rem !important;
+      padding: 0 !important;
+      border: none !important;
+      line-height: 1.3 !important;
+    }
+    .trilogy-card p {
+      font-size: 0.95rem !important;
+      line-height: 1.55 !important;
+      color: #1A1A1A !important;
+      margin-bottom: 0.85rem !important;
+    }
+    .card-cta {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--art-navy, #010D60);
+    }
+
+    /* Upcoming list */
+    .upcoming-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 1.5rem 0;
+    }
+    .upcoming-list li {
+      position: relative;
+      padding-left: 1.85rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #E5E7EB;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .upcoming-list li:last-child {
+      border-bottom: none;
+    }
+    .upcoming-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--art-blue, #2A4EA9);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    .signoff {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #E5E7EB;
+      font-style: italic;
+      color: #6E7280;
+    }
+    .signoff-org {
+      font-family: var(--font-heading);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--art-navy, #010D60);
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .vol-section h2 { font-size: 1.5rem; }
+      .principles { grid-template-columns: 1fr; gap: 0.85rem; }
+      .trilogy-figure { margin: 1.5rem -1rem; }
+      .trilogy-figure img { border-radius: 0; }
+      .trilogy-card { padding: 1.25rem 1.15rem; }
+      .trilogy-card h3 { font-size: 1.1rem !important; }
+    }
+  </style>
+</Layout>

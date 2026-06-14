@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Insights — Vol. 1, 2026</title>
+  <desc id="hero-desc">Hero graphic for Insights Vol. 1, the publication from Sigvardsson Consulting Group.</desc>
+
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#010D60"/>
+      <stop offset="50%" stop-color="#1A277A"/>
+      <stop offset="100%" stop-color="#010D60"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="0.7" cy="0.3" r="0.7">
+      <stop offset="0%" stop-color="#90A2CF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#90A2CF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="diagonalLines2" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)">
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#FFFFFF" stroke-opacity="0.025" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="url(#bgGrad2)"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#diagonalLines2)"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#glow2)"/>
+
+  <text x="100" y="80" font-family="'Chakra Petch', sans-serif"
+        font-size="18" font-weight="600" fill="#90A2CF" letter-spacing="0.32em">VOL. 1 · MAY 2026</text>
+  <text x="1500" y="80" font-family="'Chakra Petch', sans-serif"
+        font-size="18" font-weight="600" fill="#90A2CF" letter-spacing="0.32em" text-anchor="end">SIGVARDSSON CONSULTING GROUP</text>
+  <text x="1500" y="108" font-family="'Source Serif 4', Georgia, serif"
+        font-size="15" font-style="italic" fill="#90A2CF" fill-opacity="0.7" text-anchor="end">a publication by</text>
+
+  <line x1="100" y1="135" x2="1500" y2="135" stroke="#90A2CF" stroke-opacity="0.25" stroke-width="1"/>
+
+  <text x="800" y="540" font-family="'Chakra Petch', sans-serif"
+        font-size="280" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.01em">INSIGHTS</text>
+
+  <text x="800" y="620" font-family="'Source Serif 4', Georgia, serif"
+        font-size="32" font-style="italic" fill="#FFFFFF" fill-opacity="0.88" text-anchor="middle">Nordic retail analysis from a practitioner's perspective</text>
+
+  <line x1="100" y1="780" x2="1500" y2="780" stroke="#90A2CF" stroke-opacity="0.25" stroke-width="1"/>
+
+  <text x="280" y="830" font-family="'Chakra Petch', sans-serif"
+        font-size="18" font-weight="700" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle" letter-spacing="0.18em">SOURCE-CRITICAL</text>
+  <text x="800" y="830" font-family="'Chakra Petch', sans-serif"
+        font-size="18" font-weight="700" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle" letter-spacing="0.18em">CONCRETE</text>
+  <text x="1320" y="830" font-family="'Chakra Petch', sans-serif"
+        font-size="18" font-weight="700" fill="#FFFFFF" fill-opacity="0.85" text-anchor="middle" letter-spacing="0.18em">NORDIC</text>
+
+  <circle cx="540" cy="826" r="2.5" fill="#90A2CF" fill-opacity="0.6"/>
+  <circle cx="1060" cy="826" r="2.5" fill="#90A2CF" fill-opacity="0.6"/>
+</svg>
