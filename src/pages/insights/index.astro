@@ -64,6 +64,32 @@ const activeCategories = activeCategoryKeys.map(k => ({ key: k, ...categories[k]
     </div>
   </section>
 
+  <!-- ===== VOL. 1 MANIFEST BANNER ===== -->
+  <section class="ins-vol-banner">
+    <div class="container">
+      <a href="/insights/vol-1-ai-i-retail/" class="ins-vol-card">
+        <div class="ins-vol-text">
+          <div class="ins-vol-eyebrow">
+            <span class="sv-text">VOL. 1 · MANIFEST</span>
+            <span class="en-text">VOL. 1 · MANIFESTO</span>
+          </div>
+          <h2 class="ins-vol-title">
+            <span class="sv-text">AI-trilogin är klar — och Insikter Vol. 1 är här.</span>
+            <span class="en-text">The AI trilogy is complete — and Insights Vol. 1 is here.</span>
+          </h2>
+          <p class="ins-vol-blurb">
+            <span class="sv-text">Tre artiklar om AI i nordisk retail, sammanfattade och kontextualiserade. Plus vad Insikter är — och vad som kommer härnäst.</span>
+            <span class="en-text">Three articles on AI in Nordic retail, summarised and contextualised. Plus what Insights is — and what's coming next.</span>
+          </p>
+        </div>
+        <div class="ins-vol-cta">
+          <span class="sv-text">Läs manifestet →</span>
+          <span class="en-text">Read the manifesto →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <!-- ===== CATEGORY FILTER ===== -->
   <section class="ins-filter-wrap">
     <div class="container">
@@ -197,6 +223,98 @@ const activeCategories = activeCategoryKeys.map(k => ({ key: k, ...categories[k]
 </Layout>
 
 <style>
+  /* ===== VOL. 1 MANIFEST BANNER ===== */
+  .ins-vol-banner {
+    padding: 0.5rem 0 2rem;
+  }
+  .ins-vol-banner .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .ins-vol-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.85rem 2rem;
+    background: linear-gradient(135deg, #010D60 0%, #1A277A 50%, #010D60 100%);
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none !important;
+    box-shadow: 0 6px 24px rgba(1,13,96,0.18);
+    transition: transform .15s ease, box-shadow .15s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .ins-vol-card::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: radial-gradient(ellipse at right center, rgba(144,162,207,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .ins-vol-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(1,13,96,0.28);
+  }
+  .ins-vol-text {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .ins-vol-eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: #90A2CF;
+    margin-bottom: 0.5rem;
+  }
+  .ins-vol-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+    line-height: 1.25;
+    color: #fff;
+  }
+  .ins-vol-blurb {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.92;
+  }
+  .ins-vol-cta {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    padding: 0.85rem 1.5rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    transition: background .15s ease;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  .ins-vol-card:hover .ins-vol-cta {
+    background: rgba(255,255,255,0.22);
+  }
+  @media (max-width: 700px) {
+    .ins-vol-card {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.25rem;
+      padding: 1.5rem;
+    }
+    .ins-vol-title { font-size: 1.2rem; }
+    .ins-vol-cta { text-align: center; }
+  }
   :root {
     --ins-navy: #010D60;
     --ins-mid: #1A277A;
