@@ -1,0 +1,227 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'destruktionsforbudet');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <div class="series-tag">Insikter Vol. 2 — Rätt vara, rätt mängd · Del 3 av 3 — Trilogins avslutning. Tidigare delar: <a href="/insights/volymen-ar-tillbaka/">Volymen är tillbaka</a> · <a href="/insights/svinnmalet-blir-lag/">Svinnmålet blir lag</a>.</div>
+
+    <p class="has-dropcap">Den 19 juli i år hände något i europeisk handel som fick förvånansvärt lite uppmärksamhet i Sverige. Från det datumet är det förbjudet för stora företag att förstöra osålda kläder, klädaccessoarer och skor inom EU.</p>
+
+    <p>Det låter som en hållbarhetsnyhet. Det är det också. Men för en ledningsgrupp i mode-, sport- eller skohandeln är det framför allt en inköpsnyhet. För förbudet tar inte bort det osålda. Det tar bara bort den billigaste utvägen.</p>
+
+    <h2>Vad som gäller — och från när</h2>
+
+    <p>Förbudet följer av EU:s ekodesignförordning, ESPR, och de kompletterande akter som kommissionen antog under första halvåret 2026.</p>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-date">Räkenskapsåret 2025</div>
+        <div class="tl-text">Stora företag ska årligen redovisa antal och vikt på osålda konsumentprodukter som kasserats — per produkttyp, med skäl och vart varorna tagit vägen.</div>
+      </div>
+      <div class="tl-row tl-key">
+        <div class="tl-date">19 juli 2026</div>
+        <div class="tl-text">Förbud för stora företag att destruera osålda kläder, klädaccessoarer och skor.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2 mars 2027</div>
+        <div class="tl-text">Ett standardiserat EU-format för redovisningen börjar gälla. Siffrorna blir jämförbara mellan företag.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2030</div>
+        <div class="tl-text">Förbudet och redovisningskravet utvidgas till medelstora företag.</div>
+      </div>
+    </div>
+
+    <p>Som "stort företag" räknas enligt EU:s redovisningsregler den som överskrider två av tre gränser: 250 anställda, 50 miljoner euro i omsättning eller 25 miljoner euro i balansomslutning. Det omfattar de flesta nordiska kedjor av betydelse.</p>
+
+    <p>Undantagen är snäva: produkter som är farliga eller skadade, som har defekter, som gör intrång i immateriella rättigheter — eller som man har försökt skänka bort till minst tre organisationer inom social ekonomi, utan att någon har tagit emot dem.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">19/7</span>
+      <span class="stat-callout-text">Sedan den 19 juli 2026 får stora företag inte längre förstöra osålda kläder och skor i EU. Redovisningen av det som kasseras blir dessutom offentlig och jämförbar.</span>
+    </div>
+
+    <h2>Kostnaden försvinner inte. Den flyttar.</h2>
+
+    <p>Destruktion har aldrig varit en bra affär. Men den har varit en enkel utväg för det som inte gick att sälja. Nu ska samma varor i stället säljas i andra kanaler, repareras, skänkas, återanvändas eller materialåtervinnas.</p>
+
+    <p>Allt detta är bättre än att bränna dem. Men inget av det är gratis. Lageryta för varor som väntar på en ny kanal. Logistik för donation. Administration för dokumentation. Prisnedsättningar som urholkar marginalen i den ordinarie kanalen. Kostnaden för ett felköp finns kvar — den hamnar bara på andra rader i resultaträkningen. Och den blir synligare.</p>
+
+    <blockquote>Det billigaste osålda plagget är det ni aldrig köpte in.</blockquote>
+
+    <h2>Redovisningen är den verkliga förändringen</h2>
+
+    <p>Förbudet får rubrikerna. Men det är redovisningskravet som på sikt förändrar mest.</p>
+
+    <p>När varje stort företag årligen ska redovisa hur mycket osålt det kasserar — i ett standardiserat format, med skäl och per produkttyp — blir siffran jämförbar. För investerare. För journalister. För de konsumenter som väljer butik efter hur företaget sköter sig. Och för konkurrenten som gärna berättar att deras siffra är lägre.</p>
+
+    <p>Ett överlager som tidigare var ett internt problem för inköpsavdelningen blir en offentlig nyckeltalsfråga. Det är en helt annan sak att förklara i en styrelse.</p>
+
+    <h2>Vad trilogin säger tillsammans</h2>
+
+    <p>Tre artiklar. Tre perspektiv på samma fråga.</p>
+
+    <p>I <a href="/insights/volymen-ar-tillbaka/">del 1</a> visade Lars Lundqvist att risken just nu är att ha för lite: volymen är tillbaka, och de beställningsregler som var rätt under nedgången släpar efter. I <a href="/insights/svinnmalet-blir-lag/">del 2</a> visade Peter Wilén att det som blir över i livsmedel nu har ett bindande mål — mätt i kilo, mot ett basår som redan har passerat. Och i den här delen har vi sett att samma logik redan är i kraft för kläder och skor.</p>
+
+    <p>Den gemensamma nämnaren är inte hållbarhet, och inte heller lagstiftning. Det är <strong>mängdbeslutet</strong>: hur mycket av varje vara som ska finnas, var och när. Det beslutet fattas tiotusentals gånger i veckan i en medelstor kedja. Fattas det per artikel, per butik och per vecka med stöd av en prognos, blir både för lite och för mycket ovanligt. Fattas det per kategori på huvudkontoret med förra årets siffror som grund, blir båda vanliga — och nu också synliga.</p>
+
+    <p>Det som slår mig är att de data lagstiftaren nu kräver — vad som kasserades, hur mycket, av vilken artikel och varför — är exakt de data som en välskött inköpsprocess redan borde ha. Den kedja som styr sitt lager väl får compliance som en biprodukt. Den som inte gör det får ett rapporteringsprojekt som avslöjar varför.</p>
+
+    <h2>Tre frågor till ledningsgruppen</h2>
+
+    <ol class="question-list">
+      <li><strong>Vet vi hur mycket osålt vi kasserade förra året — i antal, i vikt och av vilket skäl?</strong> Om svaret tar mer än en vecka att ta fram är redovisningen redan ett projekt.</li>
+      <li><strong>Var fattas mängdbesluten?</strong> Per artikel och butik, med stöd av prognos — eller per kategori, på huvudkontoret, med fjolårets siffror?</li>
+      <li><strong>Vem äger frågan?</strong> Hållbarhetschefen, inköpschefen eller CFO:n? Svaret är alla tre. Men en av dem behöver ha mandatet.</li>
+    </ol>
+
+    <p>Den kedja som har bra svar på de tre frågorna behöver inte oroa sig för vare sig förbudet, svinnmålet eller julhandeln. Den som inte har det har nu tre skäl att börja.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <div class="series-tag">Insights Vol. 2 — Right item, right quantity · Part 3 of 3 — The trilogy's conclusion. Previous: <a href="/insights/volymen-ar-tillbaka/">Volume is back</a> · <a href="/insights/svinnmalet-blir-lag/">The waste target becomes law</a>.</div>
+
+    <p class="has-dropcap">On July 19 this year, something happened in European retail that got surprisingly little attention in Sweden. From that date, large companies are banned from destroying unsold apparel, clothing accessories and footwear in the EU.</p>
+
+    <p>It sounds like sustainability news. It is. But for a management team in fashion, sports or footwear retail, it's above all purchasing news. Because the ban doesn't remove what's unsold. It only removes the cheapest way out.</p>
+
+    <h2>What applies — and from when</h2>
+
+    <p>The ban follows from the EU Ecodesign for Sustainable Products Regulation, ESPR, and the supplementary acts the Commission adopted in the first half of 2026.</p>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-date">Financial year 2025</div>
+        <div class="tl-text">Large companies must annually disclose the number and weight of unsold consumer products discarded — per product type, with reasons and where the goods ended up.</div>
+      </div>
+      <div class="tl-row tl-key">
+        <div class="tl-date">July 19, 2026</div>
+        <div class="tl-text">Large companies are banned from destroying unsold apparel, clothing accessories and footwear.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">March 2, 2027</div>
+        <div class="tl-text">A standardised EU disclosure format applies. Figures become comparable between companies.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2030</div>
+        <div class="tl-text">The ban and the disclosure requirement extend to medium-sized companies.</div>
+      </div>
+    </div>
+
+    <p>Under EU accounting rules, a "large company" is one that exceeds two of three thresholds: 250 employees, €50 million in turnover or €25 million in balance sheet total. That covers most Nordic chains of any size.</p>
+
+    <p>The exceptions are narrow: products that are dangerous or damaged, that have defects, that infringe intellectual property rights — or that the company has tried to donate to at least three social economy organisations, without any of them accepting.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">19/7</span>
+      <span class="stat-callout-text">Since July 19, 2026, large companies may no longer destroy unsold clothing and footwear in the EU. And disclosure of what's discarded is becoming public and comparable.</span>
+    </div>
+
+    <h2>The cost doesn't disappear. It moves.</h2>
+
+    <p>Destruction has never been good business. But it has been an easy way out for what couldn't be sold. Now the same goods must instead be sold through other channels, repaired, donated, reused or recycled.</p>
+
+    <p>All of that is better than burning them. But none of it is free. Storage space for goods waiting for a new channel. Logistics for donation. Administration for documentation. Markdowns that erode the margin in the regular channel. The cost of a buying mistake remains — it just lands on other lines of the income statement. And it becomes more visible.</p>
+
+    <blockquote>The cheapest unsold garment is the one you never bought.</blockquote>
+
+    <h2>Disclosure is the real change</h2>
+
+    <p>The ban gets the headlines. But it's the disclosure requirement that will change the most over time.</p>
+
+    <p>When every large company must annually disclose how much unsold stock it discards — in a standardised format, with reasons and per product type — the number becomes comparable. For investors. For journalists. For consumers who choose where to shop based on how a company behaves. And for the competitor who will happily point out that their number is lower.</p>
+
+    <p>Overstock that used to be an internal problem for the buying department becomes a public KPI. That's a very different thing to explain to a board.</p>
+
+    <h2>What the trilogy says together</h2>
+
+    <p>Three articles. Three perspectives on the same question.</p>
+
+    <p>In <a href="/insights/volymen-ar-tillbaka/">part 1</a>, Lars Lundqvist showed that the risk right now is having too little: volume is back, and the ordering rules that were right during the downturn are lagging. In <a href="/insights/svinnmalet-blir-lag/">part 2</a>, Peter Wilén showed that what's left over in food now has a binding target — measured in kilos, against baseline years that have already passed. And in this part we've seen that the same logic is already in force for clothing and footwear.</p>
+
+    <p>The common denominator isn't sustainability, nor legislation. It's the <strong>quantity decision</strong>: how much of each item should be where, and when. In a mid-sized chain, that decision is made tens of thousands of times a week. Made per item, per store and per week with the support of a forecast, both too little and too much become rare. Made per category at head office based on last year's numbers, both become common — and now visible, too.</p>
+
+    <p>What strikes me is that the data legislators now require — what was discarded, how much, of which item and why — is exactly the data a well-run purchasing process should already have. The chain that manages its inventory well gets compliance as a by-product. The one that doesn't gets a reporting project that reveals why.</p>
+
+    <h2>Three questions for the management team</h2>
+
+    <ol class="question-list">
+      <li><strong>Do we know how much unsold stock we discarded last year — in units, in weight and for what reason?</strong> If the answer takes more than a week to produce, disclosure is already a project.</li>
+      <li><strong>Where are quantity decisions made?</strong> Per item and store, supported by a forecast — or per category, at head office, using last year's numbers?</li>
+      <li><strong>Who owns the question?</strong> The head of sustainability, the head of buying or the CFO? The answer is all three. But one of them needs the mandate.</li>
+    </ol>
+
+    <p>A chain with good answers to these three questions doesn't need to worry about the ban, the waste target or Christmas trading. One without them now has three reasons to start.</p>
+  </div>
+
+  <style>
+    .series-tag {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-blue, #2A4EA9);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .series-tag a {
+      color: var(--art-navy, #010D60);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .timeline {
+      margin: 2rem 0 2.5rem;
+      border-left: 2px solid #D5DBEA;
+      padding-left: 1.5rem;
+    }
+    .tl-row { position: relative; padding: 0.5rem 0 1.1rem; }
+    .tl-row::before {
+      content: '';
+      position: absolute;
+      left: calc(-1.5rem - 6px);
+      top: 0.85rem;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #1A277A;
+    }
+    .tl-row.tl-key::before { background: #1A277A; }
+    .tl-date {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--art-blue, #2A4EA9);
+      margin-bottom: 0.25rem;
+    }
+    .tl-key .tl-date { color: var(--art-navy, #010D60); }
+    .tl-text { font-size: 1rem; line-height: 1.6; color: #333; }
+    .question-list li { margin-bottom: 1rem; }
+  </style>
+</InsightLayout>

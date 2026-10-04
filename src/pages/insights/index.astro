@@ -15,8 +15,8 @@ const rest = sortedInsights.slice(1);
 const now = new Date();
 const monthsSv = ['januari','februari','mars','april','maj','juni','juli','augusti','september','oktober','november','december'];
 const monthsEn = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-const volumeSv = `Vol. 1 · ${monthsSv[now.getMonth()]} ${now.getFullYear()}`;
-const volumeEn = `Vol. 1 · ${monthsEn[now.getMonth()]} ${now.getFullYear()}`;
+const volumeSv = `Vol. 2 · ${monthsSv[now.getMonth()]} ${now.getFullYear()}`;
+const volumeEn = `Vol. 2 · ${monthsEn[now.getMonth()]} ${now.getFullYear()}`;
 
 // Active categories (those that have at least one article)
 const activeCategoryKeys = [...new Set(insights.map(a => a.category))];
@@ -64,22 +64,22 @@ const activeCategories = activeCategoryKeys.map(k => ({ key: k, ...categories[k]
     </div>
   </section>
 
-  <!-- ===== VOL. 1 MANIFEST BANNER ===== -->
+  <!-- ===== VOL. 2 MANIFEST BANNER ===== -->
   <section class="ins-vol-banner">
     <div class="container">
-      <a href="/insights/vol-1-ai-i-retail/" class="ins-vol-card">
+      <a href="/insights/vol-2-ratt-vara-ratt-mangd/" class="ins-vol-card">
         <div class="ins-vol-text">
           <div class="ins-vol-eyebrow">
-            <span class="sv-text">VOL. 1 · MANIFEST</span>
-            <span class="en-text">VOL. 1 · MANIFESTO</span>
+            <span class="sv-text">VOL. 2 · MANIFEST</span>
+            <span class="en-text">VOL. 2 · MANIFESTO</span>
           </div>
           <h2 class="ins-vol-title">
-            <span class="sv-text">AI-trilogin är klar — och Insikter Vol. 1 är här.</span>
-            <span class="en-text">The AI trilogy is complete — and Insights Vol. 1 is here.</span>
+            <span class="sv-text">Rätt vara, rätt mängd — Insikter Vol. 2 är här.</span>
+            <span class="en-text">Right item, right quantity — Insights Vol. 2 is here.</span>
           </h2>
           <p class="ins-vol-blurb">
-            <span class="sv-text">Tre artiklar om AI i nordisk retail, sammanfattade och kontextualiserade. Plus vad Insikter är — och vad som kommer härnäst.</span>
-            <span class="en-text">Three articles on AI in Nordic retail, summarised and contextualised. Plus what Insights is — and what's coming next.</span>
+            <span class="sv-text">Tre artiklar om mängdbeslutet: volymen som är tillbaka, EU:s bindande svinnmål och förbudet mot att förstöra osålda kläder och skor.</span>
+            <span class="en-text">Three articles on the quantity decision: returning volume, the EU's binding food waste target and the ban on destroying unsold clothing and footwear.</span>
           </p>
         </div>
         <div class="ins-vol-cta">

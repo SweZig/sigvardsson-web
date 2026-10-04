@@ -39,6 +39,24 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'destruktionsforbudet',
+    category: 'strategy',
+    titleSv: 'Destruktionsförbudet — det billigaste osålda plagget är det ni aldrig köpte in.',
+    titleEn: 'The destruction ban — the cheapest unsold garment is the one you never bought.',
+    excerptSv: 'Sedan den 19 juli får stora företag inte längre förstöra osålda kläder och skor i EU. Förbudet tar inte bort det osålda — bara den billigaste utvägen. Och redovisningen av det som kasseras blir offentlig. Trilogins avslutning: varför mängdbeslutet är den gemensamma nämnaren.',
+    excerptEn: 'Since July 19, large companies may no longer destroy unsold clothing and footwear in the EU. The ban doesn\'t remove what\'s unsold — only the cheapest way out. And disclosure of what\'s discarded is becoming public. The trilogy\'s conclusion: why the quantity decision is the common denominator.',
+    coverImage: '/images/insights/destruktionsforbudet-cover.svg',
+    authorId: 'per-sigvardsson',
+    publishDate: '2026-10-09T09:00:00+02:00',
+    publishDateDisplay: { sv: '9 oktober 2026', en: 'October 9, 2026' },
+    readingTime: 5,
+    kickerSv: 'Insikter Vol. 2 · Del 3 av 3',
+    kickerEn: 'Insights Vol. 2 · Part 3 of 3',
+    tagsSv: ['Strategi', 'ESPR', 'Inköp', 'Hållbarhet', 'Mode'],
+    tagsEn: ['Strategy', 'ESPR', 'Purchasing', 'Sustainability', 'Fashion'],
+    relatedProduct: { href: '/products/saldo4/', labelSv: 'Läs mer om Saldo4', labelEn: 'Read more about Saldo4' },
+  },
+  {
     slug: 'svinnmalet-blir-lag',
     category: 'sustainability',
     titleSv: 'Svinnmålet blir lag — och basåret har redan passerat.',

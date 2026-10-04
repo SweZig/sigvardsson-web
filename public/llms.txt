@@ -48,6 +48,8 @@ The site is bilingual (Swedish primary, English secondary). All URLs serve both 
 
 ## Insights articles (knowledge base)
 
+- [Insikter Vol. 2 — Rätt vara, rätt mängd (2026-10)](https://www.sigvardsson.org/insights/vol-2-ratt-vara-ratt-mangd/): Manifesto and overview of the Vol. 2 trilogy on the retail quantity decision: returning volume, EU food waste targets and the ESPR destruction ban.
+- [Destruktionsförbudet — det billigaste osålda plagget är det ni aldrig köpte in (2026-10-09)](https://www.sigvardsson.org/insights/destruktionsforbudet/): Per Sigvardsson on the ESPR ban on destroying unsold apparel and footwear (large companies from 19 July 2026), public disclosure of discarded stock, and why the quantity decision is the common denominator. Insights Vol. 2, part 3. 5 min read.
 - [Svinnmålet blir lag — och basåret har redan passerat (2026-10-07)](https://www.sigvardsson.org/insights/svinnmalet-blir-lag/): Peter Wilén on the revised EU Waste Framework Directive — binding 30% per-capita food waste reduction in retail and consumption by 2030 vs 2021–2023, measuring in kilos not kronor, and structured donation. Insights Vol. 2, part 2. 5 min read.
 - [Volymen är tillbaka. Är lagret det? (2026-10-05)](https://www.sigvardsson.org/insights/volymen-ar-tillbaka/): Lars Lundqvist on returning retail volume (HUI forecast +6% 2026), staffing on units rather than kronor after the food VAT cut, and four inventory actions before Black Week. Insights Vol. 2, part 1. 5 min read.
 - [Insikter Vol. 1 — AI-trilogin (2026-06)](https://www.sigvardsson.org/insights/vol-1-ai-i-retail/): Manifesto and overview of the AI trilogy: Sven chatbot anatomy, six AI use cases scored, and a three-level AI decision-mandate model.
