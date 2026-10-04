@@ -39,6 +39,24 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'svinnmalet-blir-lag',
+    category: 'sustainability',
+    titleSv: 'Svinnmålet blir lag — och basåret har redan passerat.',
+    titleEn: 'The waste target becomes law — and the baseline years have already passed.',
+    excerptSv: 'I maj skrev vi att 30 procents minskat matsvinn är ny baseline. Nu har EU skrivit in samma siffra i ett bindande direktiv. Tre saker förändras för handeln: basåret är låst, svinnet ska mätas i kilo i stället för kronor, och donation blir en struktur i stället för en gest.',
+    excerptEn: 'In May we wrote that a 30 percent reduction in food waste is the new baseline. Now the EU has written the same number into a binding directive. Three things change for retail: the baseline is locked, waste will be measured in kilos instead of kronor, and donation becomes a structure rather than a gesture.',
+    coverImage: '/images/insights/svinnmalet-blir-lag-cover.svg',
+    authorId: 'peter-wilen',
+    publishDate: '2026-10-07T09:00:00+02:00',
+    publishDateDisplay: { sv: '7 oktober 2026', en: 'October 7, 2026' },
+    readingTime: 5,
+    kickerSv: 'Insikter Vol. 2 · Del 2 av 3',
+    kickerEn: 'Insights Vol. 2 · Part 2 of 3',
+    tagsSv: ['Sustainability', 'Matsvinn', 'EU', 'Avfallsdirektivet'],
+    tagsEn: ['Sustainability', 'Food Waste', 'EU', 'Waste Framework Directive'],
+    relatedProduct: { href: '/services/tjanster/minimera-matsvinnet/', labelSv: 'Läs mer om Minimera Matsvinnet', labelEn: 'Read more about Minimize Food Waste' },
+  },
+  {
     slug: 'volymen-ar-tillbaka',
     category: 'operations',
     titleSv: 'Volymen är tillbaka. Är lagret det?',

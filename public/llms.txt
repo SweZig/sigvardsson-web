@@ -48,6 +48,7 @@ The site is bilingual (Swedish primary, English secondary). All URLs serve both 
 
 ## Insights articles (knowledge base)
 
+- [Svinnmålet blir lag — och basåret har redan passerat (2026-10-07)](https://www.sigvardsson.org/insights/svinnmalet-blir-lag/): Peter Wilén on the revised EU Waste Framework Directive — binding 30% per-capita food waste reduction in retail and consumption by 2030 vs 2021–2023, measuring in kilos not kronor, and structured donation. Insights Vol. 2, part 2. 5 min read.
 - [Volymen är tillbaka. Är lagret det? (2026-10-05)](https://www.sigvardsson.org/insights/volymen-ar-tillbaka/): Lars Lundqvist on returning retail volume (HUI forecast +6% 2026), staffing on units rather than kronor after the food VAT cut, and four inventory actions before Black Week. Insights Vol. 2, part 1. 5 min read.
 - [Insikter Vol. 1 — AI-trilogin (2026-06)](https://www.sigvardsson.org/insights/vol-1-ai-i-retail/): Manifesto and overview of the AI trilogy: Sven chatbot anatomy, six AI use cases scored, and a three-level AI decision-mandate model.
 - [AI börjar i sökrutan — men slutar i din kapitalbindning (2026-05-14)](https://www.sigvardsson.org/insights/ai-strategi-retail-2026/): Per Sigvardsson on AI's three-pillar strategic impact in retail — shelf optimization, customer listening, and working capital. 6 min read.

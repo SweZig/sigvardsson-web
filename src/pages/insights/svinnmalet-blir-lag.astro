@@ -1,0 +1,173 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'svinnmalet-blir-lag');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <div class="series-tag">Insikter Vol. 2 — Rätt vara, rätt mängd · Del 2 av 3. Tidigare del: <a href="/insights/volymen-ar-tillbaka/">Volymen är tillbaka</a>.</div>
+
+    <p class="has-dropcap">I maj skrev jag att <a href="/insights/matsvinn-30-procent/">30 procents minskat matsvinn inte längre är hjältevärde — det är ny baseline</a>. Poängen var att tekniken finns, att den levererar i regelbunden drift, och att svinn därför borde behandlas som en lönsamhetsfråga snarare än en post i hållbarhetsrapporten.</p>
+
+    <p>Sedan dess har EU sagt samma sak. Fast i lagtext.</p>
+
+    <h2>Vad som faktiskt har beslutats</h2>
+
+    <p>Det reviderade avfallsdirektivet trädde i kraft den 16 oktober 2025. För första gången finns bindande mål för matsvinn i hela unionen:</p>
+
+    <ul class="fact-list">
+      <li><strong>30 procent minskning per capita</strong> i handel, restauranger, storhushåll och hushåll</li>
+      <li><strong>10 procent minskning</strong> i livsmedelsindustrin</li>
+      <li><strong>Basår:</strong> genomsnittet för 2021–2023</li>
+      <li><strong>Måldatum:</strong> 2030</li>
+    </ul>
+
+    <p>Medlemsstaterna har 20 månader på sig att föra in direktivet i nationell lag — alltså fram till sommaren 2027 — och ska ha anpassat sina nationella program mot matsvinn senast i oktober 2027. Kommissionen ska utvärdera utvecklingen samma år, och kan då skärpa målen eller sätta nya mot 2035.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">30 %</span>
+      <span class="stat-callout-text">mindre matsvinn per invånare i handel och konsumtion till 2030, jämfört med snittet 2021–2023. Målet ligger på Sverige som land. Men det är i butikerna och köken som det ska nås.</span>
+    </div>
+
+    <p>Formellt ligger målet på medlemsstaten, inte på den enskilda butiken. Hur Sverige väljer att fördela ansvaret avgörs i det svenska genomförandet under det kommande året. Men det är svårt att se ett genomförande där handeln — den del av kedjan som både har svinnet, datan och kundkontakten — inte får en central roll.</p>
+
+    <h2>Tre saker som förändras för handeln</h2>
+
+    <h3>1. Basåret har redan passerat</h3>
+    <p>Målet räknas mot genomsnittet för 2021–2023. Det betyder att utgångsläget är låst. Den kedja som inte har tillförlitliga svinndata från de åren — per kategori, helst per artikel — kommer att ha svårt att visa vilken förbättring den faktiskt har gjort. Och svårt att få tillgodoräkna sig det arbete som redan är gjort.</p>
+    <p>Det första steget är därför inte nya verktyg. Det är att säkra den historik man har, och förstå hur den mäts.</p>
+
+    <h3>2. Svinnet ska mätas i kilo — inte i kronor</h3>
+    <p>EU:s uppföljning sker i vikt, enligt en harmoniserad mätmetod. De flesta kedjor följer i dag svinnet i kronor, som andel av omsättningen. Det skapar ett problem som få har uppmärksammat.</p>
+    <blockquote>Efter momssänkningen i april är varje kasserat bröd värt mindre i kronor. Svinnet i rapporten ser bättre ut — utan att en enda limpa mindre har slängts.</blockquote>
+    <p>Svinn i kronor är fortfarande rätt mått för lönsamheten. Men det är fel mått för att följa upp mot målet. Den som vill veta om svinnet faktiskt minskar behöver följa det i kilo och enheter, per artikel. Det är samma data som en bra prognosmodell redan arbetar med.</p>
+
+    <h3>3. Donation blir en struktur, inte en gest</h3>
+    <p>Direktivet innebär också att berörda livsmedelsföretag ska erbjuda avtal om donation till livsmedelsbanker och andra organisationer som omfördelar mat. Många butiker skänker redan i dag. Men ofta hänger det på en engagerad butikschef och en hämtning som fungerar ibland.</p>
+    <p>En donationsstruktur som håller kräver att man vet i förväg vad som kommer att bli över — i går, inte i dag klockan 21. Det är en prognosfråga. Och den som kan förutse överskottet kan oftast också undvika det.</p>
+
+    <h2>Målet delas med hushållen</h2>
+
+    <p>En detalj i direktivet som är lätt att missa: 30-procentsmålet gäller handel <em>och</em> konsumtion tillsammans. Det mesta av det svinnet uppstår i hemmen. Handeln kan inte styra vad kunden slänger i sitt kylskåp.</p>
+
+    <p>Men handeln påverkar mer än man tror. Förpackningsstorlekar. Kampanjer av typen "köp tre, betala för två" på färskvaror. Hur datummärkning kommuniceras. Hur nära bäst före-datum varorna är när de når hyllan. Allt detta flyttar svinn mellan butik och hem — åt ena eller andra hållet. Räkna med att den frågan kommer att ställas till handeln.</p>
+
+    <h2>Lagen ändrar inte vem som beställer brödet</h2>
+
+    <p>Här är det jag tycker att diskussionen ofta missar. Ett mål i ett EU-direktiv ändrar ingenting i sig. Svinnet uppstår fortfarande klockan sex på morgonen, när någon fyller på brödhyllan med en mängd som bestämdes i går. Det uppstår när en avdelningschef beställer "som vanligt" inför en helg som inte blir som vanligt.</p>
+
+    <p>Det är därför vi aldrig har sett svinnarbete som enbart ett tekniskt projekt. Prognosen och beställningsförslaget måste nå personen som faktiskt fattar beslutet, i ett verktyg som går att använda med en kundvagn i andra handen. Och den personen måste förstå varför förslaget ser ut som det gör — annars blir det överkört av magkänslan första gången det känns fel.</p>
+
+    <p>Kedjor som redan arbetar så — vi har sett det i bröd och frukt &amp; grönt hos Kiwi, Meny och Coop — kommer att uppfylla direktivet som en bieffekt. Övriga har drygt tre år på sig att komma dit. Det låter mycket. Det är det inte, om basåret redan har passerat och mätningen inte är på plats.</p>
+
+    <p>I nästa och sista del av trilogin lämnar vi livsmedel. För samma logik — att det som blir över inte längre är en intern fråga — gäller sedan i somras även kläder och skor. Och där är förbudet redan i kraft.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <div class="series-tag">Insights Vol. 2 — Right item, right quantity · Part 2 of 3. Previous: <a href="/insights/volymen-ar-tillbaka/">Volume is back</a>.</div>
+
+    <p class="has-dropcap">In May I wrote that <a href="/insights/matsvinn-30-procent/">a 30 percent reduction in food waste isn't heroic anymore — it's the new baseline</a>. The point was that the technology exists, that it delivers in steady-state operations, and that food waste should therefore be treated as a profitability issue rather than a line in the sustainability report.</p>
+
+    <p>Since then, the EU has said the same thing. In legislation.</p>
+
+    <h2>What has actually been decided</h2>
+
+    <p>The revised Waste Framework Directive entered into force on October 16, 2025. For the first time, there are binding food waste targets across the Union:</p>
+
+    <ul class="fact-list">
+      <li><strong>30 percent reduction per capita</strong> in retail, restaurants, food services and households</li>
+      <li><strong>10 percent reduction</strong> in processing and manufacturing</li>
+      <li><strong>Baseline:</strong> the average for 2021–2023</li>
+      <li><strong>Target date:</strong> 2030</li>
+    </ul>
+
+    <p>Member States have 20 months to transpose the directive into national law — that is, until the summer of 2027 — and must have adapted their national food waste prevention programmes by October 2027. The Commission will review progress the same year, and may then tighten the targets or set new ones for 2035.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">30%</span>
+      <span class="stat-callout-text">less food waste per capita in retail and consumption by 2030, compared with the 2021–2023 average. The target sits with each country. But it will be met in stores and kitchens.</span>
+    </div>
+
+    <p>Formally, the target applies to the Member State, not to the individual store. How Sweden chooses to allocate responsibility will be decided in the national transposition over the coming year. But it's hard to imagine a transposition in which retail — the part of the chain that has the waste, the data and the customer relationship — doesn't get a central role.</p>
+
+    <h2>Three things that change for retail</h2>
+
+    <h3>1. The baseline years are already behind us</h3>
+    <p>The target is measured against the 2021–2023 average. That means the starting point is locked. A chain without reliable waste data from those years — per category, ideally per item — will struggle to show the improvement it has actually made. And struggle to get credit for the work already done.</p>
+    <p>The first step is therefore not new tools. It's securing the history you have, and understanding how it's measured.</p>
+
+    <h3>2. Waste will be measured in kilos — not kronor</h3>
+    <p>EU monitoring is by weight, according to a harmonised methodology. Most chains today track waste in kronor, as a share of revenue. That creates a problem few have noticed.</p>
+    <blockquote>After the VAT cut in April, every discarded loaf is worth less in kronor. Waste in the report looks better — without a single loaf less being thrown away.</blockquote>
+    <p>Waste in kronor is still the right measure for profitability. But it's the wrong measure for tracking progress against the target. Anyone who wants to know whether waste is actually falling needs to follow it in kilos and units, per item. That's the same data a good forecasting model already works with.</p>
+
+    <h3>3. Donation becomes a structure, not a gesture</h3>
+    <p>The directive also means that relevant food businesses must offer donation agreements to food banks and other food redistribution organisations. Many stores donate today. But it often depends on a committed store manager and a pickup that works some of the time.</p>
+    <p>A donation structure that holds requires knowing in advance what will be left over — yesterday, not at 9 PM today. That's a forecasting question. And whoever can predict the surplus can usually also avoid it.</p>
+
+    <h2>The target is shared with households</h2>
+
+    <p>A detail in the directive that's easy to miss: the 30 percent target covers retail <em>and</em> consumption together. Most of that waste happens at home. Retail can't control what the customer throws out of their fridge.</p>
+
+    <p>But retail influences more than you'd think. Pack sizes. "Buy three, pay for two" promotions on fresh produce. How date labelling is communicated. How close to best-before items are when they reach the shelf. All of this moves waste between store and home — in one direction or the other. Expect that question to be put to retail.</p>
+
+    <h2>The law doesn't change who orders the bread</h2>
+
+    <p>Here's what I think the discussion often misses. A target in an EU directive doesn't change anything by itself. Waste still happens at six in the morning, when someone fills the bread shelf with a quantity decided yesterday. It happens when a department manager orders "as usual" ahead of a weekend that turns out not to be usual.</p>
+
+    <p>That's why we've never seen waste reduction as purely a technical project. The forecast and the order suggestion have to reach the person actually making the decision, in a tool you can use with a shopping trolley in the other hand. And that person has to understand why the suggestion looks the way it does — otherwise it gets overridden by gut feeling the first time it feels wrong.</p>
+
+    <p>Chains already working this way — we've seen it in bread and fresh produce at Kiwi, Meny and Coop — will meet the directive as a side effect. Others have just over three years to get there. That sounds like a lot. It isn't, when the baseline years have already passed and measurement isn't in place.</p>
+
+    <p>In the next and final part of the trilogy, we leave food behind. Because the same logic — that what's left over is no longer an internal matter — has applied to clothing and footwear since this summer. And there, the ban is already in force.</p>
+  </div>
+
+  <style>
+    .series-tag {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-blue, #2A4EA9);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .series-tag a {
+      color: var(--art-navy, #010D60);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .fact-list {
+      list-style: none;
+      padding: 1.25rem 1.5rem !important;
+      margin: 1.5rem 0 2rem !important;
+      background: #F4F6FB;
+      border-left: 3px solid #2d8a6b;
+      border-radius: 4px;
+    }
+    .fact-list li { margin: 0.35rem 0; }
+  </style>
+</InsightLayout>
