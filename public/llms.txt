@@ -2,7 +2,7 @@
 
 > Sigvardsson Consulting Group (SCG) is a Nordic retail management consultancy and implementation house combining 30+ years of retail experience, proprietary AI-driven software, and official Link Retail partnership. Three-time Global 100 Winner (2024, 2025, 2026). We help Nordic retail chains lift profitability through measurable, data-driven projects — not reports.
 
-SCG operates across Sweden, Norway, Denmark and Finland with 100+ completed retail projects at leading Nordic chains including Webhallen, NorgesGruppen Kiwi, NorgesGruppen Meny, Coop, XL Bygg, Toys 'R' Us, Travel Retail Norway, XXL Sport & Villmark, Heinermann Group, Ultimate Padel, and Elgiganten. Headquarters: Stockholm, Sweden. CEO & Founder: Per Sigvardsson.
+SCG operates across Sweden, Norway, Denmark and Finland with 100+ completed retail projects at leading Nordic chains including Webhallen, Komplett Group, NorgesGruppen Kiwi, NorgesGruppen Meny, Coop, XL Bygg, Toys 'R' Us, Travel Retail Norway, XXL Sport & Villmark, Heinermann Group, Ultimate Padel, and Elgiganten. Headquarters: Stockholm, Sweden. CEO & Founder: Per Sigvardsson.
 
 The site is bilingual (Swedish primary, English secondary). All URLs serve both languages via client-side language toggle.
 
