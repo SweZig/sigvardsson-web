@@ -2,7 +2,7 @@
 
 > Sigvardsson Consulting Group (SCG) is a Nordic retail management consultancy and implementation house combining 30+ years of retail experience, proprietary AI-driven software, and official Link Retail partnership. Three-time Global 100 Winner (2024, 2025, 2026). We help Nordic retail chains lift profitability through measurable, data-driven projects — not reports.
 
-SCG operates across Sweden, Norway, Denmark and Finland with 100+ completed retail projects at leading Nordic chains including NorgesGruppen Kiwi, NorgesGruppen Meny, Coop, XL Bygg, Toys 'R' Us, Travel Retail Norway, XXL Sport & Villmark, Heinermann Group, Ultimate Padel, and Elgiganten. Headquarters: Stockholm, Sweden. CEO & Founder: Per Sigvardsson.
+SCG operates across Sweden, Norway, Denmark and Finland with 100+ completed retail projects at leading Nordic chains including Webhallen, NorgesGruppen Kiwi, NorgesGruppen Meny, Coop, XL Bygg, Toys 'R' Us, Travel Retail Norway, XXL Sport & Villmark, Heinermann Group, Ultimate Padel, and Elgiganten. Headquarters: Stockholm, Sweden. CEO & Founder: Per Sigvardsson.
 
 The site is bilingual (Swedish primary, English secondary). All URLs serve both languages via client-side language toggle.
 
@@ -39,7 +39,7 @@ The site is bilingual (Swedish primary, English secondary). All URLs serve both 
 ## Software products
 
 - [Retail Apps](https://www.sigvardsson.org/products/retail-apps/): Suite of 9 mobile-first apps for in-store optimization.
-- [Feedback App](https://www.sigvardsson.org/products/feedback-app/): Real-time customer satisfaction measurement with NPS analytics and KPI correlation. Reference clients: XL Bygg, Toys 'R' Us.
+- [Feedback App](https://www.sigvardsson.org/products/feedback-app/): Real-time customer satisfaction measurement with NPS analytics and KPI correlation. Reference clients: Webhallen, XL Bygg, Toys 'R' Us.
 - [Saldo4](https://www.sigvardsson.org/products/saldo4/): Data-driven inventory management with daily action lists. Reduces working capital, increases stock turn.
 
 ## Technology partnership
