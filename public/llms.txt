@@ -48,6 +48,8 @@ The site is bilingual (Swedish primary, English secondary). All URLs serve both 
 
 ## Insights articles (knowledge base)
 
+- [Volymen är tillbaka. Är lagret det? (2026-10-05)](https://www.sigvardsson.org/insights/volymen-ar-tillbaka/): Lars Lundqvist on returning retail volume (HUI forecast +6% 2026), staffing on units rather than kronor after the food VAT cut, and four inventory actions before Black Week. Insights Vol. 2, part 1. 5 min read.
+- [Insikter Vol. 1 — AI-trilogin (2026-06)](https://www.sigvardsson.org/insights/vol-1-ai-i-retail/): Manifesto and overview of the AI trilogy: Sven chatbot anatomy, six AI use cases scored, and a three-level AI decision-mandate model.
 - [AI börjar i sökrutan — men slutar i din kapitalbindning (2026-05-14)](https://www.sigvardsson.org/insights/ai-strategi-retail-2026/): Per Sigvardsson on AI's three-pillar strategic impact in retail — shelf optimization, customer listening, and working capital. 6 min read.
 - [Hyllan står för 75 procent av din omsättning (2026-05-13)](https://www.sigvardsson.org/insights/hyllan-75-procent/): Per Sigvardsson on the shelf as the dominant revenue driver and how to optimize it. 5 min read.
 - [Matsvinn: 30 procents minskning är inte längre hjältevärde (2026)](https://www.sigvardsson.org/insights/matsvinn-30-procent/): Peter Wilén on food waste as a profitability issue. 4 min read.

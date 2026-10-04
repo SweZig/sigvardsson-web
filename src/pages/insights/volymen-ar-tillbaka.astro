@@ -1,0 +1,168 @@
+---
+import InsightLayout from '../../layouts/InsightLayout.astro';
+import { insights } from '../../data/insights.js';
+
+const article = insights.find(a => a.slug === 'volymen-ar-tillbaka');
+---
+
+<InsightLayout
+  slug={article.slug}
+  titleSv={article.titleSv}
+  titleEn={article.titleEn}
+  excerptSv={article.excerptSv}
+  excerptEn={article.excerptEn}
+  coverImage={article.coverImage}
+  coverFit={article.coverFit}
+  authorId={article.authorId}
+  publishDateSv={article.publishDateDisplay.sv}
+  publishDateEn={article.publishDateDisplay.en}
+  readingTime={article.readingTime}
+  category={article.category}
+  relatedProduct={article.relatedProduct}
+  kickerSv={article.kickerSv}
+  kickerEn={article.kickerEn}
+>
+  <!-- ====== SWEDISH ====== -->
+  <div class="sv-text">
+    <div class="series-tag">Insikter Vol. 2 — Rätt vara, rätt mängd · Del 1 av 3</div>
+
+    <p class="has-dropcap">I tre år har nordisk handel lärt sig att hålla igen. Räntorna steg, kunderna drog ner, och varje krona i lager blev en krona som kostade pengar att bära. Vi skrev om det i våras — i <a href="/insights/rantechocken/">Räntechocken</a> och <a href="/insights/lagret-ar-ett-beslut/">Lagret är ett beslut</a>. Försiktigheten var rätt. Den var dessutom lönsam.</p>
+
+    <p>Nu vänder det. Och den försiktighet som var en dygd 2024 håller på att bli en kostnad hösten 2026.</p>
+
+    <h2>Siffrorna som ändrade bilden</h2>
+
+    <p>Den 12 september höjde Handelns Utredningsinstitut, HUI, sin prognos för detaljhandeln 2026 — från 3,5 till <strong>6 procents volymtillväxt</strong>. Sällanköpsvaruhandeln växte med 8,6 procent i volym i juli. Dagligvaruhandeln med 6,3 procent. Drivkrafterna är kända: stigande reallöner, lägre räntekostnader, skattesänkningar — och den halverade matmomsen.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">6 %</span>
+      <span class="stat-callout-text">volymtillväxt i svensk detaljhandel 2026, enligt HUI:s prognos från september. I våras var prognosen 3,5 procent. Skillnaden är den volym som många kedjors inköpsplaner inte är byggda för.</span>
+    </div>
+
+    <p>Det är goda nyheter. Men för den som ansvarar för lager, inköp och bemanning är en uppreviderad prognos också ett besked om att planen man lade i våras är fel. Inte lite fel. Systematiskt fel — åt samma håll, i varje kategori som växer.</p>
+
+    <h2>Volym upp, kronor ner</h2>
+
+    <p>I dagligvaruhandeln är bilden extra lurig. Den 1 april sänktes momsen på livsmedel från 12 till 6 procent, och sänkningen gick enligt Svensk Dagligvaruhandel igenom fullt ut till hyllkanten. Priserna föll 5,5 procent mellan mars och april.</p>
+
+    <p>Effekten är att butiken säljer fler enheter per intjänad krona. Fler pallar ska tas emot. Fler kolli ska plockas upp. Fler hyllor ska fyllas på, fler gånger per dag. Men omsättningen i kronor — som de flesta bemannings- och prestationsmodeller i handeln utgår från — växer betydligt långsammare än arbetet.</p>
+
+    <blockquote>Den som bemannar på kronor i en marknad där volymen växer snabbare än omsättningen underbemannar systematiskt. Och det syns först på hyllan.</blockquote>
+
+    <p>Det är inte en teoretisk risk. En butik som planerar påfyllnad efter förra årets omsättningskurva kommer att ha rätt antal timmar för fel mängd varor. Resultatet är inte svinn. Resultatet är tomma hyllor klockan 17 på en torsdag.</p>
+
+    <h2>Det asymmetriska felet</h2>
+
+    <p>Under en nedgång är överlager det dyra felet. Varje överflödig artikel binder kapital, ska realiseras eller kasseras. Det var därför försiktigheten var rätt.</p>
+
+    <p>Under en uppgång vänder asymmetrin. Ett tomt hyllfack kostar inte bara den förlorade försäljningen. Det kostar kundens förtroende — och i en tid där allt fler köpbeslut förbereds i en digital kanal innan kunden kliver in i butiken, kostar det också synlighet. Kunden som inte hittar varan hos er hittar den hos någon annan. Och kommer kanske inte tillbaka.</p>
+
+    <p>Problemet är att de flesta beställningsregler är kalibrerade på de senaste årens efterfrågan. Säkerhetslager satt som "tre veckors snitt plus 20 procent" bygger på ett snitt från en marknad som inte längre finns. Regeln är inte fel i sig. Den är bara byggd för förra konjunkturen.</p>
+
+    <p>En prognosmodell som läser de senaste veckornas försäljning per artikel och butik ställer om av sig själv. En tumregel som bygger på förra årets siffror gör det inte — den släpar efter med ett helt år.</p>
+
+    <h2>Fyra saker att göra före Black Week</h2>
+
+    <p>Black Friday infaller den 27 november. Därefter följer julhandeln. Det finns fortfarande tid att ställa om — men inte mycket.</p>
+
+    <h3>1. Kalibrera om säkerhetslagret där det spelar roll</h3>
+    <p>Börja inte med alla 20 000 artiklar. Börja med de några hundra som driver hälften av volymen. Se över beställningspunkter och säkerhetslager mot de senaste tolv veckornas faktiska försäljning — inte mot förra årets.</p>
+
+    <h3>2. Mät tillgänglighet, inte bara kapitalbindning</h3>
+    <p>Under tre år har lagerdiskussionen i ledningsgruppen handlat om kapitalbindning. Det var rätt fokus då. Nu behöver nyckeltalet få sällskap av ett annat: andelen artiklar som saknas på hyllan, per butik och vecka. Det som inte mäts styrs inte.</p>
+
+    <h3>3. Bemanna på enheter, inte kronor</h3>
+    <p>Låt påfyllnads- och mottagningstimmar styras av antalet kolli och enheter som ska hanteras, inte av omsättningsprognosen. I dagligvaruhandeln efter momssänkningen är det skillnaden mellan rätt och fel bemanning.</p>
+
+    <h3>4. Planera redan nu för när momsen höjs igen</h3>
+    <p>Matmomssänkningen är tillfällig och gäller till och med den 31 december 2027. Den 1 januari 2028 höjs priserna på livsmedel i ett slag. Det kommer att påverka efterfrågan — och den kedja som har sina prognosmodeller tränade på hela perioden kommer att se förändringen komma, i stället för att upptäcka den i januarirapporten.</p>
+
+    <h2>Försiktighet är inte en strategi</h2>
+
+    <p>Den viktigaste lärdomen från 2022–2025 är inte att man ska hålla igen. Det är att lagret ska vara ett beslut — fattat per artikel, per butik och per vecka — och inte en reflex. Reflexen i en nedgång är att dra ner. Reflexen i en uppgång är att beställa mer av allt. Båda är lika fel.</p>
+
+    <p>Det är det här Vol. 2 av Insikter handlar om: <strong>rätt vara, i rätt mängd</strong>. I den här delen har vi pratat om risken att ha för lite. I de två följande handlar det om det motsatta — det som blir över. För där har lagstiftaren nu bestämt sig för att det inte längre är en intern fråga.</p>
+  </div>
+
+  <!-- ====== ENGLISH ====== -->
+  <div class="en-text">
+    <div class="series-tag">Insights Vol. 2 — Right item, right quantity · Part 1 of 3</div>
+
+    <p class="has-dropcap">For three years, Nordic retail has learned to hold back. Rates rose, customers cut back, and every krona in inventory became a krona that cost money to carry. We wrote about it this spring — in <a href="/insights/rantechocken/">The interest rate shock</a> and <a href="/insights/lagret-ar-ett-beslut/">Inventory is a decision</a>. The caution was right. It was profitable, too.</p>
+
+    <p>Now the tide is turning. And the caution that was a virtue in 2024 is becoming a cost in the autumn of 2026.</p>
+
+    <h2>The numbers that changed the picture</h2>
+
+    <p>On September 12, the Swedish Retail Research Institute, HUI, raised its 2026 retail forecast — from 3.5 to <strong>6 percent volume growth</strong>. Non-food retail grew 8.6 percent in volume in July. Grocery grew 6.3 percent. The drivers are well known: rising real wages, lower interest costs, tax cuts — and the halved VAT on food.</p>
+
+    <div class="stat-callout">
+      <span class="stat-callout-num">6%</span>
+      <span class="stat-callout-text">volume growth in Swedish retail in 2026, according to HUI's September forecast. In the spring, the forecast was 3.5 percent. The difference is volume that many chains' purchasing plans aren't built for.</span>
+    </div>
+
+    <p>That's good news. But for whoever is responsible for inventory, buying and staffing, a revised forecast is also notice that the plan made in the spring is wrong. Not slightly wrong. Systematically wrong — in the same direction, in every category that's growing.</p>
+
+    <h2>Volume up, kronor down</h2>
+
+    <p>In grocery, the picture is especially tricky. On April 1, VAT on food in Sweden was cut from 12 to 6 percent, and according to the Swedish Grocery Trade Association, the cut passed through in full to the shelf. Prices fell 5.5 percent between March and April.</p>
+
+    <p>The effect is that the store sells more units per krona earned. More pallets to receive. More cases to unpack. More shelves to fill, more times per day. But revenue in kronor — which most staffing and performance models in retail are based on — grows considerably slower than the workload.</p>
+
+    <blockquote>Staffing on revenue in a market where volume grows faster than turnover means systematic understaffing. And it shows up on the shelf first.</blockquote>
+
+    <p>This isn't a theoretical risk. A store that plans replenishment against last year's revenue curve will have the right number of hours for the wrong number of items. The result isn't waste. The result is empty shelves at 5 PM on a Thursday.</p>
+
+    <h2>The asymmetric error</h2>
+
+    <p>In a downturn, overstock is the expensive mistake. Every surplus item ties up capital and has to be marked down or discarded. That's why caution was right.</p>
+
+    <p>In an upturn, the asymmetry flips. An empty shelf doesn't just cost the lost sale. It costs the customer's trust — and at a time when more and more purchase decisions are prepared in a digital channel before the customer walks into the store, it costs visibility as well. The customer who can't find the item at your store finds it somewhere else. And may not come back.</p>
+
+    <p>The problem is that most ordering rules are calibrated on recent years' demand. Safety stock set at "three-week average plus 20 percent" is based on an average from a market that no longer exists. The rule isn't wrong in itself. It's just built for the last cycle.</p>
+
+    <p>A forecasting model that reads recent weeks' sales per item and store adjusts by itself. A rule of thumb based on last year's numbers doesn't — it lags by a full year.</p>
+
+    <h2>Four things to do before Black Week</h2>
+
+    <p>Black Friday falls on November 27. Christmas trading follows. There is still time to adjust — but not much.</p>
+
+    <h3>1. Recalibrate safety stock where it matters</h3>
+    <p>Don't start with all 20,000 items. Start with the few hundred that drive half the volume. Review reorder points and safety stock against the last twelve weeks' actual sales — not against last year's.</p>
+
+    <h3>2. Measure availability, not just working capital</h3>
+    <p>For three years, the inventory discussion in the management team has been about working capital. That was the right focus then. Now the metric needs company: the share of items missing from the shelf, per store and week. What isn't measured isn't managed.</p>
+
+    <h3>3. Staff on units, not kronor</h3>
+    <p>Let replenishment and receiving hours be driven by the number of cases and units to be handled, not by the revenue forecast. In grocery after the VAT cut, that's the difference between right and wrong staffing.</p>
+
+    <h3>4. Plan now for when VAT goes back up</h3>
+    <p>The food VAT cut is temporary and runs until December 31, 2027. On January 1, 2028, food prices rise in a single step. That will affect demand — and the chain whose forecasting models are trained on the whole period will see the change coming, instead of discovering it in the January report.</p>
+
+    <h2>Caution is not a strategy</h2>
+
+    <p>The most important lesson from 2022–2025 isn't to hold back. It's that inventory should be a decision — made per item, per store and per week — not a reflex. The reflex in a downturn is to cut. The reflex in an upturn is to order more of everything. Both are equally wrong.</p>
+
+    <p>This is what Vol. 2 of Insights is about: <strong>the right item, in the right quantity</strong>. In this part we've discussed the risk of having too little. The next two are about the opposite — what's left over. Because there, legislators have now decided it's no longer an internal matter.</p>
+  </div>
+
+  <style>
+    .series-tag {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--art-blue, #2A4EA9);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .series-tag a {
+      color: var(--art-navy, #010D60);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+  </style>
+</InsightLayout>

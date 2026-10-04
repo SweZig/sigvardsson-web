@@ -39,6 +39,24 @@ export const authors = {
 
 export const insights = [
   {
+    slug: 'volymen-ar-tillbaka',
+    category: 'operations',
+    titleSv: 'Volymen är tillbaka. Är lagret det?',
+    titleEn: 'Volume is back. Is your inventory?',
+    excerptSv: 'HUI har höjt prognosen för detaljhandeln 2026 till sex procents volymtillväxt. Efter tre år av försiktiga inköp går många kedjor in i julhandeln med beställningsregler byggda för en nedgång — och i dagligvaruhandeln växer arbetet snabbare än kronorna. Fyra saker att göra före Black Week.',
+    excerptEn: 'HUI has raised its 2026 retail forecast to six percent volume growth. After three years of cautious buying, many chains head into Christmas trading with ordering rules built for a downturn — and in grocery, the workload is growing faster than the kronor. Four things to do before Black Week.',
+    coverImage: '/images/insights/volymen-ar-tillbaka-cover.svg',
+    authorId: 'lars-lundqvist',
+    publishDate: '2026-10-05T09:00:00+02:00',
+    publishDateDisplay: { sv: '5 oktober 2026', en: 'October 5, 2026' },
+    readingTime: 5,
+    kickerSv: 'Insikter Vol. 2 · Del 1 av 3',
+    kickerEn: 'Insights Vol. 2 · Part 1 of 3',
+    tagsSv: ['Operations', 'Lager', 'Saldo4', 'Bemanning', 'Julhandel'],
+    tagsEn: ['Operations', 'Inventory', 'Saldo4', 'Staffing', 'Christmas Trading'],
+    relatedProduct: { href: '/products/saldo4/', labelSv: 'Läs mer om Saldo4', labelEn: 'Read more about Saldo4' },
+  },
+  {
     slug: 'ai-tre-nivaer',
     category: 'technology',
     titleSv: 'AI i tre nivåer — och hur ni vet vad som hör hemma var.',
